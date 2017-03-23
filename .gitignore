@@ -47,3 +47,8 @@ release.properties
 dependency-reduced-pom.xml
 
 tmp/*
+
+
+RemoteSystemsTempFiles/
+.metadata
+.recommenders

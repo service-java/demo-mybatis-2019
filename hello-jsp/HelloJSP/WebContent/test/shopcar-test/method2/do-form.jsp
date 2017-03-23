@@ -5,8 +5,8 @@
 
 
 <!-- 显示输入的信息 -->
-物品：<%=car.getName()%>
+<%--  物品：<%=car.getName()%> --%>
 <br>
-产地：<%=car.getMaker() %>
+<%-- 产地：<%=car.getMaker() %> --%>
 <br>
 <a href="form.jsp">继续输入</a>
