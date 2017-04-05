@@ -11,6 +11,8 @@
         </taglib>
     </jsp-config>
 
+
+
     <servlet>
         <servlet-name>DisplayChart</servlet-name>
         <servlet-class>
