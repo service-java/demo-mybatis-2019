@@ -7,7 +7,7 @@
     <jsp-config>
         <taglib>
             <taglib-uri>showDateUri</taglib-uri>
-            <taglib-location>/WEB-INF/showDate.tld</taglib-location>
+            <taglib-location>/WEB-INF/tld/showDate.tld</taglib-location>
         </taglib>
     </jsp-config>
 
@@ -25,7 +25,7 @@
 
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>com.MyServlet</servlet-class>
+        <servlet-class>servlet.MyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyServlet</servlet-name>

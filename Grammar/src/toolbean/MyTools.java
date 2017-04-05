@@ -5,6 +5,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MyTools {
+	// static 直接通过类名访问
+	public static String change(String str){
+		str=str.replace("<","&lt;");
+		str=str.replace(">","&gt;");
+		return str;
+	}
+
+
+
 	/**
 	 * @功能 转换字符串中属于HTML语言中的特殊字符
 	 * @参数 source为要转换的字符串
@@ -38,7 +47,7 @@ public class MyTools {
 		if(str==null)
 			str="";
 		try {
-			str=new String(str.getBytes("ISO-8859-1"),"gb2312");
+			str=new String(str.getBytes("ISO-8859-1"),"utf-8");
 		} catch (UnsupportedEncodingException e) {
 			str="";
 			e.printStackTrace();
