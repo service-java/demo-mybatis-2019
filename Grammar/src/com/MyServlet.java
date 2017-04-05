@@ -7,23 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// ¼Ì³ĞHttpServlet³éÏóÀà
+// ç»§æ‰¿HttpServletæŠ½è±¡ç±»
 public class MyServlet extends HttpServlet {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// ÖØĞ´»ò¸²¸Ç·½·¨
+	// é‡å†™æˆ–è¦†ç›–æ–¹æ³•
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		// »ñÈ¡HTTPÇëÇóĞÅÏ¢
+
+		// è·å–HTTPè¯·æ±‚ä¿¡æ¯
 		// String myName = request.getParameter("myName");
-		
-		// Éú³ÉHTTPÏìÓ¦
+
+		// ç”ŸæˆHTTPå“åº”
 		response.setContentType("text/html;charset=gb2312");
 		PrintWriter out = response.getWriter();
-		out.println("±£»¤»·¾³£¡°®»¤µØÇò£¡");
+		out.println("ä¿æŠ¤ç¯å¢ƒï¼çˆ±æŠ¤åœ°çƒï¼");
 	}
 }

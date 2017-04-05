@@ -4,11 +4,13 @@
 
 ```
 Intellij IDEA
-Tomcat
+Tomcat http://localhost:8686
 ```
 
 * Grammar
 
 ```
+// JavaBean
 
+// JSTL
 ```

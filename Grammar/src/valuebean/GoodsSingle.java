@@ -1,9 +1,9 @@
 package valuebean;
 
 public class GoodsSingle {
-	private String name;						//保存商品名称
-	private float price;						//保存商品价格
-	private int num;							//保存商品购买数量
+	private String name;						//淇濆瓨鍟嗗搧鍚嶇О
+	private float price;						//淇濆瓨鍟嗗搧浠锋牸
+	private int num;							//淇濆瓨鍟嗗搧璐拱鏁伴噺
 	
 	public String getName() {
 		return name;

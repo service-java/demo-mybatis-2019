@@ -4,57 +4,57 @@ import java.util.ArrayList;
 import valuebean.GoodsSingle;
 
 public class ShopCar {
-	private ArrayList buylist=new ArrayList();									//ÓÃÀ´´æ´¢¹ºÂòµÄÉÌÆ·
+	private ArrayList buylist=new ArrayList();									//ç”¨æ¥å­˜å‚¨è´­ä¹°çš„å•†å“
 	public void setBuylist(ArrayList buylist) {
 		this.buylist = buylist;
 	}
 	/**
-	 * @¹¦ÄÜ Ïò¹ºÎï³µÖĞÌí¼ÓÉÌÆ·
-	 * @²ÎÊı singleÎªGoodsSingleÀà¶ÔÏó£¬·â×°ÁËÒªÌí¼ÓµÄÉÌÆ·ĞÅÏ¢
+	 * @åŠŸèƒ½ å‘è´­ç‰©è½¦ä¸­æ·»åŠ å•†å“
+	 * @å‚æ•° singleä¸ºGoodsSingleç±»å¯¹è±¡ï¼Œå°è£…äº†è¦æ·»åŠ çš„å•†å“ä¿¡æ¯
 	 */
 	public void addItem(GoodsSingle single){
 		if(single!=null){
-			if(buylist.size()==0){												//Èç¹ûbuylistÖĞ²»´æÔÚÈÎºÎÉÌÆ·
+			if(buylist.size()==0){												//å¦‚æœbuylistä¸­ä¸å­˜åœ¨ä»»ä½•å•†å“
 				GoodsSingle temp=new GoodsSingle();
 				temp.setName(single.getName());
 				temp.setPrice(single.getPrice());
 				temp.setNum(single.getNum());
-				buylist.add(temp);												//´æ´¢ÉÌÆ·
+				buylist.add(temp);												//å­˜å‚¨å•†å“
 			}
-			else{																//Èç¹ûbuylistÖĞ´æÔÚÉÌÆ·	
+			else{																//å¦‚æœbuylistä¸­å­˜åœ¨å•†å“	
 				int i=0;				
-				for(;i<buylist.size();i++){										//±éÀúbuylist¼¯ºÏ¶ÔÏó£¬ÅĞ¶Ï¸Ã¼¯ºÏÖĞÊÇ·ñÒÑ¾­´æÔÚµ±Ç°ÒªÌí¼ÓµÄÉÌÆ·		
-					GoodsSingle temp=(GoodsSingle)buylist.get(i);				//»ñÈ¡buylist¼¯ºÏÖĞµ±Ç°ÔªËØ		
-					if(temp.getName().equals(single.getName())){				//ÅĞ¶Ï´Óbuylist¼¯ºÏÖĞ»ñÈ¡µÄµ±Ç°ÉÌÆ·µÄÃû³ÆÊÇ·ñÓëÒªÌí¼ÓµÄÉÌÆ·µÄÃû³ÆÏàÍ¬
-						//Èç¹ûÏàÍ¬£¬ËµÃ÷ÒÑ¾­¹ºÂòÁË¸ÃÉÌÆ·£¬Ö»ĞèÒª½«ÉÌÆ·µÄ¹ºÂòÊıÁ¿¼Ó1
-						temp.setNum(temp.getNum()+1);							//½«ÉÌÆ·¹ºÂòÊıÁ¿¼Ó1
-						break;													//½áÊøforÑ­»·
+				for(;i<buylist.size();i++){										//éå†buylisté›†åˆå¯¹è±¡ï¼Œåˆ¤æ–­è¯¥é›†åˆä¸­æ˜¯å¦å·²ç»å­˜åœ¨å½“å‰è¦æ·»åŠ çš„å•†å“		
+					GoodsSingle temp=(GoodsSingle)buylist.get(i);				//è·å–buylisté›†åˆä¸­å½“å‰å…ƒç´ 		
+					if(temp.getName().equals(single.getName())){				//åˆ¤æ–­ä»buylisté›†åˆä¸­è·å–çš„å½“å‰å•†å“çš„åç§°æ˜¯å¦ä¸è¦æ·»åŠ çš„å•†å“çš„åç§°ç›¸åŒ
+						//å¦‚æœç›¸åŒï¼Œè¯´æ˜å·²ç»è´­ä¹°äº†è¯¥å•†å“ï¼Œåªéœ€è¦å°†å•†å“çš„è´­ä¹°æ•°é‡åŠ 1
+						temp.setNum(temp.getNum()+1);							//å°†å•†å“è´­ä¹°æ•°é‡åŠ 1
+						break;													//ç»“æŸforå¾ªç¯
 					}
 				}
-				if(i>=buylist.size()){											//ËµÃ÷buylistÖĞ²»´æÔÚÒªÌí¼ÓµÄÉÌÆ·
+				if(i>=buylist.size()){											//è¯´æ˜buylistä¸­ä¸å­˜åœ¨è¦æ·»åŠ çš„å•†å“
 					GoodsSingle temp=new GoodsSingle();
 					temp.setName(single.getName());
 					temp.setPrice(single.getPrice());
 					temp.setNum(single.getNum());
-					buylist.add(temp);											//´æ´¢ÉÌÆ·
+					buylist.add(temp);											//å­˜å‚¨å•†å“
 				}
 			}
 		}			
 	}
 	/**
-	 * @¹¦ÄÜ ´Ó¹ºÎï³µÖĞÒÆ³ıÖ¸¶¨Ãû³ÆµÄÉÌÆ·
-	 * @²ÎÊı name±íÊ¾ÉÌÆ·Ãû³Æ
+	 * @åŠŸèƒ½ ä»è´­ç‰©è½¦ä¸­ç§»é™¤æŒ‡å®šåç§°çš„å•†å“
+	 * @å‚æ•° nameè¡¨ç¤ºå•†å“åç§°
 	 */
 	public void removeItem(String name){
-		for(int i=0;i<buylist.size();i++){							//±éÀúbuylist¼¯ºÏ£¬²éÕÒÖ¸¶¨Ãû³ÆµÄÉÌÆ·
-			GoodsSingle temp=(GoodsSingle)buylist.get(i);   		//»ñÈ¡¼¯ºÏÖĞµ±Ç°Î»ÖÃµÄÉÌÆ·
-			if(temp.getName().equals(name)){						//Èç¹ûÉÌÆ·µÄÃû³ÆÎªname²ÎÊıÖ¸¶¨µÄÃû³Æ	
-				if(temp.getNum()>1){								//Èç¹ûÉÌÆ·µÄ¹ºÂòÊıÁ¿´óÓÚ1
-					temp.setNum(temp.getNum()-1);					//Ôò½«¹ºÂòÊıÁ¿¼õ1
-					break;				         					//½áÊøforÑ­»·
+		for(int i=0;i<buylist.size();i++){							//éå†buylisté›†åˆï¼ŒæŸ¥æ‰¾æŒ‡å®šåç§°çš„å•†å“
+			GoodsSingle temp=(GoodsSingle)buylist.get(i);   		//è·å–é›†åˆä¸­å½“å‰ä½ç½®çš„å•†å“
+			if(temp.getName().equals(name)){						//å¦‚æœå•†å“çš„åç§°ä¸ºnameå‚æ•°æŒ‡å®šçš„åç§°	
+				if(temp.getNum()>1){								//å¦‚æœå•†å“çš„è´­ä¹°æ•°é‡å¤§äº1
+					temp.setNum(temp.getNum()-1);					//åˆ™å°†è´­ä¹°æ•°é‡å‡1
+					break;				         					//ç»“æŸforå¾ªç¯
 				}
-				else if(temp.getNum()==1){							//Èç¹ûÉÌÆ·µÄ¹ºÂòÊıÁ¿Îª1
-					buylist.remove(i);		    					//´Óbuylist¼¯ºÏ¶ÔÏóÖĞÒÆ³ı¸ÃÉÌÆ·
+				else if(temp.getNum()==1){							//å¦‚æœå•†å“çš„è´­ä¹°æ•°é‡ä¸º1
+					buylist.remove(i);		    					//ä»buylisté›†åˆå¯¹è±¡ä¸­ç§»é™¤è¯¥å•†å“
 				}
 			}
 		}

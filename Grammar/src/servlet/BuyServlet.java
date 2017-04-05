@@ -19,53 +19,53 @@ public class BuyServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action=request.getParameter("action");	//»ñÈ¡action²ÎÊıÖµ
+		String action=request.getParameter("action");	//è·å–actionå‚æ•°å€¼
 		if(action==null)
 			action="";
-		if(action.equals("buy"))					//´¥·¢ÁË¡°¹ºÂò¡±ÇëÇó
-			buy(request,response);						//µ÷ÓÃbuy()·½·¨ÊµÏÖÉÌÆ·µÄ¹ºÂò
-		if(action.equals("remove"))					//´¥·¢ÁË¡°ÒÆ³ı¡±ÇëÇó
-			remove(request,response);					//µ÷ÓÃremove()·½·¨ÊµÏÖÉÌÆ·µÄÒÆ³ı
-		if(action.equals("clear"))					//´¥·¢ÁË¡°Çå¿Õ¹ºÎï³µ¡±ÇëÇó
-			clear(request,response);					//µ÷ÓÃclear()·½·¨ÊµÏÖ¹ºÎï³µµÄÇå¿Õ
+		if(action.equals("buy"))					//è§¦å‘äº†â€œè´­ä¹°â€è¯·æ±‚
+			buy(request,response);						//è°ƒç”¨buy()æ–¹æ³•å®ç°å•†å“çš„è´­ä¹°
+		if(action.equals("remove"))					//è§¦å‘äº†â€œç§»é™¤â€è¯·æ±‚
+			remove(request,response);					//è°ƒç”¨remove()æ–¹æ³•å®ç°å•†å“çš„ç§»é™¤
+		if(action.equals("clear"))					//è§¦å‘äº†â€œæ¸…ç©ºè´­ç‰©è½¦â€è¯·æ±‚
+			clear(request,response);					//è°ƒç”¨clear()æ–¹æ³•å®ç°è´­ç‰©è½¦çš„æ¸…ç©º
 	}
-	//ÊµÏÖ¹ºÂòÉÌÆ·µÄ·½·¨
+	//å®ç°è´­ä¹°å•†å“çš„æ–¹æ³•
 	protected void buy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();		
-		String strId=request.getParameter("id");		//»ñÈ¡´¥·¢¡°¹ºÂò¡±ÇëÇóÊ±´«µİµÄid²ÎÊı£¬¸Ã²ÎÊı´æ´¢µÄÊÇÉÌÆ·ÔÚgoodslist¶ÔÏóÖĞ´æ´¢µÄÎ»ÖÃ	
+		String strId=request.getParameter("id");		//è·å–è§¦å‘â€œè´­ä¹°â€è¯·æ±‚æ—¶ä¼ é€’çš„idå‚æ•°ï¼Œè¯¥å‚æ•°å­˜å‚¨çš„æ˜¯å•†å“åœ¨goodslistå¯¹è±¡ä¸­å­˜å‚¨çš„ä½ç½®	
 		int id=MyTools.strToint(strId);
 		
 		ArrayList goodslist=(ArrayList)session.getAttribute("goodslist");
 		GoodsSingle single=(GoodsSingle)goodslist.get(id);
 		
-		ArrayList buylist=(ArrayList)session.getAttribute("buylist");		//´Ósession·¶Î§ÄÚ»ñÈ¡´æ´¢ÁËÓÃ»§ÒÑ¹ºÂòÉÌÆ·µÄ¼¯ºÏ¶ÔÏó
+		ArrayList buylist=(ArrayList)session.getAttribute("buylist");		//ä»sessionèŒƒå›´å†…è·å–å­˜å‚¨äº†ç”¨æˆ·å·²è´­ä¹°å•†å“çš„é›†åˆå¯¹è±¡
 		if(buylist==null)
 			buylist=new ArrayList();
 		
 		ShopCar myCar=new ShopCar();
-		myCar.setBuylist(buylist); 						//½«buylist¶ÔÏó¸³Öµ¸øShopCarÀàÊµÀıÖĞµÄÊôĞÔ
-		myCar.addItem(single);							//µ÷ÓÃShopCarÀàÖĞaddItem()·½·¨ÊµÏÖÉÌÆ·Ìí¼Ó²Ù×÷
+		myCar.setBuylist(buylist); 						//å°†buylistå¯¹è±¡èµ‹å€¼ç»™ShopCarç±»å®ä¾‹ä¸­çš„å±æ€§
+		myCar.addItem(single);							//è°ƒç”¨ShopCarç±»ä¸­addItem()æ–¹æ³•å®ç°å•†å“æ·»åŠ æ“ä½œ
 		
 		session.setAttribute("buylist",buylist);		
-		response.sendRedirect("show.jsp");				//½«ÇëÇóÖØ¶¨Ïòµ½show.jspÒ³Ãæ
+		response.sendRedirect("show.jsp");				//å°†è¯·æ±‚é‡å®šå‘åˆ°show.jspé¡µé¢
 	}
-	//ÊµÏÖÒÆ³ıÉÌÆ·µÄ·½·¨
+	//å®ç°ç§»é™¤å•†å“çš„æ–¹æ³•
 	protected void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		ArrayList buylist=(ArrayList)session.getAttribute("buylist");
 		
 		String name=request.getParameter("name");
 		ShopCar myCar=new ShopCar();
-		myCar.setBuylist(buylist);						//½«buylist¶ÔÏó¸³Öµ¸øShopCarÀàÊµÀıÖĞµÄÊôĞÔ
-		myCar.removeItem(MyTools.toChinese(name));		//µ÷ÓÃShopCarÀàÖĞremoveItem ()·½·¨ÊµÏÖÉÌÆ·ÒÆ³ı²Ù×÷
+		myCar.setBuylist(buylist);						//å°†buylistå¯¹è±¡èµ‹å€¼ç»™ShopCarç±»å®ä¾‹ä¸­çš„å±æ€§
+		myCar.removeItem(MyTools.toChinese(name));		//è°ƒç”¨ShopCarç±»ä¸­removeItem ()æ–¹æ³•å®ç°å•†å“ç§»é™¤æ“ä½œ
 		
 		response.sendRedirect("shopcar.jsp");
 	}
-	//ÊµÏÖÇå¿Õ¹ºÎï³µµÄ·½·¨
+	//å®ç°æ¸…ç©ºè´­ç‰©è½¦çš„æ–¹æ³•
 	protected void clear(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		ArrayList buylist=(ArrayList)session.getAttribute("buylist");			//´Ósession·¶Î§ÄÚ»ñÈ¡´æ´¢ÁËÓÃ»§ÒÑ¹ºÂòÉÌÆ·µÄ¼¯ºÏ¶ÔÏó
-		buylist.clear();														//Çå¿Õbuylist¼¯ºÏ¶ÔÏó£¬ÊµÏÖ¹ºÎï³µÇå¿ÕµÄ²Ù×÷
+		ArrayList buylist=(ArrayList)session.getAttribute("buylist");			//ä»sessionèŒƒå›´å†…è·å–å­˜å‚¨äº†ç”¨æˆ·å·²è´­ä¹°å•†å“çš„é›†åˆå¯¹è±¡
+		buylist.clear();														//æ¸…ç©ºbuylisté›†åˆå¯¹è±¡ï¼Œå®ç°è´­ç‰©è½¦æ¸…ç©ºçš„æ“ä½œ
 		
 		response.sendRedirect("shopcar.jsp");
 	}

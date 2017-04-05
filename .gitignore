@@ -52,3 +52,6 @@ tmp/*
 RemoteSystemsTempFiles/
 .metadata
 .recommenders
+
+upload
+uploads

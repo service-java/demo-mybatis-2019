@@ -6,33 +6,33 @@ import java.util.Date;
 
 public class MyTools {
 	/**
-	 * @¹¦ÄÜ ×ª»»×Ö·û´®ÖĞÊôÓÚHTMLÓïÑÔÖĞµÄÌØÊâ×Ö·û
-	 * @²ÎÊı sourceÎªÒª×ª»»µÄ×Ö·û´®
-	 * @·µ»ØÖµ StringĞÍÖµ
+	 * @åŠŸèƒ½ è½¬æ¢å­—ç¬¦ä¸²ä¸­å±äºHTMLè¯­è¨€ä¸­çš„ç‰¹æ®Šå­—ç¬¦
+	 * @å‚æ•° sourceä¸ºè¦è½¬æ¢çš„å­—ç¬¦ä¸²
+	 * @è¿”å›å€¼ Stringå‹å€¼
 	 */
 	public static String changeHTML(String source){
 		String changeStr="";
-		changeStr=source.replace("&","&amp;");			//×ª»»×Ö·û´®ÖĞµÄ¡°&¡±·ûºÅ
-		changeStr=changeStr.replace(" ","&nbsp;");		//×ª»»×Ö·û´®ÖĞµÄ¿Õ¸ñ
-		changeStr=changeStr.replace("<","&lt;");		//×ª»»×Ö·û´®ÖĞµÄ¡°<¡±·ûºÅ
-		changeStr=changeStr.replace(">","&gt;");		//×ª»»×Ö·û´®ÖĞµÄ¡°>¡±·ûºÅ
-		changeStr=changeStr.replace("\r\n","<br>");		//×ª»»×Ö·û´®ÖĞµÄ»Ø³µ»»ĞĞ
+		changeStr=source.replace("&","&amp;");			//è½¬æ¢å­—ç¬¦ä¸²ä¸­çš„â€œ&â€ç¬¦å·
+		changeStr=changeStr.replace(" ","&nbsp;");		//è½¬æ¢å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼
+		changeStr=changeStr.replace("<","&lt;");		//è½¬æ¢å­—ç¬¦ä¸²ä¸­çš„â€œ<â€ç¬¦å·
+		changeStr=changeStr.replace(">","&gt;");		//è½¬æ¢å­—ç¬¦ä¸²ä¸­çš„â€œ>â€ç¬¦å·
+		changeStr=changeStr.replace("\r\n","<br>");		//è½¬æ¢å­—ç¬¦ä¸²ä¸­çš„å›è½¦æ¢è¡Œ
 		return changeStr;
 	}
     /**
-     * @¹¦ÄÜ ½«DateĞÍÈÕÆÚ×ª»»³ÉÖ¸¶¨¸ñÊ½µÄ×Ö·û´®ĞÎÊ½£¬Èç¡°yyyy-MM-dd HH:mm:ss¡±
-     * @²ÎÊı dateÎªÒª±»×ª»»µÄDateĞÍÈÕÆÚ
-     * @·µ»ØÖµ StringĞÍÖµ
+     * @åŠŸèƒ½ å°†Dateå‹æ—¥æœŸè½¬æ¢æˆæŒ‡å®šæ ¼å¼çš„å­—ç¬¦ä¸²å½¢å¼ï¼Œå¦‚â€œyyyy-MM-dd HH:mm:ssâ€
+     * @å‚æ•° dateä¸ºè¦è¢«è½¬æ¢çš„Dateå‹æ—¥æœŸ
+     * @è¿”å›å€¼ Stringå‹å€¼
      */
 	public static String changeTime(Date date) {
-		//´´½¨Ò»¸ö¸ñÊ½»¯ÈÕÆÚµÄSimpleDateFormatÀà¶ÔÏó£¬²¢Í¬Ê±Ö¸¶¨ÈÕÆÚ×îÖÕ±»×ª»»³ÉµÄÑùÊ½
+		//åˆ›å»ºä¸€ä¸ªæ ¼å¼åŒ–æ—¥æœŸçš„SimpleDateFormatç±»å¯¹è±¡ï¼Œå¹¶åŒæ—¶æŒ‡å®šæ—¥æœŸæœ€ç»ˆè¢«è½¬æ¢æˆçš„æ ·å¼
 		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return format.format(date);			//µ÷ÓÃformat()·½·¨¸ñÊ½»¯ÈÕÆÚ
+		return format.format(date);			//è°ƒç”¨format()æ–¹æ³•æ ¼å¼åŒ–æ—¥æœŸ
 	}
 	/**
-	 * @¹¦ÄÜ ½â¾öÍ¨¹ıÌá½»±íµ¥²úÉúµÄÖĞÎÄÂÒÂë
-	 * @²ÎÊı valueÎªÒª×ª»»µÄ×Ö·û´®
-	 * @·µ»ØÖµ StringĞÍÖµ
+	 * @åŠŸèƒ½ è§£å†³é€šè¿‡æäº¤è¡¨å•äº§ç”Ÿçš„ä¸­æ–‡ä¹±ç 
+	 * @å‚æ•° valueä¸ºè¦è½¬æ¢çš„å­—ç¬¦ä¸²
+	 * @è¿”å›å€¼ Stringå‹å€¼
 	 */
     public  static String  toChinese(String str) {
 		if(str==null)
@@ -45,7 +45,7 @@ public class MyTools {
 		}
 		return str;
 	}
-	public static int strToint(String str){			//½«StringĞÍÊı¾İ×ª»»ÎªintĞÍÊı¾İµÄ·½·¨
+	public static int strToint(String str){			//å°†Stringå‹æ•°æ®è½¬æ¢ä¸ºintå‹æ•°æ®çš„æ–¹æ³•
 		if(str==null||str.equals(""))
 			str="0";
 		int i=0;

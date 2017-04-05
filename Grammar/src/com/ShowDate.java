@@ -13,8 +13,8 @@ public class ShowDate extends TagSupport {
 			java.sql.Date date = new java.sql.Date(dt.getTime());
 			out.print(date);
 		} catch (Exception e) {
-			System.out.println("显示系统日期出现的异常：" + e.getMessage());
+			System.out.println("鏄剧ず绯荤粺鏃ユ湡鍑虹幇鐨勫紓甯革細" + e.getMessage());
 		}
-		return (SKIP_BODY); // 返回SKIP_BODY常量，表示不对标签体进行处理
+		return (SKIP_BODY); // 杩斿洖SKIP_BODY甯搁噺锛岃〃绀轰笉瀵规爣绛句綋杩涜澶勭悊
 	}
 }

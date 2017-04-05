@@ -17,27 +17,27 @@ public class WordServlet extends HttpServlet {
 		doPost(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//ÒÔÏÂ´úÂëÓÃÀ´»ñÈ¡±íµ¥ÖĞ×Ö¶ÎÄÚÈİ²¢½øĞĞ×ªÂë
+		//ä»¥ä¸‹ä»£ç ç”¨æ¥è·å–è¡¨å•ä¸­å­—æ®µå†…å®¹å¹¶è¿›è¡Œè½¬ç 
 		String author=MyTools.toChinese(request.getParameter("author"));
 		String title=MyTools.toChinese(request.getParameter("title"));
 		String content=MyTools.toChinese(request.getParameter("content"));
 		
-		//»ñÈ¡µ±Ç°Ê±¼ä²¢¸ñÊ½»¯Ê±¼äÎªÖ¸¶¨¸ñÊ½
+		//è·å–å½“å‰æ—¶é—´å¹¶æ ¼å¼åŒ–æ—¶é—´ä¸ºæŒ‡å®šæ ¼å¼
 		String today=MyTools.changeTime(new Date());
 		
-		WordSingle single=new WordSingle();									//´´½¨ÖµJavaBean¶ÔÏóÓÃÀ´·â×°»ñÈ¡µÄĞÅÏ¢
+		WordSingle single=new WordSingle();									//åˆ›å»ºå€¼JavaBeanå¯¹è±¡ç”¨æ¥å°è£…è·å–çš„ä¿¡æ¯
 		single.setAuthor(MyTools.changeHTML(author));
 		single.setTitle(MyTools.changeHTML(title));
 		single.setContent(content);
 		single.setTime(today);
 		
-		HttpSession session=request.getSession();							//»ñÈ¡session¶ÔÏó
-		ServletContext scx=session.getServletContext();						//Í¨¹ısession¶ÔÏó»ñÈ¡Ó¦ÓÃÉÏÏÂÎÄ
-		ArrayList wordlist=(ArrayList)scx.getAttribute("wordlist");			//»ñÈ¡´æ´¢ÔÚÓ¦ÓÃÉÏÏÂÎÄÖĞµÄ¼¯ºÏ¶ÔÏó
+		HttpSession session=request.getSession();							//è·å–sessionå¯¹è±¡
+		ServletContext scx=session.getServletContext();						//é€šè¿‡sessionå¯¹è±¡è·å–åº”ç”¨ä¸Šä¸‹æ–‡
+		ArrayList wordlist=(ArrayList)scx.getAttribute("wordlist");			//è·å–å­˜å‚¨åœ¨åº”ç”¨ä¸Šä¸‹æ–‡ä¸­çš„é›†åˆå¯¹è±¡
 		if(wordlist==null)
 			wordlist=new ArrayList();
-		wordlist.add(single);								//½«·â×°ÁËĞÅÏ¢µÄÖµJavaBean´æ´¢µ½¼¯ºÏ¶ÔÏóÖĞ
-		scx.setAttribute("wordlist",wordlist);				//½«¼¯ºÏ¶ÔÏó±£´æµ½Ó¦ÓÃÉÏÏÂÎÄÖĞ
-		response.sendRedirect("show.jsp");					//½«ÇëÇóÖØ¶¨Ïòµ½show.jspÒ³Ãæ
+		wordlist.add(single);								//å°†å°è£…äº†ä¿¡æ¯çš„å€¼JavaBeanå­˜å‚¨åˆ°é›†åˆå¯¹è±¡ä¸­
+		scx.setAttribute("wordlist",wordlist);				//å°†é›†åˆå¯¹è±¡ä¿å­˜åˆ°åº”ç”¨ä¸Šä¸‹æ–‡ä¸­
+		response.sendRedirect("show.jsp");					//å°†è¯·æ±‚é‡å®šå‘åˆ°show.jspé¡µé¢
 	}
 }
