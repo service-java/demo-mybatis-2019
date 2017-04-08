@@ -47,7 +47,7 @@ public class BuyServlet extends HttpServlet {
 		myCar.addItem(single);							//调用ShopCar类中addItem()方法实现商品添加操作
 		
 		session.setAttribute("buylist",buylist);		
-		response.sendRedirect("show.jsp");				//将请求重定向到show.jsp页面
+		response.sendRedirect("jump/servlet/shopcar-show.jsp");				//将请求重定向到show.jsp页面
 	}
 	//实现移除商品的方法
 	protected void remove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +59,7 @@ public class BuyServlet extends HttpServlet {
 		myCar.setBuylist(buylist);						//将buylist对象赋值给ShopCar类实例中的属性
 		myCar.removeItem(MyTools.toChinese(name));		//调用ShopCar类中removeItem ()方法实现商品移除操作
 		
-		response.sendRedirect("shopcar.jsp");
+		response.sendRedirect("jump/servlet/shopcar-show.jsp");
 	}
 	//实现清空购物车的方法
 	protected void clear(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -67,6 +67,6 @@ public class BuyServlet extends HttpServlet {
 		ArrayList buylist=(ArrayList)session.getAttribute("buylist");			//从session范围内获取存储了用户已购买商品的集合对象
 		buylist.clear();														//清空buylist集合对象，实现购物车清空的操作
 		
-		response.sendRedirect("shopcar.jsp");
+		response.sendRedirect("jump/servlet/shopcar-show.jsp");
 	}
 }

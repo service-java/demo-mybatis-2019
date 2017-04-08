@@ -10,14 +10,14 @@ import javax.servlet.http.HttpSession;
 import valuebean.GoodsSingle;
 
 public class IndexServlet extends HttpServlet {
-	private static ArrayList goodslist=new ArrayList();
+	private static ArrayList goodslist = new ArrayList();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();		
 		session.setAttribute("goodslist",goodslist);
-		response.sendRedirect("show.jsp");
+		response.sendRedirect("jump/servlet/shopping.jsp");
 	}
 	static{										//静态代码块
 		String[] names={"苹果","香蕉","梨","橘子"};

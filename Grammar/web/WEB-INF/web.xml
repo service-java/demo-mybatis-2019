@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <!-- 自定义标签 -->
     <jsp-config>
         <taglib>
             <taglib-uri>showDateUri</taglib-uri>
@@ -11,9 +12,7 @@
         </taglib>
     </jsp-config>
 
-
-
-
+    <!-- 第一个servlet -->
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>servlet.MyServlet</servlet-class>
@@ -33,6 +32,7 @@
         <url-pattern>/uploadServlet</url-pattern>
     </servlet-mapping>
 
+    <!-- 图表组件 -->
     <servlet>
         <servlet-name>DisplayChart</servlet-name>
         <servlet-class>
@@ -44,34 +44,33 @@
         <url-pattern>/DisplayChart</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>wordServlet</servlet-name>-->
-        <!--<servlet-class>servlet.WordServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>wordServlet</servlet-name>-->
-        <!--<url-pattern>/addWord</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <!-- 留言板 -->
+    <servlet>
+        <servlet-name>wordServlet</servlet-name>
+        <servlet-class>servlet.WordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>wordServlet</servlet-name>
+        <url-pattern>/addWord</url-pattern>
+    </servlet-mapping>
 
-    <!-- 配置IndexServlet -->
-    <!--<servlet>-->
-        <!--<servlet-name>indexServlet</servlet-name>-->
-        <!--<servlet-class>servlet.IndexServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>indexServlet</servlet-name>-->
-        <!--<url-pattern>/index</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!-- 配置BuyServlet -->
-    <!--<servlet>-->
-        <!--<servlet-name>buyServlet</servlet-name>-->
-        <!--<servlet-class>servlet.BuyServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>buyServlet</servlet-name>-->
-        <!--<url-pattern>/doCar</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <!-- 购物车 配置IndexServlet -->
+    <servlet>
+        <servlet-name>indexServlet</servlet-name>
+        <servlet-class>servlet.IndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>indexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>buyServlet</servlet-name>
+        <servlet-class>servlet.BuyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>buyServlet</servlet-name>
+        <url-pattern>/shopping</url-pattern>
+    </servlet-mapping>
 
 
 

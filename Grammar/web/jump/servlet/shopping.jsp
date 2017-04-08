@@ -1,17 +1,18 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="valuebean.GoodsSingle" %>
-<%	ArrayList goodslist=(ArrayList)session.getAttribute("goodslist");	%>
+
+<%	ArrayList goodslist = (ArrayList)session.getAttribute("goodslist");	%>
 
 <table border="1" width="450" rules="none" cellspacing="0" cellpadding="0">
-	<tr height="50"><td colspan="3" align="center">лА╧╘илф╥хГоб</td></tr>
+	<tr height="50"><td colspan="3" align="center">Ф▐░Д╬⌡Е∙├Е⌠│Е╕┌Д╦▀</td></tr>
 	<tr align="center" height="30" bgcolor="lightgrey">
-		<td>цШЁф</td>
-		<td>╪ш╦Я(т╙/╫О)</td>
-		<td>╧╨бР</td>
+		<td>Е░█Г╖╟</td>
+		<td>Д╩╥Ф═╪(Е┘┐/Ф√╓)</td>
+		<td>Х╢╜Д╧╟</td>
 	</tr>
 	<%  if(goodslist==null||goodslist.size()==0){ %>
-	<tr height="100"><td colspan="3" align="center">ц╩спилф╥©иотй╬ё║</td></tr>
+	<tr height="100"><td colspan="3" align="center">Ф╡║Ф°┴Е∙├Е⌠│Е▐╞Ф≤╬Г╓╨О╪│</td></tr>
 	<% 
 		} 
 		else{
@@ -21,13 +22,13 @@
 	<tr height="50" align="center">
 		<td><%=single.getName()%></td>
 		<td><%=single.getPrice()%></td>
-		<td><a href="doCar?action=buy&id=<%=i%>">╧╨бР</a></td>
+		<td><a href="/Grammar/doCar?action=buy&id=<%=i%>">Х╢╜Д╧╟</a></td>
 	</tr>
 	<%
 			}
 		}
 	%>
 	<tr height="50">
-		<td align="center" colspan="3"><a href="shopcar.jsp">╡И©╢╧╨нОЁ╣</a></td>
+		<td align="center" colspan="3"><a href="shopcar-show.jsp">Ф÷╔Г°▀Х╢╜Г┴╘Х╫╕</a></td>
 	</tr>
 </table>

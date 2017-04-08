@@ -38,6 +38,6 @@ public class WordServlet extends HttpServlet {
 			wordlist=new ArrayList();
 		wordlist.add(single);								//将封装了信息的值JavaBean存储到集合对象中
 		scx.setAttribute("wordlist",wordlist);				//将集合对象保存到应用上下文中
-		response.sendRedirect("show.jsp");					//将请求重定向到show.jsp页面
+		response.sendRedirect("jump/servlet/note-show.jsp");					//将请求重定向到show.jsp页面
 	}
 }
