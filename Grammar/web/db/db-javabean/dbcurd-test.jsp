@@ -22,14 +22,14 @@
 
     // 增删改
     try {
-        sql = "delete from websites where name like '%qmen%';";
-//        conn.delete(sql);
+        sql = "delete from websites where name like '%q%';";
+        conn.delete(sql);
 
         sql = "insert websites values (null,'qmen', 'http://qmen.space', 12, 'CN')";
-        conn.insert(sql);
+//        conn.insert(sql);
 
         sql = "update websites set name='q'  where name = 'qmen'";
-        conn.update(sql);
+//        conn.update(sql);
 
 
     } catch(Exception e) {

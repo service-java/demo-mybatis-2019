@@ -13,17 +13,17 @@ public class ConnDB {
     public Connection conn = null;
     public Statement stmt = null;
     public ResultSet rs = null;
-    private static String dbClassName ="";
-    private static String dbUrl = "";
     private static String propFileName = "/db/connDB.properties";	//指定资源文件保存的位置
     private static Properties prop = new Properties();
+    private static String dbClassName ="";
+    private static String dbUrl = "";
 
     public ConnDB(){
         try {
             InputStream in=getClass().getResourceAsStream(propFileName);
             prop.load(in);	//通过输入流对象加载Properties文件
             dbClassName = prop.getProperty("DB_CLASS_NAME");	//获取数据库驱动
-            dbUrl = prop.getProperty("DB_URL",dbUrl);
+            dbUrl = prop.getProperty("DB_URL");
         }
         catch (Exception e) {
             e.printStackTrace();		//输出异常信息
