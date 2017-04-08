@@ -1,52 +1,52 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"  errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java"  errorPage="" %>
 <%@ page import="java.util.*" %>
 <%@ page import ="javax.mail.*" %>
 <%@ page import="javax.mail.internet.*" %>
 <%@ page import="javax.activation.*" %>
 <%
 try{
-	request.setCharacterEncoding("gb2312");
+	request.setCharacterEncoding("utf-8");
 	String from=request.getParameter("from");
 	String to=request.getParameter("to");
 	String subject=request.getParameter("subject");
 	String messageText=request.getParameter("content");
     String password=request.getParameter("password");
     
-	//Éú³ÉSMTPµÄÖ÷»úÃû³Æ
+	//ç”ŸæˆSMTPçš„ä¸»æœºåç§°
 	//int n =from.indexOf('@');
 	//int m=from.length() ;
 	//String mailserver ="smtp."+from.substring(n+1,m);
     String mailserver="wanggh";    
     
-    //½¨Á¢ÓÊ¼ş»á»°
+    //å»ºç«‹é‚®ä»¶ä¼šè¯
 	Properties pro=new Properties();
     pro.put("mail.smtp.host",mailserver);
     pro.put("mail.smtp.auth","true");
     Session sess=Session.getInstance(pro);
     sess.setDebug(true);
-    //ĞÂ½¨Ò»¸öÏûÏ¢¶ÔÏó
+    //æ–°å»ºä¸€ä¸ªæ¶ˆæ¯å¯¹è±¡
     MimeMessage message=new MimeMessage(sess);
-    //ÉèÖÃ·¢¼şÈË
+    //è®¾ç½®å‘ä»¶äºº
     InternetAddress from_mail=new InternetAddress(from);
     message.setFrom(from_mail);
-   //ÉèÖÃÊÕ¼şÈË
+   //è®¾ç½®æ”¶ä»¶äºº
     InternetAddress to_mail=new InternetAddress(to);
     message.setRecipient(Message.RecipientType.TO ,to_mail);
-    //ÉèÖÃÖ÷Ìâ
+    //è®¾ç½®ä¸»é¢˜
     message.setSubject(subject);
-   //ÉèÖÃÄÚÈİ
+   //è®¾ç½®å†…å®¹
    message.setText(messageText);
-   //ÉèÖÃ·¢ËÍÊ±¼ä
+   //è®¾ç½®å‘é€æ—¶é—´
    message.setSentDate(new Date());
-   //·¢ËÍÓÊ¼ş
-   message.saveChanges();  //±£Ö¤±¨Í·ÓòÍ¬»á»°ÄÚÈİ±£³ÖÒ»ÖÂ
+   //å‘é€é‚®ä»¶
+   message.saveChanges();  //ä¿è¯æŠ¥å¤´åŸŸåŒä¼šè¯å†…å®¹ä¿æŒä¸€è‡´
    Transport transport =sess.getTransport("smtp");
    transport.connect(mailserver,from,password);
    transport.sendMessage(message,message.getAllRecipients());
    transport.close();
-   out.println("<script language='javascript'>alert('ÓÊ¼şÒÑ·¢ËÍ£¡');window.location.href='sendmail.jsp';</script>");
+   out.println("<script language='javascript'>alert('é‚®ä»¶å·²å‘é€ï¼');window.location.href='send-mail.jsp';</script>");
 }catch(Exception e){
-	System.out.println("·¢ËÍÓÊ¼ş²úÉúµÄ´íÎó£º"+e.getMessage());
-	out.println("<script language='javascript'>alert('ÓÊ¼ş·¢ËÍÊ§°Ü£¡');window.location.href='sendmail.jsp';</script>");
+	System.out.println("å‘é€é‚®ä»¶äº§ç”Ÿçš„é”™è¯¯ï¼š"+e.getMessage());
+	out.println("<script language='javascript'>alert('é‚®ä»¶å‘é€å¤±è´¥ï¼');window.location.href='send-mail.jsp';</script>");
 }
 %>

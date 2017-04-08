@@ -39,16 +39,36 @@ commons-io-2.5.jar
 
 ```
 
-* 图表处理
+* 图表/输出处理
 
 ```
 // jspfreechart.jar实现
 
+    <servlet>
+        <servlet-name>DisplayChart</servlet-name>
+        <servlet-class>
+            org.jfree.chart.servlet.DisplayChart
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayChart</servlet-name>
+        <url-pattern>/DisplayChart</url-pattern>
+    </servlet-mapping>
+    
+    // 同样注意下路径
+    
+// TEXT-PIC 绝对路径
+String filePath = 
+pageContext.getServletContext().getRealPath("app/text/harvest.jpg");
 
 ```
 
 * 邮件
 
 ```
+// 需要以下jar
+JavaMail mail.jar 1.4.5
+JAF（版本 1.1.1） activation.jar
 
+还未成功
 ```

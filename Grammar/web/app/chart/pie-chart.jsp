@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="GB2312"%>
+<%@ page language="java" pageEncoding="utf-8"%>
 <%@ page import="org.jfree.chart.ChartFactory" %>
 <%@ page import="org.jfree.chart.JFreeChart" %>
 <%@ page import="org.jfree.data.general.DefaultPieDataset" %>
@@ -8,29 +8,29 @@
 
 <%
 DefaultPieDataset dataset1=new DefaultPieDataset();
-dataset1.setValue("ASP×¨Çø",200);
-dataset1.setValue("PHP×¨Çø",150);
-dataset1.setValue("Java×¨Çø",450);
-dataset1.setValue("DoNet×¨Çø",400);
+dataset1.setValue("ASPä¸“åŒº",200);
+dataset1.setValue("PHPä¸“åŒº",150);
+dataset1.setValue("Javaä¸“åŒº",450);
+dataset1.setValue("DoNetä¸“åŒº",400);
 
-//´´½¨JFreeChart×é¼þµÄÍ¼±í¶ÔÏó
+//åˆ›å»ºJFreeChartç»„ä»¶çš„å›¾è¡¨å¯¹è±¡
 JFreeChart chart=ChartFactory.createPieChart(
-									"ÂÛÌ³°æ¿éÈËÆøÖ¸Êý±ÈÀýÍ¼",	//Í¼±í±êÌâ
-									dataset1,				//Êý¾Ý¼¯
-									true,					//ÊÇ·ñ°üº¬Í¼Àý
-									false,					//ÊÇ·ñ°üº¬Í¼ÀýËµÃ÷
-									false					//ÊÇ·ñ°üº¬Á¬½Ó
+									"è®ºå›ç‰ˆå—äººæ°”æŒ‡æ•°æ¯”ä¾‹å›¾",	//å›¾è¡¨æ ‡é¢˜
+									dataset1,				//æ•°æ®é›†
+									true,					//æ˜¯å¦åŒ…å«å›¾ä¾‹
+									false,					//æ˜¯å¦åŒ…å«å›¾ä¾‹è¯´æ˜Ž
+									false					//æ˜¯å¦åŒ…å«è¿žæŽ¥
 									);
-//ÉèÖÃÍ¼±íµÄÎÄ¼þÃû
-// ¹Ì¶¨ÓÃ·¨
+//è®¾ç½®å›¾è¡¨çš„æ–‡ä»¶å
+// å›ºå®šç”¨æ³•
 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
 String fileName=ServletUtilities.saveChartAsPNG(chart,400,270,info,session);
-String url=request.getContextPath()+"/servlet/DisplayChart?filename="+fileName;
+String url=request.getContextPath()+"/DisplayChart?filename="+fileName;
 %>
 
 <html>
   <head>
-    <title>»æÖÆ±ýÐÎÍ¼</title>
+    <title>ç»˜åˆ¶é¥¼å½¢å›¾</title>
   </head>
   
   <body topmargin="0">

@@ -1,30 +1,30 @@
-<%@ page language="java" pageEncoding="gb2312"%>
+<%@ page language="java" pageEncoding="utf-8"%>
 <%@ page import="java.io.*,com.lowagie.text.*,com.lowagie.text.pdf.*"%>
 <%
 	response.reset();
 	response.setContentType("application/pdf");
 	Document document = new Document();
-	//»ñÈ¡Í¼Æ¬µÄÂ·¾¶
-	String filePath=pageContext.getServletContext().getRealPath("images/harvest.jpg");
+	//èŽ·å–å›¾ç‰‡çš„è·¯å¾„
+	String filePath=pageContext.getServletContext().getRealPath("app/text/harvest.jpg");
 	Image jpg = Image.getInstance(filePath);
-	jpg.setAlignment(Image.MIDDLE);				//ÉèÖÃÍ¼Æ¬¾ÓÖÐ
+	jpg.setAlignment(Image.MIDDLE);				//è®¾ç½®å›¾ç‰‡å±…ä¸­
 	
 	Table table=new Table(1);
-	table.setAlignment(Table.ALIGN_MIDDLE);		//ÉèÖÃ±í¸ñ¾ÓÖÐ
-	table.setBorderWidth(0); //½«±ß¿ò¿í¶ÈÉèÎª0
-	table.setPadding(3);						//±í¸ñ±ß¾àÀëÎª3
+	table.setAlignment(Table.ALIGN_MIDDLE);		//è®¾ç½®è¡¨æ ¼å±…ä¸­
+	table.setBorderWidth(0); //å°†è¾¹æ¡†å®½åº¦è®¾ä¸º0
+	table.setPadding(3);						//è¡¨æ ¼è¾¹è·ç¦»ä¸º3
 	table.setSpacing(3);
-	table.addCell(new Cell(jpg));							//½«Í¼Æ¬¼ÓÔØÔÚ±í¸ñÖÐ
+	table.addCell(new Cell(jpg));							//å°†å›¾ç‰‡åŠ è½½åœ¨è¡¨æ ¼ä¸­
 	Cell cellword=new Cell("harvest");
-	cellword.setHorizontalAlignment(Cell.ALIGN_CENTER);		//ÉèÖÃÎÄ×ÖË®Æ½¾ÓÖÐ
-	table.addCell(cellword);								//Ìí¼Ó±í¸ñ
+	cellword.setHorizontalAlignment(Cell.ALIGN_CENTER);		//è®¾ç½®æ–‡å­—æ°´å¹³å±…ä¸­
+	table.addCell(cellword);								//æ·»åŠ è¡¨æ ¼
 	ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 	PdfWriter.getInstance(document, buffer);
 	document.open();
-	//Í¨¹ý±í¸ñ½øÐÐÊä³öÍ¼Æ¬µÄÄÚÈÝ
+	//é€šè¿‡è¡¨æ ¼è¿›è¡Œè¾“å‡ºå›¾ç‰‡çš„å†…å®¹
 	document.add(table);
 	document.close();
-	//½â¾öÅ×³öIllegalStateExceptionÒì³£µÄÎÊÌâ
+	//è§£å†³æŠ›å‡ºIllegalStateExceptionå¼‚å¸¸çš„é—®é¢˜
 	out.clear();
 	out = pageContext.pushBody();
 		DataOutput output = new DataOutputStream(response.getOutputStream());
