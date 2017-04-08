@@ -1,6 +1,0 @@
- read() 读取单个字符 
- read(char[] cbuf, int off, int len) 将字符读入数组的某一部分 
- unread(char[] cbuf) 推回一个字符数组，方法是将其复制到推回缓冲区前面 
- unread(char[] cbuf, int off, int len) 推回字符数组的某一部分，方法是将其复制到推回缓冲区的前面 
- unread(int c) 推回单个字符 
-
