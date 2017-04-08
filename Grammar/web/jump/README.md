@@ -25,3 +25,21 @@ content=MyTools.change(content);
 	
 // 使用JavaBean来实现	
 ```
+* Servlet
+
+```
+
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>servlet.MyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/textServlet</url-pattern>
+    </servlet-mapping>
+    
+    // 访问 http://localhost:8686/Grammar/textServlet
+
+    
+    
+```

@@ -13,17 +13,17 @@
 
 
 
-    <servlet>
-        <servlet-name>DisplayChart</servlet-name>
-        <servlet-class>
-            org.jfree.chart.servlet.DisplayChart
-        </servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>DisplayChart</servlet-name>-->
+        <!--<servlet-class>-->
+            <!--org.jfree.chart.servlet.DisplayChart-->
+        <!--</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>DisplayChart</servlet-name>-->
+        <!--<url-pattern>/servlet/DisplayChart</url-pattern>-->
+    <!--</servlet-mapping>-->
 
-    <servlet-mapping>
-        <servlet-name>DisplayChart</servlet-name>
-        <url-pattern>/servlet/DisplayChart</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>MyServlet</servlet-name>
@@ -34,32 +34,45 @@
         <url-pattern>/textServlet</url-pattern>
     </servlet-mapping>
 
+    <!-- 上传Servlet -->
     <servlet>
-        <servlet-name>wordServlet</servlet-name>
-        <servlet-class>servlet.WordServlet</servlet-class>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>servlet.UploadServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>wordServlet</servlet-name>
-        <url-pattern>/addWord</url-pattern>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/uploadServlet</url-pattern>
     </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>wordServlet</servlet-name>-->
+        <!--<servlet-class>servlet.WordServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>wordServlet</servlet-name>-->
+        <!--<url-pattern>/addWord</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!-- 配置IndexServlet -->
-    <servlet>
-        <servlet-name>indexServlet</servlet-name>
-        <servlet-class>servlet.IndexServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>indexServlet</servlet-name>
-        <url-pattern>/index</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>indexServlet</servlet-name>-->
+        <!--<servlet-class>servlet.IndexServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>indexServlet</servlet-name>-->
+        <!--<url-pattern>/index</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!-- 配置BuyServlet -->
-    <servlet>
-        <servlet-name>buyServlet</servlet-name>
-        <servlet-class>servlet.BuyServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>buyServlet</servlet-name>
-        <url-pattern>/doCar</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>buyServlet</servlet-name>-->
+        <!--<servlet-class>servlet.BuyServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>buyServlet</servlet-name>-->
+        <!--<url-pattern>/doCar</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+
 </web-app>

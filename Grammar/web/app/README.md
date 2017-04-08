@@ -8,7 +8,25 @@
 commons-fileupload-1.3.2.jar
 commons-io-2.5.jar
 
-// jspSmartUpload.jar实现
+主要是Servlet/UploadServlet.java文件
+
+    // 映射
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>servlet.UploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/uploadServlet</url-pattern>
+    </servlet-mapping>
+    
+    // 表单
+   <form method="post" action="/Grammar/uploadServlet" enctype="multipart/form-data">
+   
+1. web.xml 与 Servlet更新后一定注意刷新或重启 tomcat
+2. 路径问题
+
+// jspSmartUpload.jar 几乎不更新,可摒弃
 
 ```
 
