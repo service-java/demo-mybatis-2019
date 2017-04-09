@@ -1,16 +1,16 @@
-<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	开发模式
+	<!-- 开发模式 -->
 	<constant name="struts.devMode" value="true"></constant>
-	Action后缀
+	<!-- Action后缀 -->
 	<constant name="struts.action.extension" value="action"></constant>
-	配置文件
+	<!-- 配置文件 -->
 	<include file="struts.xml"></include>
-	配置Bean
+	<!-- 配置Bean -->
 	<bean class="" name=""></bean>
 	<package name="linkAction"  extends="struts-default"  >
-		配置拦截器
+		<!-- 配置拦截器 -->
 		<interceptors name="" class="">
 			<interceptor-stack name="">
 				<interceptor-ref name=""></interceptor-ref>
@@ -24,4 +24,3 @@
 		</action>
 	</package>
 </struts>    
- -->
