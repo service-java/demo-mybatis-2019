@@ -55,7 +55,8 @@ index.jsp success.jsp
 ```
 
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<!-- 开发模式 -->
 	<constant name="struts.devMode" value="true"></constant>
@@ -83,4 +84,20 @@ index.jsp success.jsp
 
 ```
 
-* 
+* 域模型与驱动模型
+
+```
+
+```
+
+* 使用拦截器过滤文字
+
+```
+// New interceptor/MyInterceptor.java
+// New MessageAction
+// text-index.jsp text-success.jsp
+
+// struts.xml
+
+
+```

@@ -25,4 +25,18 @@
             <result>/add.jsp</result>
         </action>
     </package>
+
+    <package name="Text"  extends="struts-default" >
+        <interceptors>
+            <interceptor name="checkLogin" class="interceptor.MyInterceptor"></interceptor>
+        </interceptors>
+
+        <action name="public" method="execute" class="action.MessageAction">
+            <result name="success">/text-success.jsp</result>
+            <result name="login">/text-index.jsp</result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checkLogin"></interceptor-ref>
+        </action>
+    </package>
+
 </struts>
