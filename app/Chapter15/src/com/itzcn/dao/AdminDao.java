@@ -6,9 +6,9 @@ import com.itzcn.entity.Admin;
 
 public interface AdminDao {
 	
-	public List<Admin> findAllAdmin();//鍒楀嚭鎵�鏈夌鐞嗗憳淇℃伅
-	public List<Admin> findByAdminUserNameAndPwd(String adminUserName,String adminUserPwd);//鏍规嵁adminUserName鍜宎dminUserPwd鏌ヨ
-	public Admin findByAdminId(Integer adminId);//鏍规嵁adminId鏌ヨ
+	public List<Admin> findAllAdmin();//列出所有管理员信息
+	public List<Admin> findByAdminUserNameAndPwd(String adminUserName,String adminUserPwd);//根据adminUserName和adminUserPwd查询
+	public Admin findByAdminId(Integer adminId);//根据adminId查询
 	
 
 }
