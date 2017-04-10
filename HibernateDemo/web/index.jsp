@@ -35,7 +35,7 @@
     <%
         int pageNo=1; // 当前第几页
         int count = UtilMethod.getCount(); // 总数
-        int pageSize = 2;//每页数据
+        int pageSize = 4;//每页数据
         int pageCount = (count%pageSize==0)?(count/pageSize):(count/pageSize + 1);
         String pageNoStr = request.getParameter("pageSize");
         if (pageNoStr != null && !"".equals(pageNoStr)) {
@@ -51,7 +51,7 @@
 
     <form name="form1" method="post" action="index.jsp" >
 
-        <table>
+        <table class="table table-bordered">
             <tr>
                 <th>编号</th>
                 <th>名字</th>
@@ -67,7 +67,7 @@
                 <td><%=info.getName() %></td>
                 <td><%=info.getPass() %></td>
                 <td><a href="update-info.jsp?id=<%=info.getId() %>">更新</a></td>
-                <td><a href="DelInfoServlet/?id=<%=info.getId() %>" onclick="return confirm('是否确认删除？')">删除</a></td>
+                <td><a href="/DelInfoServlet?id=<%=info.getId() %>" onclick="return confirm('是否确认删除？')">删除</a></td>
             </tr>
 
             <%
@@ -102,7 +102,7 @@
                         </c:choose>
                     </c:forEach>
                 </select>
-                <input type="submit" value="跳转"></td>
+                <button type="submit">跳转</button></td>
                 <td colspan="2"><a href="add-info.jsp">添加用户</a></td>
             </tr>
         </table>

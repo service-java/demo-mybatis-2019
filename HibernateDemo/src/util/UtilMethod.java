@@ -44,7 +44,8 @@ public class UtilMethod {
         return count.intValue();
     }
 
-    public static void upInfo(Info info){//更新用户信息
+    public static void upInfo(Info info){ //更新用户信息
+
         session = HibernateSessionFactory.getSession();
         transaction =session.beginTransaction();
         session.update(info);

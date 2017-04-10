@@ -35,4 +35,6 @@ servlet/UpdateInfoServlet.java
 servlet/DelInfoServlet.java
 web.xml // 配置上述
 
+// <a href="/DelInfoServlet/?id=<%=info.getId() %> >
+// 之前错误地在Servlet后加了 / 导致一直404找不到
 ```
