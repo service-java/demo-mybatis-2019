@@ -4,7 +4,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 
-
 public class HibernateSessionFactory {
 
     /**

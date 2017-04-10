@@ -8,7 +8,7 @@
             <generator class="assigned" />
         </id>
         <!-- 多对一关联映射 -->
-        <many-to-one name="type" class="com.itzcn.model.Type" fetch="select">
+        <many-to-one name="type" class="model.Type" fetch="select">
             <column name="typeId" />
         </many-to-one>
         <property name="name" type="java.lang.String">

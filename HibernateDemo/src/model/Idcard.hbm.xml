@@ -16,6 +16,6 @@
             <column name="cardNumber" length="18" />
         </property>
 
-            <one-to-one name="pepole" class="com.itzcn.model.People" constrained="true"/>
+            <one-to-one name="pepole" class="model.People" constrained="true"/>
     </class>
 </hibernate-mapping>

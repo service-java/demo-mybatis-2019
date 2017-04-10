@@ -17,7 +17,7 @@
             <key>
                 <column name="typeId" />
             </key>
-            <one-to-many class="com.itzcn.model.Book" />
+            <one-to-many class="model.Book" />
         </set>
     </class>
 </hibernate-mapping>
