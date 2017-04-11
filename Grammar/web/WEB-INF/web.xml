@@ -72,6 +72,14 @@
         <url-pattern>/shopping</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SendMessage</servlet-name>
+        <servlet-class>util.mail.SendMessage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendMessage</servlet-name>
+        <url-pattern>/SendMessage</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

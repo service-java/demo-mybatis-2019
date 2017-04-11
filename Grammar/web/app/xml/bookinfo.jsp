@@ -30,7 +30,7 @@
     </books>
 </c:set>
 
-<c:import url="http://localhost:8686/Grammar/jump/xml/style.xsl" var="xslt"/>
+<c:import url="./style.xsl" var="xslt"/>
 <x:transform xml="${xmltext}" xslt="${xslt}"/>
 
 </body>

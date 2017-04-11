@@ -16,7 +16,7 @@ try{
 	//int n =from.indexOf('@');
 	//int m=from.length() ;
 	//String mailserver ="smtp."+from.substring(n+1,m);
-    String mailserver="wanggh";    
+    String mailserver="smtp.163.com";
     
     //建立邮件会话
 	Properties pro=new Properties();

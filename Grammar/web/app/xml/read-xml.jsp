@@ -16,7 +16,7 @@
 </head>
 <body>
 <h3>Books Info:</h3>
-<c:import var="bookInfo" url="http://localhost:8686/Grammar/jump/xml/books.xml"/>
+<c:import var="bookInfo" url="books.xml"/>
 
 <x:parse xml="${bookInfo}" var="output"/>
 <b>The title of the first book is</b>:

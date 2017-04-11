@@ -64,8 +64,8 @@
 
         //省份列表框改变事件
         $("#sheng").change(function () {
-            lyz(".cheng");    //城市的下拉框初始化
-            lyz(".xian");      //县级的下拉框初始化
+            lyz("#cheng");    //城市的下拉框初始化
+            lyz("#xian");      //县级的下拉框初始化
 
             // index value
             $.each(data, function (a, b) {

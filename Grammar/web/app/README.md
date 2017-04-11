@@ -72,3 +72,14 @@ JAF（版本 1.1.1） activation.jar
 
 还未成功
 ```
+
+* xml处理
+
+```
+// 把下面两个jar包放到 WEB_INF/lib
+XercesImpl.jar
+xalan.jar
+
+
+// 注意及时刷新
+``` 
