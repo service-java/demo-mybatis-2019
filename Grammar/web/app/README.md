@@ -28,6 +28,18 @@ commons-io-2.5.jar
 
 // jspSmartUpload.jar 几乎不更新,可摒弃
 
+
+// 限制类型上传
+util/file/FileUpload
+util/file/GetFile
+util/file/LimitFile
+
+// 无组件上传下载
+util/file/DownLoadFile // 会调用GetFile
+
+
+访问 http://localhost:8686/Grammar/DownLoadFile
+直接访问会报错
 ```
 
 * 基础
@@ -82,4 +94,5 @@ xalan.jar
 
 
 // 注意及时刷新
+// jstl实现xml貌似较少用到了
 ``` 

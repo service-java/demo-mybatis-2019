@@ -1,8 +1,8 @@
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Luo_0412
   Date: 2017/4/11
-  Time: 11:55
+  Time: 18:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,16 +21,27 @@
 
 <div class="container" style="margin-top: 20px;">
 
-    <form action="/Grammar/LimitFile" name = "one"
-          enctype="multipart/form-data" method="post"
-          class="form" >
-        选择一个rar或者zip文件
-        <input type="file" class="form-control" name="fileupload" value="upload"/><br>
+    <% List<String> list=(List) request.getAttribute("list");%>
+    <table class="table">
+        <tr>
+            <td>文件名称</td>
+            <td>上传时间</td>
+            <td>文件大小</td>
+            <td>操    作</td>
+        </tr>
+        <%for (String str :list){%>
+        <tr>
+            <%
+                String param[] = str.split("#");
+            %>
+            <td><%=param[1]%></td>
+            <td><%=param[2]%></td>
+            <td><%=param[3]%></td>
+            <td><a href ="/Grammar/app/uploadtool/pure/puredownload-deal.jsp?path=<%=param[0]%>">下载</a></td>
 
-        <input type = "submit" class="btn btn-success" value ="上传">
-        <input type = "reset" class="btn btn-default" value = "取消">
-    </form>
-
+            <%-- 不知道为什么文件路径... 唧唧了--%>
+        </tr><%
+        }%></table>
 </div><!-- ./container -->
 
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
