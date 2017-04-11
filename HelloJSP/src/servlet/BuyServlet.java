@@ -54,8 +54,8 @@ public class BuyServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		ArrayList buylist=(ArrayList)session.getAttribute("buylist");
 		
-		String name=request.getParameter("name");
-		ShopCar myCar=new ShopCar();
+		String name = request.getParameter("name");
+		ShopCar myCar = new ShopCar();
 		myCar.setBuylist(buylist);						//将buylist对象赋值给ShopCar类实例中的属性
 		myCar.removeItem(MyTools.toChinese(name));		//调用ShopCar类中removeItem ()方法实现商品移除操作
 		

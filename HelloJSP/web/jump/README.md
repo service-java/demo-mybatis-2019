@@ -15,6 +15,7 @@ content=MyTools.change(content);
 	
 // 使用JavaBean来实现	
 ```
+
 * Servlet
 
 ```
@@ -24,12 +25,16 @@ content=MyTools.change(content);
         <servlet-class>servlet.MyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
-        <url-pattern>/textServlet</url-pattern>
-    </servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/textServlet</url-pattern>
+</servlet-mapping>
     
-    // 访问 http://localhost:8686/Grammar/textServlet
+// 访问 http://localhost:8686/Grammar/textServlet
 
+// 留言板
+http://localhost:8686/Grammar/jump/servlet/note-index.jsp
     
+// 购物车    
+http://localhost:8686/Grammar/ShopcarIndexServlet
     
 ```

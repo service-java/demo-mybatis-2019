@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<form method="post" action="/Grammar/uploadServlet" enctype="multipart/form-data">
+<form method="post" action="/uploadServlet" enctype="multipart/form-data">
     选择一个文件:
     <input type="file" name="uploadFile" />
     <br/><br/>

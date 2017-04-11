@@ -37,7 +37,7 @@
             <td><%=param[1]%></td>
             <td><%=param[2]%></td>
             <td><%=param[3]%></td>
-            <td><a href ="/Grammar/app/uploadtool/pure/puredownload-deal.jsp?path=<%=param[0]%>">下载</a></td>
+            <td><a href ="app/uploadtool/pure/puredownload-deal.jsp?path=<%=param[0]%>">下载</a></td>
 
             <%-- 不知道为什么文件路径... 唧唧了--%>
         </tr><%

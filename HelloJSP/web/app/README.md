@@ -38,7 +38,7 @@ util/file/LimitFile
 util/file/DownLoadFile // 会调用GetFile
 
 
-访问 http://localhost:8686/Grammar/DownLoadFile
+访问 http://localhost:8686/DownLoadFile
 直接访问会报错
 ```
 

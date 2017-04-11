@@ -3,7 +3,7 @@
 <%@ page import="valuebean.GoodsSingle" %>
 <%
 	//获取存储在session中用来存储用户已购买商品的buylist集合对象
-	ArrayList buylist=(ArrayList)session.getAttribute("buylist");
+	ArrayList buylist = (ArrayList)session.getAttribute("buylist");
 	float total=0; 							//用来存储应付金额
 %>
 <table border="1" width="450" rules="none" cellspacing="0" cellpadding="0">
@@ -34,7 +34,7 @@
 		<td><%=price%></td>
 		<td><%=num%></td>
 		<td><%=money%></td>
-		<td><a href="/Grammar/doCar?action=remove&name=<%=single.getName() %>">移除</a></td>
+		<td><a href="/buyServlet?action=remove&name=<%=single.getName() %>">移除</a></td>
 	</tr>
 	<%
 			}
@@ -43,6 +43,6 @@
 	<tr height="50" align="center"><td colspan="5">应付金额：<%=total%></td></tr>
 	<tr height="50" align="center">
 		<td colspan="2"><a href="shopping.jsp">继续购物</a></td>
-		<td colspan="3"><a href="/Grammar/doCar?action=clear">清空购物车</a></td>
+		<td colspan="3"><a href="/buyServlet?action=clear">清空购物车</a></td>
 	</tr>
 </table>

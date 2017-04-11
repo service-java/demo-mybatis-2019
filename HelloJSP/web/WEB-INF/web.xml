@@ -12,16 +12,6 @@
         </taglib>
     </jsp-config>
 
-    <!-- 第一个servlet -->
-    <servlet>
-        <servlet-name>MyServlet</servlet-name>
-        <servlet-class>servlet.MyServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
-        <url-pattern>/textServlet</url-pattern>
-    </servlet-mapping>
-
     <!-- 上传Servlet -->
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
@@ -56,12 +46,12 @@
 
     <!-- 购物车 配置IndexServlet -->
     <servlet>
-        <servlet-name>indexServlet</servlet-name>
-        <servlet-class>servlet.IndexServlet</servlet-class>
+        <servlet-name>ShopcarIndexServlet</servlet-name>
+        <servlet-class>servlet.ShopcarIndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>indexServlet</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <servlet-name>ShopcarIndexServlet</servlet-name>
+        <url-pattern>/ShopcarIndexServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>buyServlet</servlet-name>
@@ -69,7 +59,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>buyServlet</servlet-name>
-        <url-pattern>/shopping</url-pattern>
+        <url-pattern>/buyServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -109,6 +99,5 @@
         <servlet-name>LimitFile</servlet-name>
         <url-pattern>/LimitFile</url-pattern>
     </servlet-mapping>
-
 
 </web-app>

@@ -21,7 +21,7 @@
 
 <div class="container" style="margin-top: 20px;">
 
-    <form name="SendMessage" Method="post" action="/Grammar/SendMessage">
+    <form name="SendMessage" Method="post" action="/SendMessage">
 
         <div class="form-group">
             <div class="col-md-4">

@@ -21,7 +21,7 @@
 
 <div class="container" style="margin-top: 20px;">
 
-    <form action="/Grammar/LimitFile" name = "one"
+    <form action="/LimitFile" name = "one"
           enctype="multipart/form-data" method="post"
           class="form" >
         选择一个rar或者zip文件

@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import valuebean.GoodsSingle;
 
-public class IndexServlet extends HttpServlet {
+public class ShopcarIndexServlet extends HttpServlet {
 	private static ArrayList goodslist = new ArrayList();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		doPost(request, response);
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();		
 		session.setAttribute("goodslist",goodslist);
 		response.sendRedirect("jump/servlet/shopping.jsp");
 	}
+
 	static{										//静态代码块
 		String[] names={"苹果","香蕉","梨","橘子"};
 		float[] prices={2.8f,3.1f,2.5f,2.3f};		
