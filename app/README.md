@@ -1,11 +1,27 @@
 #### app
 
+* 资源
+
+```
+https://git.oschina.net/didispace/SpringBoot-Learning
+
+http://www.codeyyy.com/java/11-35-37.html
+
+
+```
+
 * spring-shiro-training
 
 ```
 数据库 shiro
 
 http://git.oschina.net/wangzhixuan/spring-shiro-training
+```
+
+* https://git.oschina.net/thinkgem/jeesite
+
+```
+
 ```
 
 * chapter15
@@ -48,4 +64,14 @@ DRP系统主要由库存管理、质量控制、运输管理、采购管理、�
 
 
 http://zz563143188.iteye.com/ // 牛人的资料 
+
+https://git.oschina.net/juapk/SpringWind // 很可以
+
+
+// 模仿国内知名B2C网站,实现的一个分布式B2C商城 使用Spring Boot 自动配置 Dubbox / MVC / MyBatis / Druid / Solr / Redis 等
+https://git.oschina.net/binu/xbin-store
+
+https://git.oschina.net/roncoocom/roncoo-pay // 在线支付
+
+https://github.com/jfinal/jfinal // 可以优先考虑
 ```
