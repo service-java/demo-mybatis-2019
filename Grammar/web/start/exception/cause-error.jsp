@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page errorPage="error-page-jstl.jsp" %>
+<%@ page errorPage="../../error.jsp" %>
 
 <html>
 <head>
@@ -16,8 +16,7 @@
 <%
     // Throw an exception to invoke the error page
     int x = 1;
-    if (x == 1)
-    {
+    if (x == 1) {
         throw new RuntimeException("Error condition!!!");
     }
 %>

@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.Random" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,10 @@
 </head>
 <body>
 
-<div class="container">
-    <div style="margin-top: 20px;"></div>
+<div class="container" style="margin-top: 20px;">
+    <p>Just A JSP Page! </p>
 
+    <%-- 下拉按钮 --%>
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             不要点我
@@ -31,38 +34,39 @@
         </ul>
     </div>
 
-    <%
-        int type = 0;
-        if(type == 0) {
-    %>
-    <h1>你是用户</h1>
-    <%
-        }
-        else {
-            out.print("<h1>你是管理员</h1>");
-        }
-
-        Date nowday=new Date();  			//获取当前日期
-        // int hour=nowday.getHours();			//获取日期中的小时
-        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //定义日期格式化对象
-        String time= ft.format(nowday);	//将指定日期格式化为”yyyy-MM-dd HH:mm:ss”形式
-
-//        response.sendError(407, "Need authentication!!!" );
-// 加上这句就没了
-    %>
-    <p>当前时间<%=time%></p>
-
+    <%-- 演示脚本怎么混杂 --%>
     <%
         Random r = new Random();
+        int type = r.nextInt(2); // 0-1
+
+        out.print("<p>这是您的验证码 : ");
         for(int i=0; i<6; i++) {
-            out.print( (r.nextInt() >>> 1) % 10);
+            out.print( (r.nextInt() >>> 1) % 10); // 0-9
         }
-        out.print("end");
+        out.print("</p>");
+
+        if(type == 0) { %>
+            <h1>你是用户</h1>
+    <%  }
+        else { %>
+            <h1>你是管理员</h1>
+    <%    }
+
+
+        // 和Java与HTML差不多
+        Date nowday = new Date();
+        // int hour=nowday.getHours();	// 获取日期中的小时
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // 定义日期格式化对象
+        String time= ft.format(nowday);
+
+        // 这句话报407错误
+        // response.sendError(407, "Need authentication!!!" );
     %>
+
+    <%-- 赋值 --%>
+    <p>当前时间<%=time%></p>
+
 </div>
-
-
-
 
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

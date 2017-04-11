@@ -1,13 +1,19 @@
 #### JSP基础
 
-* 基础
+* basic
 
 ```
 response.setHeader("refresh", "5;url=xx.jsp?aaction=del");
-
 request.getHeader() 获取客户端信息
 
-缓存设置 setHeader
+// 缓存设置 setHeader
+
+life-cycle.jsp // JSP本身就处在一个大类中, 所以serviceVar会累加
+request-get-info.jsp // http://zjutsoft.iteye.com/blog/1084260
+visit-counter.jsp // 两种方法有不同 applicaton代码修改过，但不影响逻辑会继续执行
+refresh-auto.jsp // 自动刷新, calender的方式获取时间 
+redirect 与jsp:forward // 两种重定向的区别
+
 ```
 
 * 调试
@@ -34,11 +40,8 @@ request.getHeader() 获取客户端信息
 <%@ page import="java.io.*,java.util.Locale" %>
 
 response.setHeader("Content-Language", "es"); // 设置语言
-
 <%@ page import="java.text.DateFormat,java.util.Date" %> // 时间
-
 <%@ page import="java.text.NumberFormat,java.util.Date" %> // 货币
-
 <%@ page import="java.text.NumberFormat,java.util.Date" %> // 百分比
 ```
 

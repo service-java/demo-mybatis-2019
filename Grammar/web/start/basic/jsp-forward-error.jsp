@@ -6,8 +6,13 @@
 </head>
 
 <body>
+
 <%
-out.println("错误信息 : "+request.getAttribute("error"));
+request.setAttribute("error","很抱歉！您输入的用户名或密码不正确！");
 %>
+
+<!-- 请求转发 -->
+<jsp:forward page="../../error.jsp" />
+
 </body>
 </html>
