@@ -19,6 +19,7 @@
 <%
     // 设置每隔5秒刷新一次
     response.setIntHeader("Refresh", 5);
+
     // 获取当前时间
     Calendar calendar = new GregorianCalendar();
     String am_pm;

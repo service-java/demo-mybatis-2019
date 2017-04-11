@@ -5,7 +5,15 @@
 ```
 jdbc:mysql://localhost:3306/luodb87?autoReconnect=true&useSSL=false
 
+// 预处理语句
+// ODBC桥
+// 调用存储过程
 
+// 使用连接池
+context.xml
+
+// 高级结果集
+can-update-result.jsp // 暂时不可执行
 ```
 
 * jstl操作数据库

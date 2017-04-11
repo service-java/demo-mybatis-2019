@@ -1,5 +1,15 @@
 #### JSP基础
 
+* 基础
+
+```
+response.setHeader("refresh", "5;url=xx.jsp?aaction=del");
+
+request.getHeader() 获取客户端信息
+
+缓存设置 setHeader
+```
+
 * 调试
 
 ```
@@ -42,6 +52,7 @@ application用于记录所有次数
 
 // 获取session创建时间
 Date createTime = new Date(session.getCreationTime());
+session.setMaxInactiveInterval(3600);
    
 // 获取最后访问页面的时间
 Date lastAccessTime = new Date(session.getLastAccessedTime());

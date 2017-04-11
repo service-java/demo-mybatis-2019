@@ -1,5 +1,6 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="java.util.Random" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,6 +51,14 @@
 // 加上这句就没了
     %>
     <p>当前时间<%=time%></p>
+
+    <%
+        Random r = new Random();
+        for(int i=0; i<6; i++) {
+            out.print( (r.nextInt() >>> 1) % 10);
+        }
+        out.print("end");
+    %>
 </div>
 
 

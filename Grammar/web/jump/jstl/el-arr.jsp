@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Luo_0412
   Date: 2017/4/11
-  Time: 18:46
+  Time: 19:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,15 +21,16 @@
 
 <div class="container" style="margin-top: 20px;">
 
-    <form action="pureupload-deal.jsp"
-          enctype="multipart/form-data"
-          method="post" class="form" >
-        <input class="form-control"
-               type="file" name="fileupload"
-               value="upload" placeholder="请选择一张图片"/><br>
-        <input class="btn btn-success" type ="submit" value ="上传">
-        <input class="btn btn-default" type ="reset" value = "取消">
-    </form>
+    <%
+        String[] cities = {"郑州", "北京", "重庆"};
+        request.setAttribute("cities", cities);
+
+        String[] getCities = (String[])request.getAttribute("cities");
+        for(int i=0; i<getCities.length; i++) {
+            request.setAttribute("i", i); %>
+            <p>${cities[i]}</p>
+    <%    }
+    %>
 
 </div><!-- ./container -->
 
