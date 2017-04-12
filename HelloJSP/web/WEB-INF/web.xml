@@ -19,7 +19,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/uploadServlet</url-pattern>
+        <url-pattern>/Upload</url-pattern>
     </servlet-mapping>
 
     <!-- 图表组件 -->
@@ -41,17 +41,17 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>wordServlet</servlet-name>
-        <url-pattern>/addWord</url-pattern>
+        <url-pattern>/AddWord</url-pattern>
     </servlet-mapping>
 
-    <!-- 购物车 配置IndexServlet -->
+    <!-- 购物车配置 -->
     <servlet>
         <servlet-name>ShopcarIndexServlet</servlet-name>
         <servlet-class>servlet.ShopcarIndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShopcarIndexServlet</servlet-name>
-        <url-pattern>/ShopcarIndexServlet</url-pattern>
+        <url-pattern>/ShopcarIndex</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>buyServlet</servlet-name>
@@ -59,9 +59,8 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>buyServlet</servlet-name>
-        <url-pattern>/buyServlet</url-pattern>
+        <url-pattern>/BuyServlet</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>SendMessage</servlet-name>
         <servlet-class>util.mail.SendMessage</servlet-class>
@@ -71,33 +70,38 @@
         <url-pattern>/SendMessage</url-pattern>
     </servlet-mapping>
 
-
+    <!-- 上传文件 -->
     <servlet>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>FileUpload</servlet-name>
         <servlet-class>util.file.FileUpload</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUpload</servlet-name>
+        <url-pattern>/FileUpload</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 文件上传类型限制 -->
     <servlet>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>LimitFile</servlet-name>
         <servlet-class>util.file.LimitFile</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>LimitFile</servlet-name>
+        <url-pattern>/LimitFile</url-pattern>
+    </servlet-mapping>
+
+    <!-- 文件下载 -->
     <servlet>
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>DownLoadFile</servlet-name>
         <servlet-class>util.file.DownLoadFile</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FileUpload</servlet-name>
-        <url-pattern>/FileUpload</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>DownLoadFile</servlet-name>
         <url-pattern>/DownLoadFile</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LimitFile</servlet-name>
-        <url-pattern>/LimitFile</url-pattern>
     </servlet-mapping>
 
 </web-app>

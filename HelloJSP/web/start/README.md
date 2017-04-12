@@ -10,6 +10,10 @@ request.getHeader() 获取客户端信息
 
 life-cycle.jsp // JSP本身就处在一个大类中, 所以serviceVar会累加
 request-get-info.jsp // http://zjutsoft.iteye.com/blog/1084260
+idea映射之后就得不到了realpath了,待解决 // 实际上在JDK那里
+<%=request.getContextPath()%>/BuyServlet?action=buy&id=<%=i%>">
+
+
 visit-counter.jsp // 两种方法有不同 applicaton代码修改过，但不影响逻辑会继续执行
 refresh-auto.jsp // 自动刷新, calender的方式获取时间 
 redirect 与jsp:forward // 两种重定向的区别

@@ -1,7 +1,12 @@
 <%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-    
+
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +20,17 @@
 
 <div class="container">
 
-    <p>脚本文件的文件路径: <%=request.getServletPath()%></p>
-    <p>相对路径: <%=request.getRequestURI()%></p>
-    <%--<p><%=request.getRealPath("/") %></p>--%>
-    <p>根目录 <%=request.getSession().getServletContext().getRealPath("/")%></p>
-    <p>根目录 <%=application.getRealPath("/") %></p>
-    <p>绝对文件路径 <%=application.getRealPath(request.getRequestURI()) %></p>
-    <p>绝对父目录 <%=new File(application.getRealPath(request.getRequestURI())).getParent()%></p>
-    <p>相对父目录 <%=new File(request.getServletPath()).getParent()%></p>
+    <p><%=path%></p>
+    <p><%=basePath%></p>
+    <p>ServletPath: <%=request.getServletPath()%></p>
+    <p>RequestURI:<%=request.getRequestURI()%></p>
+    <p>getRealPath(old): <%=request.getRealPath("/") %></p>
+    <p>getRealPath(new): <%=request.getSession().getServletContext().getRealPath("./")%></p>
+    <p>getRealPath(application) <%=application.getRealPath("/") %></p>
+    <p>application <%=application.getRealPath(request.getRequestURI()) %></p>
+
+    <%--<p>绝对父目录 <%=new File( application.getRealPath(request.getRequestURI()) ).getParent() %></p>--%>
+    <%--<p>相对父目录 <%=new File(request.getServletPath()).getParent()%></p>--%>
     <hr>
 
     <p>客户提交信息的方式：<%=request.getMethod()%></p>

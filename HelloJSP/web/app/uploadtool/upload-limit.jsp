@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +20,7 @@
 
 <div class="container" style="margin-top: 20px;">
 
-    <form action="/LimitFile" name = "one"
+    <form action="<%=request.getContextPath()%>/LimitFile" name = "one"
           enctype="multipart/form-data" method="post"
           class="form" >
         选择一个rar或者zip文件

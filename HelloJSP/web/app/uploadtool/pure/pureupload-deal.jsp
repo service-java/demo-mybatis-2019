@@ -32,6 +32,7 @@
         //String serverName = request.getServerName(); //获得服务器的名字
         //String realPath = request.getRealPath(serverName);//取得互联网程序的绝对地址
         //realPath = realPath.substring(0,realPath.lastIndexOf("\\"));
+
         rootPath = request.getSession().getServletContext().getRealPath("/")+ "/app/uploadtool/upload/"; //创建文件的保存目录
         out.println("<h3>上传文件保存目录为"+rootPath+"</h3>");
         String contentType = request.getContentType(); //取得客户端上传的数据类型

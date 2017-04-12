@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
-<form action="/addWord" method="post">
+<form action="<%=request.getContextPath()%>/AddWord" method="post">
 	留 言 者：<input type="text" name="author" size="25">
 	<br>
 	留言标题：<input type="text" name="title" size="31">

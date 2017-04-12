@@ -22,7 +22,7 @@
 	<tr height="50" align="center">
 		<td><%=single.getName()%></td>
 		<td><%=single.getPrice()%></td>
-		<td><a href="/buyServlet?action=buy&id=<%=i%>">购买</a></td>
+		<td><a href="<%=request.getContextPath()%>/BuyServlet?action=buy&id=<%=i%>">购买</a></td>
 	</tr>
 	<%
 			}
