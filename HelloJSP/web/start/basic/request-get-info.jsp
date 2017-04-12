@@ -27,7 +27,7 @@
     <p>getRealPath(old): <%=request.getRealPath("/") %></p>
     <p>getRealPath(new): <%=request.getSession().getServletContext().getRealPath("./")%></p>
     <p>getRealPath(application) <%=application.getRealPath("/") %></p>
-    <p>application <%=application.getRealPath(request.getRequestURI()) %></p>
+    <p>application <%=application.getRealPath(request.getServletPath()) %></p>
 
     <%--<p>绝对父目录 <%=new File( application.getRealPath(request.getRequestURI()) ).getParent() %></p>--%>
     <%--<p>相对父目录 <%=new File(request.getServletPath()).getParent()%></p>--%>

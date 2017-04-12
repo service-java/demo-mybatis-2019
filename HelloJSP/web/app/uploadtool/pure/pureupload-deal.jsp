@@ -9,6 +9,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +34,14 @@
         DataInputStream in = null; //声明文件读入类
         FileOutputStream fileOut = null;
         String remoteAddr = request.getRemoteAddr(); //取得客户端的网络地址
+
         //String serverName = request.getServerName(); //获得服务器的名字
         //String realPath = request.getRealPath(serverName);//取得互联网程序的绝对地址
         //realPath = realPath.substring(0,realPath.lastIndexOf("\\"));
 
-        rootPath = request.getSession().getServletContext().getRealPath("/")+ "/app/uploadtool/upload/"; //创建文件的保存目录
+        // rootPath = request.getSession().getServletContext().getRealPath("/")+ "/app/uploadtool/upload/"; //创建文件的保存目录
+        rootPath =  application.getRealPath("/") + "/app/uploadtool/upload/";
+
         out.println("<h3>上传文件保存目录为"+rootPath+"</h3>");
         String contentType = request.getContentType(); //取得客户端上传的数据类型
         try{

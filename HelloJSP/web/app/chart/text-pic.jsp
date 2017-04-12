@@ -1,12 +1,19 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ page import="java.io.*,com.lowagie.text.*,com.lowagie.text.pdf.*"%>
+<%@ page import="java.net.URL" %>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <%
 	response.reset();
 	response.setContentType("application/pdf");
 	Document document = new Document();
 	//获取图片的路径
-	String filePath=pageContext.getServletContext().getRealPath("app/text/harvest.jpg");
-	Image jpg = Image.getInstance(filePath);
+//	String filePath = pageContext.getServletContext().getRealPath("app/chart/harvest.jpg");
+	Image jpg = Image.getInstance(basePath + "/app/chart/harvest.jpg");
 	jpg.setAlignment(Image.MIDDLE);				//设置图片居中
 	
 	Table table=new Table(1);

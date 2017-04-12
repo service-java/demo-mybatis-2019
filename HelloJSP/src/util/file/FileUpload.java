@@ -107,6 +107,8 @@ public class FileUpload extends HttpServlet {
         File uploadFile = new File(request.getSession().getServletContext()
                 .getRealPath("/")
                 + "upload/");
+
+
         uploadpath = uploadFile.getAbsolutePath() + File.separator + uploadpath;
         if (uploadFile.exists() == false) {
             uploadFile.mkdir();
