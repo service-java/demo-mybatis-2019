@@ -54,6 +54,25 @@ public class MyTools {
 		}
 		return str;
 	}
+
+	public  static String[]  toChinese(String[] str) {
+		if(str == null)
+			str = new String[1];
+		try {
+			for(int i=0; i < str.length; i++) {
+				str[i] = new String(str[i].getBytes("ISO-8859-1"),"utf-8");
+			}
+
+		} catch (UnsupportedEncodingException e) {
+			str = new String[1];
+			e.printStackTrace();
+		}
+		return str;
+	}
+
+
+
+
 	public static int strToint(String str){			//将String型数据转换为int型数据的方法
 		if(str==null||str.equals(""))
 			str="0";

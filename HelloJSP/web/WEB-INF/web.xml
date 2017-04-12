@@ -104,4 +104,13 @@
         <url-pattern>/DownLoadFile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>InfoServlet</servlet-name>
+        <servlet-class>servlet.InfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InfoServlet</servlet-name>
+        <url-pattern>/InfoServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
