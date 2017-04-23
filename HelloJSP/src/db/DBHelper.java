@@ -27,7 +27,7 @@ public final class DBHelper {
 
         try {
             String driver = "com.mysql.jdbc.Driver"; // 数据库驱动
-            String url = "jdbc:MySQL://127.0.0.1:3306/luodb87";// 数据库
+            String url = "jdbc:MySQL://127.0.0.1:3306/stu";// 数据库
             String user = "root"; // 用户名
             String password = "root"; // 密码
 

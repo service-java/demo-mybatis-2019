@@ -71,8 +71,6 @@ public class MyTools {
 	}
 
 
-
-
 	public static int strToint(String str){			//将String型数据转换为int型数据的方法
 		if(str==null||str.equals(""))
 			str="0";
@@ -85,4 +83,14 @@ public class MyTools {
 		}
 		return i;		
 	}
+
+	public static String strArrToStr(String[] s) {
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i < s.length; i++){
+			sb.append(s[i] + " ");
+		}
+		String str = sb.toString();
+		return str;
+	}
+
 }

@@ -31,10 +31,10 @@
 
 <%
 
-//    request.setCharacterEncoding("utf-8");
-//    response.setCharacterEncoding("utf-8");
-//    response.setContentType("utf-8");
-//    bookname = new String(bookname.getBytes("ISO-8859-1"), "UTF-8");
+    request.setCharacterEncoding("utf-8");
+    response.setCharacterEncoding("utf-8");
+    response.setContentType("utf-8");
+    bookname = new String(bookname.getBytes("ISO-8859-1"), "UTF-8");
 //    两者的区别 http://blog.csdn.net/joywy/article/details/8006645
 
 

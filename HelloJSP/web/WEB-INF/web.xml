@@ -113,4 +113,14 @@
         <url-pattern>/InfoServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>StuServlet</servlet-name>
+        <servlet-class>servlet.StuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuServlet</servlet-name>
+        <url-pattern>/Stu</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

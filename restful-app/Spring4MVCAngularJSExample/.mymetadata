@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Spring4MVCAngularJSExample Maven Webapp"
+  id="myeclipse.1452761783046"
+  context-root="/Spring4MVCAngularJSExample"
+  j2ee-spec="6.0"
+  archive="Spring4MVCAngularJSExample Maven Webapp.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

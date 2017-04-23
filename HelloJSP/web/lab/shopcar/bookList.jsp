@@ -38,13 +38,13 @@
      <td>1</td>
      <td>JSP开发应用详解</td>
      <td>36.0</td>
-     <td>
-			 <a class="js-confirm"
-			 	role="button" data-toggle="popover"
-			 	data-trigger="focus"
-			 	data-content="成功加入购物车"
-			 	href="buy.jsp?type=buy&price=36&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a>
-		 </td>
+     <%--<td>--%>
+		 <%--<a class="js-confirm"--%>
+			<%--role="button" data-toggle="popover"--%>
+			<%--data-trigger="focus"--%>
+			<%--data-content="成功加入购物车"--%>
+			<%--href="buy.jsp?type=buy&price=36&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a> </td>--%>
+
   </tr>
 
   <tr>
@@ -52,25 +52,25 @@
      <td>JSP 2.0应用教程</td>
      <td>24</td>
      <td>
-			 <a class="js-confirm"
-			 	role="button" data-toggle="popover"
-			 	data-trigger="focus"
-			 	data-content="成功加入购物车" 
-			 href="buy.jsp?type=buy&price=24&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a>
-		 </td>
+			 <%--<a class="js-confirm"--%>
+			 	<%--role="button" data-toggle="popover"--%>
+			 	<%--data-trigger="focus"--%>
+			 	<%--data-content="成功加入购物车" --%>
+			 <%--href="buy.jsp?type=buy&price=24&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a>--%>
+		 <%--</td>--%>
   </tr>
 
   <tr>
      <td>3</td>
      <td>Visual Basic课程设计</td>
      <td>29</td>
-     <td>
-			 <a class="js-confirm"
-			 	role="button" data-toggle="popover"
-			 	data-trigger="focus"
-			 	data-content="成功加入购物车" 
-			 href="buy.jsp?type=buy&price=29&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a>
-		 </td>
+     <%--<td>--%>
+			 <%--<a class="js-confirm"--%>
+			 	<%--role="button" data-toggle="popover"--%>
+			 	<%--data-trigger="focus"--%>
+			 	<%--data-content="成功加入购物车" --%>
+			 <%--href="buy.jsp?type=buy&price=29&bookname=<%=java.net.URLEncoder.encode(">Buy It!</a>--%>
+		 <%--</td>--%>
   </tr>
 </table>
 

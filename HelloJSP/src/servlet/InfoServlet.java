@@ -38,12 +38,6 @@ public class InfoServlet extends HttpServlet {
         info.setQulification(qualification);
 
         session.setAttribute("info", info);
-//        session.setAttribute("age", age);
-//        session.setAttribute("gender", gender);
-//        session.setAttribute("qualification", qualification);
-//        session.setAttribute("hobby", hobby);
-//        session.setAttribute("introduction", introduction);
-
         response.sendRedirect("lab/lab8/getinfo.jsp");
     }
 
