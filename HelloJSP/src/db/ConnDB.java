@@ -57,6 +57,7 @@ public class ConnDB {
                     ResultSet.CONCUR_READ_ONLY);
             rs = stmt.executeQuery(sql);
         } catch (SQLException ex) {
+
             System.err.println(ex.getMessage());
         }
         return rs;

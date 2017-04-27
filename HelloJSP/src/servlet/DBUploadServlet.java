@@ -37,11 +37,11 @@ public class DBUploadServlet extends HttpServlet {
 
 //        String fileDir = getServletContext().getRealPath("/uploads");
         String fileDir = getServletContext().getRealPath("./");
-
         if(getServletContext().getRealPath("./") == null) {
-            fileDir = "E:/03-JSP/HelloJSP/web";
+            fileDir = "E:/03-JSP/HelloJSP/web"; // 实际路径
         }
         fileDir += "/uploads";
+
 //        System.out.println("fileDir: " + fileDir);
 
         // 指定上传文件的保存地址
@@ -74,7 +74,7 @@ public class DBUploadServlet extends HttpServlet {
 //                    System.out.println(name);
 
                     if (formitem.getSize() > size) { // 如果上传文件大于规定的上传文件的大小
-                        message = "您上传的文件太大，请选择不超过2M的文件";
+                        message = "您上传的文件太大，请选择不超过5M的文件";
 
                         break; // 退出程序
                     }

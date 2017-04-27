@@ -25,6 +25,8 @@ commons-io-2.5.jar
    
 1. web.xml 与 Servlet更新后一定注意刷新或重启 tomcat
 2. 路径问题
+3. 文件重命名的一种方式
+filename = UUID.randomUUID().toString() + "_" + filename;
 
 // jspSmartUpload.jar 几乎不更新,可摒弃
 

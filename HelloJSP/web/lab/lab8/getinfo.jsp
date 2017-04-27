@@ -31,33 +31,34 @@
 
 <%
 
-    request.setCharacterEncoding("utf-8");
-    response.setCharacterEncoding("utf-8");
-    response.setContentType("utf-8");
-    bookname = new String(bookname.getBytes("ISO-8859-1"), "UTF-8");
+//    request.setCharacterEncoding("utf-8");
+//    response.setCharacterEncoding("utf-8");
+
+//    response.setContentType("utf-8"); // 页面的utf-8
 //    两者的区别 http://blog.csdn.net/joywy/article/details/8006645
 
 
-    Info info = (Info)session.getAttribute("info");
-    request.setAttribute("info", info);
+//    Info info = (Info)session.getAttribute("info");
+//    request.setAttribute("info", info);
 %>
 
     <table class="table table-striped table-bordered">
 
-        <tr><th>姓名</th><td> ${ info.getName() } </td></tr>
-        <tr><th>年龄</th><td> ${ info.getAge() } </td></tr>
-        <tr><th>性别</th><td> ${ info.getGender() } </td></tr>
-        <tr><th>学历</th><td> ${ info.getQulification() } </td></tr>
+        <tr><th>姓名</th><td> ${ name } </td></tr>
+        <%--<tr><th>姓名</th><td> <%=request.getAttribute("name")%> </td></tr>--%>
+        <tr><th>年龄</th><td> ${ age } </td></tr>
+        <tr><th>性别</th><td> ${ gender } </td></tr>
+        <tr><th>学历</th><td> ${ qualification } </td></tr>
 
 
         <tr><th>爱好</th><td>
-            <%  for(int i=0; i<info.getHobby().length; i++) {
+            <%  for(int i=0; i<request.getParameterValues("hobby").length; i++) {
                 request.setAttribute("i", i); %>
-            ${info.getHobby()[i]}
+            ${ hobby[i] }
             <%  } %>
         </td></tr>
 
-        <tr><th>简介</th><td>${ info.getIntroduction() }</td></tr>
+        <tr><th>简介</th><td>${ introduction }</td></tr>
 
     </table>
 </div>

@@ -21,7 +21,7 @@ public class InfoServlet extends HttpServlet {
         doPost(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(); // 引入session
+//        HttpSession session = request.getSession(); // 引入session
 
         String name = MyTools.toChinese(request.getParameter("name"));
         int age 	= Integer.parseInt(request.getParameter("age"));
@@ -30,15 +30,28 @@ public class InfoServlet extends HttpServlet {
         String[] hobby = MyTools.toChinese(request.getParameterValues("hobby"));
         String introduction = MyTools.toChinese(request.getParameter("introduction"));
 
-        info.setName(name);
-        info.setAge(age);
-        info.setGender(gender);
-        info.setIntroduction(introduction);
-        info.setHobby(hobby);
-        info.setQulification(qualification);
+        // 这种方式不太适宜
+        // session主要是存储用户信息的
+        // 而且没有必要封装到对象
+        // sendRedirect重定向是不传参的
+//        info.setName(name);
+//        info.setAge(age);
+//        info.setGender(gender);
+//        info.setIntroduction(introduction);
+//        info.setHobby(hobby);
+//        info.setQulification(qualification);
+//        session.setAttribute("info", info);
+//        response.sendRedirect("lab/lab8/getinfo.jsp");
 
-        session.setAttribute("info", info);
-        response.sendRedirect("lab/lab8/getinfo.jsp");
+        request.setAttribute("name", name);
+        request.setAttribute("age", age);
+        request.setAttribute("gender", gender);
+        request.setAttribute("qualification", qualification);
+        request.setAttribute("introduction", introduction);
+        request.setAttribute("hobby", hobby);
+
+
+        request.getRequestDispatcher("lab/lab8/getinfo.jsp").forward(request, response);
     }
 
 }
