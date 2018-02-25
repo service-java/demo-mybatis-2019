@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/04-ssm-projects/hrmapp-pure/hrmapp.iml" filepath="$PROJECT_DIR$/04-ssm-projects/hrmapp-pure/hrmapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/learn-ssm.iml" filepath="$PROJECT_DIR$/.idea/learn-ssm.iml" />
+    </modules>
+  </component>
+</project>

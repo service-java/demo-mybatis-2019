@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="hrmapp">
+    <output-path>$PROJECT_DIR$/out/artifacts/hrmapp</output-path>
+    <root id="root" />
+  </artifact>
+</component>
