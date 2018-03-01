@@ -22,7 +22,7 @@ import java.util.Properties;
 public class JpaConfiguration {
 
     @Bean
-    PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor(){
+    PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
@@ -30,9 +30,9 @@ public class JpaConfiguration {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test?characterEncoding=utf8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/springboot_db_test?characterEncoding=utf8");
         dataSource.setUsername("root");
-        dataSource.setPassword("12345678");
+        dataSource.setPassword("123456");
 
         return dataSource;
     }
@@ -49,8 +49,7 @@ public class JpaConfiguration {
         return entityManagerFactoryBean;
     }
 
-    protected Properties buildHibernateProperties()
-    {
+    protected Properties buildHibernateProperties() {
         Properties hibernateProperties = new Properties();
 
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");

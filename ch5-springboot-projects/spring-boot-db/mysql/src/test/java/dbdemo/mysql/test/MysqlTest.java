@@ -36,7 +36,7 @@ public class MysqlTest {
     RoleRepository roleRepository;
 
     @Before
-    public void initData(){
+    public void initData() {
         userRepository.deleteAll();
         roleRepository.deleteAll();
         departmentRepository.deleteAll();
@@ -65,18 +65,18 @@ public class MysqlTest {
     }
 
     @Test
-    public void findPage(){
+    public void findPage() {
         Pageable pageable = new PageRequest(0, 10, new Sort(Sort.Direction.ASC, "id"));
         Page<User> page = userRepository.findAll(pageable);
         Assert.notNull(page);
-        for(User user : page.getContent()) {
+        for (User user : page.getContent()) {
             logger.info("====user==== user name:{}, department name:{}, role name:{}",
                     user.getName(), user.getDeparment().getName(), user.getRoles().get(0).getName());
         }
     }
 
     //@Test
-    public void test(){
+    public void test() {
         User user1 = userRepository.findByNameLike("u%");
         Assert.notNull(user1);
 
