@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-integration/mm-repo/src/main/main.iml" filepath="$PROJECT_DIR$/springboot-integration/mm-repo/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-schedule-task/src/main/main1.iml" filepath="$PROJECT_DIR$/springboot-schedule-task/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-nginx/src/main/main10.iml" filepath="$PROJECT_DIR$/springboot-nginx/src/main/main10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-web-thymeleaf/src/main/main11.iml" filepath="$PROJECT_DIR$/springboot-web-thymeleaf/src/main/main11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-common/src/main/main12.iml" filepath="$PROJECT_DIR$/springboot-mybatis-common/src/main/main12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cross-orgin/yy-web/src/main/main13.iml" filepath="$PROJECT_DIR$/springboot-cross-orgin/yy-web/src/main/main13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-error-controller/src/main/main14.iml" filepath="$PROJECT_DIR$/springboot-error-controller/src/main/main14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-data-jpa/src/main/main15.iml" filepath="$PROJECT_DIR$/springboot-data-jpa/src/main/main15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-web-jsp/src/main/main16.iml" filepath="$PROJECT_DIR$/springboot-web-jsp/src/main/main16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/src/main/main17.iml" filepath="$PROJECT_DIR$/springboot-mybatis/src/main/main17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-swagger2/src/main/main18.iml" filepath="$PROJECT_DIR$/springboot-swagger2/src/main/main18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-externalized-configuration/src/main/main2.iml" filepath="$PROJECT_DIR$/springboot-externalized-configuration/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-helloworld/src/main/main3.iml" filepath="$PROJECT_DIR$/springboot-helloworld/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-error-handler/src/main/main4.iml" filepath="$PROJECT_DIR$/springboot-error-handler/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-integration/mm-service/src/main/main5.iml" filepath="$PROJECT_DIR$/springboot-integration/mm-service/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cross-orgin/xx-web/src/main/main6.iml" filepath="$PROJECT_DIR$/springboot-cross-orgin/xx-web/src/main/main6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-integration/mm-web/src/main/main7.iml" filepath="$PROJECT_DIR$/springboot-integration/mm-web/src/main/main7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-integration/mm-entity/src/main/main8.iml" filepath="$PROJECT_DIR$/springboot-integration/mm-entity/src/main/main8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-annotation/src/main/main9.iml" filepath="$PROJECT_DIR$/springboot-mybatis-annotation/src/main/main9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-swagger2/src/test/test.iml" filepath="$PROJECT_DIR$/springboot-swagger2/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cross-orgin/yy-web/src/test/test1.iml" filepath="$PROJECT_DIR$/springboot-cross-orgin/yy-web/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-helloworld/src/test/test10.iml" filepath="$PROJECT_DIR$/springboot-helloworld/src/test/test10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-nginx/src/test/test11.iml" filepath="$PROJECT_DIR$/springboot-nginx/src/test/test11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-error-handler/src/test/test12.iml" filepath="$PROJECT_DIR$/springboot-error-handler/src/test/test12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-web-jsp/src/test/test2.iml" filepath="$PROJECT_DIR$/springboot-web-jsp/src/test/test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-error-controller/src/test/test3.iml" filepath="$PROJECT_DIR$/springboot-error-controller/src/test/test3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis-annotation/src/test/test4.iml" filepath="$PROJECT_DIR$/springboot-mybatis-annotation/src/test/test4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-schedule-task/src/test/test5.iml" filepath="$PROJECT_DIR$/springboot-schedule-task/src/test/test5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-data-jpa/src/test/test6.iml" filepath="$PROJECT_DIR$/springboot-data-jpa/src/test/test6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/src/test/test7.iml" filepath="$PROJECT_DIR$/springboot-mybatis/src/test/test7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cross-orgin/xx-web/src/test/test8.iml" filepath="$PROJECT_DIR$/springboot-cross-orgin/xx-web/src/test/test8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-externalized-configuration/src/test/test9.iml" filepath="$PROJECT_DIR$/springboot-externalized-configuration/src/test/test9.iml" />
+    </modules>
+  </component>
+</project>
