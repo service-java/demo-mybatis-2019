@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/deprecated/restful-hello-world" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/chapter-2-spring-boot-quick-start" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/chapter-4-spring-boot-validating-form-input" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/chapter-5-spring-boot-paging-sorting" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/spring-data-elasticsearch-crud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/spring-data-elasticsearch-query" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-configuration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-dubbo-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-dubbo-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-elasticsearch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-freemarker" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-helloworld" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-mybatis-annotation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-mybatis-mutil-datasource" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-mybatis-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-mybatis-redis-annotation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-validation-over-json" charset="UTF-8" />
+  </component>
+</project>
