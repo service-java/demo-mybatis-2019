@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="hrm">
-    <output-path>$PROJECT_DIR$/04-ssm-projects/hrmapp</output-path>
-    <root id="archive" name="hrm.war" />
-  </artifact>
-</component>
