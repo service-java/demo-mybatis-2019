@@ -12,55 +12,54 @@ import com.bee.sample.ch14.service.MenuService;
 
 @Service
 public class MenuServiceImpl implements MenuService {
-	Log log = LogFactory.getLog(this.getClass());
+    Log log = LogFactory.getLog(this.getClass());
 
-	@CacheEvict (cacheNames ={ "menu","menuTree"},allEntries=true)
-	public void addMenu(Menu menu) {
-		
-	}
+    @CacheEvict(cacheNames = {"menu", "menuTree"}, allEntries = true)
+    public void addMenu(Menu menu) {
 
-	@Cacheable(cacheNames="menu")
-	public Menu getMenu(Long id) {
-		log.info("call service getMenu " + id);
-		// 模拟
-		Menu menu = new Menu();
-		menu.setCode("test");
-		menu.setId(id);
-		menu.setName("菜单" + id);
-		menu.setParentId(1l);
+    }
 
-		return menu;
-	}
+    @Cacheable(cacheNames = "menu")
+    public Menu getMenu(Long id) {
+        log.info("call service getMenu " + id);
+        // 模拟
+        Menu menu = new Menu();
+        menu.setCode("test");
+        menu.setId(id);
+        menu.setName("菜单" + id);
+        menu.setParentId(1l);
 
-	@Cacheable("menuTree")
-	public MenuNode getMenuTree() {
+        return menu;
+    }
 
-		log.info("call menu tree ");
-		Menu root = new Menu();
-		root.setCode("root");
-		root.setId(1l);
-		root.setName("系统管理");
-		root.setParentId(null);
+    @Cacheable("menuTree")
+    public MenuNode getMenuTree() {
 
-		Menu menu = new Menu();
-		menu.setCode("menu");
-		menu.setId(1l);
-		menu.setName("菜单管理");
-		menu.setParentId(1l);
+        log.info("call menu tree ");
+        Menu root = new Menu();
+        root.setCode("root");
+        root.setId(1l);
+        root.setName("系统管理");
+        root.setParentId(null);
 
-		MenuNode tree = new MenuNode();
-		tree.setMenu(root);
-		tree.setParent(null);
+        Menu menu = new Menu();
+        menu.setCode("menu");
+        menu.setId(1l);
+        menu.setName("菜单管理");
+        menu.setParentId(1l);
 
-		MenuNode menuTree = new MenuNode();
-		menuTree.setMenu(menu);
-		menuTree.setParent(tree);
-		tree.getChildren().add(menuTree);
+        MenuNode tree = new MenuNode();
+        tree.setMenu(root);
+        tree.setParent(null);
 
-		return tree;
+        MenuNode menuTree = new MenuNode();
+        menuTree.setMenu(menu);
+        menuTree.setParent(tree);
+        tree.getChildren().add(menuTree);
 
-	}
-	
+        return tree;
+
+    }
 
 
 }

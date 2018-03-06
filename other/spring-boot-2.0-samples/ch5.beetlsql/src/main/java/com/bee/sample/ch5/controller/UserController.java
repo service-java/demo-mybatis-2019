@@ -13,16 +13,21 @@ import com.bee.sample.ch5.service.UserService;
 
 @Controller
 public class UserController {
-	@Autowired UserService userService;
-	@RequestMapping("/user/{id}")
-	public @ResponseBody User say(@PathVariable Integer id){
-		User user= userService.getUserById(id);
-		
-		return user;
-	}
-	@RequestMapping("/user/query/{name}")
-	public @ResponseBody List<User> say(@PathVariable String name){
-		List<User> users= userService.select(name);
-		return users;
-	}
+    @Autowired
+    UserService userService;
+
+    @RequestMapping("/user/{id}")
+    public @ResponseBody
+    User say(@PathVariable Integer id) {
+        User user = userService.getUserById(id);
+
+        return user;
+    }
+
+    @RequestMapping("/user/query/{name}")
+    public @ResponseBody
+    List<User> say(@PathVariable String name) {
+        List<User> users = userService.select(name);
+        return users;
+    }
 }

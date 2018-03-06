@@ -11,11 +11,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Configuration
 public class JacksonConf {
 
-	@Bean
-	@Primary
-	public ObjectMapper getObjectMapper() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
-		return objectMapper;
-	}
+    @Bean
+    @Primary
+    public ObjectMapper getObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+        return objectMapper;
+    }
 }

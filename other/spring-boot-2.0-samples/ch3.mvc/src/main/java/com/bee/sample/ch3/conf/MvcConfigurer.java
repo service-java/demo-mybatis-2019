@@ -20,41 +20,39 @@ import com.bee.sample.ch3.entity.User;
 
 @Configuration
 public class MvcConfigurer implements WebMvcConfigurer {
-	
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/user/**");
-	}
-	public void addCorsMappings(CorsRegistry registry) {
-	}
-	
-	public void addFormatters(FormatterRegistry registry) {
-		 registry.addFormatter(new DateFormatter("yyyy-MM-dd HH:mm:ss"));
-		
-	}
+
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/user/**");
+    }
+
+    public void addCorsMappings(CorsRegistry registry) {
+    }
+
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(new DateFormatter("yyyy-MM-dd HH:mm:ss"));
+
+    }
 
 
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/index.html").setViewName("/index.btl");
-		registry.addRedirectViewController("/**/*.do", "/index.html");
-	}
-	
-	/**
-	 * 
-	 * 检查用户是否已经登录，如果未登录，重定向到登录页面
-	 *
-	 */
-	class SessionHandlerInterceptor implements HandlerInterceptor{
-		public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-				throws Exception {
-			User user = (User) request.getSession().getAttribute("user"); 
-			if(user==null){
-				response.sendRedirect("/login.html");
-				return false;
-			}
-			return true;
-		}
-	}
-	
-	
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/index.html").setViewName("/index.btl");
+        registry.addRedirectViewController("/**/*.do", "/index.html");
+    }
+
+    /**
+     * 检查用户是否已经登录，如果未登录，重定向到登录页面
+     */
+    class SessionHandlerInterceptor implements HandlerInterceptor {
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+                throws Exception {
+            User user = (User) request.getSession().getAttribute("user");
+            if (user == null) {
+                response.sendRedirect("/login.html");
+                return false;
+            }
+            return true;
+        }
+    }
+
 
 }

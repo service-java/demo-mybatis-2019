@@ -6,8 +6,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/pom.xml" />
+        <option value="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch1.helloword/pom.xml" />
+        <option value="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch2.aop/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

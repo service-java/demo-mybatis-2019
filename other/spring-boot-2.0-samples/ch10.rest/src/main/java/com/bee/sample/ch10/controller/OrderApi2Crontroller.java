@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v2/") 
+@RequestMapping("/api/v2/")
 public class OrderApi2Crontroller {
 
-	@Autowired 
-	WebSimulate webSimulate;
-	@RequestMapping("/**")
-	public void simluateJson(HttpServletRequest request,HttpServletResponse response){
-	  webSimulate.execute(request, response);
-	}
+    @Autowired
+    WebSimulate webSimulate;
+
+    @RequestMapping("/**")
+    public void simluateJson(HttpServletRequest request, HttpServletResponse response) {
+        webSimulate.execute(request, response);
+    }
 
 }

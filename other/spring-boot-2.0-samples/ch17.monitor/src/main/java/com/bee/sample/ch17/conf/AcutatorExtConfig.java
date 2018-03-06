@@ -10,29 +10,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
+
 /**
  * 自定义的监控指标,跟踪http，还有数据源监控
- * @author xiandafu
  *
+ * @author xiandafu
  */
 @Configuration
 public class AcutatorExtConfig {
-	@ConditionalOnMissingBean(HttpTraceRepository.class)
-	@Bean
-	public InMemoryHttpTraceRepository traceRepository() {
-		InMemoryHttpTraceRepository httpTrace = new  InMemoryHttpTraceRepository();
-		httpTrace.setCapacity(2);
-		return httpTrace;
-	}
-	
-	
-	@Bean
-	@ConditionalOnMissingBean
-	@ConditionalOnEnabledEndpoint
-	public HikariCPEndpoint testDataEndpoint(DataSource ds) {
-		return new HikariCPEndpoint((HikariDataSource)ds);
-	}
-	
-	
-	
+    @ConditionalOnMissingBean(HttpTraceRepository.class)
+    @Bean
+    public InMemoryHttpTraceRepository traceRepository() {
+        InMemoryHttpTraceRepository httpTrace = new InMemoryHttpTraceRepository();
+        httpTrace.setCapacity(2);
+        return httpTrace;
+    }
+
+
+    @Bean
+    @ConditionalOnMissingBean
+    @ConditionalOnEnabledEndpoint
+    public HikariCPEndpoint testDataEndpoint(DataSource ds) {
+        return new HikariCPEndpoint((HikariDataSource) ds);
+    }
+
+
 }

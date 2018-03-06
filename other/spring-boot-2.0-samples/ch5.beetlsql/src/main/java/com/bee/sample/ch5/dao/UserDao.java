@@ -9,5 +9,5 @@ import com.bee.sample.ch5.entity.User;
 
 @SqlResource("www.user")
 public interface UserDao extends BaseMapper<User> {
-	public List<User> selectSample(User query);
+    public List<User> selectSample(User query);
 }

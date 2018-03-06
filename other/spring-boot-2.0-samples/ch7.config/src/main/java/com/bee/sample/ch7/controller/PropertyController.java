@@ -13,31 +13,37 @@ import com.bee.sample.ch7.config.ServerConfig;
 
 @Controller
 public class PropertyController {
-	private Log log = LogFactory.getLog(PropertyController.class);
-	@Autowired EnvConfig envConfig;
-	@Autowired ServerConfig serverConfig;
-	
-	@RequestMapping("/sayhello.html")
-	public @ResponseBody String say(){
-		log.info("acess");
-		return "hello world";
-	}
-	
-	
-	@RequestMapping("/showenv.html")
-	public @ResponseBody String env(){
-		
-		return "port:"+envConfig.getServerPort();
-	}
-	
-	@RequestMapping("/showvalue.html")
-	public @ResponseBody String value(@Value("${server.port}")  int port){
-		return "port:"+port;
-	}
-	
-	@RequestMapping("/showserver.html")
-	public @ResponseBody String value(){
-		
-		return "port:"+serverConfig.getPort()+" contxtPath:"+serverConfig.getServlet().getPath();
-	}
+    private Log log = LogFactory.getLog(PropertyController.class);
+    @Autowired
+    EnvConfig envConfig;
+    @Autowired
+    ServerConfig serverConfig;
+
+    @RequestMapping("/sayhello.html")
+    public @ResponseBody
+    String say() {
+        log.info("acess");
+        return "hello world";
+    }
+
+
+    @RequestMapping("/showenv.html")
+    public @ResponseBody
+    String env() {
+
+        return "port:" + envConfig.getServerPort();
+    }
+
+    @RequestMapping("/showvalue.html")
+    public @ResponseBody
+    String value(@Value("${server.port}") int port) {
+        return "port:" + port;
+    }
+
+    @RequestMapping("/showserver.html")
+    public @ResponseBody
+    String value() {
+
+        return "port:" + serverConfig.getPort() + " contxtPath:" + serverConfig.getServlet().getPath();
+    }
 }

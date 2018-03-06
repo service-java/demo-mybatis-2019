@@ -22,29 +22,29 @@ import com.bee.sample.ch9.service.UserService;
 //需要模拟测试的Controller
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
-	@Autowired
-	private MockMvc mvc;
-	
-	@MockBean
-	UserService userService;
+    @Autowired
+    private MockMvc mvc;
 
-	@Test
-	public void testMvc() throws Exception {
-		int userId = 10;
-		int expectedCredit = 100;
-		//模拟userService
-		given(this.userService.getCredit(anyInt())).willReturn(100);
-		//http 调用
-		mvc.perform(get("/user/{id}", userId)).andExpect(content().string(String.valueOf(expectedCredit)));
-	}
-	
-	@Test
-	public void updateUser() throws Exception {
-		int userId = 1;
-		String name = "hilijz";
-		int expectedCredit = 100;
-		given(this.userService.updateUser(any(User.class))).willReturn(true);
-		String path = "$.success";
-		mvc.perform(get("/user/{id}/{name}", userId,name)).andExpect(jsonPath(path).value(true));
-	}
+    @MockBean
+    UserService userService;
+
+    @Test
+    public void testMvc() throws Exception {
+        int userId = 10;
+        int expectedCredit = 100;
+        //模拟userService
+        given(this.userService.getCredit(anyInt())).willReturn(100);
+        //http 调用
+        mvc.perform(get("/user/{id}", userId)).andExpect(content().string(String.valueOf(expectedCredit)));
+    }
+
+    @Test
+    public void updateUser() throws Exception {
+        int userId = 1;
+        String name = "hilijz";
+        int expectedCredit = 100;
+        given(this.userService.updateUser(any(User.class))).willReturn(true);
+        String path = "$.success";
+        mvc.perform(get("/user/{id}/{name}", userId, name)).andExpect(jsonPath(path).value(true));
+    }
 }

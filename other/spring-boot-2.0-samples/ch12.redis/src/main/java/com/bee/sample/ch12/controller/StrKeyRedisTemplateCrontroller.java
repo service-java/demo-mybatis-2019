@@ -13,24 +13,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bee.sample.ch12.controller.RedisTemplateCrontroller.User;
 
 @Controller
-@RequestMapping("/rediskey") 
+@RequestMapping("/rediskey")
 public class StrKeyRedisTemplateCrontroller {
 
-	@Autowired
-	@Qualifier("strKeyRedisTemplate")
-	private RedisTemplate redisClient;
+    @Autowired
+    @Qualifier("strKeyRedisTemplate")
+    private RedisTemplate redisClient;
 
-	@RequestMapping("/simpleset.html") 
-	public @ResponseBody String simpleSet(){
-		redisClient.opsForValue().set("key-0","hello");
-		return "success";
-	} 
-	
-	@RequestMapping("/simpleget.html") 
-	public @ResponseBody String simpleGet(){
-		String value = (String)redisClient.opsForValue().get("key-0");
-		return "success";
-		
-	} 
-	
+    @RequestMapping("/simpleset.html")
+    public @ResponseBody
+    String simpleSet() {
+        redisClient.opsForValue().set("key-0", "hello");
+        return "success";
+    }
+
+    @RequestMapping("/simpleget.html")
+    public @ResponseBody
+    String simpleGet() {
+        String value = (String) redisClient.opsForValue().get("key-0");
+        return "success";
+
+    }
+
 }

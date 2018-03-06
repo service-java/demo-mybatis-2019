@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch1.helloword/ch1.helloworld.iml" filepath="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch1.helloword/ch1.helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch2.aop/ch2.aop.iml" filepath="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch2.aop/ch2.aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learn-ssm.iml" filepath="$PROJECT_DIR$/.idea/learn-ssm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-activiti/len-activiti.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-activiti/len-activiti.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-core/len-core.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-core/len-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-sys/len-sys.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-sys/len-sys.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-web/len-web.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/len-web/len-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/lenosp.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/bweird-lenosp/lenosp.iml" />
     </modules>
   </component>
 </project>

@@ -11,11 +11,12 @@ import com.bee.sample.ch5.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
-	@Autowired UserDao userDao;
-	
-	public User geUserById(Long id) {
-		User user = userDao.findUserById(id);
-		return user;
-	}
+
+    @Autowired
+    UserDao userDao;
+
+    public User geUserById(Long id) {
+        User user = userDao.findUserById(id);
+        return user;
+    }
 }

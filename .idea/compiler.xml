@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="len-activiti" />
-        <module name="len-core" />
-        <module name="len-sys" />
-        <module name="len-web" />
+        <module name="ch1.helloworld" />
+        <module name="ch2.aop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ch1.helloworld" target="1.8" />
+      <module name="ch2.aop" target="1.8" />
       <module name="len-activiti" target="1.8" />
       <module name="len-core" target="1.8" />
       <module name="len-sys" target="1.8" />

@@ -9,16 +9,16 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Constraint(validatedBy = { WorkOverTimeValidator.class })
+@Constraint(validatedBy = {WorkOverTimeValidator.class})
 @Documented
-@Target({ ElementType.ANNOTATION_TYPE, ElementType.METHOD, ElementType.FIELD })
+@Target({ElementType.ANNOTATION_TYPE, ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface WorkOverTime {
-	String message() default "加班时间过长,不能超过{max}";
-	
-	int max() default 4;
+    String message() default "加班时间过长,不能超过{max}";
 
-	Class<?>[] groups() default {};
+    int max() default 4;
 
-	Class<? extends Payload>[] payload() default {};
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }

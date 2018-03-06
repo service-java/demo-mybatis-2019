@@ -18,27 +18,27 @@ import com.bee.sample.ch9.service.UserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-@Transactional 
+@Transactional
 public class UserDbTest {
-	
-	@Autowired
-	UserService userService;
-	
-	@Autowired
-	UserDao userDao;
-	
-	@Test
-	@Sql({"classpath:com/bee/sample/ch9/test/db/user.sql"}) //初始化一条主键为1的用户数据
-	public void upateNameTest(){
-		 
-		 User user = new User();
-		 user.setId(1);
-		 user.setName("hello123");
-		 boolean success = userService.updateUser(user);
-		 User dbUser = userDao.unique(1);
-		 assertEquals(dbUser.getName(),"hello123");
-		 	 
-	}
-	
-	
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    UserDao userDao;
+
+    @Test
+    @Sql({"classpath:com/bee/sample/ch9/test/db/user.sql"}) //初始化一条主键为1的用户数据
+    public void upateNameTest() {
+
+        User user = new User();
+        user.setId(1);
+        user.setName("hello123");
+        boolean success = userService.updateUser(user);
+        User dbUser = userDao.unique(1);
+        assertEquals(dbUser.getName(), "hello123");
+
+    }
+
+
 }
