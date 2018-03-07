@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch1.helloword/ch1.helloworld.iml" filepath="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch1.helloword/ch1.helloworld.iml" />
-      <module fileurl="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch2.aop/ch2.aop.iml" filepath="$PROJECT_DIR$/other/spring-boot-2.0-samples/ch2.aop/ch2.aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/admin-console.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/admin-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/admin-core.iml" filepath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/admin-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learn-ssm.iml" filepath="$PROJECT_DIR$/.idea/learn-ssm.iml" />
     </modules>
   </component>
