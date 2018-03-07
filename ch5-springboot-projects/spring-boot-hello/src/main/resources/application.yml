@@ -1,5 +1,0 @@
-#server setting
-server:
-  port: 80
-  tomcat:
-    uri-encoding: UTF-8
