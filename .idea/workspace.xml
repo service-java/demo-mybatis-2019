@@ -7,588 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7c33bea-56df-4048-a19a-67a354d05c46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/excelTemplates/admin/dict/dict_collection_template.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/excelTemplates/admin/dict/dict_upload_template.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/excelTemplates/admin/user/user_collection_template.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/icon-ext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/loading-0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/loading-1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/loading-2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/font/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/font/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/font/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/10.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/11.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/12.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/13.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/14.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/15.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/17.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/18.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/19.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/20.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/21.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/22.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/23.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/24.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/25.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/26.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/27.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/28.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/29.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/30.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/31.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/32.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/33.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/34.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/35.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/36.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/37.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/38.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/39.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/40.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/41.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/42.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/43.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/44.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/45.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/46.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/47.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/48.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/49.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/50.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/51.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/52.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/53.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/54.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/55.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/56.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/57.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/58.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/59.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/60.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/61.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/62.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/63.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/64.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/65.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/66.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/67.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/68.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/69.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/70.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/71.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/images/face/9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/1_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/1_open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/diy/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/line_conn.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/zTreeStandard.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/img/zTreeStandard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/oracle-lib/ojdbc6-11.2.0.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/codePorject.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/codegen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/codegen2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/codeoverview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/data.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/excelExport.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/role.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/readme/user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibeetl_beetl_2_7_27.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibeetl_beetl_framework_starter_1_1_40_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibeetl_beetlsql_2_10_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_trigersoft_jaque_2_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_22_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_abego_treelayout_org_abego_treelayout_core_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_annotations_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_digester3_with_deps_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_jexl_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_2_12_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_2_12_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_12_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_x_discovery_2_12_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jxls_jxls_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jxls_jxls_poi_1_0_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jxls_jxls_reader_2_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_4_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/CosonleApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/AuditConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/CmsBlogDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/DictConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/FunctionConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/MenuConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/OrgConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/RoleConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/RoleFunctionConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/dao/UserConsoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/entity/CmsBlog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/exception/DeletedException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/exception/NoResourceException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/AuditConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/CmsBlogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/DictConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/FunctionConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/MenuConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/OrgConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/RoleConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/service/UserConsoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/AuditConsoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/CmsBlogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/DictConsoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/FunctionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/MenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/OrgConsoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/RoleConsoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/UserConsoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/dto/DictExcelImportData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/dto/RoleDataAccessFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/dto/UserExcelExportData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/AuditQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/CmsBlogQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/CoreDictQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/CoreFunctionQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/FunctionQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/MenuQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/OrgQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/OrgTreeQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/OrgUserQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/RoleQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/RoleUserQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/UserQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/UserRoleQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/java/com/ibeetl/admin/console/web/query/WorkflowQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/banner.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/beetl.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/btsql-ext.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/excelTemplates/admin/dict/dict_mapping.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/audit.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/blog.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/cmsBlog.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/console.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/dict.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/function.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/menu.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/org.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/role.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/roleFunction.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/sql/console/user.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/audit/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/dict/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/dict/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/dict/dictApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/dict/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/dict/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/function/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/function/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/function/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/function/functionApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/function/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/menu/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/menu/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/menu/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/menu/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/menu/menuApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/orgApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/org/orgUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/roleApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/roleData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/roleFn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/role/roleUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/changePassword.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/roleDel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/userApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/userRole.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/static/js/admin/user/userRoleAdd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/audit/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/dict/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/dict/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/dict/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/function/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/function/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/function/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/menu/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/menu/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/menu/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/org/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/org/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/org/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/org/orgUser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/dataConfigPart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/function.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/role/roleUser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/changePassword.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/userRole.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/src/main/resources/templates/admin/user/userRoleAdd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/annotation/Dict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/annotation/Function.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/annotation/Query.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/BeetlConf.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/CacheConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/CustomErrorController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/DataSourceConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/FileSystemConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/JasonConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/MVCConf.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/PasswordConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/RbacAnnotationConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/RbacDataAccessConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/RemoteServiceLocatorConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/conf/ZookeeperConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreAuditDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreDictDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreFunctionDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreMenuDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreOrgDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreRoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreRoleFunctionDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreRoleMenuDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreUserDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreUserRoleDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/dao/CoreWorkflowDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/BaseEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreAudit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreOrg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreRole.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreRoleFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreRoleMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/entity/CoreUserRole.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/file/FileItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/file/FileService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/file/LocaFileService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/AutoGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/BaseTarget.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/ConsoleTarget.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/HtmlGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/JSGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/JavaCodeGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/MavenProjectTarget.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/MdGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/Target.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/WebTarget.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/model/Attribute.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/gen/model/Entity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/AccessType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/DataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/DataAccessFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/DataAccessResullt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/UserLoginInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/AllGroupAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/DefaultDataAccessFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/GroupDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/GroupOnlyDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/OwnerDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/ParentCorpDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/SameCompanyAllDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/SameDeparmentAllDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/da/SameOrgDataAccess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/tree/FunctionItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/tree/MenuItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/tree/OrgItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/rbac/tree/TreeItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/BaseService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreAuditService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreCodeGenService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreDictService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CorePlatformService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreRoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreServiceLocator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/service/CoreUserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/AnnotationUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/ClassLoaderUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/ConvertUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/ExcelError.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/FileDownloadUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/FileUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/FormFieldException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/FunctionBuildUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/FunctionLocal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/HttpRequestLocal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/MenuBuildUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/OrgBuildUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/PlatformException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/Tool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/ValidateConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/DataAccessFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/DictQueryFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/FunAccessUrlFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/FunFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/MenuFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/NextDayFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/OrgFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/RoleFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/SearchCondtionFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/SysFunctionTreeFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/beetl/XXSDefenderFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/enums/CoreDictType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/enums/DelFlagEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/enums/GeneralStateEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/util/enums/RoleTypeEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/CoreCodeGenController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/CoreDictController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/CoreUserController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/FileSystemContorller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/IndexController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/JsonResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/JsonReturnCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/SimulateController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/dto/FunctionNodeView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/dto/MenuNodeView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/dto/SystemMenuView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/query/PageParam.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/query/QueryData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/query/QueryItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/java/com/ibeetl/admin/core/web/query/QueryParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/html/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/html/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/html/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/java/controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/java/dao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/java/pojo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/java/query.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/java/service.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/js/add.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/js/del.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/js/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/js/entityApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/maven/main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/maven/pomTemplate.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/codeTemplate/md/entity.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreDict.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreFunction.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreMenu.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreOrg.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreRole.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreRoleFunction.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreRoleMenu.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreUser.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreUserRole.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/sql/core/coreWorkflow.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/css/fs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/core/codeGen/codeApi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/core/codeGen/edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/core/codeGen/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/core/codeGen/project.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/js/lib.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/frame/js/fsTab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/frame/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/frame/views/upload.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/jquery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/layui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/layui.mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/code.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/laydate/default/laydate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/css/modules/layer/default/layer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/font/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/code.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/element.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/flow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/laydate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/layedit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/layer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/laypage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/laytpl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/lay/modules/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/layui.all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/layui/layui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/css/zTreeStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/static/plugins/ztree/js/jquery.ztree.all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/container.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/query/fun.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/query/menu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/query/org.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/query/role.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/simpleUpload.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/accessButton.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/closeButton.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/functionInput.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/menuFunctionInput.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/menuInput.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/orgInput.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/roleInput.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/searchForm.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/simpleDictSelect.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/common/tag/submitButtons.tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/core/codeGen/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/core/codeGen/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/core/codeGen/project.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/error.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/help.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/src/main/resources/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/oracle-lib/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/starter-mysql.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/doc/starter-oracle.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/sonar-project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/app.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/app.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/index/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/index/index.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/index/index.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/list/list.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/list/list.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/list/list.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/list/list.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/logs/logs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/logs/logs.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/logs/logs.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/logs/logs.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/operation/operation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/operation/operation.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/operation/operation.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/pages/operation/operation.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/project.config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/areadisplay/utils/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/config/DataSourceConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/config/SessionFactoryConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/config/TransactionManagementConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/controller/AreaController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/demo/DemoApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/domain/Area.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/exception/GlobalExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/mapper/AreaMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/service/AreaService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/java/com/jas/service/AreaServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/resources/mapperConfig/AreaMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/main/resources/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/test/java/com/jas/demo/AreaMapperTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/src/test/java/com/jas/demo/DemoApplicationTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-wechat-mall/springboot/t_area.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_0_RELEASE.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_0_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_0_0_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/.idea/workspace.xml" afterPath="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-core/target/" />
     <ignored path="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/target/" />
@@ -621,6 +42,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/admin-console/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -639,17 +61,7 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
@@ -677,6 +89,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
@@ -687,20 +100,14 @@
               <item name="learn-ssm" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn-ssm" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="learn-ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn-ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="ch4-ssm-projects" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/workspace-wocai/iwocai" />
     <property name="nodejs_interpreter_path" value="E:/nodejs/node" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -952,7 +359,10 @@
       <workItem from="1520334823334" duration="1719000" />
       <workItem from="1520384178665" duration="109000" />
       <workItem from="1520402076306" duration="6987000" />
-      <workItem from="1520414045124" duration="25000" />
+      <workItem from="1520414045124" duration="162000" />
+      <workItem from="1520414408209" duration="258000" />
+      <workItem from="1520478897676" duration="154000" />
+      <workItem from="1520479079059" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="add sth">
       <created>1520335140169</created>
@@ -961,11 +371,25 @@
       <option name="project" value="LOCAL" />
       <updated>1520335140169</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add spring boot2 demo">
+      <created>1520414131762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1520414131762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add spring boot2 demo">
+      <created>1520414162099</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1520414162099</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8840000" />
+    <option name="totallyTimeSpent" value="9655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -988,11 +412,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6597826" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36847827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29456523" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5217391" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29211086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28944564" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1016,21 +440,14 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add sth" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sth" />
+    <MESSAGE value="add spring boot2 demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add spring boot2 demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch6-book-code/Java-Web/第2章/chapter2/.mymetadata">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1137,7 +554,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="304">
             <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="46" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1183,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="44" column="4" lean-forward="false" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,6 +620,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4-ssm-projects/springboot-plus/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/java/org/spring/springboot/service/CityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/java/org/spring/springboot/service/impl/CityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/java/org/spring/springboot/domain/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/java/org/spring/springboot/dao/CityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/java/org/spring/springboot/controller/CityRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch5.jdbctemplate/src/main/java/com/bee/sample/ch5/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/spring-boot-2.0-samples/ch5.jdbctemplate/src/main/java/com/bee/sample/ch5/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/springboot-learning-example/springboot-restful/src/main/resources/mapper/CityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
