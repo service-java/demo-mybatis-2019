@@ -188,7 +188,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/ch5-springboot/bweird-lenosp/len-web/target/len-web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/ch7-open-source-projects/bweird-lenosp/len-web/target/len-web/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="len-web/web/Web" />
     </root>
