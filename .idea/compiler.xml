@@ -6,8 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="admin-console" />
-        <module name="admin-core" />
         <module name="ch1.helloworld" />
         <module name="ch2.aop" />
       </profile>
