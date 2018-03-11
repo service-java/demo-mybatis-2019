@@ -13,8 +13,11 @@ import validator.UserValidator;
 
 public class UserRegController extends AbstractWizardFormController {
 
-    private String cancelView;//取消后转向的视图
-    private String succeseView;//最终处理成功转向的页面
+    // 取消后转向的视图
+    private String cancelView;
+
+    // 最终处理成功转向的页面
+    private String succeseView;
 
     public String getCancelView() {
         return cancelView;

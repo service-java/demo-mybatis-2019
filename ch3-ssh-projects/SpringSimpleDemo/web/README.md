@@ -3,7 +3,7 @@
 * 分布注册
 
 ```
-// 导入spring3.2相关jar // 可以考虑用Maven
+// 导入spring3.2相关jar 
 
 // 依次加入以下文件
 model/User.java 实体
