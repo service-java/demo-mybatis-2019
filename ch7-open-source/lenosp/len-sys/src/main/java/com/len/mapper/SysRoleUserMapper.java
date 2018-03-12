@@ -2,9 +2,10 @@ package com.len.mapper;
 
 import com.len.base.BaseMapper;
 import com.len.entity.SysRoleUser;
+
 import java.util.List;
 
-public interface SysRoleUserMapper extends BaseMapper<SysRoleUser,String>{
+public interface SysRoleUserMapper extends BaseMapper<SysRoleUser, String> {
 
     int deleteByPrimaryKey(SysRoleUser key);
 

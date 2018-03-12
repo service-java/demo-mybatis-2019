@@ -2,9 +2,10 @@ package com.len.mapper;
 
 import com.len.base.BaseMapper;
 import com.len.entity.UserLeave;
+
 import java.util.List;
 
-public interface UserLeaveMapper extends BaseMapper<UserLeave,String>{
+public interface UserLeaveMapper extends BaseMapper<UserLeave, String> {
     int deleteByPrimaryKey(String id);
 
     int insert(UserLeave record);

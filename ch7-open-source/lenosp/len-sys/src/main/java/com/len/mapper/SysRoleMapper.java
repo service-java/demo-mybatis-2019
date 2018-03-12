@@ -2,9 +2,10 @@ package com.len.mapper;
 
 import com.len.base.BaseMapper;
 import com.len.entity.SysRole;
+
 import java.util.List;
 
-public interface SysRoleMapper  extends BaseMapper<SysRole,String>{
+public interface SysRoleMapper extends BaseMapper<SysRole, String> {
 
     @Override
     int deleteByPrimaryKey(String id);

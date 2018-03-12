@@ -1,6 +1,7 @@
 package com.len.mapper;
 
 import com.len.entity.SysLog;
+
 import java.util.List;
 
 public interface SysLogMapper {

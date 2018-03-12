@@ -2,10 +2,12 @@ package com.len.mapper;
 
 import com.len.base.BaseMapper;
 import com.len.entity.SysMenu;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
-public interface SysMenuMapper extends BaseMapper<SysMenu,String> {
+public interface SysMenuMapper extends BaseMapper<SysMenu, String> {
 
     @Override
     int deleteByPrimaryKey(String id);
@@ -24,11 +26,15 @@ public interface SysMenuMapper extends BaseMapper<SysMenu,String> {
 
     @Override
     int updateByPrimaryKey(SysMenu record);
-        /**获取元节点*/
+
+    /**
+     * 获取元节点
+     */
     List<SysMenu> getMenuNotSuper();
 
     /**
      * 获取子节点
+     *
      * @return
      */
     List<SysMenu> getMenuChildren(String id);
@@ -37,6 +43,7 @@ public interface SysMenuMapper extends BaseMapper<SysMenu,String> {
 
     /**
      * 根据用户获取所有菜单
+     *
      * @param id
      * @return
      */

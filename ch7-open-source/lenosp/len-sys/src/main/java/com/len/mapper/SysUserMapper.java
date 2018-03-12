@@ -2,10 +2,12 @@ package com.len.mapper;
 
 import com.len.base.BaseMapper;
 import com.len.entity.SysUser;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
-public interface SysUserMapper extends BaseMapper<SysUser,String> {
+public interface SysUserMapper extends BaseMapper<SysUser, String> {
 
     @Override
     int deleteByPrimaryKey(String id);
@@ -39,6 +41,7 @@ public interface SysUserMapper extends BaseMapper<SysUser,String> {
 
     /**
      * 更新密码
+     *
      * @param user
      * @return
      */

@@ -14,12 +14,13 @@ import org.springframework.stereotype.Service;
  * @email 154040976@qq.com
  */
 @Service
-public class JobServiceImpl  extends BaseServiceImpl<SysJob,String> implements JobService {
+public class JobServiceImpl extends BaseServiceImpl<SysJob, String> implements JobService {
 
-  @Autowired
-  SysJobMapper jobMapper;
-  @Override
-  public BaseMapper<SysJob, String> getMappser() {
-    return jobMapper;
-  }
+    @Autowired
+    SysJobMapper jobMapper;
+
+    @Override
+    public BaseMapper<SysJob, String> getMappser() {
+        return jobMapper;
+    }
 }

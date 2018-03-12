@@ -7,12 +7,13 @@ import java.util.List;
  * @author zhuxiaomeng
  * @date 2017/12/12.
  * @email 154040976@qq.com
- *  mapper封装 crud
+ * mapper封装 crud
  */
-public interface BaseMapper<T,E extends Serializable>{
+public interface BaseMapper<T, E extends Serializable> {
 
     /**
      * 根据id删除
+     *
      * @param id
      * @return
      */
@@ -20,13 +21,15 @@ public interface BaseMapper<T,E extends Serializable>{
 
     /**
      * 插入
+     *
      * @param record
      * @return
      */
     int insert(T record);
 
     /**
-     *插入非空字段
+     * 插入非空字段
+     *
      * @param record
      * @return
      */
@@ -34,6 +37,7 @@ public interface BaseMapper<T,E extends Serializable>{
 
     /**
      * 根据id查询
+     *
      * @param id
      * @return
      */
@@ -41,6 +45,7 @@ public interface BaseMapper<T,E extends Serializable>{
 
     /**
      * 更新非空数据
+     *
      * @param record
      * @return
      */
@@ -48,6 +53,7 @@ public interface BaseMapper<T,E extends Serializable>{
 
     /**
      * 更新
+     *
      * @param record
      * @return
      */
@@ -55,6 +61,7 @@ public interface BaseMapper<T,E extends Serializable>{
 
     /**
      * 查询
+     *
      * @param record
      * @return
      */

@@ -1,6 +1,7 @@
 package com.len;
 
 import java.util.Arrays;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -20,16 +21,14 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @SpringBootApplication
 @EnableTransactionManagement
-@ComponentScan({"com.len","org.activiti"})
+@ComponentScan({"com.len", "org.activiti"})
 @MapperScan(basePackages = {"com.len.mapper"})
 public class Application {
 
-  public static void main(String[] args) {
-    ApplicationContext applicationContext=SpringApplication.run(Application.class,args);
-    String[] names = applicationContext.getBeanDefinitionNames();
-    Arrays.asList(names).forEach(name -> System.out.println(name));//1.8 forEach循环
-  }
-
-
+    public static void main(String[] args) {
+        ApplicationContext applicationContext = SpringApplication.run(Application.class, args);
+        String[] names = applicationContext.getBeanDefinitionNames();
+        Arrays.asList(names).forEach(name -> System.out.println(name));//1.8 forEach循环
+    }
 
 }

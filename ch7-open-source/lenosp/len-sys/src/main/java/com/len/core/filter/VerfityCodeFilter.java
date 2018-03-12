@@ -3,6 +3,7 @@ package com.len.core.filter;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
 
@@ -10,33 +11,39 @@ import org.apache.shiro.web.filter.AccessControlFilter;
  * @author zhuxiaomeng
  * @date 2017/12/29.
  * @email 154040976@qq.com
- *
+ * <p>
  * 验证码拦截
  */
-public class VerfityCodeFilter extends AccessControlFilter{
-    /** 是否开启验证码验证   默认true*/
+public class VerfityCodeFilter extends AccessControlFilter {
+    /**
+     * 是否开启验证码验证   默认true
+     */
     private boolean verfitiCode = true;
 
-    /** 前台提交的验证码name*/
+    /**
+     * 前台提交的验证码name
+     */
     private String jcaptchaParam = "code";
 
-    /** 验证失败后setAttribute key*/
+    /**
+     * 验证失败后setAttribute key
+     */
     private String failureKeyAttribute = "shiroLoginFailure";
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object o) throws Exception {
         request.setAttribute("verfitiCode", verfitiCode);//暂时未用到非验证码
-        HttpServletRequest httpRequest = (HttpServletRequest)request;
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
         //2、判断验证码是否禁用 或不是表单提交
         if (verfitiCode == false || !"post".equalsIgnoreCase(httpRequest.getMethod())) {
             return true;
         }
-      Object code = getSubject(request, response).getSession().getAttribute("_code");
-      String storedCode=null;
-        if(null!=code){
-          storedCode = code.toString();
+        Object code = getSubject(request, response).getSession().getAttribute("_code");
+        String storedCode = null;
+        if (null != code) {
+            storedCode = code.toString();
         }
-      //表单提交，校验验证码的正确性
+        //表单提交，校验验证码的正确性
         String currentCode = httpRequest.getParameter(jcaptchaParam);
 
         return StringUtils.equalsIgnoreCase(storedCode, currentCode);

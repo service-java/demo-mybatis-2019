@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author zhuxiaomeng
  * @date 2018/1/22.
  * @email 154040976@qq.com
- *
+ * <p>
  * 任务节点和代理人、候选人、候选组的绑定实体
  */
 public class ActAssignee implements Serializable {

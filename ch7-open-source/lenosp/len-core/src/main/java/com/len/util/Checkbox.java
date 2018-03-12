@@ -13,9 +13,11 @@ import lombok.Setter;
 @Setter
 public class Checkbox {
 
-  private String id;
-  private String name;
-  /**默认未选择*/
-  private boolean check=false;
+    private String id;
+    private String name;
+    /**
+     * 默认未选择
+     */
+    private boolean check = false;
 
 }

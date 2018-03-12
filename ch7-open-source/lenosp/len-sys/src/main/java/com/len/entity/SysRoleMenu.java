@@ -1,6 +1,7 @@
 package com.len.entity;
 
 import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

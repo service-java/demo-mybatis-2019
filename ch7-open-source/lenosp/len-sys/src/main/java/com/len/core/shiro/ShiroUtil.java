@@ -12,14 +12,15 @@ import org.apache.shiro.subject.Subject;
  */
 public class ShiroUtil {
 
-    public static Subject getSubject(){
+    public static Subject getSubject() {
         return SecurityUtils.getSubject();
     }
 
-    public static Session getSession(){
+    public static Session getSession() {
         return getSubject().getSession();
     }
-    public static CurrentUser getCurrentUse(){
+
+    public static CurrentUser getCurrentUse() {
         return (CurrentUser) getSession().getAttribute("curentUser");
     }
 

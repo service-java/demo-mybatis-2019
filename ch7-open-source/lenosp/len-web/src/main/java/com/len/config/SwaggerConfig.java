@@ -21,7 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig  extends WebMvcConfigurerAdapter{
+public class SwaggerConfig extends WebMvcConfigurerAdapter {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -37,7 +37,7 @@ public class SwaggerConfig  extends WebMvcConfigurerAdapter{
                 .title("Swagger接口列表")
                 .description("接口")
                 .termsOfServiceUrl("http://localhost:8080/swagger-ui.html")
-                .contact(new Contact("zxm","true08.com","154040976@qq.com"))
+                .contact(new Contact("zxm", "true08.com", "154040976@qq.com"))
                 .version("1.1.0")
                 .build();
     }

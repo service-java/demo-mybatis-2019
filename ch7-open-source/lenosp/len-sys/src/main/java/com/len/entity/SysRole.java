@@ -2,6 +2,7 @@ package com.len.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

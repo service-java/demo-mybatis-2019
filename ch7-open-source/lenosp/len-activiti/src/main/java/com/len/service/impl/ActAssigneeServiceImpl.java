@@ -14,19 +14,19 @@ import org.springframework.stereotype.Service;
  * @email 154040976@qq.com
  */
 @Service
-public class ActAssigneeServiceImpl extends BaseServiceImpl<ActAssignee,String> implements
-    ActAssigneeService{
+public class ActAssigneeServiceImpl extends BaseServiceImpl<ActAssignee, String> implements
+        ActAssigneeService {
 
-  @Autowired
-  ActAssigneeMapper actAssigneeMapper;
+    @Autowired
+    ActAssigneeMapper actAssigneeMapper;
 
-  @Override
-  public BaseMapper<ActAssignee, String> getMappser() {
-    return actAssigneeMapper;
-  }
+    @Override
+    public BaseMapper<ActAssignee, String> getMappser() {
+        return actAssigneeMapper;
+    }
 
-  @Override
-  public int deleteByNodeId(String nodeId) {
-    return actAssigneeMapper.deleteByNodeId(nodeId);
-  }
+    @Override
+    public int deleteByNodeId(String nodeId) {
+        return actAssigneeMapper.deleteByNodeId(nodeId);
+    }
 }

@@ -5,7 +5,9 @@ import com.len.base.impl.BaseServiceImpl;
 import com.len.entity.SysRoleMenu;
 import com.len.mapper.SysRoleMenuMapper;
 import com.len.service.RoleMenuService;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,11 @@ import org.springframework.stereotype.Service;
  * @email 154040976@qq.com
  */
 @Service
-public class RoleMenuServiceImpl extends BaseServiceImpl<SysRoleMenu,String> implements
-    RoleMenuService {
+public class RoleMenuServiceImpl extends BaseServiceImpl<SysRoleMenu, String> implements
+        RoleMenuService {
     @Autowired
     private SysRoleMenuMapper roleMenuMapper;
+
     @Override
     public BaseMapper<SysRoleMenu, String> getMappser() {
         return roleMenuMapper;

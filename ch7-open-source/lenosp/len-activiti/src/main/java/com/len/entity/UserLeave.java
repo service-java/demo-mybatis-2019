@@ -44,12 +44,13 @@ public class UserLeave implements Serializable {
     }
 
     //请假单审核信息
-    private List<LeaveOpinion> opinionList=new ArrayList<>();
+    private List<LeaveOpinion> opinionList = new ArrayList<>();
 
-    public void leaveOpAdd(LeaveOpinion leaveOpinion){
+    public void leaveOpAdd(LeaveOpinion leaveOpinion) {
         this.opinionList.add(leaveOpinion);
     }
-    public void leaveOpAddAll(List<LeaveOpinion> leaveOpinionList){
+
+    public void leaveOpAddAll(List<LeaveOpinion> leaveOpinionList) {
         this.opinionList.addAll(leaveOpinionList);
     }
 
