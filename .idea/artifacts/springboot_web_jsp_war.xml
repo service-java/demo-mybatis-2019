@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="springboot-web-jsp:war">
-    <output-path>$PROJECT_DIR$/other/springboot-socks/springboot-web-jsp/target</output-path>
-    <root id="archive" name="springboot-web-jsp-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="springboot-web-jsp:war exploded" />
-    </root>
-  </artifact>
-</component>
