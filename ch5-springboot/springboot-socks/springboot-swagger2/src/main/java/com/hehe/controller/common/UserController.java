@@ -1,4 +1,4 @@
-package com.hehe.controller;
+package com.hehe.controller.common;
 
 import com.hehe.entity.User;
 import io.swagger.annotations.Api;
@@ -23,7 +23,7 @@ import java.util.List;
  */
 @Api("用户信息管理")
 @RestController
-@RequestMapping("/user/*")
+@RequestMapping("/common/user/*")
 public class UserController {
 
     private final static List<User> userList = new ArrayList<>();

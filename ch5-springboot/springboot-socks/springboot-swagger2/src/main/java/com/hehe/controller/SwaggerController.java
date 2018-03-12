@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Api("首页管理")
 @Controller
-public class HelloController {
+public class SwaggerController {
 
     @ApiOperation("欢迎界面")
-    @GetMapping("/")
-    public String hehe(){
+    @GetMapping("/api")
+    public String hehe() {
         return "redirect:/swagger-ui.html";
     }
-
 }

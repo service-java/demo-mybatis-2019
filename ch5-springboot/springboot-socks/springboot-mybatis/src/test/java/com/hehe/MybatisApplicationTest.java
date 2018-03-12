@@ -24,8 +24,6 @@ public class MybatisApplicationTest {
 		assertThat(userMapper.getOne("1")).isNotEqualTo(null);
 		assertThat(userMapper.getOne("xxx")).isEqualTo(null);
 
-
-
 	}
 
 }

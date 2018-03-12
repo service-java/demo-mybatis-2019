@@ -18,7 +18,7 @@ public class CompleteScheduleConfig implements SchedulingConfigurer {
 
     @Mapper
     public interface CronMapper {
-        @Select("select cron from cron limit 1")
+        @Select("select USER_ID from t_user limit 1")
         String getCron();
     }
 
