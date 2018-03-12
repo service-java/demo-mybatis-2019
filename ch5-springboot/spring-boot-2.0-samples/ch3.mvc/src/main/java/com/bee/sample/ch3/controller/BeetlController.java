@@ -26,6 +26,7 @@ public class BeetlController {
     @RequestMapping("/index.html")
     public String say(Model model) {
         model.addAttribute("name", "hello,world");
+        model.addAttribute("phone", "17863434");
         return "/index.btl";
     }
 

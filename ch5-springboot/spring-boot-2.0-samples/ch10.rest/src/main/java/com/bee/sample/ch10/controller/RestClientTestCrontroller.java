@@ -44,7 +44,6 @@ public class RestClientTestCrontroller {
         ResponseEntity<Order> responseEntity = client.getForEntity(uri, Order.class, orderId);
         HttpHeaders headers = responseEntity.getHeaders();
         Order order = responseEntity.getBody();
-        ;
 
         return order;
     }

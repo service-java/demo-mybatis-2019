@@ -26,11 +26,9 @@ public class PropertyController {
         return "hello world";
     }
 
-
     @RequestMapping("/showenv.html")
     public @ResponseBody
     String env() {
-
         return "port:" + envConfig.getServerPort();
     }
 

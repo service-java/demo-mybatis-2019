@@ -6,6 +6,7 @@ import java.io.StringWriter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +23,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RequestMapping("/stream")
 public class JacksonStreamController {
     Log log = LogFactory.getLog(JacksonStreamController.class);
+
+    @Qualifier("getObjectMapper")
     @Autowired
     ObjectMapper mapper;
 
@@ -46,7 +49,6 @@ public class JacksonStreamController {
         value = parser.getValueAsString();
         parser.close();
         return key + "," + value;
-
     }
 
 

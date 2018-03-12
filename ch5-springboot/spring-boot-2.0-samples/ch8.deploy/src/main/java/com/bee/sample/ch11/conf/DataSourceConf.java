@@ -17,7 +17,6 @@ public class DataSourceConf {
         HikariDataSource prod = getDataSource(env);
         prod.setMaximumPoolSize(2);
         return prod;
-
     }
 
     @Bean(name = "dataSource")

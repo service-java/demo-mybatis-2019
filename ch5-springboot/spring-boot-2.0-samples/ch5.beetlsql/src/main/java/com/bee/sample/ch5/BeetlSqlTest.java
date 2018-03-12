@@ -26,7 +26,7 @@ import com.bee.sample.ch5.entity.User;
  */
 public class BeetlSqlTest {
     static String driver = "com.mysql.jdbc.Driver";
-    static String url = "jdbc:mysql://127.0.0.1:3306/orm?useUnicode=true&characterEncoding=UTF-8";
+    static String url = "jdbc:mysql://127.0.0.1:3306/beetl?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
     static String userName = "root";
     static String password = "123456";
 
@@ -85,7 +85,6 @@ public class BeetlSqlTest {
         User query = new User();
         query.setName("NewName");
         List<User> list = sqlManager.select("user.selectSample", User.class, query);
-
     }
 
     public static void queryUserByMap(SQLManager sqlManager) {

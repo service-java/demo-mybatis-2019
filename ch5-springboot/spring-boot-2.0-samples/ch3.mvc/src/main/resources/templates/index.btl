@@ -6,5 +6,7 @@
 </head>
 <body>
 ${name}
+${phone}
+${phone}
 </body>
 </html>

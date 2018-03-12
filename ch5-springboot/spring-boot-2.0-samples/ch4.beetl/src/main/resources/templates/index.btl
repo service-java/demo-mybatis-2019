@@ -2,8 +2,9 @@
 
 <div class="alert alert-info" role="alert">欢迎使用:${name}! ${hi()}</div>
 
-@myTag(){
-<div class="alert alert-info" role="alert">警告信息一</div>
-@}
+    @myTag(){
+    <div class="alert alert-info" role="alert">警告信息一</div>
+    @}
+
 @}
 ${test()}

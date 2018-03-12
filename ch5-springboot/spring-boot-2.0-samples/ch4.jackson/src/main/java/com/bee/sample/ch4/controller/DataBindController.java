@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class DataBindController {
+    @Qualifier("getObjectMapper")
     @Autowired
     ObjectMapper mapper;
 
@@ -35,13 +37,14 @@ public class DataBindController {
         return sb.toString();
     }
 
+
     @RequestMapping("/customize.json")
     public @ResponseBody
     String customize() throws JsonParseException, JsonMappingException, IOException {
         String jsonInput = "[{\"id\":2,\"name\":\"xiandafu\"},{\"id\":3,\"name\":\"lucy\"}]";
         JavaType type = getCollectionType(List.class, User.class);
         List<User> list = mapper.readValue(jsonInput, type);
-        return String.valueOf(list.size());
+        return String.valueOf(list.size()); // 2
     }
 
     public JavaType getCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
@@ -71,6 +74,7 @@ public class DataBindController {
         public Department(int id) {
             this.id = id;
             map.put("newAttr", 1);
+            map.put("try", 1);
         }
 
         @JsonAnyGetter

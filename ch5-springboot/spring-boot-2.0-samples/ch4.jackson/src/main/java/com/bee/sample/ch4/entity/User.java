@@ -7,14 +7,13 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 public class User {
     public interface IdView {
-    }
 
-    ;
+    }
 
     public interface IdNameView extends IdView {
+
     }
 
-    ;
 
     @JsonView(IdView.class)
     private Integer id;
