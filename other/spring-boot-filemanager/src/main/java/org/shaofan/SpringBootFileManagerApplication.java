@@ -47,7 +47,7 @@ public class SpringBootFileManagerApplication {
     /*
      *  文件管理根目录,此处为了方便采用Hard Code
      */
-    public static String ROOT = "/Users/shaofan/Desktop/";
+    public static String ROOT = "D:\\file-upload-tmp";
 
     /**
      * 展示文件列表
