@@ -119,7 +119,7 @@
         <module>../spring-boot-cache-redis</module>
     	<module>../spring-boot-activemq-producer</module>
     	<module>../spring-boot-activemq-consumer</module>
-    	<module>../spring-boot-email</module>
+    	<!--<module>../spring-boot-email</module>-->
     	<module>../spring-boot-freemarker</module>
     	<module>../spring-boot-websocket</module>
     	<module>../spring-boot-websocket-client</module>
