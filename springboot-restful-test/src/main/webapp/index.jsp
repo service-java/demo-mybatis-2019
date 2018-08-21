@@ -8,7 +8,9 @@
 %>
 <html>
 <head>
+
 	<meta http-equiv="refresh" content="0;url=<%=basePath%>user">
+
 </head>
 <body>
 </body>

@@ -1,6 +1,9 @@
-#### Java Restful
+## Java Restful
 
-* 说明
+
+- 说明
+
+    - 用来学习测试各种Maven插件 
  
 ```
 参考 http://blog.csdn.net/pzasdq/article/details/52566973
@@ -16,13 +19,11 @@ apt install maven
 或http://www.linuxidc.com/Linux/2017-02/140097.htm
 ```
 
-* 文件说明
+- 文件说明
 
 ```
 // pom.xml Maven依赖
 Spring web mvc + JSTL + log4j + 单元测试
 
 // web.xml
- 
-
 ```
