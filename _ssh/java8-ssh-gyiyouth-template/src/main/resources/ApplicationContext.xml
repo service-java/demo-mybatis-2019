@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="springAction.xml"/>
+    <!--数据库配置好以后，在下面的配置文件中配置一下，然后取消注释-->
+    <!--<import resource="springPersistence.xml"/>-->
+    <import resource="springPojoAssist.xml"/>
+    <import resource="springPojoBO.xml"/>
+    <import resource="springPojoDAO.xml"/>
+    <import resource="springPojoTool.xml"/>
+    <import resource="springPojoVO.xml"/>
+    <!--Ehcache缓存机制，默认关闭-->
+    <!--<import resource="springCache.xml"/>-->
+    <import resource="springAOP.xml"/>
+</beans>
