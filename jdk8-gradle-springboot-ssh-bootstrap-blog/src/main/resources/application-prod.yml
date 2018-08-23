@@ -1,0 +1,38 @@
+spring:
+    profiles:
+        active: prod
+    devtools:
+        restart:
+            enabled: false
+
+    thymeleaf:
+        cache: true
+
+    jade4j:
+        caching: true
+
+    jpa:
+        show-sql: true
+
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://127.0.0.1/spring_blog_prod?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password:
+
+        hikari:
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+
+    redis:
+      host: redis
+      port: 6379
+      default_expire_time: 86400
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.raysmond.blog: DEBUG

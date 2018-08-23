@@ -1,0 +1,11 @@
+.idea
+.gradle
+build
+bin
+scripts
+classes
+out
+*.iml
+*.ipr
+*.iws
+src/main/resources/static/bower_components

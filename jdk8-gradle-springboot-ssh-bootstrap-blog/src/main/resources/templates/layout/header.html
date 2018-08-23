@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="navbar">
+    <div class="p-3 py-4 px-md-4 bg-white border-bottom box-shadow">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center">
+                <h5 class="my-0 mr-md-auto font-weight-normal logo">
+                    <a href="/" th:text="${@App.getSiteName()}"></a>
+                </h5>
+                <nav class="my-2 my-md-0 mr-md-3 topbar">
+                    <a class="p-2 " href="/">首页</a>
+                    <a class="p-2 " href="/posts/archive">归档</a>
+                    <a class="p-2 " href="/tags">标签</a>
+                    <a class="p-2 " href="/about">关于</a>
+                </nav>
+                <a sec:authorize="isAuthenticated()" class="btn btn-outline-primary" href="/admin/posts">后台管理</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

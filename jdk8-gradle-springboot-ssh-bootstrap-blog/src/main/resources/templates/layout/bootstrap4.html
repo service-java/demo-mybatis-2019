@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      class="no-js" lang="zh-cn" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/highlightjs/styles/atom-one-dark.css">
+    <link rel="stylesheet" href="/css/bootstrap4-theme.css">
+    <title th:text="${@App.getSiteName()+' | ' + @App.getSiteSlogan()}"></title>
+</head>
+<body>
+
+<div th:replace="layout/header :: navbar"></div>
+
+<div class="py-5 main">
+    <div class="container">
+        <div layout:fragment="content"></div>
+    </div>
+</div>
+
+<footer class="text-muted border-top">
+    <div class="container pt-3">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>All rights reserved &copy; Raysmond, 2015-2018.</p>
+        <p>Lovingly made by <a href="https://github.com/Raysmond/SpringBlog">SpringBlog</a>, powered by Spring Boot.
+        </p>
+    </div>
+</footer>
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/highlightjs/highlight.pack.min.js"></script>
+<script src="/bower_components/contents/dist/browser/contents.js"></script>
+<script src="/bower_components/sticky-kit/jquery.sticky-kit.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        if($('.post-page').length > 0) {
+            $('#post-contents').append(gajus.Contents({
+                articles: $('.post-content').find('h1, h2, h3, h4').get()
+            }).list());
+            $("#post-contents").stick_in_parent({
+                parent: '#post-content-wrapper'
+            });
+        }
+    });
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-34658010-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
