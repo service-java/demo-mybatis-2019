@@ -2,6 +2,8 @@ var Lib = {
 	tablePage : {
 		"layout" : [ 'count', 'prev', 'page', 'next' ]
 	},
+
+
 	loadOrgPanel : function(container, textInput, valueInput) {
 		$.post(Common.ctxPath + "/core/user/org.json", {}, function(response) {
 			var zNodes = response.data;

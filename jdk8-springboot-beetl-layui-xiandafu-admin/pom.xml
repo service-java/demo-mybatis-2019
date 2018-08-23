@@ -11,6 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<plus.version>1.1.5</plus.version>
 	</properties>
+
 	<modules>
 		<module>admin-core</module>
 		<module>admin-console</module>
@@ -43,6 +44,9 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<parameters>true</parameters>
+					<compilerArgs>
+						<arg>-parameters</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 		</plugins>

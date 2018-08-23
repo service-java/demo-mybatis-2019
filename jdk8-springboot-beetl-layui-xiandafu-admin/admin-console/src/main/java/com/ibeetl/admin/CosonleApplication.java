@@ -20,6 +20,4 @@ public class CosonleApplication  extends SpringBootServletInitializer  {
         SpringApplication.run(CosonleApplication.class, args);
     }
 
-
-
 }	
