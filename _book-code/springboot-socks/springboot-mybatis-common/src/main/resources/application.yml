@@ -1,7 +1,7 @@
 spring:
   datasource:
     #连接MySQL
-    url: jdbc:mysql://localhost:3306/socks?useSSL=false
+    url: jdbc:mysql://localhost:3306/springboot_socks?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver

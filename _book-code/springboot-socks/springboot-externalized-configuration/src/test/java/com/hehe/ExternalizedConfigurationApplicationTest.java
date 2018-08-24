@@ -19,7 +19,7 @@ public class ExternalizedConfigurationApplicationTest {
 	@Test
 	public void testconfig() {
 	  MyDataSource dataSource = new MyDataSource();
-	  dataSource.setUrl("jdbc:mysql://localhost:3306/socks?useSSL=false");
+	  dataSource.setUrl("jdbc:mysql://localhost:3306/springboot_socks?useSSL=false");
 	  dataSource.setUsername("root");
 	  dataSource.setPassword("root");
 	  dataSource.setDriverClassName("com.mysql.jdbc.Driver");
