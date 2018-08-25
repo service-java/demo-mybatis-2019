@@ -2,11 +2,12 @@
 
 - 《一步一步学 Spring Boot2》 
     - https://github.com/huangwenyi10/stepbystep-learn-springboot
-    - 代码有问题 不推荐
+    - 代码有问题 整本书比较空 不推荐
 
 - Spring Boot 实战
-    - 可以看下四种数据库的操作
-    - 没分模块 不推荐
+
+    - 四种数据库的操作
+    - 代码没分模块 不推荐
 
 # JSP教材源码
 
