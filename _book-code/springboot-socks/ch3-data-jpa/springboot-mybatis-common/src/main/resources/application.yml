@@ -3,7 +3,7 @@ spring:
     #连接MySQL
     url: jdbc:mysql://localhost:3306/springboot_socks?useSSL=false
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
