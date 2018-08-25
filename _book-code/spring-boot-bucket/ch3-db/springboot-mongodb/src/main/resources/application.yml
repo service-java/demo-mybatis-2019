@@ -2,12 +2,6 @@
 ##################  所有profile共有的配置  #################
 ##########################################################
 
-###################  自定义项目配置 ###################
-xncoding:
-  socket-port: 9099    #socket端口
-  ping-interval: 60000 #Ping消息间隔（毫秒）
-  ping-timeout: 180000 #Ping消息超时时间（毫秒）
-
 ###################  spring配置  ###################
 spring:
   profiles:
@@ -20,6 +14,9 @@ spring:
 #####################################################################
 spring:
   profiles: dev
+  data:
+    mongodb:
+      uri: mongodb://xiongneng:123456@localhost:27017/test
 
 logging:
   level:
@@ -36,6 +33,9 @@ logging:
 
 spring:
   profiles: test
+  data:
+    mongodb:
+      uri: mongodb://xiongneng:123456@localhost:27017/test
 
 logging:
   level:

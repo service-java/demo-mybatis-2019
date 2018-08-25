@@ -36,16 +36,16 @@ spring:
   profiles: dev
 
 xncoding:
-  image-dir: E:/pics/
-  load-js: E:/pics/html/js/echarts-load.js
-  index-html: file:///E:/pics/html/index.html
+  image-dir: C:/pics/
+  load-js: C:/pics/html/js/echarts-load.js
+  index-html: file:///C:/pics/html/index.html
 
 logging:
   level:
     ROOT: INFO
     com:
       xncoding: DEBUG
-  file: E:/logs/sb-ehcharts.log
+  file: C:/logs/sb-ehcharts.log
 
 ---
 
