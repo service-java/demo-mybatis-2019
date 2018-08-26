@@ -20,6 +20,8 @@ CREATE DATABASE IF NOT EXISTS guns_rest DEFAULT CHARSET utf8 COLLATE utf8_genera
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+USE guns_rest;
+
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
