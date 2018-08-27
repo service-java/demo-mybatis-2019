@@ -1,0 +1,30 @@
+<#ftl output_format="HTML" auto_esc=true>
+<@h.siteCommonHead title="后台管理系统" keywords="开源,永久免费" description="springrain开源系统管理后台"/>
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin">
+	    <@h.naviHeader />
+		<@h.leftMenu />
+		<!-- 主体内容开始 -->
+			<div class="layui-tab layui-tab-brief">
+				<ul class="layui-tab-title site-demo-title">
+		             <li style="float:right;">
+		             </li>
+	       		</ul>
+	       		<div class="layui-body layui-tab-content site-demo-body">
+					<div class="layui-tab-item layui-show"  lay-filter="docDemoTabBrief">
+						<div class="layui-main">
+				          <div id="LAY_preview">
+					         	系统首页
+					         	
+						  </div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<!-- 主体内容结束 -->
+	  	<@h.footer />
+	</div>
+</body>
+</html>
+
