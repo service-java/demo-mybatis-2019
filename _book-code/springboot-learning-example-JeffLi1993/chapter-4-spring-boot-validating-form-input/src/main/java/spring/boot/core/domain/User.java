@@ -33,7 +33,8 @@ public class User implements Serializable {
     @Size(min = 2, max = 8, message = "姓名长度必须大于 2 且小于 20 字")
     private String name;
 
-    /**
+    /**Identifier 'gulp' has already been declared
+
      * 年龄
      */
     @NotNull(message = "年龄不能为空")

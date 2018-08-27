@@ -40,7 +40,8 @@
 #### 工程配置
 
 - chapter2-1-1：[配置文件详解：自定义属性、随机数、多环境配置等](http://blog.didispace.com/springbootproperties/)
-- chapter2-2-1：[配置文件详解：自定义属性、随机数、多环境配置等](http://blog.didispace.com/springbootproperties/)
+- chapter2-1-2：[2.0 新特性（一）：配置绑定全解析](http://blog.didispace.com/Spring-Boot-2-0-feature-1-relaxed-binding-2/)
+- chapter2-2-1：[2.0 新特性（二）：新增事件ApplicationStartedEvent](http://blog.didispace.com/Spring-Boot-2-0-feature-2-ApplicationStartedEvent/)
 
 #### Web开发
 
@@ -63,6 +64,7 @@
 - chapter3-2-8：[MyBatis注解配置详解](http://blog.didispace.com/mybatisinfo/)
 - chapter3-2-9：[使用Flyway来管理数据库版本](http://blog.didispace.com/spring-boot-flyway-db-version/)
 - chapter3-2-10：[使用LDAP来统一管理用户信息](http://blog.didispace.com/spring-boot-ldap-user/)
+- chapter3-2-11：[Spring Boot中增强对MongoDB的配置（连接池等）](http://blog.didispace.com/springbootmongodb-plus/)
 
 #### 事务管理
 
@@ -70,8 +72,12 @@
 - chapter3-3-2：[分布式事务（未完成）]
 
 #### 其他内容
+
 - chapter4-1-1：[使用@Scheduled创建定时任务](http://blog.didispace.com/springbootscheduled/)
 - chapter4-1-2：[使用@Async实现异步调用](http://blog.didispace.com/springbootasync/)
+- chapter4-1-3：[使用@Async实现异步调用：自定义线程池](http://blog.didispace.com/springbootasync-2/)
+- chapter4-1-4：[使用@Async实现异步调用：资源优雅关闭](http://blog.didispace.com/springbootasync-3/)
+- chapter4-1-5：[使用@Async实现异步调用：使用Future以及定义超时](http://blog.didispace.com/springbootasync-4/)
 
 #### 日志管理
 
