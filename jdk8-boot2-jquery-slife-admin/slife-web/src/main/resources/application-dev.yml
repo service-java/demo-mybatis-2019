@@ -3,7 +3,7 @@ attach_path: E:/ideaword/moban/slife/attach/
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/slife?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost/slife_admin?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     druid:
