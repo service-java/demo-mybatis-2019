@@ -20,6 +20,4 @@ public class TestDemo {
         redisTemplate.opsForValue().set("a", "b");
         System.out.println(redisTemplate.opsForValue().get("a"));
     }
-
-    ;
 }
