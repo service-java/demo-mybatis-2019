@@ -6,9 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>base</module>
-		<module>core</module>
-		<module>web</module>
+		<module>mtons-base</module>
+		<module>mtons-core</module>
+		<module>mtons-web</module>
 	</modules>
 
 	<properties>

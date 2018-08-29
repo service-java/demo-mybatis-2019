@@ -6,13 +6,14 @@
 		<artifactId>mblog</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>web</artifactId>
+	<artifactId>mtons-web</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.mtons.mblog</groupId>
-			<artifactId>core</artifactId>
+			<artifactId>mtons-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

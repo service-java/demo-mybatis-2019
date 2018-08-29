@@ -6,11 +6,13 @@
 		<artifactId>mblog</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>core</artifactId>
+	<artifactId>mtons-core</artifactId>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.mtons.mblog</groupId>
-			<artifactId>base</artifactId>
+			<artifactId>mtons-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
