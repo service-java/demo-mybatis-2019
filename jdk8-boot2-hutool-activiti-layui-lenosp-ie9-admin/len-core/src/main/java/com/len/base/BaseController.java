@@ -36,6 +36,7 @@ public abstract class BaseController<T> {
 
     @ExceptionHandler({UnauthorizedException.class, AuthorizationException.class})
     public String authorizationException(HttpServletRequest request, HttpServletResponse response) {
+        //
         if (isAjaxRequest(request)) {
             Map<String, Object> map = Maps.newHashMap();
             map.put("code", "403");
@@ -53,6 +54,7 @@ public abstract class BaseController<T> {
         }
     }
 
+    //
     private static boolean isAjaxRequest(HttpServletRequest request) {
         String requestedWith = request.getHeader("x-requested-with");
         return requestedWith != null && requestedWith.equalsIgnoreCase("XMLHttpRequest");

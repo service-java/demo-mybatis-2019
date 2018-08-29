@@ -58,7 +58,6 @@ public interface BaseService<T, E extends Serializable> extends BaseMapper<T, E>
 
 
   List<T> selectListByPage(T record);*/
-
     public ReType show(T t, int page, int limit);
 
     public String showAll(T t);

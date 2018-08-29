@@ -8,7 +8,7 @@ import com.len.entity.SysRoleMenu;
 import com.len.mapper.SysMenuMapper;
 import com.len.mapper.SysRoleMenuMapper;
 import com.len.service.MenuService;
-import com.len.util.TreeUtil;
+import com.len.util.component.TreeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

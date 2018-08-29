@@ -12,18 +12,15 @@ import com.len.exception.MyException;
 import com.len.service.RoleUserService;
 import com.len.service.SysUserService;
 import com.len.util.*;
+import com.len.util.component.Checkbox;
 import io.swagger.annotations.ApiOperation;
 
-import java.io.*;
 import java.util.List;
-import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -79,12 +76,12 @@ public class UserController extends BaseController {
     @GetMapping(value = "listByRoleId")
     @ResponseBody
     @RequiresPermissions("user:show")
-    public String showUser(Model model, String roleId,int page, int limit) {
+    public String showUser(Model model, String roleId, int page, int limit) {
         JSONObject returnValue = new JSONObject();
-        List<SysUser> users = userService.getUserByRoleId(roleId,page,limit);
-        int counts =  userService.countUserByRoleId(roleId,page,limit);
-        returnValue.put("users",users);
-        returnValue.put("totals",counts);
+        List<SysUser> users = userService.getUserByRoleId(roleId, page, limit);
+        int counts = userService.countUserByRoleId(roleId, page, limit);
+        returnValue.put("users", users);
+        returnValue.put("totals", counts);
         return JSON.toJSONString(returnValue);
     }
 
@@ -256,7 +253,7 @@ public class UserController extends BaseController {
     @ResponseBody
     public JsonUtil imgUpload(HttpServletRequest req, @RequestParam("file") MultipartFile file,
                               ModelMap model) {
-        String fileName=uploadUtil.upload(file);
+        String fileName = uploadUtil.upload(file);
         JsonUtil j = new JsonUtil();
         j.setMsg(fileName);
         return j;

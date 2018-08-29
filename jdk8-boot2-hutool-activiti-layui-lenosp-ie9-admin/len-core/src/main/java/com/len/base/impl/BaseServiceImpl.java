@@ -207,8 +207,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     }
 
     @Override
-    public String showAll(T t)
-    {
+    public String showAll(T t) {
         List<T> tList = null;
         try {
             tList = getMappser().selectListByPage(t);

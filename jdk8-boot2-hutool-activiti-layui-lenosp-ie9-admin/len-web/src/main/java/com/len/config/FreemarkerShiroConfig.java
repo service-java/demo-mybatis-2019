@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class FreemarkerShiroConfig implements InitializingBean {
 
-  @Autowired
-  private freemarker.template.Configuration configuration;
+    @Autowired
+    private freemarker.template.Configuration configuration;
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
-    configuration.setSharedVariable("shiro", new ShiroTags());
-  }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        configuration.setSharedVariable("shiro", new ShiroTags());
+    }
 }

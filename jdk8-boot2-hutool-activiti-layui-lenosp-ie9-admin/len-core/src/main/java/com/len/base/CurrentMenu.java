@@ -2,6 +2,7 @@ package com.len.base;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,12 +16,12 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CurrentMenu implements Serializable {
-    /**  
-	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)  
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)
+     */
+    private static final long serialVersionUID = 1L;
 
-	private String id;
+    private String id;
 
     private String name;
 
@@ -43,7 +44,9 @@ public class CurrentMenu implements Serializable {
     private String permission;
 
     private Byte menuType;
-    /**菜单排序id 填充菜单展示id*/
+    /**
+     * 菜单排序id 填充菜单展示id
+     */
     private int num;
 
     public CurrentMenu(String id, String name, String pId, String url, Integer orderNum, String icon, String permission, Byte menuType, int num) {

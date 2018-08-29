@@ -39,10 +39,12 @@ To change this template use File | Settings | File Templates.-->
                     <div class="layui-input-block layui-form">
                         <input type="hidden" name="customerId" id="customerId">
                         <input type="hidden" name="customerName" id="customerName">
-                        <select disabled readonly="readonly" id="customer" name="customer" lay-verify="required" lay-filter="customerFilter">
+                        <select disabled readonly="readonly" id="customer" name="customer" lay-verify="required"
+                                lay-filter="customerFilter">
                             <option value="">未选择客户</option>
                         <#list customerList as cl>
-                            <option value="${cl.id}" <#if cl.id == declare.customerId>selected = selected"</#if> >${cl.customerName}</option>
+                            <option value="${cl.id}"
+                                    <#if cl.id == declare.customerId>selected=selected"</#if> >${cl.customerName}</option>
                         </#list>
                         </select>
                     </div>
@@ -57,11 +59,13 @@ To change this template use File | Settings | File Templates.-->
                     <div class="layui-input-block layui-form">
                         <input type="hidden" name="productId" id="productId">
                         <input type="hidden" name="productName" id="productName">
-                        <select disabled readonly="readonly"   id="product" name="product" lay-verify="required" lay-filter="productFilter">
+                        <select disabled readonly="readonly" id="product" name="product" lay-verify="required"
+                                lay-filter="productFilter">
                             <option value="">未选择产品</option>
                         <#list productList as cl>
 
-                            <option value="${cl.id}" <#if cl.id == declare.productId>selected = selected"</#if> >${cl.productName} </option>
+                            <option value="${cl.id}"
+                                    <#if cl.id == declare.productId>selected=selected"</#if> >${cl.productName} </option>
 
                         </#list>
                         </select>
@@ -75,7 +79,8 @@ To change this template use File | Settings | File Templates.-->
                         <span class="x-red">*</span>结束时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" disabled readonly="readonly" id="endTime" name="endTime" lay-verify="endTime" placeholder="yyyy-MM-dd"
+                        <input type="text" disabled readonly="readonly" id="endTime" name="endTime" lay-verify="endTime"
+                               placeholder="yyyy-MM-dd"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -91,27 +96,28 @@ To change this template use File | Settings | File Templates.-->
                         <span class="x-red">*</span>申报原因
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="reason"  disabled readonly="readonly" style="width: 300px;" name="reason" lay-verify="reason" value="${declare.reason}"
+                        <input type="text" id="reason" disabled readonly="readonly" style="width: 300px;" name="reason"
+                               lay-verify="reason" value="${declare.reason}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
             <div style="height: 60px"></div>
         </div>
-        <#--<div style="width: 100%;height: 55px;background-color: white;border-top:1px solid #e6e6e6;-->
-  <#--position: fixed;bottom: 1px;margin-left:-20px;">-->
-            <#--<div class="layui-form-item" style=" float: right;margin-right: 30px;margin-top: 8px">-->
-                <#--<button  class="layui-btn layui-btn-normal" lay-filter="add" lay-submit>-->
-                    <#--重新提交-->
-                <#--</button>-->
-                <#--<button  class="layui-btn layui-btn-normal" lay-filter="closeDeclare" lay-submit>-->
-                    <#--取消请假-->
-                <#--</button>-->
-                <#--<button class="layui-btn layui-btn-primary" data-type="close">-->
-                    <#--取消-->
-                <#--</button>-->
-            <#--</div>-->
-        <#--</div>-->
+    <#--<div style="width: 100%;height: 55px;background-color: white;border-top:1px solid #e6e6e6;-->
+    <#--position: fixed;bottom: 1px;margin-left:-20px;">-->
+    <#--<div class="layui-form-item" style=" float: right;margin-right: 30px;margin-top: 8px">-->
+    <#--<button  class="layui-btn layui-btn-normal" lay-filter="add" lay-submit>-->
+    <#--重新提交-->
+    <#--</button>-->
+    <#--<button  class="layui-btn layui-btn-normal" lay-filter="closeDeclare" lay-submit>-->
+    <#--取消请假-->
+    <#--</button>-->
+    <#--<button class="layui-btn layui-btn-primary" data-type="close">-->
+    <#--取消-->
+    <#--</button>-->
+    <#--</div>-->
+    <#--</div>-->
     </form>
 </div>
 <script>

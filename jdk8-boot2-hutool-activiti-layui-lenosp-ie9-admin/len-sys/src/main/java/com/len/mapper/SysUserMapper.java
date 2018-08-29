@@ -8,7 +8,7 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 import java.util.Map;
 
-public interface SysUserMapper extends com.len.base.BaseMapper<SysUser,String> {
+public interface SysUserMapper extends com.len.base.BaseMapper<SysUser, String> {
 
     SysUser login(@Param("username") String username);
 
@@ -22,11 +22,13 @@ public interface SysUserMapper extends com.len.base.BaseMapper<SysUser,String> {
 
     /**
      * 更新密码
+     *
      * @param user
      * @return
      */
     int rePass(SysUser user);
 
     List<SysUser> getUserByRoleId(Map map);
+
     int countUserByRoleId(Map map);
 }

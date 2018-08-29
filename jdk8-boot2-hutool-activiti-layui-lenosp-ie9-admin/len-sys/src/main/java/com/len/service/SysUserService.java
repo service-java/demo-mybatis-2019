@@ -4,8 +4,9 @@ package com.len.service;
 import com.len.base.BaseService;
 import com.len.entity.SysRoleUser;
 import com.len.entity.SysUser;
-import com.len.util.Checkbox;
+import com.len.util.component.Checkbox;
 import com.len.util.JsonUtil;
+
 import java.util.List;
 
 /**
@@ -13,56 +14,60 @@ import java.util.List;
  * @date 2017/12/4.
  * @email 154040976@qq.com
  */
-public interface SysUserService extends BaseService<SysUser,String> {
+public interface SysUserService extends BaseService<SysUser, String> {
 
-  SysUser login(String username);
-
-
-  SysUser selectByPrimaryKey(String id);
-
-  /**
-   * 分页查询
-   * @param
-   * @return
-   */
-  @Override
-  List<SysUser> selectListByPage(SysUser sysUser);
-
-  int count();
-
-  /**
-   * 新增
-   * @param user
-   * @return
-   */
-  int add(SysUser user);
-
-  /**
-   * 删除
-   * @param id
-   * @return
-   */
-  JsonUtil delById(String id,boolean flag);
-
-  int checkUser(String username);
+    SysUser login(String username);
 
 
-  @Override
-  int updateByPrimaryKey(SysUser sysUser);
+    SysUser selectByPrimaryKey(String id);
 
-  List<SysRoleUser> selectByCondition(SysRoleUser sysRoleUser);
+    /**
+     * 分页查询
+     *
+     * @param
+     * @return
+     */
+    @Override
+    List<SysUser> selectListByPage(SysUser sysUser);
 
-  public List<Checkbox> getUserRoleByJson(String id);
+    int count();
 
-  /**
-   * 更新密码
-   * @param user
-   * @return
-   */
-  int rePass(SysUser user);
+    /**
+     * 新增
+     *
+     * @param user
+     * @return
+     */
+    int add(SysUser user);
+
+    /**
+     * 删除
+     *
+     * @param id
+     * @return
+     */
+    JsonUtil delById(String id, boolean flag);
+
+    int checkUser(String username);
 
 
-  List<SysUser> getUserByRoleId(String roleId,int page,int limit);
+    @Override
+    int updateByPrimaryKey(SysUser sysUser);
 
-  int countUserByRoleId(String roleId,int page,int limit);
+    List<SysRoleUser> selectByCondition(SysRoleUser sysRoleUser);
+
+    public List<Checkbox> getUserRoleByJson(String id);
+
+    /**
+     * 更新密码
+     *
+     * @param user
+     * @return
+     */
+    int rePass(SysUser user);
+
+
+    List<SysUser> getUserByRoleId(String roleId, int page, int limit);
+
+    int countUserByRoleId(String roleId, int page, int limit);
 }

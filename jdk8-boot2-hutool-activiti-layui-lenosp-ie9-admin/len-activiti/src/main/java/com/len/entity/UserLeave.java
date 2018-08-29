@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class UserLeave extends BaseTask {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "JDBC")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "JDBC")
     protected String id;
 
     /**
@@ -59,14 +59,14 @@ public class UserLeave extends BaseTask {
     private String taskName;
 
 
-
     //请假单审核信息
-    private List<LeaveOpinion> opinionList=new ArrayList<>();
+    private List<LeaveOpinion> opinionList = new ArrayList<>();
 
-    public void leaveOpAdd(LeaveOpinion leaveOpinion){
+    public void leaveOpAdd(LeaveOpinion leaveOpinion) {
         this.opinionList.add(leaveOpinion);
     }
-    public void leaveOpAddAll(List<LeaveOpinion> leaveOpinionList){
+
+    public void leaveOpAddAll(List<LeaveOpinion> leaveOpinionList) {
         this.opinionList.addAll(leaveOpinionList);
     }
 
@@ -77,7 +77,6 @@ public class UserLeave extends BaseTask {
     public void setOpinionList(List<LeaveOpinion> opinionList) {
         this.opinionList = opinionList;
     }
-
 
 
     /**
@@ -93,7 +92,6 @@ public class UserLeave extends BaseTask {
     public void setDays(Integer days) {
         this.days = days;
     }
-
 
 
     public Date getBeginTime() {

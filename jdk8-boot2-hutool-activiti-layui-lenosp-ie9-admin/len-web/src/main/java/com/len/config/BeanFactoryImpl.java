@@ -16,8 +16,8 @@ import org.springframework.core.ResolvableType;
 public class BeanFactoryImpl implements BeanFactoryAware {
 
 
-  @Override
-  public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-    System.out.println("BeanFactoryAware------->"+beanFactory);
-  }
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("BeanFactoryAware------->" + beanFactory);
+    }
 }

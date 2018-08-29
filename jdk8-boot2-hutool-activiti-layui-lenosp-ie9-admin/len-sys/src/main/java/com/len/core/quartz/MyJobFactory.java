@@ -10,12 +10,12 @@ import org.springframework.scheduling.quartz.AdaptableJobFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyJobFactory extends AdaptableJobFactory{
-      
+public class MyJobFactory extends AdaptableJobFactory {
+
     @Autowired
     private AutowireCapableBeanFactory capableBeanFactory;
-  
-    @Override  
+
+    @Override
     protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception {
         Object job = super.createJobInstance(bundle);
         capableBeanFactory.autowireBean(job);

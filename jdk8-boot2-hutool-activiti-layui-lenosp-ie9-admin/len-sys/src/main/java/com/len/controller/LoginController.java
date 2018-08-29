@@ -113,7 +113,7 @@ public class LoginController {
     }
 
     @GetMapping("/main")
-    public String main(){
+    public String main() {
         return "main/main";
     }
 
@@ -162,7 +162,7 @@ public class LoginController {
 
             //生成随机字串
             String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
-            log.info("verifyCode:{}",verifyCode);
+            log.info("verifyCode:{}", verifyCode);
             //存入会话session
             HttpSession session = request.getSession(true);
             session.setAttribute("_code", verifyCode.toLowerCase());

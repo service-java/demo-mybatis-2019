@@ -8,6 +8,6 @@ import com.len.entity.UserLeave;
  * @date 2018/1/21.
  * @email 154040976@qq.com
  */
-public interface UserLeaveService extends BaseService<UserLeave,String> {
+public interface UserLeaveService extends BaseService<UserLeave, String> {
 
 }

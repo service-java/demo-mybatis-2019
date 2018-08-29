@@ -66,6 +66,5 @@ public interface BaseMapper<T, E extends Serializable> extends tk.mybatis.mapper
      */
 
 
-
     List<T> selectListByPage(T record);
 }

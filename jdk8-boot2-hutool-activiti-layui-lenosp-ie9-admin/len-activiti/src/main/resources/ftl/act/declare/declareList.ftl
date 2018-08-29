@@ -163,9 +163,7 @@
             },
             reload: function () {
                 table.reload('delcareList', {
-                    where: {
-
-                    }
+                    where: {}
                 });
             }
         };
@@ -175,7 +173,7 @@
             if (obj.event === 'start') {
                 start(data.key);
             } else if (obj.event === 'getProcImage') {
-              //  var url = '${re.contextPath}/leave/getShineProcImage?processInstanceId=' + data.processInstanceId + '';
+                //  var url = '${re.contextPath}/leave/getShineProcImage?processInstanceId=' + data.processInstanceId + '';
                 layer.open({
                     id: 'delcare-image',
                     type: 2,
@@ -199,8 +197,7 @@
                     title: '审核详情',
                     content: "${re.contextPath}/leave/leaveDetail?processId=" + data.processInstanceId
                 });
-            }else if(obj.event ==='delcareBillDetail')
-            {
+            } else if (obj.event === 'delcareBillDetail') {
                 layer.open({
                     id: 'delcare-infodetail',
                     type: 2,
@@ -210,7 +207,7 @@
                     shadeClose: false,
                     shade: 0.4,
                     title: '单据详情',
-                    content:  "readOnlyLeave/"+data.id
+                    content: "readOnlyLeave/" + data.id
                 });
             }
         });

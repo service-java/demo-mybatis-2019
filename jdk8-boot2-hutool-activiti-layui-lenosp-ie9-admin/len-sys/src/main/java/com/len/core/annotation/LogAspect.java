@@ -72,13 +72,13 @@ public class LogAspect {
             for (int i = 0; i < obj.length; i++) {
                 buffer.append("[参数" + (i + 1) + ":");
                 Object o = obj[i];
-                if(o instanceof Model){
+                if (o instanceof Model) {
                     continue;
                 }
-                String parameter=null;
+                String parameter = null;
                 try {
-                    parameter=JSON.toJSONString(o);
-                }catch (Exception e){
+                    parameter = JSON.toJSONString(o);
+                } catch (Exception e) {
                     continue;
                 }
                 buffer.append(parameter);

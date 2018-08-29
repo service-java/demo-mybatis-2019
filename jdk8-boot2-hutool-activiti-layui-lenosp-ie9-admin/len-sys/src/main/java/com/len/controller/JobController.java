@@ -5,16 +5,12 @@ import com.len.core.annotation.Log;
 import com.len.core.annotation.Log.LOG_TYPE;
 import com.len.core.quartz.JobTask;
 import com.len.entity.SysJob;
-import com.len.entity.SysUser;
 import com.len.exception.MyException;
 import com.len.service.JobService;
 import com.len.util.BeanUtil;
-import com.len.util.Checkbox;
 import com.len.util.JsonUtil;
 import com.len.util.ReType;
 import io.swagger.annotations.ApiOperation;
-
-import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;

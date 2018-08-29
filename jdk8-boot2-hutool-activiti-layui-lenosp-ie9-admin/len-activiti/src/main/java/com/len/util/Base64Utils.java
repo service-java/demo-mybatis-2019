@@ -25,7 +25,7 @@ public class Base64Utils {
             strBase64 = encoder.encode(bytes);      //将字节流数组转换为字符串
             in.close();
         } catch (IOException ioe) {
-            logger.error("图片转64编码异常",ioe);
+            logger.error("图片转64编码异常", ioe);
         }
         return strBase64;
     }

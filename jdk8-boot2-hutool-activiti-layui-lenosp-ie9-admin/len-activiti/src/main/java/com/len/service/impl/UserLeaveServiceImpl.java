@@ -14,14 +14,14 @@ import org.springframework.stereotype.Service;
  * @email 154040976@qq.com
  */
 @Service
-public class UserLeaveServiceImpl extends BaseServiceImpl<UserLeave,String> implements
-    UserLeaveService {
+public class UserLeaveServiceImpl extends BaseServiceImpl<UserLeave, String> implements
+        UserLeaveService {
 
-  @Autowired
-  UserLeaveMapper userLeaveMapper;
+    @Autowired
+    UserLeaveMapper userLeaveMapper;
 
-  @Override
-  public BaseMapper<UserLeave,String> getMappser() {
-    return userLeaveMapper;
-  }
+    @Override
+    public BaseMapper<UserLeave, String> getMappser() {
+        return userLeaveMapper;
+    }
 }

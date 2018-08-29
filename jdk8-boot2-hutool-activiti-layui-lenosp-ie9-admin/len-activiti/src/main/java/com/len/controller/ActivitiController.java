@@ -15,7 +15,6 @@
  */
 package com.len.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -27,7 +26,7 @@ import com.len.service.ActAssigneeService;
 import com.len.service.RoleService;
 import com.len.service.RoleUserService;
 import com.len.service.SysUserService;
-import com.len.util.Checkbox;
+import com.len.util.component.Checkbox;
 import com.len.util.JsonUtil;
 import com.len.util.ReType;
 import org.activiti.bpmn.converter.BpmnXMLConverter;
