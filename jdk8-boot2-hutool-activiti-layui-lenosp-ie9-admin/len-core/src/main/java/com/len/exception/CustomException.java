@@ -19,6 +19,7 @@ public class CustomException implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest,
                                          HttpServletResponse httpServletResponse, Object o, Exception e) {
+
         ModelAndView mv = new ModelAndView("/error/error");
         if (e instanceof UnauthorizedException) {
             //处理拦截shiro 无权限
@@ -29,7 +30,6 @@ public class CustomException implements HandlerExceptionResolver {
         MyException myExecption = null;
         if (e instanceof MyException) {
             myExecption = (MyException) e;
-
         } else {
             myExecption = new MyException("未知错误");
         }

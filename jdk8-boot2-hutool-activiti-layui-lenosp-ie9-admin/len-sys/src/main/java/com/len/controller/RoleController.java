@@ -51,6 +51,15 @@ public class RoleController extends BaseController {
     @Autowired
     private RoleMenuService roleMenuService;
 
+    // 临时添加
+    @GetMapping(value = "basicInfo")
+    @RequiresPermissions(value = "role:show")
+    public String showInfo(Model model) {
+        System.out.println("test2555");
+        return "/system/role/basicInfo";
+    }
+
+
     @GetMapping(value = "showRole")
     @RequiresPermissions(value = "role:show")
     public String showRole(Model model) {

@@ -19,7 +19,11 @@ public class MyFreemarkerConfig extends FreeMarkerConfigurer {
     public void afterPropertiesSet() throws IOException, TemplateException {
         super.afterPropertiesSet();
         Configuration configuration = this.getConfiguration();
+
+        // 权限颗粒
         configuration.setSharedVariable("shiro", new ShiroTags());
+
+        // 设置数字默认格式化
         configuration.setNumberFormat("#");
     }
 }
