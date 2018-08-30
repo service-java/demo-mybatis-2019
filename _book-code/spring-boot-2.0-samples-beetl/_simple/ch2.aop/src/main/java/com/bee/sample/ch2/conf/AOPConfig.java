@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 @Configuration
 public class AOPConfig {
+
     @Around("@within(org.springframework.stereotype.Controller) ")
     public Object functionAccessCheck(final ProceedingJoinPoint pjp) throws Throwable {
 
