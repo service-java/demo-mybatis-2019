@@ -27,7 +27,6 @@ public class DataBindController {
     ObjectMapper mapper;
 
     @RequestMapping("/updateUsers.json")
-
     public @ResponseBody
     String say(@RequestBody List<User> list) {
         StringBuilder sb = new StringBuilder();

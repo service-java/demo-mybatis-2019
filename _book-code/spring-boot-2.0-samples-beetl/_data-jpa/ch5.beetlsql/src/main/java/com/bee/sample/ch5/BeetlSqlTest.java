@@ -26,7 +26,7 @@ import com.bee.sample.ch5.entity.User;
  */
 public class BeetlSqlTest {
     static String driver = "com.mysql.jdbc.Driver";
-    static String url = "jdbc:mysql://127.0.0.1:3306/beetl?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
+    static String url = "jdbc:mysql://127.0.0.1:3306/beetl_samples?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
     static String userName = "root";
     static String password = "123456";
 

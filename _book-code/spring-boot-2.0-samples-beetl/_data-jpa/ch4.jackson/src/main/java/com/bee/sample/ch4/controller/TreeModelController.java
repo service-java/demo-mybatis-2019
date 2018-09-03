@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TreeModelController {
-    @RequestMapping("/hello.html")
+
+    @RequestMapping("/hello")
     public @ResponseBody
     String say() {
-        return "hello world";
+        return "hello world I AM YOUR XYZ";
     }
 }
