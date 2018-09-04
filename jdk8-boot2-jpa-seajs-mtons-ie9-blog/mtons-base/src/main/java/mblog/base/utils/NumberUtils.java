@@ -10,6 +10,7 @@ import java.util.Set;
  */
 public class NumberUtils {
 
+
     public static int changeToInt(Object obj) {
         int i = 0;
         if (obj != null && StringUtils.isNumeric(obj.toString())) {

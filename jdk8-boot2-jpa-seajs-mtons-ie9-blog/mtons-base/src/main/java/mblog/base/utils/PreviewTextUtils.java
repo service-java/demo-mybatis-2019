@@ -24,13 +24,15 @@ public class PreviewTextUtils {
      * @return string
      */
     public static String getText(String html) {
-        if (html == null)
+        if (html == null) {
             return null;
+        }
         return Jsoup.clean(html, Whitelist.none()).trim();
     }
 
     /**
      * 提取纯文本
+     *
      * @param html 代码
      * @param length 提取文本长度
      * @return string
@@ -47,8 +49,9 @@ public class PreviewTextUtils {
      * @return string
      */
     public static String getSimpleHtml(String html) {
-        if (html == null)
+        if (html == null) {
             return null;
+        }
         return Jsoup.clean(html, Whitelist.simpleText());
     }
 
@@ -58,8 +61,9 @@ public class PreviewTextUtils {
      * @return string
      */
     public static String getImgSrc(String html) {
-        if (html == null)
+        if (html == null) {
             return null;
+        }
         Document doc = Jsoup.parseBodyFragment(html);
         Element image = doc.select("img").first();
         return image == null ? null : image.attr("src");

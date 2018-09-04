@@ -60,5 +60,10 @@ public class MD5 {
 	public static String randString(int length) {
 		return RandomStringUtils.random(length);
 	}
-	
+
+//	public static void main(String[] args) {
+//		String str = md5("12");
+//		System.out.println(str);
+//	}
+
 }
