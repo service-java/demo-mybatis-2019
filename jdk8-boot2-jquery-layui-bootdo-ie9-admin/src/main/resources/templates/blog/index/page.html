@@ -6,14 +6,17 @@
 	<div id="content" class="summernote"></div>
 
 	<script type="text/javascript" th:inline="javascript">
-		$().ready(function() {
-			$('.summernote').summernote({
-				lang : 'zh-CN'
-			});
-			var content = /*[[${bContent.content}]]*/
-			$('#content').code(content);
-			$('.summernote').destroy();
-		});
+		$(function () {
+            $('.summernote').summernote({
+                lang : 'zh-CN'
+            });
+            var content = /*[[${bContent.content}]]*/
+
+			// console.log(content)
+			$('#content').summernote('code', content)
+
+            $('.summernote').summernote('destroy');
+        })
 	</script>
 </body>
 </html>
