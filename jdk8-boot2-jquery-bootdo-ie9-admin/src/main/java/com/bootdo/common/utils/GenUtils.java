@@ -222,17 +222,17 @@ public class GenUtils {
         }
 
         if (template.contains("list.js.vm")) {
-            return "main" + File.separator + "resources" + File.separator + "static" + File.separator + "js" + File.separator
-                    + "appjs" + File.separator + packageName + File.separator + classname + File.separator + classname + ".js";
+            return "main" + File.separator + "resources" + File.separator + "assets" + File.separator + "js" + File.separator
+                    + packageName + File.separator + classname + File.separator + classname + ".js";
             //		+ "modules" + File.separator + "generator" + File.separator + className.toLowerCase() + ".js";
         }
         if (template.contains("add.js.vm")) {
-            return "main" + File.separator + "resources" + File.separator + "static" + File.separator + "js" + File.separator
-                    + "appjs" + File.separator + packageName + File.separator + classname + File.separator + "add.js";
+            return "main" + File.separator + "resources" + File.separator + "assets" + File.separator + "js" + File.separator
+                    + packageName + File.separator + classname + File.separator + "add.js";
         }
         if (template.contains("edit.js.vm")) {
-            return "main" + File.separator + "resources" + File.separator + "static" + File.separator + "js" + File.separator
-                    + "appjs" + File.separator + packageName + File.separator + classname + File.separator + "edit.js";
+            return "main" + File.separator + "resources" + File.separator + "assets" + File.separator + "js" + File.separator
+                    + packageName + File.separator + classname + File.separator + "edit.js";
         }
 
 //		if(template.contains("menu.sql.vm")){
