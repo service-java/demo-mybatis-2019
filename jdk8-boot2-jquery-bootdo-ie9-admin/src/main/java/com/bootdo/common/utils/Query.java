@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class Query extends LinkedHashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
-	// 
+	// 偏移???
 	private int offset;
 	// 每页条数
 	private int limit;

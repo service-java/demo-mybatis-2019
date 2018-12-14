@@ -13,7 +13,11 @@ import java.util.Date;
 
  */
 public class TimeUtils {
-	
+
+
+    /**
+     * 转化成时分秒中文描述
+     */
 	public static String toTimeString(long time) {
 		TimeUtils t = new TimeUtils(time);
 		int day = t.get(TimeUtils.DAY);

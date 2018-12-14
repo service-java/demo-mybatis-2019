@@ -23,9 +23,9 @@ spring:
     multipart:
       max-file-size: 30Mb
       max-request-size: 30Mb
-  devtools:
-    restart:
-      enabled: true
+#  devtools:
+#    restart:
+#      enabled: true
   cache:
     type: ehcache
     ehcache:
