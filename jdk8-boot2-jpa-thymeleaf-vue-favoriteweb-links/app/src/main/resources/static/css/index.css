@@ -1,132 +1,130 @@
-body
-{
+body {
     padding-top: 50px;
 
     background-color: #fff;
 }
-.navbar
-{
+
+.navbar {
     min-height: 50px;
 }
-.navbar-default
-{
+
+.navbar-default {
     border-bottom: none;
     background-color: white;
 }
-.navbar-default .navbar-nav > li > a
-{
+
+.navbar-default .navbar-nav > li > a {
     padding-top: 14px;
     padding-bottom: 14px;
 
     color: #959595;
 }
-.navbar-default .navbar-nav > li > a:hover
-{
+
+.navbar-default .navbar-nav > li > a:hover {
     color: #333;
 }
-.navbar-brand
-{
+
+.navbar-brand {
     height: 50px;
     padding-top: 7px;
     padding-bottom: 7px;
 }
-.navbar-brand > img
-{
+
+.navbar-brand > img {
     width: 95px;
     height: 36px;
 }
-footer
-{
-    font-size: 13px;
 
-    color: #666
+footer {
+    font-size: 13px;
+    color: #666;
     padding-bottom: 10px;
     background: white;
 }
-footer > a
-{
+
+footer > a {
     color: black;
 }
-footer > p
-{
+
+footer > p {
     margin-bottom: 10px;
 }
-.img-responsive
-{
+
+.img-responsive {
     margin: 0 auto;
 }
-.banner
-{
+
+.banner {
     height: 500px;
 
-    background-image: url(../img/banner.png);
+    /*background-image: url(../img/banner.png);*/
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; /* <------ */
+    background-size: cover;
 }
-.banner > .media
-{
+
+.banner > .media {
     width: 758px;
     margin-top: 150px;
 }
-.banner > .media > .media-left > img
-{
+
+.banner > .media > .media-left > img {
     width: 420px;
     height: 233px;
 }
-.banner .media-body .title
-{
+
+.banner .media-body .title {
     font-size: 30px;
 }
-.banner .media-body .detail
-{
+
+.banner .media-body .detail {
     font-size: 12px;
     line-height: 150%;
 
     margin-top: 5px;
     margin-bottom: 15px;
 }
-.banner p
-{
+
+.banner p {
     color: white;
 }
-.banner h1
-{
+
+.banner h1 {
     color: white;
 }
-.banner a
-{
+
+.banner a {
     color: white;
     border-width: 1px;
     border-style: solid;
     background-color: transparent;
 }
-.banner .ms-button
-{
+
+.banner .ms-button {
     padding: 10px 40px;
 }
-.banner .xs-button
-{
+
+.banner .xs-button {
     padding: 10px 130px;
 }
-.features
-{
+
+.features {
     margin-top: 40px;
 }
-.features img
-{
+
+.features img {
     width: 60px;
     height: 60px;
     margin-top: 40px;
 }
-.features .title
-{
+
+.features .title {
     font-size: 20px;
 
     margin-top: 20px;
 }
-.features .description
-{
+
+.features .description {
     font-size: 13px;
     line-height: 150%;
 
@@ -134,27 +132,27 @@ footer > p
 
     color: #666;
 }
-.social
-{
+
+.social {
     margin-top: 80px;
 }
-.qrcode
-{
+
+.qrcode {
     width: 100px;
     height: 100px;
     margin-top: 40px;
 }
-.qrcode-text
-{
+
+.qrcode-text {
     margin-top: 10px;
 }
-.qrcode-text img
-{
+
+.qrcode-text img {
     width: 100px;
     height: 28px;
 }
-.target-fix
-{
+
+.target-fix {
     position: relative;
     top: -50px;
 
