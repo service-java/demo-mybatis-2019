@@ -11,7 +11,7 @@
 ```$xslt
 jdk.v 
 + web-framework.v(ssm/ssh/boot2/...) 
-+ 特色技术.v(beetl/hutool) 
++ 特色技术.v(视图技术/beetl/hutool) 
 + 项目名称/作者 
 + modules(是否分模块) 
 + 应用场景(pc/h5/mina/ie10+/...) 
