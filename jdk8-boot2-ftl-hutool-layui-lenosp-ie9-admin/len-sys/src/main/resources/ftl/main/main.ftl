@@ -73,7 +73,7 @@
                     <dd><a href="javascript:;" kit-target
                            data-options="{url:'/role/basicInfo',icon:'&#xe658;',title:'基本资料',id:'966'}"><span>基本资料</span></a>
                     </dd>
-                    <#--<dd><a href="javascript:;">安全设置</a></dd>-->
+                <#--<dd><a href="javascript:;">安全设置</a></dd>-->
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>

@@ -109,8 +109,8 @@
         *   ng.$http#usage_parameters $http.config}:
      *
      *       {action1: {method:?, params:?, isArray:?, headers:?, ...},
- *        action2: {method:?, params:?, isArray:?, headers:?, ...},
- *        ...}
+     *        action2: {method:?, params:?, isArray:?, headers:?, ...},
+     *        ...}
      *
      *   Where:
      *
@@ -152,10 +152,10 @@
      *   optionally extended with custom `actions`. The default set contains these actions:
      *
      *       { 'get':    {method:'GET'},
- *         'save':   {method:'POST'},
- *         'query':  {method:'GET', isArray:true},
- *         'remove': {method:'DELETE'},
- *         'delete': {method:'DELETE'} };
+     *         'save':   {method:'POST'},
+     *         'query':  {method:'GET', isArray:true},
+     *         'remove': {method:'DELETE'},
+     *         'delete': {method:'DELETE'} };
      *
      *   Calling these methods invoke an {@link ng.$http} with the specified http method,
      *   destination and parameters. When the data is returned from the server then the object is an
@@ -287,25 +287,25 @@
      *        // Some APIs expect a PUT request in the format URL/object/ID
      *        // Here we are creating an 'update' method
      *        app.factory('Notes', ['$resource', function($resource) {
- *    return $resource('/notes/:id', null,
- *        {
- *            'update': { method:'PUT' }
- *        });
- *		}]);
+     *    return $resource('/notes/:id', null,
+     *        {
+     *            'update': { method:'PUT' }
+     *        });
+     *		}]);
      *
      *        // In our controller we get the ID from the URL using ngRoute and $routeParams
      *        // We pass in $routeParams and our Notes factory along with $scope
      *        app.controller('NotesCtrl', ['$scope', '$routeParams', 'Notes',
      function($scope, $routeParams, Notes) {
- *    // First get a note object from the factory
- *    var note = Notes.get({ id:$routeParams.id });
- *    $id = note.id;
- *
- *    // Now call update passing in the ID first then the object you are updating
- *    Notes.update({ id:$id }, note);
- *
- *    // This will PUT /notes/ID with the note object in the request payload
- *		}]);
+     *    // First get a note object from the factory
+     *    var note = Notes.get({ id:$routeParams.id });
+     *    $id = note.id;
+     *
+     *    // Now call update passing in the ID first then the object you are updating
+     *    Notes.update({ id:$id }, note);
+     *
+     *    // This will PUT /notes/ID with the note object in the request payload
+     *		}]);
      * </pre>
      */
     angular.module('ngResource', ['ng']).factory('$resource', ['$http', '$q', function ($http, $q) {

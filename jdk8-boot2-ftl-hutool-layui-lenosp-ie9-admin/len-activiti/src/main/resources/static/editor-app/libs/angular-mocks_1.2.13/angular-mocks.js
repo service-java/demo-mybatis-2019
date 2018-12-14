@@ -209,25 +209,25 @@
      *
      * <pre>
      *   describe('$exceptionHandlerProvider', function() {
- *
- *     it('should capture log messages and exceptions', function() {
- *
- *       module(function($exceptionHandlerProvider) {
- *         $exceptionHandlerProvider.mode('log');
- *       });
- *
- *       inject(function($log, $exceptionHandler, $timeout) {
- *         $timeout(function() { $log.log(1); });
- *         $timeout(function() { $log.log(2); throw 'banana peel'; });
- *         $timeout(function() { $log.log(3); });
- *         expect($exceptionHandler.errors).toEqual([]);
- *         expect($log.assertEmpty());
- *         $timeout.flush();
- *         expect($exceptionHandler.errors).toEqual(['banana peel']);
- *         expect($log.log.logs).toEqual([[1], [2], [3]]);
- *       });
- *     });
- *   });
+     *
+     *     it('should capture log messages and exceptions', function() {
+     *
+     *       module(function($exceptionHandlerProvider) {
+     *         $exceptionHandlerProvider.mode('log');
+     *       });
+     *
+     *       inject(function($log, $exceptionHandler, $timeout) {
+     *         $timeout(function() { $log.log(1); });
+     *         $timeout(function() { $log.log(2); throw 'banana peel'; });
+     *         $timeout(function() { $log.log(3); });
+     *         expect($exceptionHandler.errors).toEqual([]);
+     *         expect($log.assertEmpty());
+     *         $timeout.flush();
+     *         expect($exceptionHandler.errors).toEqual(['banana peel']);
+     *         expect($log.log.logs).toEqual([[1], [2], [3]]);
+     *       });
+     *     });
+     *   });
      * </pre>
      */
 
@@ -1781,18 +1781,18 @@
      * <pre>
      *   myAppDev = angular.module('myAppDev', ['myApp', 'ngMockE2E']);
      *   myAppDev.run(function($httpBackend) {
- *     phones = [{name: 'phone1'}, {name: 'phone2'}];
- *
- *     // returns the current list of phones
- *     $httpBackend.whenGET('/phones').respond(phones);
- *
- *     // adds a new phone to the phones array
- *     $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
- *       phones.push(angular.fromJson(data));
- *     });
- *     $httpBackend.whenGET(/^\/templates\//).passThrough();
- *     //...
- *   });
+     *     phones = [{name: 'phone1'}, {name: 'phone2'}];
+     *
+     *     // returns the current list of phones
+     *     $httpBackend.whenGET('/phones').respond(phones);
+     *
+     *     // adds a new phone to the phones array
+     *     $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
+     *       phones.push(angular.fromJson(data));
+     *     });
+     *     $httpBackend.whenGET(/^\/templates\//).passThrough();
+     *     //...
+     *   });
      * </pre>
      *
      * Afterwards, bootstrap your app with this new module.
@@ -2049,13 +2049,13 @@
          *
          * // Wrap the parameter in underscores
          * beforeEach( inject( function(_myService_){
-   *   myService = _myService_;
-   * }));
+         *   myService = _myService_;
+         * }));
          *
          * // Use myService in a series of tests.
          * it('makes use of myService', function() {
-   *   myService.doStuff();
-   * });
+         *   myService.doStuff();
+         * });
          *
          * ```
          *
@@ -2071,31 +2071,31 @@
          *
          *
          *   describe('MyApp', function() {
-   *
-   *     // You need to load modules that you want to test,
-   *     // it loads only the "ng" module by default.
-   *     beforeEach(module('myApplicationModule'));
-   *
-   *
-   *     // inject() is used to inject arguments of all given functions
-   *     it('should provide a version', inject(function(mode, version) {
-   *       expect(version).toEqual('v1.0.1');
-   *       expect(mode).toEqual('app');
-   *     }));
-   *
-   *
-   *     // The inject and module method can also be used inside of the it or beforeEach
-   *     it('should override a version and test the new version is injected', function() {
-   *       // module() takes functions or strings (module aliases)
-   *       module(function($provide) {
-   *         $provide.value('version', 'overridden'); // override version here
-   *       });
-   *
-   *       inject(function(version) {
-   *         expect(version).toEqual('overridden');
-   *       });
-   *     });
-   *   });
+         *
+         *     // You need to load modules that you want to test,
+         *     // it loads only the "ng" module by default.
+         *     beforeEach(module('myApplicationModule'));
+         *
+         *
+         *     // inject() is used to inject arguments of all given functions
+         *     it('should provide a version', inject(function(mode, version) {
+         *       expect(version).toEqual('v1.0.1');
+         *       expect(mode).toEqual('app');
+         *     }));
+         *
+         *
+         *     // The inject and module method can also be used inside of the it or beforeEach
+         *     it('should override a version and test the new version is injected', function() {
+         *       // module() takes functions or strings (module aliases)
+         *       module(function($provide) {
+         *         $provide.value('version', 'overridden'); // override version here
+         *       });
+         *
+         *       inject(function(version) {
+         *         expect(version).toEqual('overridden');
+         *       });
+         *     });
+         *   });
          *
          * </pre>
          *

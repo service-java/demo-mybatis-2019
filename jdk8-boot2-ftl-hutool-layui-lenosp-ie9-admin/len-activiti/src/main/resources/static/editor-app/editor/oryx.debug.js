@@ -10287,9 +10287,9 @@ ORYX.Core.AbstractShape.JSONHelper = {
      * @example
      * // Increases the lowerRight x value of each direct child shape by one.
      * myShapeAsJson.eachChild(function(shape, parentShape){
-      *     shape.bounds.lowerRight.x = shape.bounds.lowerRight.x + 1;
-      *     return shape;
-      * }, false, true);
+     *     shape.bounds.lowerRight.x = shape.bounds.lowerRight.x + 1;
+     *     return shape;
+     * }, false, true);
      */
     eachChild: function (iterator, deep, modify) {
         if (!this.childShapes) return;
@@ -12194,15 +12194,15 @@ ORYX.Editor = {
 
     /**
      *    option = {
-	*		type: string,
-	*		position: {x:int, y:int},
-	*		connectingType:	uiObj-Class
-	*		connectedShape: uiObj
-	*		draggin: bool
-	*		namespace: url
-	*       parent: ORYX.Core.AbstractShape
-	*		template: a template shape that the newly created inherits properties from.
-	*		}
+     *		type: string,
+     *		position: {x:int, y:int},
+     *		connectingType:	uiObj-Class
+     *		connectedShape: uiObj
+     *		draggin: bool
+     *		namespace: url
+     *       parent: ORYX.Core.AbstractShape
+     *		template: a template shape that the newly created inherits properties from.
+     *		}
      */
     createShape: function (option) {
 

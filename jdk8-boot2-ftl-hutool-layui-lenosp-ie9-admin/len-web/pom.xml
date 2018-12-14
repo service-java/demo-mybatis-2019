@@ -40,9 +40,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>com.len</groupId>-->
-            <!--<artifactId>len-blog</artifactId>-->
-            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--<groupId>com.len</groupId>-->
+        <!--<artifactId>len-blog</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
         <!--</dependency>-->
     </dependencies>
     <build>

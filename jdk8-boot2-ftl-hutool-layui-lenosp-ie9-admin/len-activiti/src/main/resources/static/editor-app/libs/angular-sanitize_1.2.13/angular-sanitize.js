@@ -227,11 +227,11 @@
     /**
      * @example
      * htmlParser(htmlString, {
- *     start: function(tag, attrs, unary) {},
- *     end: function(tag) {},
- *     chars: function(text) {},
- *     comment: function(text) {}
- * });
+     *     start: function(tag, attrs, unary) {},
+     *     end: function(tag) {},
+     *     chars: function(text) {},
+     *     comment: function(text) {}
+     * });
      *
      * @param {string} html string
      * @param {object} handler
@@ -418,11 +418,11 @@
      * create an HTML/XML writer which writes to buffer
      * @param {Array} buf use buf.jain('') to get out sanitized html string
      * @returns {object} in the form of {
- *     start: function(tag, attrs, unary) {},
- *     end: function(tag) {},
- *     chars: function(text) {},
- *     comment: function(text) {}
- * }
+     *     start: function(tag, attrs, unary) {},
+     *     end: function(tag) {},
+     *     chars: function(text) {},
+     *     comment: function(text) {}
+     * }
      */
     function htmlSanitizeWriter(buf, uriValidator) {
         var ignore = false;
