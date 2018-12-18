@@ -119,8 +119,7 @@
 
 	<delete id="batchRemove">
 		delete from sys_dict where id in
-		<foreach item="id" collection="array" open="(" separator=","
-			close=")">
+		<foreach item="id" collection="array" open="(" separator="," close=")">
 			#{id}
 		</foreach>
 	</delete>
