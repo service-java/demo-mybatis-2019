@@ -22,7 +22,9 @@ public class Base64Utils {
             byte[] bytes = new byte[in.available()];
             // 将文件中的内容读入到数组中
             in.read(bytes);
-            strBase64 = encoder.encode(bytes);      //将字节流数组转换为字符串
+
+            // 将字节流数组转换为字符串
+            strBase64 = encoder.encode(bytes);
             in.close();
         } catch (IOException ioe) {
             logger.error("图片转64编码异常", ioe);

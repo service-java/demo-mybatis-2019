@@ -13,12 +13,11 @@ File Encoding         : 65001
 Date: 2018-06-26 23:10:40
 */
 
-DROP DATABASE IF EXISTS guns_rest;
-CREATE DATABASE IF NOT EXISTS guns_rest DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+DROP DATABASE IF EXISTS guns;
+CREATE DATABASE IF NOT EXISTS guns DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 
-USE guns_rest;
+USE guns;
 
-SET FOREIGN_KEY_CHECKS=0;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
