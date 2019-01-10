@@ -19,7 +19,7 @@ public interface BlogArticleService extends BaseService<BlogArticle, String> {
 
     public JsonUtil getDetail(String code);
 
-    public JsonUtil detail(String code,String ip);
+    public JsonUtil detail(String code, String ip);
 
     List<Article> selectArticle(String code);
 

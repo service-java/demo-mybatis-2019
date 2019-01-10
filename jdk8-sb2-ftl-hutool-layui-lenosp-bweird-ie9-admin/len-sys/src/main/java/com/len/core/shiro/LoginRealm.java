@@ -52,7 +52,7 @@ public class LoginRealm extends AuthorizingRealm {
             }
         } else {
             //根据用户获取角色 根据角色获取所有按钮权限
-            CurrentUser cUser = (CurrentUser) ShiroUtil.getSession().getAttribute("curentUser");
+            CurrentUser cUser = (CurrentUser) ShiroUtil.getSession().getAttribute("currentUser");
             for (CurrentRole cRole : cUser.getCurrentRoleList()) {
                 info.addRole(cRole.getId());
             }

@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -21,14 +21,13 @@
  * Execution listeners
  */
 
-var KisBpmMultiInstanceCtrl = [ '$scope', function($scope) {
+var KisBpmMultiInstanceCtrl = ['$scope', function ($scope) {
 
-    if ($scope.property.value == undefined && $scope.property.value == null)
-    {
-    	$scope.property.value = 'None';
+    if ($scope.property.value == undefined && $scope.property.value == null) {
+        $scope.property.value = 'None';
     }
-        
-    $scope.multiInstanceChanged = function() {
-    	$scope.updatePropertyInModel($scope.property);
+
+    $scope.multiInstanceChanged = function () {
+        $scope.updatePropertyInModel($scope.property);
     };
 }];

@@ -11,10 +11,8 @@ public class CustomUsernamePasswordToken extends UsernamePasswordToken {
 
     private String type;
 
-
-
     public CustomUsernamePasswordToken(final String username, final String password, String loginType) {
-        super(username,password);
+        super(username, password);
         this.type = loginType;
     }
 

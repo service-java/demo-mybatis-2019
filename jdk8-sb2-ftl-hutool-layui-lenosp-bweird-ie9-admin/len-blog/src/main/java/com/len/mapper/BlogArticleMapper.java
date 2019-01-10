@@ -16,7 +16,7 @@ public interface BlogArticleMapper extends BaseMapper<BlogArticle, String> {
 
     List<Article> selectArticleByTag(@Param("tagCode") String tagCode);
 
-    BlogArticle selectPrevious(@Param("createDate")Date date);
+    BlogArticle selectPrevious(@Param("createDate") Date date);
 
-    BlogArticle selectNext(@Param("createDate")Date date);
+    BlogArticle selectNext(@Param("createDate") Date date);
 }

@@ -12,9 +12,9 @@ public class JwtToken implements AuthenticationToken {
     private String token;
     private String type;
 
-    public JwtToken(String token,String type) {
+    public JwtToken(String token, String type) {
         this.token = token;
-        this.type=type;
+        this.type = type;
     }
 
     @Override

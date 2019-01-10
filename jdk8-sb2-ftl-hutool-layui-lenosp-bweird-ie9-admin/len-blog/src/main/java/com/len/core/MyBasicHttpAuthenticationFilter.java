@@ -49,7 +49,7 @@ public class MyBasicHttpAuthenticationFilter extends BasicHttpAuthenticationFilt
 
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
-        WebUtils.toHttp(response).sendError(HttpServletResponse.SC_UNAUTHORIZED,"访问被拒绝");
+        WebUtils.toHttp(response).sendError(HttpServletResponse.SC_UNAUTHORIZED, "访问被拒绝");
         return false;
     }
 }

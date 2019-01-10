@@ -9,7 +9,7 @@ public class BlogCategory {
     @Column(name = "id")
     private String id;
 
-    @Column(name="sequence")
+    @Column(name = "sequence")
     private Byte sequence;
 
     /**

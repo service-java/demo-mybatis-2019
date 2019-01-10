@@ -76,7 +76,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     public int insert(T record) {
         try {
             record = addValue(record, true);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return getMappser().insert(record);
@@ -90,7 +90,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
      * @return
      */
     public T addValue(T record, boolean flag) {
-        CurrentUser currentUser = (CurrentUser) SecurityUtils.getSubject().getSession().getAttribute("curentUser");
+        CurrentUser currentUser = (CurrentUser) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
         //统一处理公共字段
         Class<?> clazz = record.getClass();
         String operator, operateDate;
@@ -131,7 +131,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     public int insertSelective(T record) {
         try {
             record = addValue(record, true);
-        }catch (Exception e){
+        } catch (Exception e) {
         }
         return getMappser().insertSelective(record);
     }
@@ -141,7 +141,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     public int updateByPrimaryKeySelective(T record) {
         try {
             record = addValue(record, false);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return getMappser().updateByPrimaryKeySelective(record);
@@ -151,7 +151,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     public int updateByPrimaryKey(T record) {
         try {
             record = addValue(record, false);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return getMappser().updateByPrimaryKey(record);
@@ -224,8 +224,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     }
 
     @Override
-    public String showAll(T t)
-    {
+    public String showAll(T t) {
         List<T> tList = null;
         try {
             tList = getMappser().selectListByPage(t);
@@ -248,7 +247,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
             log.error("class:BaseServiceImpl ->method:getList->message:" + e.getMessage());
             e.printStackTrace();
         }
-        return new ReType(tPage.getTotal(),tPage.getPageNum(), tList);
+        return new ReType(tPage.getTotal(), tPage.getPageNum(), tList);
     }
 
 
@@ -278,24 +277,24 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
 
     @Override
     public int updateByExample(T t, Object o) {
-        return getMappser().updateByExample(t,o);
+        return getMappser().updateByExample(t, o);
     }
 
 
     @Override
     public int updateByExampleSelective(T t, Object o) {
-        return getMappser().updateByExampleSelective(t,o);
+        return getMappser().updateByExampleSelective(t, o);
     }
 
 
     @Override
     public List<T> selectByExampleAndRowBounds(Object o, RowBounds rowBounds) {
-        return getMappser().selectByExampleAndRowBounds(o,rowBounds);
+        return getMappser().selectByExampleAndRowBounds(o, rowBounds);
     }
 
 
     @Override
     public List<T> selectByRowBounds(T t, RowBounds rowBounds) {
-        return getMappser().selectByRowBounds(t,rowBounds);
+        return getMappser().selectByRowBounds(t, rowBounds);
     }
 }

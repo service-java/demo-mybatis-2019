@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -20,12 +20,12 @@
 
 angular.module('activitiModeler')
     .controller('HeaderController', ['$rootScope', '$scope', '$http', '$timeout', function ($rootScope, $scope, $http, $timeout) {
-    	
-    	// Add reference to global header-config
-    	$scope.headerConfig = KISBPM.HEADER_CONFIG;
-    	
-    	// TODO: generate setting-menu items
-    	
-    	// TODO: generate user-menu items
 
-}]);
+        // Add reference to global header-config
+        $scope.headerConfig = KISBPM.HEADER_CONFIG;
+
+        // TODO: generate setting-menu items
+
+        // TODO: generate user-menu items
+
+    }]);

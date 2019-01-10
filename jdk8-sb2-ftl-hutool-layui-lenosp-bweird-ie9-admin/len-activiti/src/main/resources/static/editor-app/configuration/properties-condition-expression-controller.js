@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -21,11 +21,11 @@
  * Condition expression
  */
 
-var KisBpmConditionExpressionCtrl = [ '$scope', '$modal', function($scope, $modal) {
+var KisBpmConditionExpressionCtrl = ['$scope', '$modal', function ($scope, $modal) {
 
     // Config for the modal window
     var opts = {
-        template:  'editor-app/configuration/properties/condition-expression-popup.html?version=' + Date.now(),
+        template: 'editor-app/configuration/properties/condition-expression-popup.html?version=' + Date.now(),
         scope: $scope
     };
 
@@ -33,26 +33,26 @@ var KisBpmConditionExpressionCtrl = [ '$scope', '$modal', function($scope, $moda
     $modal(opts);
 }];
 
-var KisBpmConditionExpressionPopupCtrl = [ '$scope', '$translate', '$http', function($scope, $translate, $http) {
+var KisBpmConditionExpressionPopupCtrl = ['$scope', '$translate', '$http', function ($scope, $translate, $http) {
 
-	// Put json representing condition on scope
+    // Put json representing condition on scope
     if ($scope.property.value !== undefined && $scope.property.value !== null) {
 
         $scope.conditionExpression = {value: $scope.property.value};
-        
+
     } else {
         $scope.conditionExpression = {value: ''};
     }
-	
-    $scope.save = function() {
+
+    $scope.save = function () {
         $scope.property.value = $scope.conditionExpression.value;
         $scope.updatePropertyInModel($scope.property);
         $scope.close();
     };
 
     // Close button handler
-    $scope.close = function() {
-    	$scope.property.mode = 'read';
-    	$scope.$hide();
+    $scope.close = function () {
+        $scope.property.mode = 'read';
+        $scope.$hide();
     };
 }];

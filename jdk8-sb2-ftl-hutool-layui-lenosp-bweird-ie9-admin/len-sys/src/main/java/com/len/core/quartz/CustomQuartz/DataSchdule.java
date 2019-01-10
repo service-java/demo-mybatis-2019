@@ -21,8 +21,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class DataSchdule {
 
-   // @Scheduled(cron = "0 0/5 * * * ? ")
-    @Log(type = Log.LOG_TYPE.UPDATE,desc = "定时还原数据库")
+    // @Scheduled(cron = "0 0/5 * * * ? ")
+    @Log(type = Log.LOG_TYPE.UPDATE, desc = "定时还原数据库")
     public static void restData() throws IOException, InterruptedException {
         // SQL文件路径
         try {

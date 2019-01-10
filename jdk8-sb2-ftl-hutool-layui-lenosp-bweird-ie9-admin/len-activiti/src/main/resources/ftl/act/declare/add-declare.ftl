@@ -37,9 +37,9 @@ To change this template use File | Settings | File Templates.-->
                         选择客户
                     </label>
                     <div class="layui-input-block layui-form">
-                        <#--<input type="hidden" name="customerId" id="customerId">-->
-                        <#--<input type="hidden" name="customerName" id="customerName">-->
-                        <select id="customer" name="customerId"  lay-verify="required" lay-filter="customerFilter">
+                    <#--<input type="hidden" name="customerId" id="customerId">-->
+                    <#--<input type="hidden" name="customerName" id="customerName">-->
+                        <select id="customer" name="customerId" lay-verify="required" lay-filter="customerFilter">
                             <option value="">请选择一个客户</option>
                             <#list customerList as cl>
                             <option value="${cl.id}">${cl.customerName}</option>
@@ -55,8 +55,8 @@ To change this template use File | Settings | File Templates.-->
                         选择产品
                     </label>
                     <div class="layui-input-block layui-form">
-                        <#--<input type="hidden" name="productId" id="productId">-->
-                        <#--<input type="hidden" name="productName" id="productName">-->
+                    <#--<input type="hidden" name="productId" id="productId">-->
+                    <#--<input type="hidden" name="productName" id="productName">-->
                         <select id="product" name="productId" lay-verify="required" lay-filter="productFilter">
                             <option value="">请选择一个产品</option>
                             <#list productList as cl>
@@ -121,12 +121,12 @@ To change this template use File | Settings | File Templates.-->
 
         form.render('select');
 
-        form.on('select(customerFilter)', function(data){
+        form.on('select(customerFilter)', function (data) {
             $('#customerId').val(data.value);
             $("#customerName").val($(data.elem).find("option:selected").text());
         });
 
-        form.on('select(productFilter)', function(data){
+        form.on('select(productFilter)', function (data) {
             $('#productId').val(data.value);
             $("#productName").val($(data.elem).find("option:selected").text());
         });

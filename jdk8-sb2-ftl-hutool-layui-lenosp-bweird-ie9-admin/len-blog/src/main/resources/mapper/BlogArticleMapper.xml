@@ -72,25 +72,25 @@
     </select>
 
     <select id="selectArticleByTag" resultType="com.len.model.Article">
-      select
-      <include refid="selectSql"/>
-      from
+        select
+        <include refid="selectSql"/>
+        from
         blog_article ba
-      LEFT JOIN
+        LEFT JOIN
         blog_article_tag bat
-      on
+        on
         ba.id=bat.article_id
-      LEFT JOIN
+        LEFT JOIN
         blog_tag bt
-      on
+        on
         bat.tag_id=bt.id
-      LEFT JOIN
+        LEFT JOIN
         sys_user su on ba.create_by=su.id
-      where
+        where
         bt.tag_code=#{tagCode}
         and ba.del_flag=0
         order by ba.top_num desc,ba.create_date desc
-  </select>
+    </select>
 
     <select id="selectPrevious" resultMap="BaseResultMap">
         select

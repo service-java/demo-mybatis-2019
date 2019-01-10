@@ -9,17 +9,17 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 @Configuration
 public class MySchedulerListener {
-      
-    @Autowired  
+
+    @Autowired
     MyJobFactory myJobFactory;
 
-      
-    @Bean(name ="schedulerFactoryBean")
+
+    @Bean(name = "schedulerFactoryBean")
     public SchedulerFactoryBean schedulerFactory() {
         SchedulerFactoryBean bean = new SchedulerFactoryBean();
         bean.setJobFactory(myJobFactory);
         bean.setConfigLocation(new ClassPathResource("quartz.properties"));
-        return bean;  
-    }  
-  
-}  
+        return bean;
+    }
+
+}

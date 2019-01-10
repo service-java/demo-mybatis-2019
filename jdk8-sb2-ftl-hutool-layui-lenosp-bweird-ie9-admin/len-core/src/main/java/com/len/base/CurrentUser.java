@@ -3,6 +3,7 @@ package com.len.base;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -35,12 +36,12 @@ public class CurrentUser implements Serializable {
 
     private Byte delFlag;
 
-   private List<CurrentMenu> currentMenuList;
-   private List<CurrentRole> currentRoleList;
+    private List<CurrentMenu> currentMenuList;
+    private List<CurrentRole> currentRoleList;
     private static final long serialVersionUID = 1L;
 
     public CurrentUser(String id, String username, Integer age, String email, String photo,
-        String realName) {
+                       String realName) {
         this.id = id;
         this.username = username;
         this.age = age;

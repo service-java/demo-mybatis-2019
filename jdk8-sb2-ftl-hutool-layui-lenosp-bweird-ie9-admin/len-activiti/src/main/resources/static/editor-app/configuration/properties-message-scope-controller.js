@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-angular.module('activitiModeler').controller('ActivitiMessageRefCtrl', [ '$scope', function($scope) {
+angular.module('activitiModeler').controller('ActivitiMessageRefCtrl', ['$scope', function ($scope) {
 
     // Find the parent shape on which the message definitions are defined
     var messageDefinitionsProperty = undefined;
@@ -42,7 +42,7 @@ angular.module('activitiModeler').controller('ActivitiMessageRefCtrl', [ '$scope
     $scope.messageDefinitions = messageDefinitionsProperty;
 
 
-    $scope.messageChanged = function() {
-    	$scope.updatePropertyInModel($scope.property);
+    $scope.messageChanged = function () {
+        $scope.updatePropertyInModel($scope.property);
     };
 }]);

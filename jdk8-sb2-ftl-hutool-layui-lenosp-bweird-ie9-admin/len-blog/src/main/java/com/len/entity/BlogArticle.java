@@ -26,7 +26,7 @@ public class BlogArticle {
     /**
      * 列表缩略图
      */
-    @Column(name="first_img")
+    @Column(name = "first_img")
     private String firstImg;
 
     /**

@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -47,7 +47,7 @@ KISBPM.eventBus = {
 
     /** Event fired when a model is saved. */
     EVENT_TYPE_MODEL_SAVED: 'event-type-model-saved',
-    
+
     /** Event fired when the quick menu buttons should be hidden. */
     EVENT_TYPE_HIDE_SHAPE_BUTTONS: 'event-type-hide-shape-buttons',
 
@@ -95,15 +95,15 @@ KISBPM.eventBus = {
         }
     },
 
-    hasListener:function(type, callback, scope) {
-        if(typeof this.listeners[type] != "undefined") {
+    hasListener: function (type, callback, scope) {
+        if (typeof this.listeners[type] != "undefined") {
             var numOfCallbacks = this.listeners[type].length;
-            if(callback === undefined && scope === undefined){
+            if (callback === undefined && scope === undefined) {
                 return numOfCallbacks > 0;
             }
-            for(var i=0; i<numOfCallbacks; i++) {
+            for (var i = 0; i < numOfCallbacks; i++) {
                 var listener = this.listeners[type][i];
-                if(listener.scope == scope && listener.callback == callback) {
+                if (listener.scope == scope && listener.callback == callback) {
                     return true;
                 }
             }
@@ -114,19 +114,19 @@ KISBPM.eventBus = {
     /**
      * Dispatch an event to all event listeners registered to that specific type.
      */
-    dispatch:function(type, event) {
-        if(typeof this.listeners[type] != "undefined") {
+    dispatch: function (type, event) {
+        if (typeof this.listeners[type] != "undefined") {
             var numOfCallbacks = this.listeners[type].length;
-            for(var i=0; i<numOfCallbacks; i++) {
+            for (var i = 0; i < numOfCallbacks; i++) {
                 var listener = this.listeners[type][i];
-                if(listener && listener.callback) {
+                if (listener && listener.callback) {
                     listener.callback.apply(listener.scope, [event]);
                 }
             }
         }
     },
 
-    dispatchOryxEvent: function(event, uiObject) {
+    dispatchOryxEvent: function (event, uiObject) {
         KISBPM.eventBus.editor.handleEvents(event, uiObject);
     }
 

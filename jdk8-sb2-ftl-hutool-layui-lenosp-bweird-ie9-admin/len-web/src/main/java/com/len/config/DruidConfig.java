@@ -89,18 +89,18 @@ public class DruidConfig {
         return servletRegistrationBean;
     }
 
-  @Bean
-  public DruidStatInterceptor getDruidStatInterceptor(){
-    return new DruidStatInterceptor();
-  }
+    @Bean
+    public DruidStatInterceptor getDruidStatInterceptor() {
+        return new DruidStatInterceptor();
+    }
 
-  @Bean
-  @Scope("prototype")
-  public JdkRegexpMethodPointcut getJdkRegexpMethodPointcut(){
-    JdkRegexpMethodPointcut pointcut=new JdkRegexpMethodPointcut();
-    String[] str={"com.len.service.*","com.len.mapper.*"};
-    pointcut.setPatterns(str);
-    return pointcut;
-  }
+    @Bean
+    @Scope("prototype")
+    public JdkRegexpMethodPointcut getJdkRegexpMethodPointcut() {
+        JdkRegexpMethodPointcut pointcut = new JdkRegexpMethodPointcut();
+        String[] str = {"com.len.service.*", "com.len.mapper.*"};
+        pointcut.setPatterns(str);
+        return pointcut;
+    }
 
 }

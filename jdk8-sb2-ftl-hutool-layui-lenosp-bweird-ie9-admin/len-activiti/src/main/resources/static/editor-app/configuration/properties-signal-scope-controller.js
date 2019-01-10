@@ -1,7 +1,7 @@
 /*
  * Activiti Modeler component part of the Activiti project
  * Copyright 2005-2014 Alfresco Software, Ltd. All rights reserved.
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -16,7 +16,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-angular.module('activitiModeler').controller('ActivitiSignalRefCtrl', [ '$scope', function($scope) {
+angular.module('activitiModeler').controller('ActivitiSignalRefCtrl', ['$scope', function ($scope) {
 
     // Find the parent shape on which the signal definitions are defined
     var signalDefinitionsProperty = undefined;
@@ -41,7 +41,7 @@ angular.module('activitiModeler').controller('ActivitiSignalRefCtrl', [ '$scope'
     $scope.signalDefinitions = signalDefinitionsProperty;
 
 
-    $scope.signalChanged = function() {
-    	$scope.updatePropertyInModel($scope.property);
+    $scope.signalChanged = function () {
+        $scope.updatePropertyInModel($scope.property);
     };
 }]);

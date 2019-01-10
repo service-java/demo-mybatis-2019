@@ -36,7 +36,7 @@ public class SysMenu {
     /**
      * 排序字段
      */
-    @Length(min = 1,max = 4, message = "序号长度不对")
+    @Length(min = 1, max = 4, message = "序号长度不对")
     @Column(name = "order_num")
     private Integer orderNum;
 
@@ -74,9 +74,9 @@ public class SysMenu {
 
     private static final long serialVersionUID = 1L;
 
-    private List<SysMenu> children=new ArrayList<SysMenu>();
+    private List<SysMenu> children = new ArrayList<SysMenu>();
 
-    public void addChild(SysMenu sysMenu){
+    public void addChild(SysMenu sysMenu) {
         children.add(sysMenu);
     }
 }

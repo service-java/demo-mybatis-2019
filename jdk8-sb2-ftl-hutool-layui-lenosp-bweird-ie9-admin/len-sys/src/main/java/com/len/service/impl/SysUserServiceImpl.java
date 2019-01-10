@@ -22,8 +22,10 @@ import com.len.util.BeanUtil;
 import com.len.util.Checkbox;
 import com.len.util.JsonUtil;
 import com.len.util.Md5Util;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
@@ -208,7 +210,6 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, String> impleme
     }
 
 
-
     @Override
     public void setMenuAndRoles(String username) {
         SysUser s = new SysUser();
@@ -244,6 +245,6 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, String> impleme
         }
         currentUser.setCurrentRoleList(currentRoleList);
         currentUser.setCurrentMenuList(currentMenuList);
-        session.setAttribute("curentUser", currentUser);
+        session.setAttribute("currentUser", currentUser);
     }
 }

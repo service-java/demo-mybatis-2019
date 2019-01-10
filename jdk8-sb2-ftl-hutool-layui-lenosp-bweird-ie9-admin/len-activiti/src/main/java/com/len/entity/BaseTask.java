@@ -8,10 +8,10 @@ import java.util.Date;
  * Created by kingdee-001 on 2018/6/30.
  */
 @MappedSuperclass
-public abstract class BaseTask implements Serializable{
+public abstract class BaseTask implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "JDBC")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "JDBC")
     protected String id;
 
     /**
@@ -33,7 +33,6 @@ public abstract class BaseTask implements Serializable{
 
     @Column(name = "user_name")
     protected String userName;
-
 
 
     @Column(name = "process_instance_Id")
@@ -65,8 +64,6 @@ public abstract class BaseTask implements Serializable{
 
 
     private Integer submittimes;
-
-
 
 
     /**

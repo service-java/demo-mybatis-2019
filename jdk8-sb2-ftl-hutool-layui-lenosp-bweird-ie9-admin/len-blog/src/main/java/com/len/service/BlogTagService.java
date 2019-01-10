@@ -8,5 +8,5 @@ import com.len.entity.BlogTag;
  * @date 2018/7/28.
  * @email 154040976@qq.com
  */
-public interface BlogTagService extends BaseService<BlogTag,String> {
+public interface BlogTagService extends BaseService<BlogTag, String> {
 }

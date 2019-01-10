@@ -15,7 +15,7 @@ public class JWTUtil {
     /**
      * 过期时间3小时
      */
-    private static final long EXPIRE_TIME = 3 * 60 * 60 * 1000;
+    private static final long EXPIRE_TIME = 3 * (60 * 60 * 1000);
 
     /**
      * 校验token是否正确
@@ -30,6 +30,7 @@ public class JWTUtil {
             JWTVerifier verifier = JWT.require(algorithm)
                     .withClaim("username", username)
                     .build();
+
             DecodedJWT jwt = verifier.verify(token);
             return true;
         } catch (Exception exception) {
@@ -80,6 +81,7 @@ public class JWTUtil {
     public static String[] getRoles(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
+            // 字符串 -> 字符串数组
             return jwt.getClaim("roles").asArray(String.class);
         } catch (JWTDecodeException e) {
             return null;

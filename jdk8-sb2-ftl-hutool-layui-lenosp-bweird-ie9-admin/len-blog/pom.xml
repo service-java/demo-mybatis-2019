@@ -12,7 +12,6 @@
     <artifactId>len-blog</artifactId>
 
 
-
     <dependencies>
         <dependency>
             <groupId>com.len</groupId>

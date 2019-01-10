@@ -53,7 +53,7 @@ public class RedisService {
      */
     public void set(String key, String value, Long second) {
         key = prefix + key;
-        valueOps.set(key, value, second,TimeUnit.SECONDS);
+        valueOps.set(key, value, second, TimeUnit.SECONDS);
     }
 
     /**
@@ -76,7 +76,7 @@ public class RedisService {
      */
     public void setObj(Object key, Object value, Long second) {
         key = prefix + key.toString();
-        valOpsObj.set(key, value, second,TimeUnit.SECONDS);
+        valOpsObj.set(key, value, second, TimeUnit.SECONDS);
     }
 
     /**
