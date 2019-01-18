@@ -10,9 +10,9 @@ import com.ibeetl.admin.core.rbac.da.DefaultDataAccessFactory;
 
 @Configuration
 public class RbacDataAccessConfig {
-	@ConditionalOnMissingBean(DataAccessFactory.class)
-	@Bean
-	public DataAccessFactory dataAccessFatory(ApplicationContext  applicationContext) {
-		return new DefaultDataAccessFactory(applicationContext);
-	}
+    @ConditionalOnMissingBean(DataAccessFactory.class)
+    @Bean
+    public DataAccessFactory dataAccessFatory(ApplicationContext applicationContext) {
+        return new DefaultDataAccessFactory(applicationContext);
+    }
 }

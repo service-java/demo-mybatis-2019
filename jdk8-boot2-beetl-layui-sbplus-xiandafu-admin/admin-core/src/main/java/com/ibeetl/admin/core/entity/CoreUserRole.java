@@ -8,14 +8,14 @@ import org.beetl.sql.core.annotatoin.AutoID;
 import org.beetl.sql.core.annotatoin.SeqID;
 
 /*
-*  用户角色关系
-* gen by beetlsql 2016-11-22
-*/
+ *  用户角色关系
+ * gen by beetlsql 2016-11-22
+ */
 public class CoreUserRole extends BaseEntity {
 
     // 自增id
-	@SeqID(name = "ORACLE_CORE_SEQ_NAME")
-	@AutoID
+    @SeqID(name = "ORACLE_CORE_SEQ_NAME")
+    @AutoID
     private Long id;
     // 授权机构id
     @NotNull(message = "授权机构不能为空")
@@ -61,13 +61,13 @@ public class CoreUserRole extends BaseEntity {
         this.userId = userId;
     }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
 
 }

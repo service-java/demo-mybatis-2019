@@ -19,49 +19,48 @@ import com.ibeetl.admin.core.web.JsonResult;
 
 @Configuration
 public class JasonConfig {
-	@Bean
-	@ConditionalOnMissingBean(ObjectMapper.class)
-	public ObjectMapper getObjectMapper() {
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
-		objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-		SimpleModule simpleModule = new SimpleModule("SimpleModule", 
-				Version.unknownVersion());
-		simpleModule.addSerializer(JsonResult.class, new CustomJsonResultSerializer());
-		objectMapper.registerModule(simpleModule);
-		return objectMapper;
-	}
-	/**
-	 * layui 前端要求后台返回的数据格式
-	 * @author xiandafu
-	 *
-	 */
-	public static class CustomJsonResultSerializer extends JsonSerializer<JsonResult> {
+    @Bean
+    @ConditionalOnMissingBean(ObjectMapper.class)
+    public ObjectMapper getObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        SimpleModule simpleModule = new SimpleModule("SimpleModule", Version.unknownVersion());
+        simpleModule.addSerializer(JsonResult.class, new CustomJsonResultSerializer());
+        objectMapper.registerModule(simpleModule);
+        return objectMapper;
+    }
 
-	    public CustomJsonResultSerializer() {
-	    }
+    /**
+     * layui 前端要求后台返回的数据格式
+     *
+     * @author xiandafu
+     */
+    public static class CustomJsonResultSerializer extends JsonSerializer<JsonResult> {
+
+        public CustomJsonResultSerializer() {
+        }
 
 
-		@Override
-		public void serialize(JsonResult value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
-			gen.writeStartObject();
-			if(value.getCode().equals("200")) {
-				gen.writeObjectField("code", 0);
-			}else {
-				gen.writeObjectField("code", Integer.parseInt(value.getCode()));
-			}
-			gen.writeStringField("msg", value.getMsg());
-			Object data = value.getData();
-			if(data instanceof PageQuery ) {
-				PageQuery query = (PageQuery)(data);
-				gen.writeObjectField("count", query.getTotalRow());
-				gen.writeObjectField("data", query.getList());
-			}else {
-				
-				gen.writeObjectField("data", data);
-			}
-			gen.writeEndObject();
-		}
+        @Override
+        public void serialize(JsonResult value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+            gen.writeStartObject();
+            if (value.getCode().equals("200")) {
+                gen.writeObjectField("code", 0);
+            } else {
+                gen.writeObjectField("code", Integer.parseInt(value.getCode()));
+            }
+            gen.writeStringField("msg", value.getMsg());
+            Object data = value.getData();
+            if (data instanceof PageQuery) {
+                PageQuery query = (PageQuery) (data);
+                gen.writeObjectField("count", query.getTotalRow());
+                gen.writeObjectField("data", query.getList());
+            } else {
+                gen.writeObjectField("data", data);
+            }
+            gen.writeEndObject();
+        }
 
-	}
+    }
 }

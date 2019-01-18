@@ -10,9 +10,9 @@ import com.ibeetl.admin.core.entity.CoreAudit;
 @Service
 @Transactional
 public class CoreAuditService extends BaseService<CoreAudit> {
-    
+
     @Autowired
     private CoreAuditDao sysAuditDao;
-    
+
 
 }

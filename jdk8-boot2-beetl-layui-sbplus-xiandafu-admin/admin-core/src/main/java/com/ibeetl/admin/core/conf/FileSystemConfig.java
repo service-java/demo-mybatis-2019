@@ -16,19 +16,20 @@ import com.ibeetl.admin.core.file.LocalFileService;
 @Configuration
 @ConditionalOnMissingBean(FileService.class)
 public class FileSystemConfig {
-	@Autowired
-	Environment env;
-	@Bean
-	public FileService getFileService(ApplicationContext ctx) {
-		String root = env.getProperty("localFile.root");
-		if(StringUtils.isEmpty(root)) {
-			String userDir = System.getProperty("user.dir");
-			root = userDir+File.separator+"filesystem";
-		}
-		File f = new File(root);
-		if(!f.exists()) {
-			f.mkdirs();
-		}
-		return new LocalFileService(ctx,root);
-	}
+    @Autowired
+    Environment env;
+
+    @Bean
+    public FileService getFileService(ApplicationContext ctx) {
+        String root = env.getProperty("localFile.root");
+        if (StringUtils.isEmpty(root)) {
+            String userDir = System.getProperty("user.dir");
+            root = userDir + File.separator + "filesystem";
+        }
+        File f = new File(root);
+        if (!f.exists()) {
+            f.mkdirs();
+        }
+        return new LocalFileService(ctx, root);
+    }
 }

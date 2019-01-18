@@ -2,20 +2,21 @@ package com.ibeetl.admin.core.web;
 
 /**
  * 描述: json格式数据返回码
- *<ul>
- *      <li>100 : 用户未登录 </li>
- *      <li>200 : 成功 </li>
- *      <li>300 : 失败 </li>
+ * <ul>
+ * <li>100 : 用户未登录 </li>
+ * <li>200 : 成功 </li>
+ * <li>300 : 失败 </li>
  * </ul>
+ *
  * @author : Administrator
  */
 public enum JsonReturnCode {
 
-    NOT_LOGIN("401","未登录"),
-    SUCCESS ("200","成功"),
-    FAIL ("500","内部失败"),
-	ACCESS_ERROR ("403","禁止访问"),
-	NOT_FOUND ("404","页面未发现");
+    NOT_LOGIN("401", "未登录"),
+    SUCCESS("200", "成功"),
+    FAIL("500", "内部失败"),
+    ACCESS_ERROR("403", "禁止访问"),
+    NOT_FOUND("404", "页面未发现");
     private String code;
     private String desc;
 

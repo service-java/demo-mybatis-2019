@@ -41,7 +41,7 @@ import com.ibeetl.starter.ObjectMapperJsonUtil;
 @AutoConfigureAfter(JasonConfig.class)
 public class BeetlConf {
     @Autowired
-     Environment env;
+    Environment env;
     @Autowired
     CorePlatformService platFormService;
 
@@ -53,7 +53,6 @@ public class BeetlConf {
 
     @Autowired
     DictQueryFunction dictDownQueryFunction;
-  
 
 
     @Autowired
@@ -72,13 +71,13 @@ public class BeetlConf {
 
     @Autowired
     FunFunction funFunction;
-    
+
     @Autowired
     FunAccessUrlFunction funAccessUrlFunction;
-    
+
     @Autowired
     MenuFunction menuFunction;
-    
+
     @Bean
     public WebSimulate getWebSimulate(GroupTemplate gt, ObjectMapper objectMapper) {
         return new WebSimulate(gt, new ObjectMapperJsonUtil(objectMapper)) {
@@ -117,34 +116,34 @@ public class BeetlConf {
                     }
 
                 });
-                
+
                 groupTemplate.registerFunction("abcd", new Function() {
 
                     @Override
                     public Boolean call(Object[] paras, Context ctx) {
-                      return true;
+                        return true;
                     }
 
                 });
-                
+
                 groupTemplate.registerFunction("env", new Function() {
 
                     @Override
                     public String call(Object[] paras, Context ctx) {
-                      String key = (String)paras[0];
-                      String value =  env.getProperty(key); 
-                      if(value!=null) {
-                          return getStr(value);
-                      }
-                      if(paras.length==2) {
-                          return (String)paras[1];
-                      }
-                      return null;
+                        String key = (String) paras[0];
+                        String value = env.getProperty(key);
+                        if (value != null) {
+                            return getStr(value);
+                        }
+                        if (paras.length == 2) {
+                            return (String) paras[1];
+                        }
+                        return null;
                     }
-                    
+
                     protected String getStr(String str) {
                         try {
-                            return new String(str.getBytes("iso8859-1"),"UTF-8");
+                            return new String(str.getBytes("iso8859-1"), "UTF-8");
                         } catch (UnsupportedEncodingException e) {
                             throw new RuntimeException(e);
                         }

@@ -15,6 +15,7 @@ import com.ibeetl.admin.core.util.enums.RoleTypeEnum;
 
 /**
  * 描述: 字典 service，包含常规字典和级联字典的操作。
+ *
  * @author : xiandafu
  */
 @Service
@@ -25,16 +26,13 @@ public class CoreRoleService extends BaseService<CoreRole> {
 
     @Autowired
     private CoreRoleDao roleDao;
-    
-    
-    public List<CoreRole> getAllRoles(String type){
-    	CoreRole template = new CoreRole();
-    	template.setType(type);
-    	return roleDao.template(template);
-    }
-   
 
-    
-    
-  
+
+    public List<CoreRole> getAllRoles(String type) {
+        CoreRole template = new CoreRole();
+        template.setType(type);
+        return roleDao.template(template);
+    }
+
+
 }

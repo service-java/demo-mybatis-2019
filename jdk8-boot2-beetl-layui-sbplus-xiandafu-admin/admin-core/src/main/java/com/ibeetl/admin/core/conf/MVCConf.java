@@ -102,19 +102,17 @@ public class MVCConf implements WebMvcConfigurer, InitializingBean {
         this.orgId = env.getProperty("user.orgId", Long.class);
         this.mvcTestPath = env.getProperty("mvc.test.path");
         Map<String, Object> var = new HashMap<>(5);
-        String appName =  env.getProperty("app.name");
-        if(appName==null) {
-        	 var.put("appName",DEFAULT_APP_NAME);
-      
+        String appName = env.getProperty("app.name");
+        if (appName == null) {
+            var.put("appName", DEFAULT_APP_NAME);
+
         }
-        
+
         var.put("jsVer", System.currentTimeMillis());
-       
-       groupTemplate.setSharedVars(var);
-        
-        
-   
-       
+
+        groupTemplate.setSharedVars(var);
+
+
     }
 
 

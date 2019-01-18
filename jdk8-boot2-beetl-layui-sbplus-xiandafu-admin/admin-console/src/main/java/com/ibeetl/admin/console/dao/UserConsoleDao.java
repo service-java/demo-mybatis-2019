@@ -16,11 +16,11 @@ public interface UserConsoleDao extends BaseMapper<CoreUser> {
 
     PageQuery<CoreUser> queryByCondtion(PageQuery<CoreUser> query);
 
-    void batchDelUserByIds( List<Long> ids);
+    void batchDelUserByIds(List<Long> ids);
 
     void batchUpdateUserState(List<Long> ids, GeneralStateEnum state);
-    
-    List<CoreUserRole> queryUserRole( Long id,Long orgId,Long roleId);
+
+    List<CoreUserRole> queryUserRole(Long id, Long orgId, Long roleId);
 
 }
 

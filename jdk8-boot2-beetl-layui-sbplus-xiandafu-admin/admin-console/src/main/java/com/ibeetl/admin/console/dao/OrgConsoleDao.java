@@ -15,11 +15,11 @@ import com.ibeetl.admin.core.entity.CoreUser;
 @SqlResource("console.org")
 public interface OrgConsoleDao extends BaseMapper<CoreOrg> {
 
-   
- 
 
     void queryByCondtion(PageQuery<CoreOrg> query);
-    @SqlStatement(type=SqlStatementType.SELECT)
+
+    @SqlStatement(type = SqlStatementType.SELECT)
     void queryUserByCondtion(PageQuery<CoreUser> query);
+
     void batchDelByIds(@Param(value = "ids") List<Long> ids);
 }

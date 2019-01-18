@@ -14,17 +14,16 @@ import com.ibeetl.admin.core.service.CorePlatformService;
 @Component
 public class FunFunction implements Function {
 
-	@Autowired
-	CorePlatformService platFormService;
-	
-	
-	public Object call(Object[] paras, Context ctx) {
-		FunctionItem tree = platFormService.buildFunction();
-		FunctionItem item = tree.findChild((Long)paras[0]);
-		return item.getName();
-		
-	}
-	
-	
+    @Autowired
+    CorePlatformService platFormService;
+
+
+    public Object call(Object[] paras, Context ctx) {
+        FunctionItem tree = platFormService.buildFunction();
+        FunctionItem item = tree.findChild((Long) paras[0]);
+        return item.getName();
+
+    }
+
 
 }

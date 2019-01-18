@@ -57,7 +57,7 @@ public class MenuConsoleService extends BaseService<CoreMenu> {
         }
         platformService.clearMenuCache();
     }
-    
+
     public void updateMenu(CoreMenu menu) {
         menuDao.updateById(menu);
         platformService.clearMenuCache();

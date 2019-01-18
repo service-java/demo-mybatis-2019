@@ -25,89 +25,93 @@ import com.ibeetl.admin.core.util.PlatformException;
 
 @Service
 @Transactional
-public class DictConsoleService extends BaseService<CoreDict>{
+public class DictConsoleService extends BaseService<CoreDict> {
 
-    @Autowired private DictConsoleDao dictDao;
+    @Autowired
+    private DictConsoleDao dictDao;
 
-    public PageQuery<CoreDict>queryByCondition(PageQuery query){
-        PageQuery ret =  dictDao.queryByCondition(query);
+    public PageQuery<CoreDict> queryByCondition(PageQuery query) {
+        PageQuery ret = dictDao.queryByCondition(query);
         queryListAfter(ret.getList());
         return ret;
     }
 
-    public void batchDelCoreDict(List<Long> ids){
+    public void batchDelCoreDict(List<Long> ids) {
         try {
-        	//TODO,找到数据字典所有子类，设置删除标记
+            //TODO,找到数据字典所有子类，设置删除标记
             dictDao.batchDelCoreDictByIds(ids);
         } catch (Exception e) {
             throw new PlatformException("批量删除CoreDict失败", e);
         }
     }
+
     public List<CoreDict> queryExcel(PageQuery<CoreUser> query) {
         //同查询，不需要额外数据
-        PageQuery ret =  dictDao.queryByCondition(query);
+        PageQuery ret = dictDao.queryByCondition(query);
         queryListAfter(ret.getList());
         return ret.getList();
-        
+
     }
+
     /**
-     *  参考：dict_mapping.xml
+     * 参考：dict_mapping.xml
+     *
      * @param list
      * @return
      */
     public void batchInsert(List<DictExcelImportData> list) {
-       int dataStartRow = 2;
-       final Map<Integer,DictExcelImportData> map = new HashMap<>();
-       list.forEach((item)->map.put(item.getExcelId(), item));
-       //逐个按照顺序导入
-       for(DictExcelImportData item:list) {
-           CoreDict dict = new  CoreDict();
-           dict.setName(item.getName());
-           dict.setRemark(item.getRemark());
-           dict.setType(item.getType());
-           dict.setTypeName(item.getTypeName());
-           dict.setValue(item.getValue());
-           
-           //设置父字典
-           if(item.getParentExcelId()!=0) {
-               DictExcelImportData parentItem =  map.get(item.getParentExcelId());
-               if(parentItem==null) {
-                   //硬编码，TODO,用reader缺少校验，替换手写导入
-                   int row = item.getExcelId()+dataStartRow;
-                   throwImporError(row,5,"未找到父字典");
-               }
-               if(parentItem.getId()==null) {
-                   int row = item.getExcelId()+dataStartRow;
-                   throwImporError(row,5,"父字典未被导入，请先导入父字典");
-               }
-               dict.setParent(parentItem.getId());
-           }
-           dict.setCreateTime(new Date());
-           //导入前先查找是否有此值
-           CoreDict template = new CoreDict();
-           template.setType(dict.getType());
-           template.setValue(dict.getValue());
-           CoreDict dbDict = dictDao.templateOne(template);
-           if(dbDict!=null) {
-               int row = item.getExcelId()+dataStartRow;
-               throwImporError(row,0,"字典数据已经存在");
-           }
-           dictDao.insert(dict);
-           
-           item.setId(dict.getId());
-           dataStartRow++;
-       }
-       
-       
+        int dataStartRow = 2;
+        final Map<Integer, DictExcelImportData> map = new HashMap<>();
+        list.forEach((item) -> map.put(item.getExcelId(), item));
+        //逐个按照顺序导入
+        for (DictExcelImportData item : list) {
+            CoreDict dict = new CoreDict();
+            dict.setName(item.getName());
+            dict.setRemark(item.getRemark());
+            dict.setType(item.getType());
+            dict.setTypeName(item.getTypeName());
+            dict.setValue(item.getValue());
+
+            //设置父字典
+            if (item.getParentExcelId() != 0) {
+                DictExcelImportData parentItem = map.get(item.getParentExcelId());
+                if (parentItem == null) {
+                    //硬编码，TODO,用reader缺少校验，替换手写导入
+                    int row = item.getExcelId() + dataStartRow;
+                    throwImporError(row, 5, "未找到父字典");
+                }
+                if (parentItem.getId() == null) {
+                    int row = item.getExcelId() + dataStartRow;
+                    throwImporError(row, 5, "父字典未被导入，请先导入父字典");
+                }
+                dict.setParent(parentItem.getId());
+            }
+            dict.setCreateTime(new Date());
+            //导入前先查找是否有此值
+            CoreDict template = new CoreDict();
+            template.setType(dict.getType());
+            template.setValue(dict.getValue());
+            CoreDict dbDict = dictDao.templateOne(template);
+            if (dbDict != null) {
+                int row = item.getExcelId() + dataStartRow;
+                throwImporError(row, 0, "字典数据已经存在");
+            }
+            dictDao.insert(dict);
+
+            item.setId(dict.getId());
+            dataStartRow++;
+        }
+
+
     }
-    
-    private void throwImporError(int row,int col,String msg) {
+
+    private void throwImporError(int row, int col, String msg) {
         ExcelError error = new ExcelError();
-        CellReference cr = new CellReference(row,col,false,false);
+        CellReference cr = new CellReference(row, col, false, false);
         error.setCell(cr.formatAsString());
         error.setMsg(msg);
-        throw new PlatformException("导入错误在:"+error.getCell()+","+msg);
+        throw new PlatformException("导入错误在:" + error.getCell() + "," + msg);
     }
-    
-    
+
+
 }

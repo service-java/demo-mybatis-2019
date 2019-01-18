@@ -11,6 +11,7 @@ public interface MenuConsoleDao extends BaseMapper<CoreMenu> {
 
     /**
      * 根据条件分页查询
+     *
      * @param query 查询条件
      */
     void queryByCondtion(PageQuery query);

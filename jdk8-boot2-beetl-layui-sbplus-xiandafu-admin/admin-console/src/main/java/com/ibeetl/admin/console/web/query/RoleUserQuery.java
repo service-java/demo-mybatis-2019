@@ -12,35 +12,32 @@ public class RoleUserQuery extends PageParam {
     private String userCode;
     @Query(name = "名称", display = true)
     private String userName;
-   
+
     private Long roleId;
 
-	public String getUserCode() {
-		return userCode;
-	}
+    public String getUserCode() {
+        return userCode;
+    }
 
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public Long getRoleId() {
-		return roleId;
-	}
+    public Long getRoleId() {
+        return roleId;
+    }
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
-
-
-  
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 
 
 }

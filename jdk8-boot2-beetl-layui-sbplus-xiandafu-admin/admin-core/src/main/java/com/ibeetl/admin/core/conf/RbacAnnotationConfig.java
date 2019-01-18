@@ -27,100 +27,100 @@ import com.ibeetl.admin.core.util.PlatformException;
 @Aspect
 @Component
 public class RbacAnnotationConfig {
-	@Autowired
-	CorePlatformService platformService;
-	@Autowired
-	CoreAuditService sysAuditService;
-	@Autowired
-	HttpRequestLocal httpRequestLocal;
+    @Autowired
+    CorePlatformService platformService;
+    @Autowired
+    CoreAuditService sysAuditService;
+    @Autowired
+    HttpRequestLocal httpRequestLocal;
 
-	@Autowired
-	Environment env;
+    @Autowired
+    Environment env;
 
-	ObjectMapper jsonMapper = new ObjectMapper();
-	private final Log log = LogFactory.getLog(this.getClass());
+    ObjectMapper jsonMapper = new ObjectMapper();
+    private final Log log = LogFactory.getLog(this.getClass());
 
-	@org.aspectj.lang.annotation.Around("within(@org.springframework.stereotype.Controller *) && @annotation(function)")
-	public Object functionAccessCheck(final ProceedingJoinPoint pjp, Function function) throws Throwable {
-		// debug
-		String funCode = null;
-		CoreUser user = null;
-		Method m = null;
-		try {
-			
-			if (function != null) {
-				funCode = function.value();
-				user = platformService.getCurrentUser();
-				Long orgId = platformService.getCurrentOrgId();
-				boolean access = platformService.canAcessFunction(user.getId(), orgId, funCode);
-				if (!access) {
-					log.warn(jsonMapper.writeValueAsString(user) + "试图访问未授权功能 " + funCode);
-					throw new PlatformException("试图访问未授权功能");
-				}
-				FunctionLocal.set(funCode);
-			}
-			
-			Object o = pjp.proceed();
-			if (function != null) {
-				MethodSignature ms = (MethodSignature)pjp.getSignature();
-			    m = ms.getMethod();
-				createAudit(funCode,function.name(), user, true, "",m);
-			}
-			return o;
+    @org.aspectj.lang.annotation.Around("within(@org.springframework.stereotype.Controller *) && @annotation(function)")
+    public Object functionAccessCheck(final ProceedingJoinPoint pjp, Function function) throws Throwable {
+        // debug
+        String funCode = null;
+        CoreUser user = null;
+        Method m = null;
+        try {
 
-		} catch (Throwable e) {
-			if (function != null) {
-				createAudit(funCode, function.name(),user, false, e.getMessage(),m);
-			}
-			throw e;
-		}
+            if (function != null) {
+                funCode = function.value();
+                user = platformService.getCurrentUser();
+                Long orgId = platformService.getCurrentOrgId();
+                boolean access = platformService.canAcessFunction(user.getId(), orgId, funCode);
+                if (!access) {
+                    log.warn(jsonMapper.writeValueAsString(user) + "试图访问未授权功能 " + funCode);
+                    throw new PlatformException("试图访问未授权功能");
+                }
+                FunctionLocal.set(funCode);
+            }
 
-	}
+            Object o = pjp.proceed();
+            if (function != null) {
+                MethodSignature ms = (MethodSignature) pjp.getSignature();
+                m = ms.getMethod();
+                createAudit(funCode, function.name(), user, true, "", m);
+            }
+            return o;
 
-	private void createAudit(String functionCode, String functionName,CoreUser user, boolean success, String msg, Method m) {
-		boolean enable = env.getProperty("audit.enable", Boolean.class, false);
-		if (!enable) {
-			return;
-		}
-		if(filter(m,functionCode)){
-			return ;
-		}
-		
-		CoreAudit audit = new CoreAudit();
-		if(StringUtils.isEmpty(functionName)) {
-		    CoreFunction fun = this.platformService.getFunction(functionCode);
+        } catch (Throwable e) {
+            if (function != null) {
+                createAudit(funCode, function.name(), user, false, e.getMessage(), m);
+            }
+            throw e;
+        }
 
-	        if (fun == null) {
-	            // 没有在数据库定义，但写在代码里了
-	            log.warn(functionCode + " 未在数据库里定义");
-	            functionName = "未定义";
-	        } else {
-	            functionName = fun.getName();
-	        }
-		}
-		audit.setCreateTime(new Date());
-		audit.setFunctionCode(functionCode);
-		audit.setFunctionName(functionName);
-		audit.setUserId(user.getId());
-		audit.setSuccess(success ? 1 : 0);
-		audit.setUserName(user.getName());
-		audit.setMessage(msg);
-		
-		audit.setIp(httpRequestLocal.getRequestIP());
-		sysAuditService.save(audit);
-	}
-	
-	private boolean filter(Method m,String functionCode){
-		if(functionCode.startsWith("audit.")){
-			return true;
-		}
-		String uri = httpRequestLocal.getRequestURI();
-		if(uri!=null&&uri.endsWith("/index/condition.json")){
-			
-			return true ;
-		}else{
-			return false;
-		}
-	}
+    }
+
+    private void createAudit(String functionCode, String functionName, CoreUser user, boolean success, String msg, Method m) {
+        boolean enable = env.getProperty("audit.enable", Boolean.class, false);
+        if (!enable) {
+            return;
+        }
+        if (filter(m, functionCode)) {
+            return;
+        }
+
+        CoreAudit audit = new CoreAudit();
+        if (StringUtils.isEmpty(functionName)) {
+            CoreFunction fun = this.platformService.getFunction(functionCode);
+
+            if (fun == null) {
+                // 没有在数据库定义，但写在代码里了
+                log.warn(functionCode + " 未在数据库里定义");
+                functionName = "未定义";
+            } else {
+                functionName = fun.getName();
+            }
+        }
+        audit.setCreateTime(new Date());
+        audit.setFunctionCode(functionCode);
+        audit.setFunctionName(functionName);
+        audit.setUserId(user.getId());
+        audit.setSuccess(success ? 1 : 0);
+        audit.setUserName(user.getName());
+        audit.setMessage(msg);
+
+        audit.setIp(httpRequestLocal.getRequestIP());
+        sysAuditService.save(audit);
+    }
+
+    private boolean filter(Method m, String functionCode) {
+        if (functionCode.startsWith("audit.")) {
+            return true;
+        }
+        String uri = httpRequestLocal.getRequestURI();
+        if (uri != null && uri.endsWith("/index/condition.json")) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

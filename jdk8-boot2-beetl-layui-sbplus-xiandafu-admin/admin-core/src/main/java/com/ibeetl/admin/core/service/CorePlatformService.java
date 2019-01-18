@@ -39,6 +39,7 @@ import com.ibeetl.admin.core.util.enums.DelFlagEnum;
 
 /**
  * 系统平台功能访问入口，所有方法应该支持缓存或者快速访问
+ *
  * @author xiandafu
  */
 @Service
@@ -69,9 +70,9 @@ public class CorePlatformService {
     public static final String ACCESS_USER_ORGS = "core:orgs";
 
     public static final String ACCESS_SUPPER_ADMIN = "admin";
-    
-	@Autowired
-	HttpRequestLocal httpRequestLocal;
+
+    @Autowired
+    HttpRequestLocal httpRequestLocal;
 
 
     @Autowired
@@ -117,31 +118,31 @@ public class CorePlatformService {
 
 
     public CoreUser getCurrentUser() {
-    	checkSession();
-        CoreUser user =  (CoreUser) httpRequestLocal.getSessionValue(ACCESS_CURRENT_USER);
+        checkSession();
+        CoreUser user = (CoreUser) httpRequestLocal.getSessionValue(ACCESS_CURRENT_USER);
         return user;
 
     }
-    
+
     public void changeOrg(Long orgId) {
-    		List<CoreOrg> orgs = this.getCurrentOrgs();
-    		for(CoreOrg org:orgs) {
-    			if(org.getId().equals(orgId)) {
-    			 	httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_ORG, org);
-    			}
-    		}
-	}
+        List<CoreOrg> orgs = this.getCurrentOrgs();
+        for (CoreOrg org : orgs) {
+            if (org.getId().equals(orgId)) {
+                httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_ORG, org);
+            }
+        }
+    }
 
 
     public Long getCurrentOrgId() {
-    	checkSession();
+        checkSession();
         CoreOrg org = (CoreOrg) httpRequestLocal.getSessionValue(ACCESS_CURRENT_ORG);
         return org.getId();
 
     }
-    
+
     public CoreOrg getCurrentOrg() {
-    	checkSession();
+        checkSession();
         CoreOrg org = (CoreOrg) httpRequestLocal.getSessionValue(ACCESS_CURRENT_ORG);
         return org;
 
@@ -152,18 +153,18 @@ public class CorePlatformService {
         return orgs;
 
     }
-    
+
     protected void checkSession() {
-    	  CoreOrg org = (CoreOrg) httpRequestLocal.getSessionValue(ACCESS_CURRENT_ORG);
-          if(org==null) {
-          	throw new PlatformException("会话过期，重新登录");
-          }
+        CoreOrg org = (CoreOrg) httpRequestLocal.getSessionValue(ACCESS_CURRENT_ORG);
+        if (org == null) {
+            throw new PlatformException("会话过期，重新登录");
+        }
     }
 
     public void setLoginUser(CoreUser user, CoreOrg currentOrg, List<CoreOrg> orgs) {
-    	httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_USER, user);
-    	httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_ORG, currentOrg);
-    	httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_USER_ORGS, orgs);
+        httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_USER, user);
+        httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_CURRENT_ORG, currentOrg);
+        httpRequestLocal.setSessionValue(CorePlatformService.ACCESS_USER_ORGS, orgs);
 
     }
 
@@ -185,13 +186,11 @@ public class CorePlatformService {
             return root;
         }
         OrgItem current = getCurrentOrgItem();
-        OrgItem item= dataAccessFactory.getUserOrgTree(current);
-       
+        OrgItem item = dataAccessFactory.getUserOrgTree(current);
+
         return item;
 
     }
-
-   
 
 
     @Cacheable(FUNCTION_CACHE)
@@ -214,6 +213,7 @@ public class CorePlatformService {
 
     /**
      * 判断用户是否是超级管理员
+     *
      * @param user
      * @return
      */
@@ -226,12 +226,13 @@ public class CorePlatformService {
         return isSupperAdmin(user);
     }
 
-    public boolean isAllowUserName(String name){
-    	return !name.startsWith(ACCESS_SUPPER_ADMIN);
+    public boolean isAllowUserName(String name) {
+        return !name.startsWith(ACCESS_SUPPER_ADMIN);
     }
 
     /**
      * 获取用户在指定功能点的数据权限配置，如果没有，返回空集合
+     *
      * @param userId
      * @param orgId
      * @param fucntionCode
@@ -246,11 +247,11 @@ public class CorePlatformService {
 
     /**
      * 当前用户是否能访问功能，用于后台功能验证,functionCode 目前只支持二级域名方式，不支持更多级别
+     *
      * @param functionCode "user.add","user"
      * @return
      */
-    
-    
+
 
     @Cacheable(USER_FUNCTION_ACCESS_CACHE)
     public boolean canAcessFunction(Long userId, Long orgId, String functionCode) {
@@ -276,17 +277,16 @@ public class CorePlatformService {
         boolean canAccess = !list.isEmpty();
         if (canAccess) {
             return true;
-        }else{
-        	return false;
+        } else {
+            return false;
         }
-
-        
 
 
     }
 
     /**
      * 当前功能的子功能，如果有，则页面需要做按钮级别的过滤
+     *
      * @param userId
      * @param orgId
      * @param parentFunction 菜单对应的function
@@ -309,6 +309,7 @@ public class CorePlatformService {
 
     /**
      * 查询当前用户有用的菜单项目，可以在随后验证是否能显示某项菜单
+     *
      * @return
      */
     @Cacheable(USER_MENU_CACHE)
@@ -320,6 +321,7 @@ public class CorePlatformService {
 
     /**
      * 验证菜单是否能被显示
+     *
      * @param item
      * @param allows
      * @return
@@ -340,14 +342,14 @@ public class CorePlatformService {
 
     @Cacheable(ORG_TREE_CACHE)
     public OrgItem buildOrg() {
-       
-       
+
+
         CoreOrg root = sysOrgDao.getRoot();
         OrgItem rootItem = new OrgItem(root);
         CoreOrg org = new CoreOrg();
         org.setDelFlag(DelFlagEnum.NORMAL.getValue());
         List<CoreOrg> list = sysOrgDao.template(org);
-        OrgBuildUtil.buildTreeNode(rootItem,list);
+        OrgBuildUtil.buildTreeNode(rootItem, list);
         //集团
         return rootItem;
 
@@ -359,12 +361,14 @@ public class CorePlatformService {
         return FunctionBuildUtil.buildOrgTree(list);
 
     }
+
     /**
      * 用户信息被管理员修改，重置会话，让用户操作重新登录
+     *
      * @param name
      */
-    public void restUserSession(String name){
-    	//TODO
+    public void restUserSession(String name) {
+        //TODO
     }
 
 
@@ -381,23 +385,24 @@ public class CorePlatformService {
         //没有做任何事情，交给spring cache来处理了
     }
 
-    @CacheEvict(cacheNames = {CorePlatformService.DICT_CACHE_SAME_LEVEL,CorePlatformService.DICT_CACHE_TYPE,CorePlatformService.DICT_CACHE_VALUE}, allEntries = true)
+    @CacheEvict(cacheNames = {CorePlatformService.DICT_CACHE_SAME_LEVEL, CorePlatformService.DICT_CACHE_TYPE, CorePlatformService.DICT_CACHE_VALUE}, allEntries = true)
     public void clearDictCache() {
     }
-    
+
     @CacheEvict(cacheNames = {CorePlatformService.ORG_TREE_CACHE}, allEntries = true)
     public void clearOrgCache() {
     }
 
     /**
      * 得到类型为系统的菜单，通常就是根菜单下面
+     *
      * @return
      */
     public List<MenuItem> getSysMenu() {
         MenuItem root = buildMenu();
         List<MenuItem> list = root.getChildren();
         for (MenuItem item : list) {
-            if (!item.getData().getType() .equals(CoreMenu.TYPE_SYSTEM)) {
+            if (!item.getData().getType().equals(CoreMenu.TYPE_SYSTEM)) {
                 throw new IllegalArgumentException("本系统没有系统模块");
             }
         }
@@ -406,6 +411,7 @@ public class CorePlatformService {
 
     /**
      * 得到菜单的子菜单
+     *
      * @param menuId
      * @return
      */
@@ -414,9 +420,6 @@ public class CorePlatformService {
         List<MenuItem> list = root.findChild(menuId).getChildren();
         return list;
     }
-    
-    
-  
 
 
 }

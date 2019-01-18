@@ -17,6 +17,7 @@ public interface CoreDictDao extends BaseMapper<CoreDict> {
 
     /**
      * 查询某个类型下的字典集合
+     *
      * @param type 字典类型
      * @return
      */
@@ -24,16 +25,17 @@ public interface CoreDictDao extends BaseMapper<CoreDict> {
 
     /**
      * 查询字段类型列表
+     *
      * @param delFlag 删除标记
      * @return
      */
     @SqlStatement(returnType = Map.class)
     List<Map<String, String>> findTypeList(int delFlag);
 
-  
 
     /**
      * 根据父节点Id查询子节点数据
+     *
      * @param id 父节点id
      * @return
      */

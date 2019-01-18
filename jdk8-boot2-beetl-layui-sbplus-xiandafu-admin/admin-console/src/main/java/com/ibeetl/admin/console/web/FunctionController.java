@@ -40,8 +40,8 @@ import com.ibeetl.admin.core.web.dto.FunctionNodeView;
  */
 @Controller
 public class FunctionController {
-	
-	private  final Log log  = LogFactory.getLog(this.getClass());
+
+    private final Log log = LogFactory.getLog(this.getClass());
 
     private static final String MODEL = "/admin/function";
     @Autowired
@@ -49,101 +49,102 @@ public class FunctionController {
     @Autowired
     private FunctionConsoleService functionConsoleService;
 
-    
+
     /*页面*/
-     
-     @GetMapping(MODEL + "/index.do")
-     @Function("function")
-     public ModelAndView index() {
- 		ModelAndView view = new ModelAndView("/admin/function/index.html");
- 		view.addObject("search", FunctionQuery.class.getName());
-         return view;
-     }
-     
-     @GetMapping(MODEL + "/add.do")
-     @Function("function.add")
-     public ModelAndView add() {
-    	 ModelAndView view = new ModelAndView("/admin/function/add.html");
-    	 return view;
-     }
-     @GetMapping(MODEL + "/edit.do")
-     @Function("function.edit")
-     public ModelAndView edit(Integer id) {
-    	 ModelAndView view = new ModelAndView("/admin/function/edit.html");
-    	 CoreFunction function = functionConsoleService.queryById(id);
-         view.addObject("function", function);
-    	 return view;
-     }
-     
-     /*Json*/
-     
+
+    @GetMapping(MODEL + "/index.do")
+    @Function("function")
+    public ModelAndView index() {
+        ModelAndView view = new ModelAndView("/admin/function/index.html");
+        view.addObject("search", FunctionQuery.class.getName());
+        return view;
+    }
+
+    @GetMapping(MODEL + "/add.do")
+    @Function("function.add")
+    public ModelAndView add() {
+        ModelAndView view = new ModelAndView("/admin/function/add.html");
+        return view;
+    }
+
+    @GetMapping(MODEL + "/edit.do")
+    @Function("function.edit")
+    public ModelAndView edit(Integer id) {
+        ModelAndView view = new ModelAndView("/admin/function/edit.html");
+        CoreFunction function = functionConsoleService.queryById(id);
+        view.addObject("function", function);
+        return view;
+    }
+
+    /*Json*/
+
     @RequestMapping(MODEL + "/add.json")
     @Function("function.add")
     @ResponseBody
     public JsonResult<CoreFunction> addFunction(@Validated(ValidateConfig.ADD.class) CoreFunction function) {
-		String code = function.getCode();
-		CoreFunction dbFunction = functionConsoleService.getFunction(code);
-		if(dbFunction!=null){
-			throw new FormFieldException(CoreFunction.class.getName(),"code","已经存在");
-		}
-		
-		if(function.getParentId()==null){
-			function.setParentId(0l);
-		}
-		function.setCreateTime(new Date());
-		functionConsoleService.saveFunction(function);
-		return JsonResult.success(function);
+        String code = function.getCode();
+        CoreFunction dbFunction = functionConsoleService.getFunction(code);
+        if (dbFunction != null) {
+            throw new FormFieldException(CoreFunction.class.getName(), "code", "已经存在");
+        }
+
+        if (function.getParentId() == null) {
+            function.setParentId(0l);
+        }
+        function.setCreateTime(new Date());
+        functionConsoleService.saveFunction(function);
+        return JsonResult.success(function);
     }
-    
-    
+
+
     @RequestMapping(MODEL + "/update.json")
     @Function("function.update")
     @ResponseBody
     public JsonResult<?> updateFunction(@Validated(ValidateConfig.UPDATE.class) CoreFunction function) {
-		CoreFunction dbFunction = functionConsoleService.getFunction(function.getCode());
-		if(dbFunction!=null&&!dbFunction.getId().equals(function.getId())){			
-			throw new FormFieldException(CoreFunction.class.getName(),"code","已经存在");
-		}
-		
-		if(function.getParentId()==null){
-			function.setParentId(0l);
-		}
+        CoreFunction dbFunction = functionConsoleService.getFunction(function.getCode());
+        if (dbFunction != null && !dbFunction.getId().equals(function.getId())) {
+            throw new FormFieldException(CoreFunction.class.getName(), "code", "已经存在");
+        }
+
+        if (function.getParentId() == null) {
+            function.setParentId(0l);
+        }
 //		function.setCreateTime(dbFunction.getCreateTime());
-		functionConsoleService.updateFunction(function);
-    	return JsonResult.success();
+        functionConsoleService.updateFunction(function);
+        return JsonResult.success();
     }
-    
+
     @RequestMapping(MODEL + "/view.json")
     @Function("function.query")
     @ResponseBody
     public JsonResult<CoreFunction> getFunction(Long id) {
-    		CoreFunction function =  functionConsoleService.getFunction(id);
+        CoreFunction function = functionConsoleService.getFunction(id);
 
-    		if (function.hasParent()){
-    			CoreFunction parent = functionConsoleService.getFunction(function.getParentId());
-    			function.set("parentName",parent.getName());
-			}else {
-				function.set("parentName","");
-			}
-			functionConsoleService.queryEntityAfter(function);
-    		return JsonResult.success(function);
+        if (function.hasParent()) {
+            CoreFunction parent = functionConsoleService.getFunction(function.getParentId());
+            function.set("parentName", parent.getName());
+        } else {
+            function.set("parentName", "");
+        }
+        functionConsoleService.queryEntityAfter(function);
+        return JsonResult.success(function);
     }
-    
+
 
     @RequestMapping(MODEL + "/delete.json")
     @Function("function.delete")
     @ResponseBody
     public JsonResult deleteFunction(Long id) {
-     	CoreFunction fun = functionConsoleService.queryById(id);
-        if (fun == null) {        	
-            throw new PlatformException("删除失败,没有找到Function "+id+"!");
+        CoreFunction fun = functionConsoleService.queryById(id);
+        if (fun == null) {
+            throw new PlatformException("删除失败,没有找到Function " + id + "!");
         }
-       //删除功能和所有子功能
-       functionConsoleService.deleteFunction(id);
-       return new JsonResult().success();
+        //删除功能和所有子功能
+        functionConsoleService.deleteFunction(id);
+        return new JsonResult().success();
     }
-    
-    
+
+
     /**
      * 字典列表  分页
      *
@@ -154,74 +155,71 @@ public class FunctionController {
     @Function("function.query")
     @ResponseBody
     public JsonResult<PageQuery<CoreFunction>> list(FunctionQuery condtion) {
-     
+
         PageQuery page = condtion.getPageQuery();
         functionConsoleService.queryByCondtion(page);
         return JsonResult.success(page);
-     
+
     }
-    
-    
+
+
     @PostMapping(MODEL + "/list/condition.json")
     @Function("function.query")
     @ResponseBody
     public JsonResult<List<Map<String, Object>>> listCondtion() {
-    		List<Map<String, Object>> list = AnnotationUtil.getInstance().getAnnotations(Query.class, FunctionQuery.class);
-    		return JsonResult.success(list);
-    }
-    
-  
-    private List<Long> findChildFunctionIds(Long funtionId) {
-       
-        FunctionItem funItem = platformService.buildFunction().findChild(funtionId);
-        List<Long> children =  funItem.findAllChildrenId();
-        children.add(funtionId);
-        return  children;
+        List<Map<String, Object>> list = AnnotationUtil.getInstance().getAnnotations(Query.class, FunctionQuery.class);
+        return JsonResult.success(list);
     }
 
- 
+
+    private List<Long> findChildFunctionIds(Long funtionId) {
+
+        FunctionItem funItem = platformService.buildFunction().findChild(funtionId);
+        List<Long> children = funItem.findAllChildrenId();
+        children.add(funtionId);
+        return children;
+    }
 
 
     @RequestMapping(MODEL + "/batchDel.json")
     @Function("function.delete")
     @ResponseBody
     public JsonResult batchDel(String ids) {
-    		List<Long> dels = ConvertUtil.str2longs(ids);
+        List<Long> dels = ConvertUtil.str2longs(ids);
         functionConsoleService.batchDeleteFunction(dels);
         return new JsonResult().success();
-       
+
     }
-    
+
     @PostMapping(MODEL + "/tree.json")
     @Function("function.query")
     @ResponseBody
-    public JsonResult<List<FunctionNodeView> > tree() {
-    		FunctionItem root = this.platformService.buildFunction();
-    		List<FunctionNodeView> tree = buildFunctionTree(root);
-    		return JsonResult.success(tree);
-       
-    }
-    
-    
-    private List<FunctionNodeView> buildFunctionTree(FunctionItem node){
-  		List<FunctionItem> list = node.getChildren();
-      	if(list.size()==0){
-      		return Collections.EMPTY_LIST;
-      	}
-      	List<FunctionNodeView> views = new ArrayList<FunctionNodeView>(list.size());
-      	for(FunctionItem item :list){
-      		FunctionNodeView view = new FunctionNodeView();
-      		view.setCode(item.getData().getCode());
-      		view.setName(item.getData().getName());
-      		view.setId(item.getData().getId());
-      		view.setAccessUrl(item.getData().getAccessUrl());
-      		List<FunctionNodeView> children = this.buildFunctionTree(item);
-      		view.setChildren(children);
-      		views.add(view);
-      	}
-      	return views;
-     }
-    
+    public JsonResult<List<FunctionNodeView>> tree() {
+        FunctionItem root = this.platformService.buildFunction();
+        List<FunctionNodeView> tree = buildFunctionTree(root);
+        return JsonResult.success(tree);
 
-    
+    }
+
+
+    private List<FunctionNodeView> buildFunctionTree(FunctionItem node) {
+        List<FunctionItem> list = node.getChildren();
+        if (list.size() == 0) {
+            return Collections.EMPTY_LIST;
+        }
+        List<FunctionNodeView> views = new ArrayList<FunctionNodeView>(list.size());
+        for (FunctionItem item : list) {
+            FunctionNodeView view = new FunctionNodeView();
+            view.setCode(item.getData().getCode());
+            view.setName(item.getData().getName());
+            view.setId(item.getData().getId());
+            view.setAccessUrl(item.getData().getAccessUrl());
+            List<FunctionNodeView> children = this.buildFunctionTree(item);
+            view.setChildren(children);
+            views.add(view);
+        }
+        return views;
+    }
+
+
 }

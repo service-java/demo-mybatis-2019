@@ -10,13 +10,14 @@ import java.lang.annotation.RetentionPolicy;
  * public String addUser(){
  * }
  * </pre>
- * 
+ * <p>
  * 只有拥有此项功能的角色才能操作，否则，权限不足
- * @author lijiazhi
  *
+ * @author lijiazhi
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Function {
-	public String value();
-	public String name() default "";
+    public String value();
+
+    public String name() default "";
 }

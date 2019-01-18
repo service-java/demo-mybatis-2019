@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.jxls.expression.ExpressionEvaluator;
 
-public class BeetlExpressionEvaluator implements ExpressionEvaluator{
+public class BeetlExpressionEvaluator implements ExpressionEvaluator {
 
     @Override
     public Object evaluate(String expression, Map<String, Object> context) {

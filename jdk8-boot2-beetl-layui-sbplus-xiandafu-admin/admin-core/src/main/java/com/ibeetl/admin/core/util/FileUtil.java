@@ -6,18 +6,17 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class FileUtil {
-    public static void copy(InputStream input ,OutputStream os) {
+    public static void copy(InputStream input, OutputStream os) {
         try {
             byte[] buf = new byte[1024];
             int bytesRead;
             while ((bytesRead = input.read(buf)) > 0) {
                 os.write(buf, 0, bytesRead);
             }
-           
-        }catch(Exception ex) {
-            throw new PlatformException("文件复制出错"+ex);
-        }
-        finally {
+
+        } catch (Exception ex) {
+            throw new PlatformException("文件复制出错" + ex);
+        } finally {
             try {
                 input.close();
                 os.close();
@@ -25,7 +24,7 @@ public class FileUtil {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            
+
         }
     }
 }

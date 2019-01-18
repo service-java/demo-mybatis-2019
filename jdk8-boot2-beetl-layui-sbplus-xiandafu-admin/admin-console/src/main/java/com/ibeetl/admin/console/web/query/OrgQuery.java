@@ -13,11 +13,11 @@ public class OrgQuery extends PageParam {
     private String code;
     @Query(name = "机构名称", display = true)
     private String name;
-	@Query(name="机构类型",display=true,type=Query.TYPE_DICT,dict=CoreDictType.ORG_TYPE)
-	private String type;
-	@Query(name="上一级机构",display=true,type=Query.TYPE_CONTROL,control="org")
-	private String parentOrgId;
-    
+    @Query(name = "机构类型", display = true, type = Query.TYPE_DICT, dict = CoreDictType.ORG_TYPE)
+    private String type;
+    @Query(name = "上一级机构", display = true, type = Query.TYPE_CONTROL, control = "org")
+    private String parentOrgId;
+
     public String getCode() {
         return code;
     }
@@ -34,20 +34,20 @@ public class OrgQuery extends PageParam {
         this.name = name;
     }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public String getParentOrgId() {
-		return parentOrgId;
-	}
+    public String getParentOrgId() {
+        return parentOrgId;
+    }
 
-	public void setParentOrgId(String parentOrgId) {
-		this.parentOrgId = parentOrgId;
-	}
+    public void setParentOrgId(String parentOrgId) {
+        this.parentOrgId = parentOrgId;
+    }
 
 }

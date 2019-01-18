@@ -4,29 +4,32 @@ import java.io.OutputStream;
 
 public abstract class FileItem {
     protected Long id;
-	protected String name;
-	protected String path;
-	boolean isTemp = false;
-	
-	public abstract OutputStream openOutpuStream();
-	
-	public abstract void copy(OutputStream os);
-	
-	
-	public abstract boolean delete();
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPath() {
-		return path;
-	}
-	public void setPath(String path) {
-		this.path = path;
-	}
+    protected String name;
+    protected String path;
+    boolean isTemp = false;
+
+    public abstract OutputStream openOutpuStream();
+
+    public abstract void copy(OutputStream os);
+
+
+    public abstract boolean delete();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     public boolean isTemp() {
         return isTemp;
@@ -43,6 +46,6 @@ public abstract class FileItem {
     public void setId(Long id) {
         this.id = id;
     }
-	
-	
+
+
 }

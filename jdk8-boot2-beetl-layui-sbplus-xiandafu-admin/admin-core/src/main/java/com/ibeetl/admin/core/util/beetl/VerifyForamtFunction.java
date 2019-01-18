@@ -14,21 +14,21 @@ public class VerifyForamtFunction implements Function {
 
     @Override
     public String call(Object[] arg0, Context arg1) {
-    	
-    	StringBuilder sb = new StringBuilder("");
-    	
-    	if(arg0[0] instanceof List){
-    		List<Verify> list = (List)arg0[0];
-    		for (int i = 0; i < list.size(); i++) {
-    			Verify verify = list.get(i);
-    			if(i < list.size() - 1){
-    				sb.append(verify.getName()+"|");
-    			}else{
-    				sb.append(verify.getName());
-    			}
-			}
-    	}
-    	
+
+        StringBuilder sb = new StringBuilder("");
+
+        if (arg0[0] instanceof List) {
+            List<Verify> list = (List) arg0[0];
+            for (int i = 0; i < list.size(); i++) {
+                Verify verify = list.get(i);
+                if (i < list.size() - 1) {
+                    sb.append(verify.getName() + "|");
+                } else {
+                    sb.append(verify.getName());
+                }
+            }
+        }
+
         return sb.toString();
     }
 

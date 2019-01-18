@@ -10,26 +10,25 @@ import com.ibeetl.admin.core.service.CoreRoleService;
 
 /**
  * 获取系统的所有角色列表
- * @author xiandafu
  *
+ * @author xiandafu
  */
 @Component
 public class RoleFunction implements Function {
 
-	@Autowired
-	CoreRoleService  coreRoleService;
-	
-	
-	public Object call(Object[] paras, Context ctx) {
-		
-		String type = null;
-		if(paras.length!=0) {
-			type = (String)paras[0];
-		}
-		return coreRoleService.getAllRoles(type);
-		
-	}
-	
-	
+    @Autowired
+    CoreRoleService coreRoleService;
+
+
+    public Object call(Object[] paras, Context ctx) {
+
+        String type = null;
+        if (paras.length != 0) {
+            type = (String) paras[0];
+        }
+        return coreRoleService.getAllRoles(type);
+
+    }
+
 
 }

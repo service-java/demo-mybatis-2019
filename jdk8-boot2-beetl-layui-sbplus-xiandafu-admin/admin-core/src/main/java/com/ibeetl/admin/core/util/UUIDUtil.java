@@ -8,5 +8,5 @@ public class UUIDUtil {
         String randomUUIDString = uuid.toString();
         return randomUUIDString;
     }
-    
+
 }

@@ -6,14 +6,13 @@ import com.ibeetl.admin.core.web.query.PageParam;
 
 /**
  * 描述:  角色查询条件
- *
  */
 public class RoleQuery extends PageParam {
     @Query(name = "编码", display = true)
     private String code;
     @Query(name = "名称", display = true)
     private String name;
-    @Query(name = "业务角色类型", type = Query.TYPE_DICT,dict=CoreDictType.ROLE_TYPE)
+    @Query(name = "业务角色类型", type = Query.TYPE_DICT, dict = CoreDictType.ROLE_TYPE)
     private String type;
 
 
@@ -33,15 +32,13 @@ public class RoleQuery extends PageParam {
         this.name = name;
     }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	
+    public void setType(String type) {
+        this.type = type;
+    }
 
 
 }

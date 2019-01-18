@@ -26,7 +26,7 @@ public class RoleConsoleService extends BaseService<CoreRole> {
 
     @Autowired
     private RoleConsoleDao roleDao;
-    
+
     @Autowired
     private SQLManager sqlManager;
 
@@ -35,16 +35,18 @@ public class RoleConsoleService extends BaseService<CoreRole> {
 
     /**
      * 获取全部操作角色集合
+     *
      * @return
      */
     public List<CoreRole> queryAllPermissionList() {
-    	CoreRole template = new CoreRole();
-    	template.setType(RoleTypeEnum.ACCESS.getValue());
+        CoreRole template = new CoreRole();
+        template.setType(RoleTypeEnum.ACCESS.getValue());
         return roleDao.template(template);
     }
 
     /**
      * 根据删标记获取全部角色集合
+     *
      * @param delFlagEnum 删除标记
      * @return
      */
@@ -54,6 +56,7 @@ public class RoleConsoleService extends BaseService<CoreRole> {
 
     /**
      * 根据条件查询
+     *
      * @param query
      */
     public void queryByCondtion(PageQuery query) {
@@ -61,27 +64,28 @@ public class RoleConsoleService extends BaseService<CoreRole> {
         super.queryListAfter(query.getList());
     }
 
-    
+
     public PageQuery<CoreUser> queryRoleUser(PageQuery query) {
-    	OrgItem root = platformService.buildOrg();
-    	PageQuery<CoreUser>  ret = roleDao.queryUser(query);
-    	List<CoreUser> list = ret.getList();
-    	//从缓存里取出组织机构名称
-    	for(CoreUser user:list) {
-    		Long orgId = user.getOrgId();
-    		Integer orgId1 = (Integer)user.get("orgId1");
-    		user.set("orgIdText", root.findChild(orgId).getName());
-    		user.set("orgId1Text", root.findChild((long)orgId1).getName());
-    		
-    	}
-    	//再次处理数据字典
-    	this.queryListAfter(list);
-    	return ret;
-    	 
+        OrgItem root = platformService.buildOrg();
+        PageQuery<CoreUser> ret = roleDao.queryUser(query);
+        List<CoreUser> list = ret.getList();
+        //从缓存里取出组织机构名称
+        for (CoreUser user : list) {
+            Long orgId = user.getOrgId();
+            Integer orgId1 = (Integer) user.get("orgId1");
+            user.set("orgIdText", root.findChild(orgId).getName());
+            user.set("orgId1Text", root.findChild((long) orgId1).getName());
+
+        }
+        //再次处理数据字典
+        this.queryListAfter(list);
+        return ret;
+
     }
 
     /**
      * 根据编号查询
+     *
      * @param code 角色编号
      * @return
      */
@@ -97,15 +101,13 @@ public class RoleConsoleService extends BaseService<CoreRole> {
         if (ids == null || ids.isEmpty()) {
             throw new PlatformException("删除数据ID不能为空");
         }
-        
+
         roleDao.batchDelByIds(ids);
         roleDao.batchDeleteRoleFunction(ids);
         roleDao.batchDeleteRoleMenu(ids);
         roleDao.batchDeleteUserRole(ids);
         return true;
     }
-    
-    
-   
+
 
 }

@@ -27,7 +27,7 @@ public class AnnotationUtil {
      *
      * @param annotationClasss   注解定义类
      * @param useAnnotationClass 使用注解的类
-     * @return List<Map<String, Object>>
+     * @return List<Map < String ,   Object>>
      * @throws Exception
      */
     public List<Map<String, Object>> getAnnotations(Class annotationClasss, Class useAnnotationClass) {

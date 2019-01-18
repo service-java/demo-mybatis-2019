@@ -18,6 +18,7 @@ import com.ibeetl.admin.core.util.enums.DelFlagEnum;
 
 /**
  * 描述:
+ *
  * @author : xiandafu
  */
 public class BaseService<T> {
@@ -26,22 +27,23 @@ public class BaseService<T> {
     protected CoreDictService dictUtil;
     @Autowired
     protected SQLManager sqlManager;
-    
-    
+
 
     /**
      * 根据id查询对象，如果主键ID不存在
+     *
      * @param id
      * @return
      */
     public T queryById(Object id) {
         T t = sqlManager.single(getCurrentEntityClassz(), id);
-        queryEntityAfter((Object) t);			
+        queryEntityAfter((Object) t);
         return t;
     }
 
     /**
      * 根据id查询
+     *
      * @param classz 返回的对象类型
      * @param id     主键id
      * @return
@@ -54,17 +56,18 @@ public class BaseService<T> {
 
     /**
      * 新增一条数据
+     *
      * @param model 实体类
      * @return
      */
     public boolean save(T model) {
-        return sqlManager.insert(model,true) > 0;
+        return sqlManager.insert(model, true) > 0;
     }
 
-   
 
     /**
      * 删除数据（一般为逻辑删除，更新del_flag字段为1）
+     *
      * @param ids
      * @return
      */
@@ -72,9 +75,9 @@ public class BaseService<T> {
         if (ids == null || ids.isEmpty()) {
             throw new PlatformException("删除数据ID不能为空");
         }
-        
+
         for (Long id : ids) {
-          
+
         }
 
         List<Object> list = new ArrayList<>();
@@ -83,7 +86,7 @@ public class BaseService<T> {
             // always id,delFlag for pojo
             map.put("id", id);
             map.put("delFlag", DelFlagEnum.DELETED.getValue());
-          
+
             list.add(map);
         }
         int[] count = sqlManager.updateBatchTemplateById(getCurrentEntityClassz(), list);
@@ -95,16 +98,18 @@ public class BaseService<T> {
     }
 
     public boolean deleteById(Long id) {
-       
-            Map map = new HashMap();
-            // always id,delFlag for pojo
-            map.put("id", id);
-            map.put("delFlag", DelFlagEnum.DELETED.getValue());
-            int ret = sqlManager.updateTemplateById(getCurrentEntityClassz(), map);
-            return ret==1;
+
+        Map map = new HashMap();
+        // always id,delFlag for pojo
+        map.put("id", id);
+        map.put("delFlag", DelFlagEnum.DELETED.getValue());
+        int ret = sqlManager.updateTemplateById(getCurrentEntityClassz(), map);
+        return ret == 1;
     }
+
     /**
      * 根据id删除数据
+     *
      * @param id 主键值
      * @return
      */
@@ -114,6 +119,7 @@ public class BaseService<T> {
 
     /**
      * 根据id删除数据
+     *
      * @param id 主键值
      * @return
      */
@@ -123,26 +129,28 @@ public class BaseService<T> {
 
     /**
      * 更新，只更新不为空的字段
+     *
      * @param model
      * @return
      */
     public boolean updateTemplate(T model) {
-        return sqlManager.updateTemplateById(model)>0;
+        return sqlManager.updateTemplateById(model) > 0;
     }
 
     /**
      * 更新所有字段
+     *
      * @param model
      * @return
      */
     public boolean update(T model) {
-    		return sqlManager.updateById(model) > 0;
+        return sqlManager.updateById(model) > 0;
     }
 
-  
 
     /**
      * 获取当前注入泛型T的类型
+     *
      * @return 具体类型
      */
     @SuppressWarnings("unchecked")
@@ -157,16 +165,16 @@ public class BaseService<T> {
         }
     }
 
-    public void queryEntityAfter(Object  bean) {
+    public void queryEntityAfter(Object bean) {
         if (bean == null) {
             return;
         }
-        
-        if(!(bean instanceof TailBean)){
-        	throw new PlatformException("指定的pojo"+bean.getClass()+" 不能获取数据字典，需要继承TailBean");
+
+        if (!(bean instanceof TailBean)) {
+            throw new PlatformException("指定的pojo" + bean.getClass() + " 不能获取数据字典，需要继承TailBean");
         }
-        
-        TailBean ext  = (TailBean)bean;
+
+        TailBean ext = (TailBean) bean;
         Class c = ext.getClass();
         do {
             Field[] fields = c.getDeclaredFields();
@@ -174,24 +182,24 @@ public class BaseService<T> {
                 if (field.isAnnotationPresent(Dict.class)) {
                     field.setAccessible(true);
                     Dict dict = field.getAnnotation(Dict.class);
-                    
+
                     try {
                         String display = "";
                         Object fieldValue = field.get(ext);
                         if (fieldValue != null) {
-                            CoreDict  dbDict = dictUtil.findCoreDict(dict.type(),fieldValue.toString());
-                            display = dbDict!=null?dbDict.getName():null;
+                            CoreDict dbDict = dictUtil.findCoreDict(dict.type(), fieldValue.toString());
+                            display = dbDict != null ? dbDict.getName() : null;
                         }
                         ext.set(field.getName() + dict.suffix(), display);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-    
+
                 }
             }
-         c = c.getSuperclass();
-        }while(c!=TailBean.class);
-        
+            c = c.getSuperclass();
+        } while (c != TailBean.class);
+
     }
 
 }

@@ -12,23 +12,22 @@ import java.util.List;
 
 /**
  * 通过orgId获取orgName,从缓存中获取
- * @author xiandafu
  *
+ * @author xiandafu
  */
 @Component
 public class OrgFunction implements Function {
 
-	@Autowired
-	CorePlatformService platFormService;
-	
-	
-	public Object call(Object[] paras, Context ctx) {
-		OrgItem tree = platFormService.buildOrg();
-		OrgItem item = tree.findChild((Long)paras[0]);
-		return item.getName();
-		
-	}
-	
-	
+    @Autowired
+    CorePlatformService platFormService;
+
+
+    public Object call(Object[] paras, Context ctx) {
+        OrgItem tree = platFormService.buildOrg();
+        OrgItem item = tree.findChild((Long) paras[0]);
+        return item.getName();
+
+    }
+
 
 }

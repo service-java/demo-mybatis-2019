@@ -28,6 +28,7 @@ public class CoreDictController {
 
     /**
      * 查看字典类型对应的列表
+     *
      * @param type
      * @return
      */
@@ -35,23 +36,23 @@ public class CoreDictController {
     @ResponseBody
     public JsonResult<List<CoreDict>> view(String type) {
         List<CoreDict> list = dictService.findAllByType(type);
-        return  JsonResult.success(list);
+        return JsonResult.success(list);
     }
 
     /**
      * 查看字典值的子字典
+     *
      * @param value
      * @return
      */
 
     @RequestMapping(MODEL + "/viewChildren.json")
     @ResponseBody
-    public JsonResult<List<CoreDict>> viewChild(String group,String value) {
-        CoreDict dict = dictService.findCoreDict(group,value);
+    public JsonResult<List<CoreDict>> viewChild(String group, String value) {
+        CoreDict dict = dictService.findCoreDict(group, value);
         List<CoreDict> list = dictService.findChildByParent(dict.getId());
-        return  JsonResult.success(list);
+        return JsonResult.success(list);
     }
-
 
 
 }

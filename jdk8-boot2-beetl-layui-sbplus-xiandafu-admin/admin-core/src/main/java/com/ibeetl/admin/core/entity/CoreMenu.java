@@ -22,13 +22,13 @@ public class CoreMenu extends BaseEntity {
     public static final String TYPE_NAV = "MENU_N";
     public static final String TYPE_MENUITEM = "MENU_M";
 
-	@NotNull(message = "ID不能为空", groups = ValidateConfig.UPDATE.class)
-	@SeqID(name = ORACLE_CORE_SEQ_NAME)
-	@AutoID
+    @NotNull(message = "ID不能为空", groups = ValidateConfig.UPDATE.class)
+    @SeqID(name = ORACLE_CORE_SEQ_NAME)
+    @AutoID
     protected Long id;
 
     //创建时间
-	@UpdateIgnore
+    @UpdateIgnore
     protected Date createTime;
 
     //菜单代码
@@ -125,13 +125,13 @@ public class CoreMenu extends BaseEntity {
         this.icon = icon;
     }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-    
-    
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+
 }

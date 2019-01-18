@@ -5,6 +5,7 @@ import org.beetl.sql.core.engine.PageQuery;
 
 /**
  * 子类继承此类获得翻页功能
+ *
  * @author lijiazhi
  */
 public class PageParam {
@@ -30,13 +31,13 @@ public class PageParam {
         return query;
     }
 
-	public Integer getLimit() {
-		return limit;
-	}
+    public Integer getLimit() {
+        return limit;
+    }
 
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-	}
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
 
 
 }

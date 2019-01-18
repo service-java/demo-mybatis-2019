@@ -3,9 +3,11 @@ package com.ibeetl.admin.console.web.query;
 import com.ibeetl.admin.core.annotation.Query;
 import com.ibeetl.admin.core.util.enums.CoreDictType;
 import com.ibeetl.admin.core.web.query.PageParam;
+
 import java.util.Date;
+
 /**
- *CoreDict查询
+ * CoreDict查询
  */
 public class CoreDictQuery extends PageParam {
     @Query(name = "字典值", display = true)
@@ -16,29 +18,37 @@ public class CoreDictQuery extends PageParam {
     private String typeName;
     @Query(name = "父字典", display = true)
     private String parent;
-    public String getValue(){
-        return  value;
+
+    public String getValue() {
+        return value;
     }
-    public void setValue(String value ){
+
+    public void setValue(String value) {
         this.value = value;
     }
-    public String getName(){
-        return  name;
+
+    public String getName() {
+        return name;
     }
-    public void setName(String name ){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public String getTypeName(){
-        return  typeName;
+
+    public String getTypeName() {
+        return typeName;
     }
-    public void setTypeName(String typeName ){
+
+    public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-    public String getParent(){
-        return  parent;
+
+    public String getParent() {
+        return parent;
     }
-    public void setParent(String parent ){
+
+    public void setParent(String parent) {
         this.parent = parent;
     }
- 
+
 }

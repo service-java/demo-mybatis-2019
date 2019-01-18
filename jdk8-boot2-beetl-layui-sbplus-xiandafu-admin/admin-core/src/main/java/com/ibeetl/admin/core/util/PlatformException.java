@@ -10,7 +10,7 @@ public class PlatformException extends RuntimeException {
         super(message);
     }
 
-    public PlatformException(String message, Throwable e){
-        super(message,e);
+    public PlatformException(String message, Throwable e) {
+        super(message, e);
     }
 }

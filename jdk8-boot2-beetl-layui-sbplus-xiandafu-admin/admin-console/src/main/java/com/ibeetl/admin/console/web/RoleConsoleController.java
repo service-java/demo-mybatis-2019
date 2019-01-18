@@ -98,16 +98,17 @@ public class RoleConsoleController {
         ModelAndView view = new ModelAndView("/admin/role/function.html");
         return view;
     }
+
     @GetMapping(MODEL + "/data.do")
     @Function("role.function.query")
-    public ModelAndView  data() {
+    public ModelAndView data() {
         ModelAndView view = new ModelAndView("/admin/role/data.html");
         return view;
     }
 
     /**
      * 列表页、 分页数据
-     * 
+     *
      * @param condtion
      * @return
      */
@@ -130,7 +131,7 @@ public class RoleConsoleController {
 
     /**
      * 获取列表查询条件
-     * 
+     *
      * @return
      */
     @PostMapping(MODEL + "/list/condition.json")
@@ -143,7 +144,7 @@ public class RoleConsoleController {
 
     /**
      * 保存
-     * 
+     *
      * @return
      */
     @PostMapping(MODEL + "/add.json")
@@ -163,7 +164,7 @@ public class RoleConsoleController {
 
     /**
      * 更新
-     * 
+     *
      * @param role
      * @return
      */
@@ -185,7 +186,7 @@ public class RoleConsoleController {
 
     /**
      * 查询角色信息
-     * 
+     *
      * @param id
      * @return
      */
@@ -199,9 +200,8 @@ public class RoleConsoleController {
 
     /**
      * (批量)删除
-     * 
-     * @param ids
-     *            角色id
+     *
+     * @param ids 角色id
      * @return
      */
     @PostMapping(MODEL + "/delete.json")
@@ -219,9 +219,8 @@ public class RoleConsoleController {
 
     /**
      * 查询角色下授权用户列表
-     * 
-     * @param queryCondtion
-     *            查询条件
+     *
+     * @param queryCondtion 查询条件
      * @return
      */
     @PostMapping(MODEL + "/user/list.json")
@@ -289,14 +288,14 @@ public class RoleConsoleController {
         List<Long> delIds = new ArrayList<Long>();
         List<Long> dbs = functionConsoleService.getFunctionByRole(roleId);
         Iterator<Long> it = all.iterator();
-        for(Long id:all) {
-            if(!dbs.contains(id)) {
+        for (Long id : all) {
+            if (!dbs.contains(id)) {
                 addIds.add(id);
             }
         }
-        
-        for(Long id:dbs) {
-            if(!all.contains(id)) {
+
+        for (Long id : dbs) {
+            if (!all.contains(id)) {
                 delIds.add(id);
             }
         }
@@ -307,7 +306,7 @@ public class RoleConsoleController {
     @PostMapping(MODEL + "/function/updateDataAccess.json")
     @Function("role.function.updateDataAccess")
     @ResponseBody
-    public JsonResult updateFunctionDataAccess(Long roleId,Long fnId,Integer accessType) {
+    public JsonResult updateFunctionDataAccess(Long roleId, Long fnId, Integer accessType) {
         RoleDataAccessFunction data = new RoleDataAccessFunction();
         data.setRoleId(roleId);
         data.setId(fnId);
@@ -315,12 +314,12 @@ public class RoleConsoleController {
         functionConsoleService.updateFunctionAccessByRole(Arrays.asList(data));
         return JsonResult.success();
     }
-    
+
     /*后端模板渲染*/
     @PostMapping(MODEL + "/function/dataAccess.do")
     @Function("role.function.updateDataAccess")
     public ModelAndView datapage(Long roleId) {
-        List<RoleDataAccessFunction> list =  functionConsoleService.getQueryFunctionByRole(roleId);
+        List<RoleDataAccessFunction> list = functionConsoleService.getQueryFunctionByRole(roleId);
         ModelAndView view = new ModelAndView("/admin/role/dataConfigPart.html");
         view.addObject("list", list);
         return view;

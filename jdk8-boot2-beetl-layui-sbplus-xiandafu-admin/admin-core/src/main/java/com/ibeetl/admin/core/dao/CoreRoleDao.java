@@ -13,5 +13,4 @@ import java.util.List;
 public interface CoreRoleDao extends BaseMapper<CoreRole> {
 
 
-
 }

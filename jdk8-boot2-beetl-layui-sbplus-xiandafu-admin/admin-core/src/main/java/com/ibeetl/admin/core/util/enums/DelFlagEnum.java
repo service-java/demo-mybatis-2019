@@ -4,6 +4,7 @@ import org.beetl.sql.core.annotatoin.EnumMapping;
 
 /**
  * 描述:数据是否被逻辑删除
+ *
  * @author : xiandafu
  */
 @EnumMapping("value")

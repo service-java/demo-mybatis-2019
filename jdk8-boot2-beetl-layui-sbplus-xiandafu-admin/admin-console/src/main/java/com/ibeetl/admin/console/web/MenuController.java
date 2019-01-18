@@ -46,34 +46,36 @@ public class MenuController {
     CorePlatformService platformService;
 
     /*页面*/
-    
+
     @GetMapping(MODEL + "/index.do")
     @Function("menu")
     public ModelAndView index() {
-		ModelAndView view = new ModelAndView("/admin/menu/index.html");
-		view.addObject("search", MenuQuery.class.getName());
+        ModelAndView view = new ModelAndView("/admin/menu/index.html");
+        view.addObject("search", MenuQuery.class.getName());
         return view;
     }
-    
+
     @GetMapping(MODEL + "/add.do")
     @Function("menu.add")
     public ModelAndView add() {
-   	 ModelAndView view = new ModelAndView("/admin/menu/add.html");
-   	 return view;
+        ModelAndView view = new ModelAndView("/admin/menu/add.html");
+        return view;
     }
+
     @GetMapping(MODEL + "/edit.do")
     @Function("menu.edit")
     public ModelAndView edit(Integer id) {
-   	 ModelAndView view = new ModelAndView("/admin/menu/edit.html");
-   	 CoreMenu menu = menuService.queryById(id);
-     view.addObject("menu", menu);
-   	 return view;
+        ModelAndView view = new ModelAndView("/admin/menu/edit.html");
+        CoreMenu menu = menuService.queryById(id);
+        view.addObject("menu", menu);
+        return view;
     }
-    
+
     /*Json*/
-    
+
     /**
      * 查询
+     *
      * @param menu
      * @return
      */
@@ -81,11 +83,11 @@ public class MenuController {
     @Function("menu.query")
     @ResponseBody
     public JsonResult condition() {
-    	   List<Map<String, Object>> list = AnnotationUtil.getInstance().getAnnotations(Query.class, MenuQuery.class);
-       return JsonResult.success(list);
+        List<Map<String, Object>> list = AnnotationUtil.getInstance().getAnnotations(Query.class, MenuQuery.class);
+        return JsonResult.success(list);
     }
-    
-    
+
+
     @PostMapping(MODEL + "/list.json")
     @Function("menu.query")
     @ResponseBody
@@ -94,10 +96,11 @@ public class MenuController {
         menuService.queryByCondtion(page);
         return JsonResult.success(page);
     }
-    
+
 
     /**
      * 添加
+     *
      * @param menu
      * @return
      */
@@ -112,6 +115,7 @@ public class MenuController {
 
     /**
      * 更新
+     *
      * @param fun
      * @return
      */
@@ -125,6 +129,7 @@ public class MenuController {
 
     /**
      * 根据id查询菜单信息
+     *
      * @param id 菜单Id
      * @return
      */
@@ -133,8 +138,8 @@ public class MenuController {
     @ResponseBody
     public JsonResult<CoreMenu> view(Long id) {
         CoreMenu fun = menuService.queryById(id);
-        MenuItem root =  this.platformService.buildMenu();
-        MenuItem child =  root.findChild(fun.getId());
+        MenuItem root = this.platformService.buildMenu();
+        MenuItem child = root.findChild(fun.getId());
         CoreMenu parent = child.getParent().getData();
         fun.set("parentMenuName", parent.getName());
         return JsonResult.success(fun);
@@ -142,6 +147,7 @@ public class MenuController {
 
     /**
      * 删除
+     *
      * @param id 菜单id
      * @return
      */
@@ -152,9 +158,10 @@ public class MenuController {
         menuService.deleteMenu(id);
         return new JsonResult().success();
     }
-    
+
     /**
      * 批量删除
+     *
      * @param ids 菜单id集合
      * @return
      */
@@ -162,12 +169,10 @@ public class MenuController {
     @Function("menu.delete")
     @ResponseBody
     public JsonResult delete(String ids) {
-    	List<Long> dels = ConvertUtil.str2longs(ids);
-    	menuService.batchDeleteMenuId(dels);
-    	return new JsonResult().success();
+        List<Long> dels = ConvertUtil.str2longs(ids);
+        menuService.batchDeleteMenuId(dels);
+        return new JsonResult().success();
     }
-    
-    
 
 
 }

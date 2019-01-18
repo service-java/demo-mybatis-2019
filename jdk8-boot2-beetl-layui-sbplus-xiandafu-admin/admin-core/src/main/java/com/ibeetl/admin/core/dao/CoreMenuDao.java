@@ -15,7 +15,7 @@ public interface CoreMenuDao extends BaseMapper<CoreMenu> {
 
     public void queryByCondtion(PageQuery query);
 
-    public void clearMenuFunction( List<Long> functionIds);
+    public void clearMenuFunction(List<Long> functionIds);
 
 
     public List<CoreMenu> allMenuWithURL();
