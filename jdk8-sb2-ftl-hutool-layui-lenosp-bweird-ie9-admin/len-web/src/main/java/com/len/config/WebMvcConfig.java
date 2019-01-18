@@ -46,7 +46,8 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/META-INF/resources/").setCachePeriod(0);
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/META-INF/resources/").setCachePeriod(0);
         registry.addResourceHandler("/plugin/**", "/static/**")
                 .addResourceLocations("classpath:/plugin/", "classpath:/static/");
         registry.addResourceHandler("/ftl/**").addResourceLocations("classpath:/ftl/");
@@ -56,7 +57,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         super.addResourceHandlers(registry);
     }
 
-    /*保留国际化*/
+    /* 保留国际化 */
     @Bean
     public LocaleChangeInterceptor interceptor() {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();

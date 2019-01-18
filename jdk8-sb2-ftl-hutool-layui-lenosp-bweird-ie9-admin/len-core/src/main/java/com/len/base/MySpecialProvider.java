@@ -21,7 +21,6 @@ public class MySpecialProvider extends MapperTemplate {
         super(mapperClass, mapperHelper);
     }
 
-
     public String insertList(MappedStatement ms) {
         final Class<?> entityClass = getEntityClass(ms);
         //开始拼sql

@@ -22,5 +22,4 @@ public class ContextUtil {
     public static HttpSession getSession() {
         return getServletRequest().getSession();
     }
-
 }

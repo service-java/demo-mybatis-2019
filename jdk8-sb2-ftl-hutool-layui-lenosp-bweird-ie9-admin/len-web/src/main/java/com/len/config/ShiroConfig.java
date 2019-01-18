@@ -40,7 +40,6 @@ public class ShiroConfig {
         rm.setHashAlgorithmName("md5");
         rm.setHashIterations(4);
         return rm;
-
     }
 
    /* @Bean
@@ -173,17 +172,19 @@ public class ShiroConfig {
         defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         return defaultWebSessionManager;
     }
-/*
-  @Bean
-  public FilterRegistrationBean delegatingFilterProxy(){
-    FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
-    DelegatingFilterProxy proxy = new DelegatingFilterProxy();
-    proxy.setTargetFilterLifecycle(true);
-    proxy.setTargetBeanName("shiroFilter");
 
-    filterRegistrationBean.setFilter(proxy);
-    return filterRegistrationBean;
-  }*/
+
+      /*
+      @Bean
+      public FilterRegistrationBean delegatingFilterProxy(){
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        DelegatingFilterProxy proxy = new DelegatingFilterProxy();
+        proxy.setTargetFilterLifecycle(true);
+        proxy.setTargetBeanName("shiroFilter");
+
+        filterRegistrationBean.setFilter(proxy);
+        return filterRegistrationBean;
+      }*/
 
 
 }

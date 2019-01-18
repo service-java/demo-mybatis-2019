@@ -25,6 +25,7 @@
         <module>len-web</module>
         <module>len-activiti</module>
         <module>len-blog</module>
+        <!--<module>len-admin</module>-->
     </modules>
 
     <dependencies>

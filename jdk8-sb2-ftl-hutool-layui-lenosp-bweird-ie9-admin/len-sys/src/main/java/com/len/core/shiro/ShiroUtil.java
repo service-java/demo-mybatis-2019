@@ -23,5 +23,4 @@ public class ShiroUtil {
     public static CurrentUser getCurrentUse() {
         return (CurrentUser) getSession().getAttribute("currentUser");
     }
-
 }

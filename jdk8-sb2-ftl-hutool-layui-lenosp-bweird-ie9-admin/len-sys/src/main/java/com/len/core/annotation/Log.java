@@ -21,8 +21,6 @@ import java.lang.annotation.Target;
 public @interface Log {
     public enum LOG_TYPE {ADD, UPDATE, DEL, SELECT, ATHOR}
 
-    ;
-
     /**
      * 内容
      */
