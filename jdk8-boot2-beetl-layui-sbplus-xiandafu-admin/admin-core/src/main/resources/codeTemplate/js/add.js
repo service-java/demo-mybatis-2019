@@ -1,3 +1,4 @@
+/* eslint-disable */
 layui.define([ 'form', 'laydate', 'table','${entity.code}Api'], function(exports) {
     var form = layui.form;
     var ${entity.code}Api = layui.${entity.code}Api;
@@ -17,12 +18,12 @@ layui.define([ 'form', 'laydate', 'table','${entity.code}Api'], function(exports
                      });
                 });
             });
-        
+
             $("#addButton-cancel").click(function(){
                 Lib.closeFrame();
             });
         }
-    			
+
     }
     exports('add',view);
 });

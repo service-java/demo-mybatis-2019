@@ -1,6 +1,6 @@
 /*访问后台的代码*/
 layui.define([], function(exports) {
-	var api={
+	var api = {
 			updateDict:function(form,callback){
 				Lib.submitForm("/admin/dict/update.json",form,{},callback)
 			},
@@ -11,16 +11,16 @@ layui.define([], function(exports) {
 				Common.post("/admin/dict/delete.json",{"ids":ids},function(){
 					callback();
 				})
-			}, 
+			},
 			exportExcel:function(form,callback){
 	            var formPara = form.serializeJson();
 	            Common.post("/admin/dict/excel/export.json", formPara, function(fileId) {
 	                callback(fileId);
 	            })
 	        }
-		
+
 	};
-	
+
 	 exports('dictApi',api);
-	
+
 });

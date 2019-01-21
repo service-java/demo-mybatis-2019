@@ -1,3 +1,4 @@
+/* eslint-disable */
 layui.define([ 'form', 'laydate', 'table','${entity.code}Api'], function(exports) {
     var form = layui.form;
     var ${entity.code}Api = layui.${entity.code}Api;
@@ -21,8 +22,8 @@ layui.define([ 'form', 'laydate', 'table','${entity.code}Api'], function(exports
                 Lib.closeFrame();
             });
         }
-            
+
     }
     exports('edit',view);
-	
+
 });

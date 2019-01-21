@@ -1,3 +1,4 @@
+/* eslint-disable */
 layui.define([ 'form', 'laydate', 'table' ], function(exports) {
     var form = layui.form;
     var laydate = layui.laydate;
@@ -26,8 +27,9 @@ layui.define([ 'form', 'laydate', 'table' ], function(exports) {
                         type : 'checkbox',
                         fixed:'left',
                     },
-                @for(attr in entity.list){
-            @if(attr.name=="delFlag"){continue;}
+                @for (attr in entity.list) {
+
+            @if(attr.name=="delFlag") { continue; }
                     @if(attr.name=="version"){continue;}
                     @if(attr.name=="attachmentId"){continue;}
                 {
@@ -46,7 +48,7 @@ layui.define([ 'form', 'laydate', 'table' ], function(exports) {
                 }${!attrLP.last?","}
             @}
 
-        ] ]
+        ]]
 
         });
 
@@ -84,8 +86,8 @@ layui.define([ 'form', 'laydate', 'table' ], function(exports) {
                     });
                 }
                 @if(entity.includeExcel){
-            ,
-                exportDocument : function() {
+
+                ,exportDocument : function() {
                     layui.use([ '${entity.code}Api' ], function() {
                         var ${entity.code}Api = layui.${entity.code}Api
                         Common.openConfirm("确认要导出这些${entity.displayName}数据?", function() {
@@ -105,6 +107,7 @@ layui.define([ 'form', 'laydate', 'table' ], function(exports) {
                 }
                 @}
         };
+
             $('.ext-toolbar').on('click', function() {
                 var type = $(this).data('type');
                 toolbar[type] ? toolbar[type].call(this) : '';

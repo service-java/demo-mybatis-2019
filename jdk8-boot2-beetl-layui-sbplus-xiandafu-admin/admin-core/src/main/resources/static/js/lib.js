@@ -3,7 +3,6 @@ var Lib = {
 		"layout" : [ 'count', 'prev', 'page', 'next' ]
 	},
 
-
 	loadOrgPanel : function(container, textInput, valueInput) {
 		$.post(Common.ctxPath + "/core/user/org.json", {}, function(response) {
 			var zNodes = response.data;
@@ -20,8 +19,8 @@ var Lib = {
 					zTreeObj = $.fn.zTree.init($("#_treeDemo"), {}, zNodes);
 					if(valueInput.val()){
 						var node = zTreeObj.getNodeByParam("id",valueInput.val());
-						zTreeObj.selectNode(node,true);  
-						zTreeObj.expandNode(node, true, false);  
+						zTreeObj.selectNode(node,true);
+						zTreeObj.expandNode(node, true, false);
 					}
 				},
 				yes : function(index, layero) {
@@ -39,9 +38,9 @@ var Lib = {
 					textInput.val('');
 					zTreeObj.cancelSelectedNode();
 				}
-			
+
 			});
-			
+
 		})
 	},
 	loadFunPanel : function(container, textInput, valueInput) {
@@ -60,47 +59,8 @@ var Lib = {
 					zTreeObj = $.fn.zTree.init($("#_treeDemo"), {}, zNodes);
 					if(valueInput.val()){
 						var node = zTreeObj.getNodeByParam("id",valueInput.val());
-						zTreeObj.selectNode(node,true);  
-						zTreeObj.expandNode(node, true, false);  
-					}
-				},
-				yes : function(index, layero) {
-					var nodes = zTreeObj.getSelectedNodes();
-	
-					if (nodes.length == 1) {
-						var fun = nodes[0];
-						valueInput.val(fun.id);
-						textInput.val(fun.name);
-					}
-					layer.close(index);
-				},
-				btn2: function(index, layero){
-					valueInput.val('');
-					textInput.val('');
-					zTreeObj.cancelSelectedNode();
-				}
-			});
-			
-		})
-	},
-	loadMenuPanel : function(container, textInput, valueInput) {
-		$.post(Common.ctxPath + "/core/user/menu/tree.json", {}, function(response) {
-			var zNodes = response.data;
-			var zTreeObj = null;
-			var index = layer.open({
-				type : 0,
-				area : [ '500px', '400px' ],
-				offset : 't',
-				anim : 5,
-				title : '选择菜单',
-				content : "<ul id='_treeDemo' class='ztree'></ul>",
-				btn: ['确定','重置'],
-				success: function(layero, index){
-					zTreeObj = $.fn.zTree.init($("#_treeDemo"), {}, zNodes);
-					if(valueInput.val()){
-						var node = zTreeObj.getNodeByParam("id",valueInput.val());
-						zTreeObj.selectNode(node,true);  
-						zTreeObj.expandNode(node, true, false);  
+						zTreeObj.selectNode(node,true);
+						zTreeObj.expandNode(node, true, false);
 					}
 				},
 				yes : function(index, layero) {
@@ -119,7 +79,46 @@ var Lib = {
 					zTreeObj.cancelSelectedNode();
 				}
 			});
-			
+
+		})
+	},
+	loadMenuPanel : function(container, textInput, valueInput) {
+		$.post(Common.ctxPath + "/core/user/menu/tree.json", {}, function(response) {
+			var zNodes = response.data;
+			var zTreeObj = null;
+			var index = layer.open({
+				type : 0,
+				area : [ '500px', '400px' ],
+				offset : 't',
+				anim : 5,
+				title : '选择菜单',
+				content : "<ul id='_treeDemo' class='ztree'></ul>",
+				btn: ['确定','重置'],
+				success: function(layero, index){
+					zTreeObj = $.fn.zTree.init($("#_treeDemo"), {}, zNodes);
+					if(valueInput.val()){
+						var node = zTreeObj.getNodeByParam("id",valueInput.val());
+						zTreeObj.selectNode(node,true);
+						zTreeObj.expandNode(node, true, false);
+					}
+				},
+				yes : function(index, layero) {
+					var nodes = zTreeObj.getSelectedNodes();
+
+					if (nodes.length == 1) {
+						var fun = nodes[0];
+						valueInput.val(fun.id);
+						textInput.val(fun.name);
+					}
+					layer.close(index);
+				},
+				btn2: function(index, layero){
+					valueInput.val('');
+					textInput.val('');
+					zTreeObj.cancelSelectedNode();
+				}
+			});
+
 		})
 	},
 	loadMenuFunPanel : function(container, textInput, valueInput) {
@@ -138,8 +137,8 @@ var Lib = {
 					zTreeObj = $.fn.zTree.init($("#_treeDemo"), {}, zNodes);
 					if(valueInput.val()){
 						var node = zTreeObj.getNodeByParam("id",valueInput.val());
-						zTreeObj.selectNode(node,true);  
-						zTreeObj.expandNode(node, true, false);  
+						zTreeObj.selectNode(node,true);
+						zTreeObj.expandNode(node, true, false);
 					}
 				},
 				yes : function(index, layero) {
@@ -197,14 +196,14 @@ var Lib = {
             });
         });
 
-		
+
 		$(form).find(".input-date").each(function() {
             laydate = layui.laydate;
             laydate.render({
                 elem : $(this)[0],
             });
         })
-		
+
 
 	},
 	_dropdown : function(layuiForm, data, form, select, groupName) {
@@ -249,7 +248,7 @@ var Lib = {
 							+ "</option>");
 		}
 	},
-	
+
 	download:function(fileId){
 	  fileId=encodeURIComponent(fileId);
 	  window.location.href =   Common.ctxPath+"/core/file/get.do?id="+fileId
@@ -262,9 +261,8 @@ var Lib = {
 			tableIns.reload({
 				where : data,
 				page: {
-				      curr: page 
+				      curr: page
 				 }
-				
 			});
 		} else {
 			tableIns.reload({
@@ -277,11 +275,11 @@ var Lib = {
 		var index = parent.layer.getFrameIndex(window.name); // 先得到当前iframe层的索引
 		parent.layer.close(index); // 再执行关闭
 	},
-	
+
 	submitForm : function(url,form, paras, callBack) {
 		var formPara = form.serializeJson();
-		for (var key in paras) {  
-           formPara[key]=paras[key];  
+		for (var key in paras) {
+           formPara[key]=paras[key];
         }
 		Common.post(url, formPara, callBack);
 	},
@@ -294,8 +292,9 @@ var Lib = {
 	        btn.attr('disabled',"true");
 	        btn.addClass('button-disabled');
 	    }
-	    
+
 	},
+
 	getTableHeight : function(queryLine) {
 		// 表格相对高度
 		if (queryLine == 1) {

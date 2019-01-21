@@ -1,3 +1,4 @@
+/* eslint-disable */
 layui.define(['table', '${entity.code}Api'], function(exports) {
     var ${entity.code}Api = layui.${entity.code}Api;
     var table=layui.table;
@@ -19,5 +20,5 @@ layui.define(['table', '${entity.code}Api'], function(exports) {
         }
     }
     exports('del',view);
-	
+
 });
