@@ -50,7 +50,7 @@ public class SignController {
     private List<String> roles;
 
 
-    @ApiOperation(value = "/blogLogin", httpMethod = "POST", notes = "登录method")
+    @ApiOperation("登录")
     @PostMapping(value = "/blogLogin")
     public JsonUtil blogLogin(SysUser user) {
         if (StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {

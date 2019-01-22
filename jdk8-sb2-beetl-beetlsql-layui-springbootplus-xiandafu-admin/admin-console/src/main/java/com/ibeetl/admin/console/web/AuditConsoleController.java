@@ -4,6 +4,7 @@ package com.ibeetl.admin.console.web;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.beetl.sql.core.engine.PageQuery;
@@ -37,9 +38,7 @@ public class AuditConsoleController {
     @Autowired
     AuditConsoleService auditConsoleService;
 
-
     /*页面*/
-
     @GetMapping(MODEL + "/index.do")
     @Function("trace")
     public ModelAndView index() {
@@ -50,7 +49,6 @@ public class AuditConsoleController {
 
 
     /*Json*/
-
     @PostMapping(MODEL + "/view.json")
     @ResponseBody
     @Function("trace")
@@ -75,6 +73,7 @@ public class AuditConsoleController {
     @Function("trace")
     @ResponseBody
     public JsonResult<List<Map<String, Object>>> listCondtion() {
+
         List<Map<String, Object>> list = AnnotationUtil.getInstance().getAnnotations(Query.class, AuditQuery.class);
         return JsonResult.success(list);
     }

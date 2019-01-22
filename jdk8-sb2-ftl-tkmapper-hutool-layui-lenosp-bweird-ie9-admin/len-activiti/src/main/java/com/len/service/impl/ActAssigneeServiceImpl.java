@@ -35,7 +35,7 @@ public class ActAssigneeServiceImpl extends BaseServiceImpl<ActAssignee, String>
     private RepositoryService repositoryService;
 
     @Override
-    public BaseMapper<ActAssignee, String> getMappser() {
+    public BaseMapper<ActAssignee, String> getMapper() {
         return actAssigneeMapper;
     }
 

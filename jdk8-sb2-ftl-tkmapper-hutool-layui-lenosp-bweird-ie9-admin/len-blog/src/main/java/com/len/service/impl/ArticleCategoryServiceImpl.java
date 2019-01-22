@@ -23,7 +23,7 @@ public class ArticleCategoryServiceImpl extends BaseServiceImpl<ArticleCategory,
     private ArticleCategoryMapper articleCategoryMapper;
 
     @Override
-    public BaseMapper<ArticleCategory, String> getMappser() {
+    public BaseMapper<ArticleCategory, String> getMapper() {
         return articleCategoryMapper;
     }
 

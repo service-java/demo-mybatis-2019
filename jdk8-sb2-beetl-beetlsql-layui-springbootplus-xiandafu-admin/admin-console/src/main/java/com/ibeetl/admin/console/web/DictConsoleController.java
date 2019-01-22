@@ -11,6 +11,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.beetl.sql.core.engine.PageQuery;
@@ -102,6 +103,7 @@ public class DictConsoleController {
     @PostMapping(MODEL + "/add.json")
     @Function("dict.add")
     @ResponseBody
+    @ApiOperation("新增字典")
     public JsonResult add(@Validated(ValidateConfig.ADD.class) CoreDict dict) {
         dict.setCreateTime(new Date());
         dictService.save(dict);
@@ -136,7 +138,9 @@ public class DictConsoleController {
     @Function("dict.delete")
     @ResponseBody
     public JsonResult delete(String ids) {
+        // @demo '1,2' -> [1,2]
         List<Long> dels = ConvertUtil.str2longs(ids);
+
         dictService.batchDelCoreDict(dels);
         platformService.clearDictCache();
         return new JsonResult().success();

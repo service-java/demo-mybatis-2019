@@ -12,15 +12,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="format-detection" content="telephone=no"/>	
-	<script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js?v=${jsVer}"></script>
+	<meta name="format-detection" content="telephone=no"/>
+
 	<link href="https://cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css?v=${jsVer}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/css/fs.css?v=${jsVer}" media="all"/>
 	<link rel="stylesheet" type="text/css" href="${ctxPath}/plugins/layui/css/layui.css?v=${jsVer}" media="all"/>
 	<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_520106_q8xykrwf86ywrk9.css?v=${jsVer}" media="all"/>
+	<link rel="stylesheet" href="${ctxPath}/plugins/ztree/css/metroStyle.css?v=${jsVer}" type="text/css">
+	<style>
+		.site-block{padding: 20px; border: 1px solid #eee;}
+
+
+		.input-readonly{
+			background-color: #efefef;
+			cursor:not-allowed;
+		}
+		.button-disabled{
+			background-color: #efefef;
+			cursor:not-allowed;
+		}
+	</style>
+
+
+	<script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js?v=${jsVer}"></script>
 	<script type="text/javascript" src="${ctxPath}/plugins/layui/layui.js?v=${jsVer}"></script>
 	<script type="text/javascript" src="${ctxPath}/plugins/jquery/jquery.min.js?v=${jsVer}"></script>
 	<!--<link rel="stylesheet" href="${ctxPath}/plugins/ztree/css/zTreeStyle.css?v=${jsVer}" type="text/css">-->
-	<link rel="stylesheet" href="${ctxPath}/plugins/ztree/css/metroStyle.css?v=${jsVer}" type="text/css">
 	<script type="text/javascript" src="${ctxPath}/plugins/ztree/js/jquery.ztree.all.min.js?v=${jsVer}"></script>
 	<!-- 业务公用库 -->
 	<script type="text/javascript" src="${ctxPath}/js/common.js?v=${jsVer}"></script>
@@ -38,29 +55,17 @@
 　　　function (e) {
 　　　　if (e.which === 27) {
 		Common.openConfirm("是否放弃治疗回到主页?",function(){
-			layer.closeAll(); 
+			layer.closeAll();
 		})
-　　　　　 
+　　　　　
 　　　　   }
 	});
 	</script>
-	<style>
-	.site-block{padding: 20px; border: 1px solid #eee;}
-	
-    
-    .input-readonly{
-    	background-color: #efefef;  
-    	cursor:not-allowed;
-	}  
-	.button-disabled{
-    	background-color: #efefef;  
-    	cursor:not-allowed;
-	}  
-	</style>
+
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
-<div style="margin: 15px;"> 
+<div style="margin: 15px;">
 ${layoutContent}
 </div>
 </div>

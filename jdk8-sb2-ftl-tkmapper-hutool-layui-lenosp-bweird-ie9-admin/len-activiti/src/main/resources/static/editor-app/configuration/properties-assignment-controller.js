@@ -224,7 +224,7 @@ var KisBpmChoseAssignmentCtrl = ['$scope', '$http', function ($scope, $http) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
-            url: '../role/showaLLRoleList'
+            url: '../role/showallRoleList'
         })
 
             .success(function (data, status, headers, config) {
@@ -354,7 +354,7 @@ var KisBpmChoseCandidateGroupsCtrl = ['$scope', '$http', function ($scope, $http
                 'Accept': 'application/json',
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
-            url: '../role/showaLLRoleList'
+            url: '../role/showallRoleList'
         })
             .success(function (data, status, headers, config) {
                 var obj = data;

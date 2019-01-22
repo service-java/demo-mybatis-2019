@@ -15,6 +15,7 @@ import com.len.service.RoleUserService;
 import com.len.util.BeanUtil;
 import com.len.util.JsonUtil;
 import com.len.util.ReType;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -34,6 +35,7 @@ import java.util.List;
  * @email 154040976@qq.com
  * 角色业务
  */
+@Api(description = "角色")
 @Controller
 @RequestMapping(value = "/role")
 public class RoleController extends BaseController {
@@ -50,22 +52,22 @@ public class RoleController extends BaseController {
     @Autowired
     private RoleMenuService roleMenuService;
 
-    @GetMapping(value = "showRole")
+    @GetMapping(value = "/showRole")
     @RequiresPermissions(value = "role:show")
     public String showRole(Model model) {
         return "/system/role/roleList";
     }
 
-    @ApiOperation(value = "/showRoleList", httpMethod = "GET", notes = "展示角色")
-    @GetMapping(value = "showRoleList")
+    @ApiOperation("展示角色")
+    @GetMapping(value = "/showRoleList")
     @ResponseBody
     @RequiresPermissions("role:show")
     public ReType showRoleList(SysRole role, Model model, String page, String limit) {
         return roleService.show(role, Integer.valueOf(page), Integer.valueOf(limit));
     }
 
-    @ApiOperation(value = "/showaLLRoleList", httpMethod = "GET", notes = "展示角色")
-    @GetMapping(value = "showaLLRoleList")
+    @ApiOperation("展示角色")
+    @GetMapping(value = "/showallRoleList")
     @ResponseBody
     @RequiresPermissions("role:show")
     public String showRoleList(SysRole role, Model model) {
@@ -73,16 +75,16 @@ public class RoleController extends BaseController {
     }
 
 
-    @GetMapping(value = "showAddRole")
+    @GetMapping(value = "/showAddRole")
     public String goAddRole(Model model) {
         JSONArray jsonArray = menuService.getTreeUtil(null);
         model.addAttribute("menus", jsonArray.toJSONString());
         return "/system/role/add-role";
     }
 
-    @ApiOperation(value = "/addRole", httpMethod = "POST", notes = "添加角色")
+    @ApiOperation("添加角色")
     @Log(desc = "添加角色")
-    @PostMapping(value = "addRole")
+    @PostMapping(value = "/addRole")
     @ResponseBody
     public JsonUtil addRole(SysRole sysRole, String[] menus) {
         if (StringUtils.isEmpty(sysRole.getRoleName())) {
@@ -109,7 +111,7 @@ public class RoleController extends BaseController {
         return j;
     }
 
-    @GetMapping(value = "updateRole")
+    @GetMapping(value = "/updateRole")
     public String updateRole(String id, Model model, boolean detail) {
         if (StringUtils.isNotEmpty(id)) {
             SysRole role = roleService.selectByPrimaryKey(id);
@@ -121,9 +123,9 @@ public class RoleController extends BaseController {
         return "system/role/update-role";
     }
 
-    @ApiOperation(value = "/updateRole", httpMethod = "POST", notes = "更新角色")
+    @ApiOperation("更新角色")
     @Log(desc = "更新角色")
-    @PostMapping(value = "updateRole")
+    @PostMapping(value = "/updateRole")
     @ResponseBody
     public JsonUtil updateUser(SysRole role, String[] menus) {
         JsonUtil jsonUtil = new JsonUtil();
@@ -157,9 +159,9 @@ public class RoleController extends BaseController {
         return jsonUtil;
     }
 
-    @ApiOperation(value = "/del", httpMethod = "POST", notes = "删除角色")
+    @ApiOperation(value="删除角色", httpMethod = "DELETE")
     @Log(desc = "删除角色", type = LOG_TYPE.DEL)
-    @PostMapping(value = "del")
+    @PostMapping(value = "/del")
     @ResponseBody
     @RequiresPermissions("role:del")
     public JsonUtil del(String id) {

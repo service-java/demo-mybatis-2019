@@ -23,7 +23,7 @@ public class RoleMenuServiceImpl extends BaseServiceImpl<SysRoleMenu, String> im
     private SysRoleMenuMapper roleMenuMapper;
 
     @Override
-    public BaseMapper<SysRoleMenu, String> getMappser() {
+    public BaseMapper<SysRoleMenu, String> getMapper() {
         return roleMenuMapper;
     }
 

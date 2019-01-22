@@ -14,6 +14,7 @@ import com.len.exception.MyException;
 import com.len.service.RoleUserService;
 import com.len.service.SysUserService;
 import com.len.util.*;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -33,7 +34,7 @@ import java.util.List;
  * @email 154040976@qq.com
  * 用户管理
  */
-//@Api(value="user")
+@Api(description = "用户")
 @Controller
 @RequestMapping(value = "/user")
 public class UserController extends BaseController {
@@ -49,27 +50,27 @@ public class UserController extends BaseController {
     @Autowired
     JobTask task;
 
-    @GetMapping(value = "mainTest")
+    @GetMapping(value = "/mainTest")
     @RequiresPermissions("user:show")
     public String showTest() {
         return "system/user/mainTest";
     }
 
-    @GetMapping(value = "showUser")
+    @GetMapping(value = "/showUser")
     @RequiresPermissions("user:show")
     public String showUser(Model model) {
         return "/system/user/userList";
     }
 
-    @GetMapping(value = "showUserList")
+    @GetMapping(value = "/showUserList")
     @ResponseBody
     @RequiresPermissions("user:show")
     public ReType showUser(Model model, SysUser user, String page, String limit) {
         return userService.show(user, Integer.valueOf(page), Integer.valueOf(limit));
     }
 
-    @ApiOperation(value = "/listByRoleId", httpMethod = "GET", notes = "展示角色")
-    @GetMapping(value = "listByRoleId")
+    @ApiOperation("展示角色")
+    @GetMapping(value = "/listByRoleId")
     @ResponseBody
     @RequiresPermissions("user:show")
     public String showUser(Model model, String roleId, int page, int limit) {
@@ -82,16 +83,16 @@ public class UserController extends BaseController {
     }
 
 
-    @GetMapping(value = "showAddUser")
+    @GetMapping(value = "/showAddUser")
     public String goAddUser(Model model) {
         List<Checkbox> checkboxList = userService.getUserRoleByJson(null);
         model.addAttribute("boxJson", checkboxList);
         return "/system/user/add-user";
     }
 
-    @ApiOperation(value = "/addUser", httpMethod = "POST", notes = "添加用户")
+    @ApiOperation("添加用户")
     @Log(desc = "添加用户")
-    @PostMapping(value = "addUser")
+    @PostMapping(value = "/addUser")
     @ResponseBody
     public JsonUtil addUser(SysUser user, String[] role) {
         if (user == null) {
@@ -128,7 +129,7 @@ public class UserController extends BaseController {
         return j;
     }
 
-    @GetMapping(value = "updateUser")
+    @GetMapping(value = "/updateUser")
     public String goUpdateUser(String id, Model model, boolean detail) {
         if (StringUtils.isNotEmpty(id)) {
             //用户-角色
@@ -141,9 +142,9 @@ public class UserController extends BaseController {
         return "system/user/update-user";
     }
 
-    @ApiOperation(value = "/updateUser", httpMethod = "POST", notes = "更新用户")
+    @ApiOperation("更新用户")
     @Log(desc = "更新用户", type = LOG_TYPE.UPDATE)
-    @PostMapping(value = "updateUser")
+    @PostMapping(value = "/updateUser")
     @ResponseBody
     public JsonUtil updateUser(SysUser user, String role[]) {
         JsonUtil jsonUtil = new JsonUtil();
@@ -177,8 +178,8 @@ public class UserController extends BaseController {
         return jsonUtil;
     }
 
+    @ApiOperation(value="删除用户", httpMethod = "DELETE")
     @Log(desc = "删除用户", type = LOG_TYPE.DEL)
-    @ApiOperation(value = "/del", httpMethod = "POST", notes = "删除用户")
     @PostMapping(value = "/del")
     @ResponseBody
     @RequiresPermissions("user:del")
@@ -205,7 +206,7 @@ public class UserController extends BaseController {
      * @return
      */
     @Log(desc = "修改密码", type = LOG_TYPE.UPDATE)
-    @PostMapping(value = "rePass")
+    @PostMapping(value = "/rePass")
     @ResponseBody
     @RequiresPermissions("user:repass")
     public JsonUtil rePass(String id, String pass, String newPwd) {
@@ -245,7 +246,7 @@ public class UserController extends BaseController {
     /**
      * 头像上传 目前首先相对路径
      */
-    @PostMapping(value = "upload")
+    @PostMapping(value = "/upload")
     @ResponseBody
     public JsonUtil imgUpload(HttpServletRequest req, @RequestParam("file") MultipartFile file,
                               ModelMap model) {
@@ -258,7 +259,7 @@ public class UserController extends BaseController {
     /**
      * 验证用户名是否存在
      */
-    @GetMapping(value = "checkUser")
+    @GetMapping(value = "/checkUser")
     @ResponseBody
     public JsonUtil checkUser(String uname, HttpServletRequest req) {
         JsonUtil j = new JsonUtil();

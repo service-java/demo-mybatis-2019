@@ -12,6 +12,7 @@ import com.len.util.BeanUtil;
 import com.len.util.Checkbox;
 import com.len.util.JsonUtil;
 import com.len.util.ReType;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
@@ -33,6 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * <p>
  * 定时任务 controller
  */
+@Api(description = "任务管理器")
 @Controller
 @RequestMapping("/job")
 public class JobController extends BaseController<SysJob> {
@@ -43,27 +45,88 @@ public class JobController extends BaseController<SysJob> {
     @Autowired
     JobTask jobTask;
 
-    @GetMapping(value = "showJob")
+    @GetMapping(value = "/showJob")
     @RequiresPermissions("job:show")
     public String showUser(Model model) {
         return "/system/job/jobList";
     }
 
-    @GetMapping(value = "showJobList")
+    @GetMapping(value = "/showJobList")
     @ResponseBody
     @RequiresPermissions("job:show")
     public ReType showUser(Model model, SysJob job, String page, String limit) {
         return jobService.show(job, Integer.valueOf(page), Integer.valueOf(limit));
     }
 
-    @GetMapping(value = "showAddJob")
+    @GetMapping(value = "/showAddJob")
     public String addJob(Model model) {
         return "/system/job/add-job";
     }
 
-    @ApiOperation(value = "/addJob", httpMethod = "POST", notes = "添加任务类")
+    @GetMapping(value = "/updateJob")
+    public String updateJob(String id, Model model, boolean detail) {
+        if (StringUtils.isNotEmpty(id)) {
+            SysJob job = jobService.selectByPrimaryKey(id);
+            model.addAttribute("job", job);
+        }
+        model.addAttribute("detail", detail);
+        return "system/job/update-job";
+    }
+
+    @Log(desc = "停止任务")
+    @PostMapping(value = "/endJob")
+    @ResponseBody
+    @RequiresPermissions("job:end")
+    public JsonUtil endJob(String id) {
+        JsonUtil j = new JsonUtil();
+        String msg = null;
+        if (StringUtils.isEmpty(id)) {
+            j.setMsg("获取数据失败");
+            j.setFlag(false);
+            return j;
+        }
+        try {
+            SysJob job = jobService.selectByPrimaryKey(id);
+            jobTask.remove(job);
+            job.setStatus(false);
+            jobService.updateByPrimaryKey(job);
+            msg = "停止成功";
+        } catch (MyException e) {
+            e.printStackTrace();
+        }
+        j.setMsg(msg);
+        return j;
+    }
+
+    @Log(desc = "启动任务")
+    @PostMapping(value = "/startJob")
+    @ResponseBody
+    @RequiresPermissions("job:start")
+    public JsonUtil startJob(String id) {
+        JsonUtil j = new JsonUtil();
+        String msg = null;
+        if (StringUtils.isEmpty(id)) {
+            j.setMsg("获取数据失败");
+            j.setFlag(false);
+            return j;
+        }
+        try {
+            SysJob job = jobService.selectByPrimaryKey(id);
+            jobTask.startJob(job);
+            job.setStatus(true);
+            jobService.updateByPrimaryKey(job);
+            msg = "启动成功";
+        } catch (MyException e) {
+            e.printStackTrace();
+        }
+        j.setMsg(msg);
+        return j;
+    }
+
+
+    @ApiOperation("添加任务类")
     @Log(desc = "添加任务")
-    @PostMapping(value = "addJob")
+    @PostMapping(value = "/addJob")
     @ResponseBody
     public JsonUtil addJob(SysJob job) {
         JsonUtil j = new JsonUtil();
@@ -80,20 +143,10 @@ public class JobController extends BaseController<SysJob> {
         return j;
     }
 
-    @GetMapping(value = "updateJob")
-    public String updateJob(String id, Model model, boolean detail) {
-        if (StringUtils.isNotEmpty(id)) {
-            SysJob job = jobService.selectByPrimaryKey(id);
-            model.addAttribute("job", job);
-        }
-        model.addAttribute("detail", detail);
-        return "system/job/update-job";
-    }
 
-
-    @ApiOperation(value = "/updateJob", httpMethod = "POST", notes = "更新任务")
+    @ApiOperation("更新任务")
     @Log(desc = "更新任务", type = LOG_TYPE.UPDATE)
-    @PostMapping(value = "updateJob")
+    @PostMapping(value = "/updateJob")
     @ResponseBody
     public JsonUtil updateJob(SysJob job) {
         JsonUtil j = new JsonUtil();
@@ -119,9 +172,10 @@ public class JobController extends BaseController<SysJob> {
         return j;
     }
 
+
+    @ApiOperation(value="删除任务", httpMethod = "DELETE")
     @Log(desc = "删除任务", type = LOG_TYPE.DEL)
-    @ApiOperation(value = "/del", httpMethod = "POST", notes = "删除任务")
-    @PostMapping(value = "del")
+    @PostMapping(value = "/del")
     @ResponseBody
     @RequiresPermissions("job:del")
     public JsonUtil del(String id) {
@@ -152,55 +206,5 @@ public class JobController extends BaseController<SysJob> {
         return j;
     }
 
-
-    @Log(desc = "启动任务")
-    @PostMapping(value = "startJob")
-    @ResponseBody
-    @RequiresPermissions("job:start")
-    public JsonUtil startJob(String id) {
-        JsonUtil j = new JsonUtil();
-        String msg = null;
-        if (StringUtils.isEmpty(id)) {
-            j.setMsg("获取数据失败");
-            j.setFlag(false);
-            return j;
-        }
-        try {
-            SysJob job = jobService.selectByPrimaryKey(id);
-            jobTask.startJob(job);
-            job.setStatus(true);
-            jobService.updateByPrimaryKey(job);
-            msg = "启动成功";
-        } catch (MyException e) {
-            e.printStackTrace();
-        }
-        j.setMsg(msg);
-        return j;
-    }
-
-    @Log(desc = "停止任务")
-    @PostMapping(value = "endJob")
-    @ResponseBody
-    @RequiresPermissions("job:end")
-    public JsonUtil endJob(String id) {
-        JsonUtil j = new JsonUtil();
-        String msg = null;
-        if (StringUtils.isEmpty(id)) {
-            j.setMsg("获取数据失败");
-            j.setFlag(false);
-            return j;
-        }
-        try {
-            SysJob job = jobService.selectByPrimaryKey(id);
-            jobTask.remove(job);
-            job.setStatus(false);
-            jobService.updateByPrimaryKey(job);
-            msg = "停止成功";
-        } catch (MyException e) {
-            e.printStackTrace();
-        }
-        j.setMsg(msg);
-        return j;
-    }
 
 }

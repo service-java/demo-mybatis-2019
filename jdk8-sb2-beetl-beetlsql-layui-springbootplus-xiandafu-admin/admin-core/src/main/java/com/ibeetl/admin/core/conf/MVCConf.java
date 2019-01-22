@@ -85,6 +85,12 @@ public class MVCConf implements WebMvcConfigurer, InitializingBean {
     }
 
     @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //enabling swagger-ui part for visual documentation
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+    }
+
+    @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**");
     }
@@ -96,6 +102,7 @@ public class MVCConf implements WebMvcConfigurer, InitializingBean {
     }
 
 
+
     @Override
     public void afterPropertiesSet() throws Exception {
         this.useId = env.getProperty("user.id", Long.class);
@@ -105,14 +112,11 @@ public class MVCConf implements WebMvcConfigurer, InitializingBean {
         String appName = env.getProperty("app.name");
         if (appName == null) {
             var.put("appName", DEFAULT_APP_NAME);
-
         }
 
         var.put("jsVer", System.currentTimeMillis());
 
         groupTemplate.setSharedVars(var);
-
-
     }
 
 

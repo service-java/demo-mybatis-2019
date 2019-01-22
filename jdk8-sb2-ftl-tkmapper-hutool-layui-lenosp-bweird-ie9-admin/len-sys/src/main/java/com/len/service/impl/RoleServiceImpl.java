@@ -23,7 +23,7 @@ public class RoleServiceImpl extends BaseServiceImpl<SysRole, String> implements
     private SysRoleMapper roleMapper;
 
     @Override
-    public BaseMapper<SysRole, String> getMappser() {
+    public BaseMapper<SysRole, String> getMapper() {
         return roleMapper;
     }
 

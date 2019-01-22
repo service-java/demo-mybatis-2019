@@ -36,7 +36,7 @@ public class LogController extends BaseController {
     @Autowired
     private SysLogMapper logMapper;
 
-    @GetMapping(value = "showLog")
+    @GetMapping(value = "/showLog")
     public String showMenu(Model model) {
         return "/system/log/logList";
     }
@@ -49,7 +49,7 @@ public class LogController extends BaseController {
      * @param limit
      * @return
      */
-    @GetMapping(value = "showLogList")
+    @GetMapping(value = "/showLogList")
     @ResponseBody
     public ReType showLog(SysLog sysLog, String page, String limit) {
         List<SysLog> tList = null;
@@ -69,7 +69,7 @@ public class LogController extends BaseController {
      * @param
      * @return
      */
-    @PostMapping(value = "del")
+    @PostMapping(value = "/del")
     @ResponseBody
     public JsonUtil del(String[] ids) {
         JsonUtil j = new JsonUtil();

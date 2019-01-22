@@ -28,8 +28,7 @@ public class JsonUtil {
         this.flag = flag;
     }
 
-    public JsonUtil() {
-    }
+    public JsonUtil() {}
 
     public JsonUtil(boolean flag, String msg) {
         this.flag = flag;

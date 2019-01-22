@@ -48,7 +48,7 @@ public class BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle, String>
 
 
     @Override
-    public BaseMapper<BlogArticle, String> getMappser() {
+    public BaseMapper<BlogArticle, String> getMapper() {
         return blogArticleMapper;
     }
 

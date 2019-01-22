@@ -33,7 +33,7 @@ public class MenuServiceImpl extends BaseServiceImpl<SysMenu, String> implements
     private SysRoleMenuMapper roleMenuMapper;
 
     @Override
-    public BaseMapper<SysMenu, String> getMappser() {
+    public BaseMapper<SysMenu, String> getMapper() {
         return menuDao;
     }
 

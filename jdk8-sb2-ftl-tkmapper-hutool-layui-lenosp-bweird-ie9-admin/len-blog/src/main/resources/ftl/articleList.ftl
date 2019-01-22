@@ -231,19 +231,19 @@
         if (title == null || title == '') {
             title = false;
         }
-        ;
+
         if (url == null || url == '') {
             url = "error/404";
         }
-        ;
+
         if (w == null || w == '') {
             w = ($(window).width() * 0.9);
         }
-        ;
+
         if (h == null || h == '') {
             h = ($(window).height() - 50);
         }
-        ;
+
         layer.open({
             id: 'user-detail',
             type: 2,
@@ -300,19 +300,19 @@
         if (title == null || title == '') {
             title = false;
         }
-        ;
+
         if (url == null || url == '') {
             url = "404.html";
         }
-        ;
+
         if (w == null || w == '') {
             w = ($(window).width() * 0.9);
         }
-        ;
+
         if (h == null || h == '') {
             h = ($(window).height() - 50);
         }
-        ;
+
         layer.open({
             id: 'user-add',
             type: 2,

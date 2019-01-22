@@ -20,7 +20,7 @@ public class BlogTagServiceImpl extends BaseServiceImpl<BlogTag, String> impleme
     private BlogTagMapper blogTagMapper;
 
     @Override
-    public BaseMapper<BlogTag, String> getMappser() {
+    public BaseMapper<BlogTag, String> getMapper() {
         return blogTagMapper;
     }
 }

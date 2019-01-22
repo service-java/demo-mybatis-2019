@@ -43,33 +43,33 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     private static final String STR = "java.lang.String";
 
 
-    public abstract BaseMapper<T, E> getMappser();
+    public abstract BaseMapper<T, E> getMapper();
 
 
     @Override
     public List<T> select(T t) {
-        return getMappser().select(t);
+        return getMapper().select(t);
     }
 
     @Override
     public List<T> selectAll() {
-        return getMappser().selectAll();
+        return getMapper().selectAll();
     }
 
     @Override
     public List<T> selectByIds(String ids) {
-        return getMappser().selectByIds(ids);
+        return getMapper().selectByIds(ids);
     }
 
     @Override
     public int selectCount(T t) {
-        return getMappser().selectCount(t);
+        return getMapper().selectCount(t);
     }
 
 
     @Override
     public int deleteByPrimaryKey(E id) {
-        return getMappser().deleteByPrimaryKey(id);
+        return getMapper().deleteByPrimaryKey(id);
     }
 
     @Override
@@ -79,7 +79,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
         } catch (Exception e) {
 
         }
-        return getMappser().insert(record);
+        return getMapper().insert(record);
     }
 
     /**
@@ -133,7 +133,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
             record = addValue(record, true);
         } catch (Exception e) {
         }
-        return getMappser().insertSelective(record);
+        return getMapper().insertSelective(record);
     }
 
 
@@ -144,7 +144,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
         } catch (Exception e) {
 
         }
-        return getMappser().updateByPrimaryKeySelective(record);
+        return getMapper().updateByPrimaryKeySelective(record);
     }
 
     @Override
@@ -154,52 +154,52 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
         } catch (Exception e) {
 
         }
-        return getMappser().updateByPrimaryKey(record);
+        return getMapper().updateByPrimaryKey(record);
     }
 
     @Override
     public List<T> selectListByPage(T record) {
-        return getMappser().selectListByPage(record);
+        return getMapper().selectListByPage(record);
     }
 
     @Override
     public int deleteByPrimaryKey(Object o) {
-        return getMappser().deleteByPrimaryKey(o);
+        return getMapper().deleteByPrimaryKey(o);
     }
 
     @Override
     public int delete(T t) {
-        return getMappser().delete(t);
+        return getMapper().delete(t);
     }
 
     @Override
     public boolean existsWithPrimaryKey(Object o) {
-        return getMappser().existsWithPrimaryKey(o);
+        return getMapper().existsWithPrimaryKey(o);
     }
 
     @Override
     public T selectByPrimaryKey(Object o) {
-        return getMappser().selectByPrimaryKey(o);
+        return getMapper().selectByPrimaryKey(o);
     }
 
     @Override
     public T selectOne(T t) {
-        return getMappser().selectOne(t);
+        return getMapper().selectOne(t);
     }
 
     @Override
     public int deleteByIds(String s) {
-        return getMappser().deleteByIds(s);
+        return getMapper().deleteByIds(s);
     }
 
     @Override
     public int insertList(List<T> list) {
-        return getMappser().insertList(list);
+        return getMapper().insertList(list);
     }
 
     @Override
     public int insertUseGeneratedKeys(T t) {
-        return getMappser().insertUseGeneratedKeys(t);
+        return getMapper().insertUseGeneratedKeys(t);
     }
 
     /**
@@ -215,7 +215,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
         List<T> tList = null;
         Page<T> tPage = PageHelper.startPage(page, limit);
         try {
-            tList = getMappser().selectListByPage(t);
+            tList = getMapper().selectListByPage(t);
         } catch (MyException e) {
             log.error("class:BaseServiceImpl ->method:show->message:" + e.getMessage());
             e.printStackTrace();
@@ -227,7 +227,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
     public String showAll(T t) {
         List<T> tList = null;
         try {
-            tList = getMappser().selectListByPage(t);
+            tList = getMapper().selectListByPage(t);
         } catch (MyException e) {
 //            logger.error("class:BaseServiceImpl ->method:show->message:" + e.getMessage());
             log.error("class:BaseServiceImpl ->method:show->message:" + e.getMessage());
@@ -242,7 +242,7 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
         List<T> tList = null;
         Page<T> tPage = PageHelper.startPage(page, limit);
         try {
-            tList = getMappser().selectListByPage(t);
+            tList = getMapper().selectListByPage(t);
         } catch (MyException e) {
             log.error("class:BaseServiceImpl ->method:getList->message:" + e.getMessage());
             e.printStackTrace();
@@ -253,48 +253,48 @@ public abstract class BaseServiceImpl<T, E extends Serializable> implements Base
 
     @Override
     public int deleteByExample(Object o) {
-        return getMappser().deleteByExample(o);
+        return getMapper().deleteByExample(o);
     }
 
 
     @Override
     public List<T> selectByExample(Object o) {
-        return getMappser().selectByExample(o);
+        return getMapper().selectByExample(o);
     }
 
 
     @Override
     public int selectCountByExample(Object o) {
-        return getMappser().selectCountByExample(o);
+        return getMapper().selectCountByExample(o);
     }
 
 
     @Override
     public T selectOneByExample(Object o) {
-        return getMappser().selectOneByExample(o);
+        return getMapper().selectOneByExample(o);
     }
 
 
     @Override
     public int updateByExample(T t, Object o) {
-        return getMappser().updateByExample(t, o);
+        return getMapper().updateByExample(t, o);
     }
 
 
     @Override
     public int updateByExampleSelective(T t, Object o) {
-        return getMappser().updateByExampleSelective(t, o);
+        return getMapper().updateByExampleSelective(t, o);
     }
 
 
     @Override
     public List<T> selectByExampleAndRowBounds(Object o, RowBounds rowBounds) {
-        return getMappser().selectByExampleAndRowBounds(o, rowBounds);
+        return getMapper().selectByExampleAndRowBounds(o, rowBounds);
     }
 
 
     @Override
     public List<T> selectByRowBounds(T t, RowBounds rowBounds) {
-        return getMappser().selectByRowBounds(t, rowBounds);
+        return getMapper().selectByRowBounds(t, rowBounds);
     }
 }

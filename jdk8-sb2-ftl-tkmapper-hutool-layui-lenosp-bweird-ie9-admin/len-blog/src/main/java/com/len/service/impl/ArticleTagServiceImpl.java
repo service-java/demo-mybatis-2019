@@ -20,7 +20,7 @@ public class ArticleTagServiceImpl extends BaseServiceImpl<ArticleTag, String> i
     private ArticleTagMapper articleTagMapper;
 
     @Override
-    public BaseMapper<ArticleTag, String> getMappser() {
+    public BaseMapper<ArticleTag, String> getMapper() {
         return articleTagMapper;
     }
 }

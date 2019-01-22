@@ -20,7 +20,7 @@ public class JobServiceImpl extends BaseServiceImpl<SysJob, String> implements J
     SysJobMapper jobMapper;
 
     @Override
-    public BaseMapper<SysJob, String> getMappser() {
+    public BaseMapper<SysJob, String> getMapper() {
         return jobMapper;
     }
 }

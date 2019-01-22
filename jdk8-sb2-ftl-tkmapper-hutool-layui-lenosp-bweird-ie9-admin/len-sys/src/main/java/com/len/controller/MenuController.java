@@ -11,6 +11,7 @@ import com.len.service.MenuService;
 import com.len.service.RoleMenuService;
 import com.len.util.BeanUtil;
 import com.len.util.JsonUtil;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
  * @email 154040976@qq.com
  * 菜单
  */
+@Api(description = "菜单")
 @RequestMapping("/menu")
 @Controller
 public class MenuController extends BaseController {
@@ -41,8 +43,8 @@ public class MenuController extends BaseController {
      * @param model
      * @return
      */
-    @ApiOperation(value = "/showMenu", httpMethod = "GET", notes = "展示菜单")
-    @GetMapping(value = "showMenu")
+    @ApiOperation("展示菜单")
+    @GetMapping(value = "/showMenu")
     @RequiresPermissions("menu:show")
     public String showMenu(Model model) {
         JSONArray ja = menuService.getMenuJsonList();
@@ -50,16 +52,16 @@ public class MenuController extends BaseController {
         return "/system/menu/menuList";
     }
 
-    @GetMapping(value = "showAddMenu")
+    @GetMapping(value = "/showAddMenu")
     public String addMenu(Model model) {
         JSONArray ja = menuService.getMenuJsonList();
         model.addAttribute("menus", ja.toJSONString());
         return "/system/menu/add-menu";
     }
 
+    @ApiOperation("添加菜单")
     @Log(desc = "添加菜单", type = LOG_TYPE.UPDATE)
-    @ApiOperation(value = "/addMenu", httpMethod = "POST", notes = "添加菜单")
-    @PostMapping(value = "addMenu")
+    @PostMapping(value = "/addMenu")
     @ResponseBody
     public JsonUtil addMenu(SysMenu sysMenu, Model model) {
         JsonUtil jsonUtil = new JsonUtil();
@@ -91,7 +93,7 @@ public class MenuController extends BaseController {
         return jsonUtil;
     }
 
-    @GetMapping(value = "showUpdateMenu")
+    @GetMapping(value = "/showUpdateMenu")
     public String showUpdateMenu(Model model, String id) {
         SysMenu sysMenu = menuService.selectByPrimaryKey(id);
         JSONArray ja = menuService.getMenuJsonList();

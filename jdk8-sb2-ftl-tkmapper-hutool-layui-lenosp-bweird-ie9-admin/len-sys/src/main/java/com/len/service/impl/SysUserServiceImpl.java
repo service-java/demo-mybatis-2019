@@ -62,7 +62,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, String> impleme
     private static final String ADMIN = "admin";
 
     @Override
-    public BaseMapper<SysUser, String> getMappser() {
+    public BaseMapper<SysUser, String> getMapper() {
         return sysUserMapper;
     }
 

@@ -9,6 +9,7 @@ import com.len.service.MenuService;
 import com.len.service.SysUserService;
 import com.len.util.CustomUsernamePasswordToken;
 import com.len.util.VerifyCodeUtils;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -34,6 +35,7 @@ import java.util.List;
  * @email 154040976@qq.com
  * 登录、退出页面
  */
+@Api(description = "登录")
 @Controller
 @Slf4j
 public class LoginController {
@@ -49,7 +51,7 @@ public class LoginController {
         return loginCheck();
     }
 
-    @GetMapping(value = "goLogin")
+    @GetMapping(value = "/goLogin")
     public String goLogin(Model model, ServletRequest request) {
         Subject sub = SecurityUtils.getSubject();
         if (sub.isAuthenticated()) {
@@ -79,7 +81,7 @@ public class LoginController {
      * @param rememberMe
      * @return
      */
-    @ApiOperation(value = "/login", httpMethod = "POST", notes = "登录method")
+    @ApiOperation("登录")
     @PostMapping(value = "/login")
     public String login(SysUser user, Model model, String rememberMe, HttpServletRequest request) {
         String codeMsg = (String) request.getAttribute("shiroLoginFailure");

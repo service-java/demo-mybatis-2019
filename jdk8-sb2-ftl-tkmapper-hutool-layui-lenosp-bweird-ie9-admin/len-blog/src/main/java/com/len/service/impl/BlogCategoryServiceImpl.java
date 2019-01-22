@@ -20,7 +20,7 @@ public class BlogCategoryServiceImpl extends BaseServiceImpl<BlogCategory, Strin
     private BlogCategoryMapper blogCategoryMapper;
 
     @Override
-    public BaseMapper<BlogCategory, String> getMappser() {
+    public BaseMapper<BlogCategory, String> getMapper() {
         return blogCategoryMapper;
     }
 }

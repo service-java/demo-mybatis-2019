@@ -50,6 +50,7 @@ public class AnnotationUtil {
         private static AnnotationUtil instance = new AnnotationUtil();
 
         private AnnotationUtilHolder() {
+
         }
     }
 }
