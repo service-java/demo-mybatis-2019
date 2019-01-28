@@ -12,6 +12,7 @@ import com.len.util.ReType;
 
 import java.util.List;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,7 @@ public class LogController extends BaseController {
      * @param limit
      * @return
      */
+    @ApiOperation("显示所有日志")
     @GetMapping(value = "/showLogList")
     @ResponseBody
     public ReType showLog(SysLog sysLog, String page, String limit) {
@@ -69,6 +71,7 @@ public class LogController extends BaseController {
      * @param
      * @return
      */
+    @ApiOperation(value="删除日志", httpMethod = "DELETE")
     @PostMapping(value = "/del")
     @ResponseBody
     public JsonUtil del(String[] ids) {
