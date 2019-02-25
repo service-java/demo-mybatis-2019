@@ -31,10 +31,11 @@ public class ValidatorUtils {
      */
     public static void validateEntity(Object object, Class<?>... groups)
             throws RRException {
+        //
         Set<ConstraintViolation<Object>> constraintViolations = validator.validate(object, groups);
         if (!constraintViolations.isEmpty()) {
             StringBuilder msg = new StringBuilder();
-            for(ConstraintViolation<Object> constraint: constraintViolations){
+            for(ConstraintViolation<Object> constraint : constraintViolations){
                 msg.append(constraint.getMessage()).append("<br>");
             }
             throw new RRException(msg.toString());
