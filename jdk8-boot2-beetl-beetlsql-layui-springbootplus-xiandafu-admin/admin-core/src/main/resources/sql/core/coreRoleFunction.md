@@ -29,7 +29,7 @@ getRoleChildrenFunction
 
 ```sql
 select sf.code 
-from core_role_function  rf 
+from core_role_function rf 
 left join core_function sf on rf.function_id=sf.id 
 where rf.role_id in 
 (
