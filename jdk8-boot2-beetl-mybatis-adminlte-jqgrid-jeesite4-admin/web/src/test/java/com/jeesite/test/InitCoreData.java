@@ -19,7 +19,7 @@ import com.jeesite.modules.config.Application;
 @SpringBootTest(classes=Application.class)
 @Rollback(false)
 public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
-	
+
 	@Test
 	public void initCoreData() throws Exception{
 		createTable();
@@ -39,5 +39,5 @@ public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
 		initGenTestData();
 		initGenTreeData();
 	}
-	
+
 }
