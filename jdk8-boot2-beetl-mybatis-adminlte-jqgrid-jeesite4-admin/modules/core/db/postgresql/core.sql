@@ -46,6 +46,7 @@ CREATE TABLE js_gen_table
 	comments varchar(500) NOT NULL,
 	parent_table_name varchar(64),
 	parent_table_fk_name varchar(64),
+	data_source_name varchar(64),
 	tpl_category varchar(200),
 	package_name varchar(500),
 	module_name varchar(30),
@@ -288,11 +289,12 @@ CREATE TABLE js_sys_employee_post
 CREATE TABLE js_sys_file_entity
 (
 	file_id varchar(64) NOT NULL,
-	file_md5 varchar(64) NOT NULL UNIQUE,
+	file_md5 varchar(64) NOT NULL,
 	file_path varchar(1000) NOT NULL,
 	file_content_type varchar(200) NOT NULL,
 	file_extension varchar(100) NOT NULL,
-	file_size decimal(38) NOT NULL,
+	file_size decimal(31) NOT NULL,
+	file_meta varchar(255),
 	PRIMARY KEY (file_id)
 ) WITHOUT OIDS;
 
@@ -326,6 +328,7 @@ CREATE TABLE js_sys_job
 	cron_expression varchar(255) NOT NULL,
 	misfire_instruction decimal(1) NOT NULL,
 	concurrent char(1) NOT NULL,
+	instance_name varchar(64) DEFAULT 'JeeSiteScheduler' NOT NULL,
 	status char(1) NOT NULL,
 	create_by varchar(64) NOT NULL,
 	create_date timestamp NOT NULL,
@@ -478,13 +481,13 @@ CREATE TABLE js_sys_msg_inner
 	content_type char(1),
 	msg_content text NOT NULL,
 	receive_type char(1) NOT NULL,
-	receive_codes text NOT NULL,
-	receive_names text NOT NULL,
-	send_user_code varchar(64) NOT NULL,
-	send_user_name varchar(100) NOT NULL,
-	send_date timestamp NOT NULL,
+	receive_codes text,
+	receive_names text,
+	send_user_code varchar(64),
+	send_user_name varchar(100),
+	send_date timestamp,
 	is_attac char(1),
-	notify_types varchar(100) NOT NULL,
+	notify_types varchar(100),
 	status char(1) NOT NULL,
 	create_by varchar(64) NOT NULL,
 	create_date timestamp NOT NULL,
@@ -500,7 +503,7 @@ CREATE TABLE js_sys_msg_inner_record
 (
 	id varchar(64) NOT NULL,
 	msg_inner_id varchar(64) NOT NULL,
-	receive_user_code varchar(64),
+	receive_user_code varchar(64) NOT NULL,
 	receive_user_name varchar(100) NOT NULL,
 	read_status char(1) NOT NULL,
 	read_date timestamp,
@@ -802,7 +805,7 @@ CREATE INDEX idx_sys_company_status ON js_sys_company (status);
 CREATE INDEX idx_sys_company_vc ON js_sys_company (view_code);
 CREATE INDEX idx_sys_company_pcs ON js_sys_company (parent_codes);
 CREATE INDEX idx_sys_company_tss ON js_sys_company (tree_sorts);
-CREATE INDEX idx_sys_config_key ON js_sys_config (config_key);
+CREATE UNIQUE INDEX idx_sys_config_key ON js_sys_config (config_key);
 CREATE INDEX idx_sys_dict_data_cc ON js_sys_dict_data (corp_code);
 CREATE INDEX idx_sys_dict_data_dt ON js_sys_dict_data (dict_type);
 CREATE INDEX idx_sys_dict_data_pc ON js_sys_dict_data (parent_code);
@@ -859,7 +862,6 @@ CREATE INDEX idx_sys_msg_inner_cl ON js_sys_msg_inner (content_level);
 CREATE INDEX idx_sys_msg_inner_sc ON js_sys_msg_inner (send_user_code);
 CREATE INDEX idx_sys_msg_inner_sd ON js_sys_msg_inner (send_date);
 CREATE INDEX idx_sys_msg_inner_r_mi ON js_sys_msg_inner_record (msg_inner_id);
-CREATE INDEX idx_sys_msg_inner_r_rc ON js_sys_msg_inner_record (receive_user_code);
 CREATE INDEX idx_sys_msg_inner_r_ruc ON js_sys_msg_inner_record (receive_user_code);
 CREATE INDEX idx_sys_msg_inner_r_status ON js_sys_msg_inner_record (read_status);
 CREATE INDEX idx_sys_msg_inner_r_star ON js_sys_msg_inner_record (is_star);
@@ -924,6 +926,7 @@ COMMENT ON COLUMN js_gen_table.class_name IS '实体类名称';
 COMMENT ON COLUMN js_gen_table.comments IS '表说明';
 COMMENT ON COLUMN js_gen_table.parent_table_name IS '关联父表的表名';
 COMMENT ON COLUMN js_gen_table.parent_table_fk_name IS '本表关联父表的外键名';
+COMMENT ON COLUMN js_gen_table.data_source_name IS '数据源名称';
 COMMENT ON COLUMN js_gen_table.tpl_category IS '使用的模板';
 COMMENT ON COLUMN js_gen_table.package_name IS '生成包路径';
 COMMENT ON COLUMN js_gen_table.module_name IS '生成模块名';
@@ -1111,6 +1114,7 @@ COMMENT ON COLUMN js_sys_file_entity.file_path IS '文件相对路径';
 COMMENT ON COLUMN js_sys_file_entity.file_content_type IS '文件内容类型';
 COMMENT ON COLUMN js_sys_file_entity.file_extension IS '文件后缀扩展名';
 COMMENT ON COLUMN js_sys_file_entity.file_size IS '文件大小(单位B)';
+COMMENT ON COLUMN js_sys_file_entity.file_meta IS '文件信息(JSON格式)';
 COMMENT ON TABLE js_sys_file_upload IS '文件上传表';
 COMMENT ON COLUMN js_sys_file_upload.id IS '编号';
 COMMENT ON COLUMN js_sys_file_upload.file_id IS '文件编号';
@@ -1132,6 +1136,7 @@ COMMENT ON COLUMN js_sys_job.invoke_target IS '调用目标字符串';
 COMMENT ON COLUMN js_sys_job.cron_expression IS 'Cron执行表达式';
 COMMENT ON COLUMN js_sys_job.misfire_instruction IS '计划执行错误策略';
 COMMENT ON COLUMN js_sys_job.concurrent IS '是否并发执行';
+COMMENT ON COLUMN js_sys_job.instance_name IS '集群的实例名字';
 COMMENT ON COLUMN js_sys_job.status IS '状态（0正常 1删除 2暂停）';
 COMMENT ON COLUMN js_sys_job.create_by IS '创建者';
 COMMENT ON COLUMN js_sys_job.create_date IS '创建时间';
@@ -1247,7 +1252,7 @@ COMMENT ON COLUMN js_sys_msg_inner.msg_title IS '消息标题';
 COMMENT ON COLUMN js_sys_msg_inner.content_level IS '内容级别（1普通 2一般 3紧急）';
 COMMENT ON COLUMN js_sys_msg_inner.content_type IS '内容类型（1公告 2新闻 3会议 4其它）';
 COMMENT ON COLUMN js_sys_msg_inner.msg_content IS '消息内容';
-COMMENT ON COLUMN js_sys_msg_inner.receive_type IS '接受者类型（1用户 2部门 3角色 4岗位）';
+COMMENT ON COLUMN js_sys_msg_inner.receive_type IS '接受者类型（0全部 1用户 2部门 3角色 4岗位）';
 COMMENT ON COLUMN js_sys_msg_inner.receive_codes IS '接受者字符串';
 COMMENT ON COLUMN js_sys_msg_inner.receive_names IS '接受者名称字符串';
 COMMENT ON COLUMN js_sys_msg_inner.send_user_code IS '发送者用户编码';
@@ -1266,7 +1271,7 @@ COMMENT ON COLUMN js_sys_msg_inner_record.id IS '编号';
 COMMENT ON COLUMN js_sys_msg_inner_record.msg_inner_id IS '所属消息';
 COMMENT ON COLUMN js_sys_msg_inner_record.receive_user_code IS '接受者用户编码';
 COMMENT ON COLUMN js_sys_msg_inner_record.receive_user_name IS '接受者用户姓名';
-COMMENT ON COLUMN js_sys_msg_inner_record.read_status IS '读取状态（0未送达 1未读 2已读）';
+COMMENT ON COLUMN js_sys_msg_inner_record.read_status IS '读取状态（0未送达 1已读 2未读）';
 COMMENT ON COLUMN js_sys_msg_inner_record.read_date IS '阅读时间';
 COMMENT ON COLUMN js_sys_msg_inner_record.is_star IS '是否标星';
 COMMENT ON TABLE js_sys_msg_push IS '消息推送表';
@@ -1290,7 +1295,7 @@ COMMENT ON COLUMN js_sys_msg_push.push_return_msg_id IS '推送返回消息编�
 COMMENT ON COLUMN js_sys_msg_push.push_return_content IS '推送返回的内容信息';
 COMMENT ON COLUMN js_sys_msg_push.push_status IS '推送状态（0未推送 1成功  2失败）';
 COMMENT ON COLUMN js_sys_msg_push.push_date IS '推送时间';
-COMMENT ON COLUMN js_sys_msg_push.read_status IS '读取状态（0未送达 1未读 2已读）';
+COMMENT ON COLUMN js_sys_msg_push.read_status IS '读取状态（0未送达 1已读 2未读）';
 COMMENT ON COLUMN js_sys_msg_push.read_date IS '读取时间';
 COMMENT ON TABLE js_sys_msg_pushed IS '消息已推送表';
 COMMENT ON COLUMN js_sys_msg_pushed.id IS '编号';
@@ -1313,7 +1318,7 @@ COMMENT ON COLUMN js_sys_msg_pushed.push_return_code IS '推送返回结果码';
 COMMENT ON COLUMN js_sys_msg_pushed.push_return_msg_id IS '推送返回消息编号';
 COMMENT ON COLUMN js_sys_msg_pushed.push_status IS '推送状态（0未推送 1成功  2失败）';
 COMMENT ON COLUMN js_sys_msg_pushed.push_date IS '推送时间';
-COMMENT ON COLUMN js_sys_msg_pushed.read_status IS '读取状态（0未送达 1未读 2已读）';
+COMMENT ON COLUMN js_sys_msg_pushed.read_status IS '读取状态（0未送达 1已读 2未读）';
 COMMENT ON COLUMN js_sys_msg_pushed.read_date IS '读取时间';
 COMMENT ON TABLE js_sys_msg_template IS '消息模板';
 COMMENT ON COLUMN js_sys_msg_template.id IS '编号';

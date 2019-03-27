@@ -15,6 +15,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jeesite.common.codec.DesUtils;
 import com.jeesite.common.config.Global;
 import com.jeesite.common.lang.StringUtils;
 import com.jeesite.common.shiro.filter.FormAuthenticationFilter;
@@ -33,7 +35,7 @@ import com.jeesite.common.web.CookieUtils;
 import com.jeesite.common.web.http.ServletUtils;
 import com.jeesite.modules.sys.entity.Menu;
 import com.jeesite.modules.sys.entity.User;
-import com.jeesite.modules.sys.service.UserService;
+import com.jeesite.modules.sys.utils.PwdUtils;
 import com.jeesite.modules.sys.utils.UserUtils;
 
 /**
@@ -54,7 +56,8 @@ public class LoginController extends BaseController{
 		if (StringUtils.containsIgnoreCase(request.getRequestURI(), ";JSESSIONID=")){
 			String queryString = request.getQueryString();
 			queryString = queryString == null ? "" : "?" + queryString;
-			return REDIRECT + adminPath + "/login" + queryString;
+			ServletUtils.redirectUrl(request, response, adminPath + "/login" + queryString);
+			return null;
 		}
 
 		LoginInfo loginInfo = UserUtils.getLoginInfo();
@@ -63,16 +66,8 @@ public class LoginController extends BaseController{
 		if(loginInfo != null){
 			String queryString = request.getQueryString();
 			queryString = queryString == null ? "" : "?" + queryString;
-			String indexUrl = adminPath + "/index" + queryString;
-			if (ServletUtils.isAjaxRequest(request)){
-				try {
-					request.getRequestDispatcher(indexUrl).forward(request, response); // AJAX不支持Redirect改用Forward
-				} catch (Exception ex) {
-					logger.error(ex.getMessage(), ex);
-				}
-				return null;
-			}
-			return REDIRECT + indexUrl;
+			ServletUtils.redirectUrl(request, response, adminPath + "/index" + queryString);
+			return null;
 		}
 		
 		// 如果是登录操作，跳转到此，则认为是登录失败（支持GET登录时传递__login=true参数）
@@ -130,16 +125,8 @@ public class LoginController extends BaseController{
 		if(loginInfo != null){
 			String queryString = request.getQueryString();
 			queryString = queryString == null ? "" : "?" + queryString;
-			String indexUrl = adminPath + "/index" + queryString;
-			if (ServletUtils.isAjaxRequest(request)){
-				try {
-					request.getRequestDispatcher(indexUrl).forward(request, response); // AJAX不支持Redirect改用Forward
-				} catch (Exception ex) {
-					logger.error(ex.getMessage(), ex);
-				}
-				return null;
-			}
-			return REDIRECT + indexUrl;
+			ServletUtils.redirectUrl(request, response, adminPath + "/index" + queryString);
+			return null;
 		}
 		
 		String username = WebUtils.getCleanParam(request, FormAuthenticationFilter.DEFAULT_USERNAME_PARAM);
@@ -149,6 +136,11 @@ public class LoginController extends BaseController{
 		String exception = (String)request.getAttribute(FormAuthenticationFilter.DEFAULT_ERROR_KEY_ATTRIBUTE_NAME);
 		String message = (String)request.getAttribute(FormAuthenticationFilter.DEFAULT_MESSAGE_PARAM);
 
+		String secretKey = Global.getProperty("shiro.loginSubmit.secretKey");
+		if (StringUtils.isNotBlank(secretKey)){
+			username = DesUtils.decode(username, secretKey);
+		}
+		
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM, username);
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_REMEMBER_ME_PARAM, rememberMe);
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_REMEMBER_USERCODE_PARAM, rememberUserCode);
@@ -202,12 +194,20 @@ public class LoginController extends BaseController{
 		if (StringUtils.containsIgnoreCase(request.getRequestURI(), ";JSESSIONID=")){
 			String queryString = request.getQueryString();
 			queryString = queryString == null ? "" : "?" + queryString;
-			return REDIRECT + adminPath + "/index" + queryString;
+			ServletUtils.redirectUrl(request, response, adminPath + "/index" + queryString);
+			return null;
 		}
 
 		// 验证下用户权限，以便调用doGetAuthorizationInfo方法，保存单点登录登出句柄
-		if (!SecurityUtils.getSubject().isPermitted("user")){
-			return REDIRECT + adminPath + "/login";
+		Subject subject = SecurityUtils.getSubject();
+		if (subject == null || !subject.isPermitted("user")){
+			if (subject != null){
+				subject.logout();
+			}
+			String queryString = request.getQueryString();
+			queryString = queryString == null ? "" : "?" + queryString;
+			ServletUtils.redirectUrl(request, response, adminPath + "/login" + queryString);
+			return null;
 		}
 
 		//获取登录用户信息
@@ -216,14 +216,20 @@ public class LoginController extends BaseController{
 		// 未加载shiro模块时会为空，直接访问则提示操作权限不足。
 		if(loginInfo == null){
 			UserUtils.getSubject().logout();
-			return REDIRECT + adminPath + "/login";
+			String queryString = request.getQueryString();
+			queryString = queryString == null ? "" : "?" + queryString;
+			ServletUtils.redirectUrl(request, response, adminPath + "/login" + queryString);
+			return null;
 		}
 		
 		// 当前用户对象信息
 		User user = UserUtils.get(loginInfo.getId());
 		if (user == null){
 			UserUtils.getSubject().logout();
-			return REDIRECT + adminPath + "/login";
+			String queryString = request.getQueryString();
+			queryString = queryString == null ? "" : "?" + queryString;
+			ServletUtils.redirectUrl(request, response, adminPath + "/login" + queryString);
+			return null;
 		}
 		model.addAttribute("user", user); // 设置当前用户信息
 
@@ -231,10 +237,10 @@ public class LoginController extends BaseController{
 		Session session = UserUtils.getSession();
 		
 		// 是否是登录操作
-		boolean isLogin = "true".equals(loginInfo.getParam("__login"));
+		boolean isLogin = "true".equals(session.getAttribute("__login"));
 		if (isLogin){
 			// 获取后接着清除，防止下次获取仍然认为是登录状态
-			loginInfo.getParams().remove("__login");
+			session.removeAttribute("__login");
 			// 设置共享SessionId的Cookie值（第三方系统使用）
 			String cookieName = Global.getProperty("session.shareSessionIdCookieName");
 			if (StringUtils.isNotBlank(cookieName)){
@@ -246,10 +252,10 @@ public class LoginController extends BaseController{
 			}
 		}
 
-		// 获取登录成功页面
-		String successUrl = Global.getProperty("shiro.successUrl");
-		if (!StringUtils.contains(successUrl, "://")){
-			successUrl = request.getContextPath() + successUrl;
+		// 获取登录成功后跳转的页面
+		String successUrl = request.getParameter("__url");
+		if (StringUtils.isBlank(successUrl)){
+			successUrl = Global.getProperty("shiro.successUrl");
 		}
 		
 		// 登录操作如果是Ajax操作，直接返回登录信息字符串。
@@ -262,6 +268,9 @@ public class LoginController extends BaseController{
 				model.addAttribute("message", text("sys.login.getInfo"));
 			}
 			model.addAttribute("sessionid", (String)session.getId());
+			if (!StringUtils.contains(successUrl, "://")){
+				successUrl = request.getContextPath() + successUrl;
+			}
 			model.addAttribute("__url", successUrl); // 告诉浏览器登录后跳转的页面
 			return ServletUtils.renderObject(response, model);
 		}
@@ -285,7 +294,7 @@ public class LoginController extends BaseController{
 		}
 		
 		// 初始密码策略和密码修改策略验证（0：关闭；1：提醒用户；2：强制修改初始或旧密码）
-		String passwordModifyUrl = UserService.passwordModifyValid(user, model);
+		String passwordModifyUrl = PwdUtils.passwordModifyValid(user, model);
 		if (passwordModifyUrl != null){
 			try {
 				request.getRequestDispatcher(passwordModifyUrl).forward(request, response);
@@ -295,6 +304,11 @@ public class LoginController extends BaseController{
 			return null;
 		}
 		
+		// 非无类型用户，自动根据用户类型设置默认菜单的归属系统（个性化示例）
+		//if (!User.USER_TYPE_NONE.equals(user.getUserType())){
+		//	session.setAttribute("sysCode", user.getUserType());
+		//}
+		
 		// 返回指定用户类型的首页视图
 		String view = UserUtils.getUserTypeValue(user.getUserType(), "indexView");
 		if(StringUtils.isNotBlank(view)){
@@ -303,6 +317,15 @@ public class LoginController extends BaseController{
 		
 		// 返回主页面视图
 		return "modules/sys/sysIndex";
+	}
+	
+	/**
+	 * 获取侧边栏菜单数据
+	 */
+	@RequiresPermissions("user")
+	@RequestMapping(value = "index/menuTree")
+	public String indexMenuTree(String parentCode) {
+		return "modules/sys/sysIndex/menuTree";
 	}
 	
 	/**
@@ -334,14 +357,11 @@ public class LoginController extends BaseController{
 	@RequiresPermissions("user")
 	@RequestMapping(value = "switch/{sysCode}")
 	public String switchSys(@PathVariable String sysCode) {
-		LoginInfo principal = UserUtils.getLoginInfo();
-		User user = UserUtils.get(principal.getId());
+		User user = UserUtils.getUser();
 		if (user.isSuperAdmin() && StringUtils.isNotBlank(sysCode)){
-			if (!StringUtils.equals(principal.getParam("sysCode"), sysCode)){
-				principal.setParam("sysCode", sysCode);
-				UserUtils.removeCache(UserUtils.CACHE_AUTH_INFO);
-				UserUtils.removeCache(UserUtils.CACHE_MENU_LIST);
-			}
+			Session session = UserUtils.getSession();
+			session.setAttribute("sysCode", sysCode);
+			UserUtils.removeCache(UserUtils.CACHE_AUTH_INFO+"_"+session.getId());
 		}
 		return REDIRECT + adminPath + "/index";
 	}

@@ -25,7 +25,7 @@
 							<div class="col-sm-8">
 								<#form:treeselect id="office" title="${text('机构选择')}"
 									path="employee.office.officeCode" labelPath="employee.office.officeName" 
-									url="${ctx}/sys/office/treeData" class="required" allowClear="false"/>
+									url="${ctx}/sys/office/treeData?ctrlPermi=2" class="required" allowClear="false"/>
 							</div>
 						</div>
 					</div>
@@ -36,7 +36,7 @@
 							<div class="col-sm-8">
 								<#form:treeselect id="company" title="${text('公司选择')}"
 									path="employee.company.companyCode" labelPath="employee.company.companyName" 
-									url="${ctx}/sys/company/treeData" btnClass="" allowClear="true"/>
+									url="${ctx}/sys/company/treeData?ctrlPermi=2" btnClass="" allowClear="true"/>
 							</div>
 						</div>
 					</div>
@@ -198,8 +198,7 @@
 <script>
 $("#inputForm").validate({
 	submitHandler: function(form){
-		<% if(op == 'add' || op == 'auth') {%>
-		// 获取选中角色
+		<% if(op == 'add' || op == 'auth') { // 获取选中角色  %>
 		$("#userRoleString").val(roleGrid.dataGrid('getSelectRows').join(','));
 		<% } %>
 		js.ajaxSubmitForm($(form), function(data){
@@ -221,8 +220,8 @@ var roleGrid = $("#roleGrid").dataGrid({
 		{name:'ctrlPermi',value:'2'}
 	],
 	columnModel: [
-		{header:'${text('角色名称')}', name:'name', sortable:false, width:100, align:"center"},
-		{header:'${text('角色编码')}', name:'id', sortable:false, width:100, align:"center"}  
+		{header:'${text("角色名称")}', name:'name', sortable:false, width:100, align:"center"},
+		{header:'${text("角色编码")}', name:'id', sortable:false, width:100, align:"center"}  
 	],
 	showCheckbox: true,
 	autoGridHeight: function(){

@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.jeesite.modules.config.Application;
+import com.jeesite.modules.Application;
 
 /**
  * 初始化核心表数据
@@ -19,12 +19,12 @@ import com.jeesite.modules.config.Application;
 @SpringBootTest(classes=Application.class)
 @Rollback(false)
 public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
-
+	
 	@Test
 	public void initCoreData() throws Exception{
 		createTable();
 		initLog();
-		initArea();
+		initArea("3700","3701","3702");
 		initConfig();
 		initModule();
 		initDict();
@@ -39,5 +39,5 @@ public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
 		initGenTestData();
 		initGenTreeData();
 	}
-
+	
 }

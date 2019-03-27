@@ -12,10 +12,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
+import org.springframework.core.env.Environment;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 
@@ -34,11 +34,13 @@ public class PropertiesUtils {
 	
 	// 默认加载的文件，可通过继承覆盖（若有相同Key，优先加载后面的）
 	public static final String[] DEFAULT_CONFIG_FILE = new String[]{
+			"classpath:config/bootstrap.yml", "classpath:bootstrap.yml",
 			"classpath:config/application.yml", "classpath:application.yml"};
 
 	private static Logger logger = PropertiesUtils.initLogger();
-	
+	private final Set<String> configSet = SetUtils.newLinkedHashSet();
 	private final Properties properties = new Properties();
+	private static Environment environment;
 	
 	/**
 	 * 当前类的实例持有者（静态内部类，延迟加载，懒汉式，线程安全的单例模式）
@@ -55,7 +57,7 @@ public class PropertiesUtils {
 			for(Resource resource : resources){
 				configSet.add("classpath:config/"+resource.getFilename());
 			}
-			configSet.add("classpath:config/jeesite.yml");
+			//configSet.add("classpath:config/jeesite.yml");
 			// 获取全局设置默认的配置文件（以下是支持环境配置的属性文件）
 			Set<String> set = SetUtils.newLinkedHashSet();
 			for (String configFile : DEFAULT_CONFIG_FILE){
@@ -83,7 +85,7 @@ public class PropertiesUtils {
 			}
 			for (String location : configFiles){
 				configSet.add(location);
-				if (StringUtils.isNotBlank(profiles) && !StringUtils.equals(profiles, "default")){
+				if (StringUtils.isNotBlank(profiles)){
 					if (location.endsWith(".properties")){
 						configSet.add(StringUtils.substringBeforeLast(location, ".properties")
 								+ "-" + profiles + ".properties");
@@ -108,14 +110,11 @@ public class PropertiesUtils {
 				Resource resource = ResourceUtils.getResource(location);
 				if (resource.exists()){
         			if (location.endsWith(".properties")){
-        				InputStreamReader is = null;
-        				try {
-	    					is = new InputStreamReader(resource.getInputStream(), "UTF-8");
+        				try (InputStreamReader is = new InputStreamReader(resource.getInputStream(), "UTF-8")){
 	    					properties.load(is);
+	    					configSet.add(location);
 	        			} catch (IOException ex) {
 	            			logger.error("Load " + location + " failure. ", ex);
-	        			} finally {
-	        				IOUtils.closeQuietly(is);
 	        			}
         			}
         			else if (location.endsWith(".yml")){
@@ -125,18 +124,24 @@ public class PropertiesUtils {
         					properties.put(ObjectUtils.toString(entry.getKey()),
         							ObjectUtils.toString(entry.getValue()));
         				}
+    					configSet.add(location);
         			}
 				}
 			} catch (Exception e) {
     			logger.error("Load " + location + " failure. ", e);
 			}
-			// 存储当前加载的配置文件路径和名称
-			properties.setProperty("configFiles", StringUtils.join(configFiles, ","));
 		}
 	}
 	
 	/**
-	 * 获取当前加载的属性
+	 * 获取当前加载的属性文件
+	 */
+	public Set<String> getConfigSet() {
+		return configSet;
+	}
+	
+	/**
+	 * 获取当前加载的属性数据
 	 */
 	public Properties getProperties() {
 		return properties;
@@ -163,14 +168,19 @@ public class PropertiesUtils {
 	 * 获取属性值，取不到从System.getProperty()获取，都取不到返回null
 	 */
 	public String getProperty(String key) {
+		if (environment != null){
+			String value = environment.getProperty(key);
+			if (value != null){
+				return value;
+			}
+		}
         String value = properties.getProperty(key);
         if (value != null){
-        	// 支持嵌套取值的问题  key=${xx}/yy
 	    	Matcher m = p1.matcher(value);
 	        while(m.find()) {
 	            String g = m.group();
-	            String keyChild = g.replaceAll("\\$\\{", "").replaceAll("\\}", "");
-	            value = StringUtils.replace(value, g, getProperty(keyChild));
+	            String childKey = g.replaceAll("\\$\\{|\\}", "");
+	            value = StringUtils.replace(value, g, getProperty(childKey));
 	        }
 	        return value;
 	    }else{
@@ -191,6 +201,14 @@ public class PropertiesUtils {
 	}
 	
 	/**
+	 * 设置环境属性
+	 * @param environment
+	 */
+	public static void setEnvironment(Environment environment) {
+		PropertiesUtils.environment = environment;
+	}
+
+	/**
 	 * 初始化日志路径
 	 */
 	private static Logger initLogger(){
@@ -207,7 +225,9 @@ public class PropertiesUtils {
 		if (new File(classesLogPath).exists()){
 			logPath = classesLogPath;
 		}
-		System.setProperty("logPath", FileUtils.path(logPath));
+		if (StringUtils.isBlank(System.getProperty("logPath"))){
+			System.setProperty("logPath", FileUtils.path(logPath));
+		}
 		return LoggerFactory.getLogger(PropertiesUtils.class);
 	}
 	

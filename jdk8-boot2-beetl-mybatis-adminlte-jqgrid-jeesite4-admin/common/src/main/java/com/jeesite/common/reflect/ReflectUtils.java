@@ -43,20 +43,21 @@ public class ReflectUtils {
 	 * 调用Getter方法.
 	 * 支持多级，如：对象名.对象名.方法
 	 */
-	public static Object invokeGetter(Object obj, String propertyName) {
+	@SuppressWarnings("unchecked")
+	public static <E> E invokeGetter(Object obj, String propertyName) {
 		Object object = obj;
 		for (String name : StringUtils.split(propertyName, ".")){
 			String getterMethodName = GETTER_PREFIX + StringUtils.capitalize(name);
 			object = invokeMethod(object, getterMethodName, new Class[] {}, new Object[] {});
 		}
-		return object;
+		return (E)object;
 	}
 
 	/**
 	 * 调用Setter方法, 仅匹配方法名。
 	 * 支持多级，如：对象名.对象名.方法
 	 */
-	public static void invokeSetter(Object obj, String propertyName, Object value) {
+	public static <E> void invokeSetter(Object obj, String propertyName, E value) {
 		Object object = obj;
 		String[] names = StringUtils.split(propertyName, ".");
 		for (int i=0; i<names.length; i++){
@@ -73,16 +74,17 @@ public class ReflectUtils {
 	/**
 	 * 直接读取对象属性值, 无视private/protected修饰符, 不经过getter函数.
 	 */
-	public static Object getFieldValue(final Object obj, final String fieldName) {
+	@SuppressWarnings("unchecked")
+	public static <E> E getFieldValue(final Object obj, final String fieldName) {
 		Field field = getAccessibleField(obj, fieldName);
 		if (field == null) {
 			//throw new IllegalArgumentException("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
-			logger.warn("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
+			logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
 			return null;
 		}
-		Object result = null;
+		E result = null;
 		try {
-			result = field.get(obj);
+			result = (E)field.get(obj);
 		} catch (IllegalAccessException e) {
 			logger.error("不可能抛出的异常{}", e.getMessage());
 		}
@@ -92,11 +94,11 @@ public class ReflectUtils {
 	/**
 	 * 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数.
 	 */
-	public static void setFieldValue(final Object obj, final String fieldName, final Object value) {
+	public static <E> void setFieldValue(final Object obj, final String fieldName, final E value) {
 		Field field = getAccessibleField(obj, fieldName);
 		if (field == null) {
 			//throw new IllegalArgumentException("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
-			logger.warn("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
+			logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + fieldName + "] 字段 ");
 			return;
 		}
 		try {
@@ -111,7 +113,8 @@ public class ReflectUtils {
 	 * 用于一次性调用的情况，否则应使用getAccessibleMethod()函数获得Method后反复调用.
 	 * 同时匹配方法名+参数类型，
 	 */
-	public static Object invokeMethod(final Object obj, final String methodName, final Class<?>[] parameterTypes,
+	@SuppressWarnings("unchecked")
+	public static <E> E invokeMethod(final Object obj, final String methodName, final Class<?>[] parameterTypes,
 			final Object[] args) {
 		if (obj == null || methodName == null){
 			return null;
@@ -119,11 +122,11 @@ public class ReflectUtils {
 		Method method = getAccessibleMethod(obj, methodName, parameterTypes);
 		if (method == null) {
 			//throw new IllegalArgumentException("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
-			logger.warn("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
+			logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
 			return null;
 		}
 		try {
-			return method.invoke(obj, args);
+			return (E)method.invoke(obj, args);
 		} catch (Exception e) {
 			String msg = "method: "+method+", obj: "+obj+", args: "+args+"";
 			throw convertReflectionExceptionToUnchecked(msg, e);
@@ -135,12 +138,13 @@ public class ReflectUtils {
 	 * 用于一次性调用的情况，否则应使用getAccessibleMethodByName()函数获得Method后反复调用.
 	 * 只匹配函数名，如果有多个同名函数调用第一个。
 	 */
-	public static Object invokeMethodByName(final Object obj, final String methodName, final Object[] args) {
+	@SuppressWarnings("unchecked")
+	public static <E> E invokeMethodByName(final Object obj, final String methodName, final Object[] args) {
 		Method method = getAccessibleMethodByName(obj, methodName, args.length);
 		if (method == null) {
 			// 如果为空不报错，直接返回空。
 //			throw new IllegalArgumentException("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
-			logger.warn("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
+			logger.debug("在 [" + obj.getClass() + "] 中，没有找到 [" + methodName + "] 方法 ");
 			return null;
 		}
 		try {
@@ -171,7 +175,7 @@ public class ReflectUtils {
 					}
 				}
 			}
-			return method.invoke(obj, args);
+			return (E)method.invoke(obj, args);
 		} catch (Exception e) {
 			String msg = "method: "+method+", obj: "+obj+", args: "+args+"";
 			throw convertReflectionExceptionToUnchecked(msg, e);
@@ -300,19 +304,19 @@ public class ReflectUtils {
 		Type genType = clazz.getGenericSuperclass();
 
 		if (!(genType instanceof ParameterizedType)) {
-			logger.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
+			logger.debug(clazz.getSimpleName() + "'s superclass not ParameterizedType");
 			return Object.class;
 		}
 
 		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
 		if (index >= params.length || index < 0) {
-			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "
+			logger.debug("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "
 					+ params.length);
 			return Object.class;
 		}
 		if (!(params[index] instanceof Class)) {
-			logger.warn(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
+			logger.debug(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
 			return Object.class;
 		}
 

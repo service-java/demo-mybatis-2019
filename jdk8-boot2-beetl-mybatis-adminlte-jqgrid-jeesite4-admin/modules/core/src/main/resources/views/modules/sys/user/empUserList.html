@@ -24,6 +24,7 @@
 		<div class="box-body">
 			<#form:form id="searchForm" model="${empUser}" action="${ctx}/sys/empUser/listData" method="post" class="form-inline "
 					data-page-no="${parameter.pageNo}" data-page-size="${parameter.pageSize}" data-order-by="${parameter.orderBy}">
+				<#form:hidden name="ctrlPermi" value="2"/>
 				<div class="form-group">
 					<label class="control-label">${text('账号')}：</label>
 					<div class="control-inline">
@@ -66,7 +67,7 @@
 					<div class="control-inline width-90">
 						<#form:treeselect id="office" title="${text('机构选择')}"
 								path="employee.office.officeCode" labelPath="employee.office.officeName" 
-								url="${ctx}/sys/office/treeData" btnClass="btn-sm" allowClear="true" canSelectParent="true"/>
+								url="${ctx}/sys/office/treeData?ctrlPermi=2" btnClass="btn-sm" allowClear="true" canSelectParent="true"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -74,7 +75,7 @@
 					<div class="control-inline width-90">
 						<#form:treeselect id="company" title="${text('公司选择')}"
 								path="employee.company.companyCode" labelPath="employee.company.companyName" 
-								url="${ctx}/sys/company/treeData" btnClass="btn-sm" allowClear="true" canSelectParent="true"/>
+								url="${ctx}/sys/company/treeData?ctrlPermi=2" btnClass="btn-sm" allowClear="true" canSelectParent="true"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -106,47 +107,47 @@
 $('#dataGrid').dataGrid({
 	searchForm: $("#searchForm"),
 	columnModel: [
-		{header:'${text('登录账号')}', name:'loginCode', index:'a.login_code', width:200, align:"center", frozen:true, formatter: function(val, obj, row, act){
-			return '<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=edit" class="btnList" data-title="${text('编辑用户')}">'+(val||row.id)+'</a>';
+		{header:'${text("登录账号")}', name:'loginCode', index:'a.login_code', width:200, align:"center", frozen:true, formatter: function(val, obj, row, act){
+			return '<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=edit" class="btnList" data-title="${text("编辑用户")}">'+(val||row.id)+'</a>';
 		}},
-		{header:'${text('用户昵称')}', name:'userName', index:'a.user_name', width:200, align:"center"},
-		{header:'${text('员工姓名')}', name:'refName', index:'a.ref_name', width:200, align:"center"},
-		{header:'${text('归属机构')}', name:'employee.office.officeName', index:'o.office_name', width:200, align:"center"},
-		{header:'${text('归属公司')}', name:'employee.company.companyName', index:'c.company_name', width:200, align:"center"},
-		{header:'${text('电子邮箱')}', name:'email', index:'a.email', width:200, align:"center"},
-		{header:'${text('手机号码')}', name:'mobile', index:'a.mobile', width:200, align:"center"},
-		{header:'${text('办公电话')}', name:'phone', index:'a.phone', width:200, align:"center"},
-		{header:'${text('更新时间')}', name:'updateDate', index:'a.update_date', width:200, align:"center"},
-		{header:'${text('状态')}', name:'status', index:'a.status', width:140, align:"center", formatter: function(val, obj, row, act){
+		{header:'${text("用户昵称")}', name:'userName', index:'a.user_name', width:200, align:"center"},
+		{header:'${text("员工姓名")}', name:'refName', index:'a.ref_name', width:200, align:"center"},
+		{header:'${text("归属机构")}', name:'employee.office.officeName', index:'o.office_name', width:200, align:"center"},
+		{header:'${text("归属公司")}', name:'employee.company.companyName', index:'c.company_name', width:200, align:"center"},
+		{header:'${text("电子邮箱")}', name:'email', index:'a.email', width:200, align:"center"},
+		{header:'${text("手机号码")}', name:'mobile', index:'a.mobile', width:200, align:"center"},
+		{header:'${text("办公电话")}', name:'phone', index:'a.phone', width:200, align:"center"},
+		{header:'${text("更新时间")}', name:'updateDate', index:'a.update_date', width:200, align:"center"},
+		{header:'${text("状态")}', name:'status', index:'a.status', width:140, align:"center", formatter: function(val, obj, row, act){
 			return js.getDictLabel(${@DictUtils.getDictListJson('sys_status')}, val, '未知', true);
 		}},
-		{header:'${text('操作')}', name:'actions', width:260, sortable:false, title:false, formatter: function(val, obj, row, act){
+		{header:'${text("操作")}', name:'actions', width:260, sortable:false, title:false, formatter: function(val, obj, row, act){
 			var actions = [];
 			<% if(hasPermi('sys:empUser:edit')){ %>
-				actions.push('<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=edit" class="btnList" title="${text('编辑用户')}"><i class="fa fa-pencil"></i></a>&nbsp;');
+				actions.push('<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=edit" class="btnList" title="${text("编辑用户")}"><i class="fa fa-pencil"></i></a>&nbsp;');
 			<% } %>
 			<% if(hasPermi('sys:empUser:updateStatus')){ %>
 				if (row.status == Global.STATUS_NORMAL){
-					actions.push('<a href="${ctx}/sys/empUser/disable?userCode='+row.userCode+'" class="btnList" title="${text('停用用户')}" data-confirm="${text('确认要停用该用户吗？')}"><i class="glyphicon glyphicon-ban-circle"></i></a>&nbsp;');
+					actions.push('<a href="${ctx}/sys/empUser/disable?userCode='+row.userCode+'" class="btnList" title="${text("停用用户")}" data-confirm="${text("确认要停用该用户吗？")}"><i class="glyphicon glyphicon-ban-circle"></i></a>&nbsp;');
 				}
 				if (row.status == Global.STATUS_DISABLE){
-					actions.push('<a href="${ctx}/sys/empUser/enable?userCode='+row.userCode+'" class="btnList" title="${text('启用用户')}" data-confirm="${text('确认要启用该用户吗？')}"><i class="glyphicon glyphicon-ok-circle"></i></a>&nbsp;');
+					actions.push('<a href="${ctx}/sys/empUser/enable?userCode='+row.userCode+'" class="btnList" title="${text("启用用户")}" data-confirm="${text("确认要启用该用户吗？")}"><i class="glyphicon glyphicon-ok-circle"></i></a>&nbsp;');
 				}
 			<% } %>
 			<% if(hasPermi('sys:empUser:edit')){ %>
-				actions.push('<a href="${ctx}/sys/empUser/delete?userCode='+row.userCode+'" class="btnList" title="${text('删除用户')}" data-confirm="${text('确认要删除该用户吗？')}"><i class="fa fa-trash-o"></i></a>&nbsp;');
+				actions.push('<a href="${ctx}/sys/empUser/delete?userCode='+row.userCode+'" class="btnList" title="${text("删除用户")}" data-confirm="${text("确认要删除该用户吗？")}"><i class="fa fa-trash-o"></i></a>&nbsp;');
 			<% } %>
 			<% if(hasPermi('sys:empUser:authRole,sys:empUser:authDataScope,sys:empUser:resetpwd', 'or')){ %>
-				actions.push('<a href="javascript:" class="btnMore" title="${text('更多操作')}"><i class="fa fa-chevron-circle-right"></i></a>&nbsp;');
+				actions.push('<a href="javascript:" class="btnMore" title="${text("更多操作")}"><i class="fa fa-chevron-circle-right"></i></a>&nbsp;');
 				actions.push('<div class="moreItems">');
 				<% if(hasPermi('sys:empUser:authRole')){ %>
-					actions.push('<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=auth" class="btn btn-default btn-xs btnList" title="${text('用户分配角色')}"><i class="fa fa-check-square-o"></i> ${text('分配角色')}</a>&nbsp;');
+					actions.push('<a href="${ctx}/sys/empUser/form?userCode='+row.userCode+'&op=auth" class="btn btn-default btn-xs btnList" title="${text("用户分配角色")}"><i class="fa fa-check-square-o"></i> ${text("分配角色")}</a>&nbsp;');
 				<% } %>
 				<% if(hasPermi('sys:empUser:authDataScope')){ %>
-					actions.push('<a href="${ctx}/sys/empUser/formAuthDataScope?userCode='+row.userCode+'" class="btn btn-default btn-xs btnList" title="${text('用户分配数据权限')}"><i class="fa fa-check-circle-o"></i> ${text('数据权限')}</a>&nbsp;');
+					actions.push('<a href="${ctx}/sys/empUser/formAuthDataScope?userCode='+row.userCode+'" class="btn btn-default btn-xs btnList" title="${text("用户分配数据权限")}"><i class="fa fa-check-circle-o"></i> ${text("数据权限")}</a>&nbsp;');
 				<% } %>
 				<% if(hasPermi('sys:empUser:resetpwd')){ %>
-					actions.push('<a href="${ctx}/sys/empUser/resetpwd?userCode='+row.userCode+'" class="btn btn-default btn-xs btnList" title="${text('用户密码重置')}" data-confirm="${text('确认要将该用户密码重置到初始状态吗？')}"><i class="fa fa-reply-all"></i> ${text('重置密码')}</a>&nbsp;');
+					actions.push('<a href="${ctx}/sys/empUser/resetpwd?userCode='+row.userCode+'" class="btn btn-default btn-xs btnList" title="${text("用户密码重置")}" data-confirm="${text("确认要将该用户密码重置到初始状态吗？")}"><i class="fa fa-reply-all"></i> ${text("重置密码")}</a>&nbsp;');
 				<% } %>
 				actions.push('</div>');
 			<% } %>
@@ -205,7 +206,7 @@ $('#btnImport').click(function(){
 		<div class="col-xs-12 col-xs-offset-1">
 			<input type="file" id="file" name="file" class="form-file"/>
 			<div class="mt10 pt5">
-				<#form:checkbox name="updateSupport" label="${text('否更新已经存在的用户数据')}" class="form-control"
+				<#form:checkbox name="updateSupport" label="${text('是否更新已经存在的用户数据')}" class="form-control"
 					title="${text('如果用户编码已经存在，更新这条数据。')}"/> &nbsp;
 				<a href="${ctx}/sys/empUser/importTemplate" class="btn btn-default btn-xs"><i class="fa fa-file-excel-o"></i> ${text('下载模板')}</a>
 			</div>

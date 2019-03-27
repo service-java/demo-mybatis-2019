@@ -4,27 +4,35 @@
 package com.jeesite.modules.sys.web.user;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jeesite.common.collect.ListUtils;
+import com.jeesite.common.collect.MapUtils;
 import com.jeesite.common.config.Global;
 import com.jeesite.common.entity.Page;
 import com.jeesite.common.lang.StringUtils;
 import com.jeesite.common.mybatis.mapper.query.QueryType;
 import com.jeesite.common.web.BaseController;
 import com.jeesite.modules.sys.entity.EmpUser;
+import com.jeesite.modules.sys.entity.Role;
 import com.jeesite.modules.sys.entity.User;
+import com.jeesite.modules.sys.service.RoleService;
 import com.jeesite.modules.sys.service.UserService;
 import com.jeesite.modules.sys.utils.UserUtils;
 
@@ -35,10 +43,13 @@ import com.jeesite.modules.sys.utils.UserUtils;
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/corpAdmin")
+@ConditionalOnProperty(name="web.core.enabled", havingValue="true", matchIfMissing=true)
 public class CorpAdminController extends BaseController {
 
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private RoleService roleService;
 
 	@ModelAttribute
 	public User get(String userCode, boolean isNewRecord) {
@@ -62,7 +73,8 @@ public class CorpAdminController extends BaseController {
 		user.getSqlMap().getWhere().disableAutoAddCorpCodeWhere()
 			.and("corp_code", QueryType.EQ, user.getCorpCode_())
 			.and("corp_name", QueryType.LIKE, user.getCorpName_());
-		Page<User> page = userService.findPage(new Page<User>(request, response), user);
+		user.setPage(new Page<>(request, response));
+		Page<User> page = userService.findPage(user);
 		return page;
 	}
 
@@ -76,6 +88,10 @@ public class CorpAdminController extends BaseController {
 				user.setCorpName_(StringUtils.EMPTY);  // 租户名称
 			}
 		}
+		// 获取当前用户所拥有的角色
+		Role role = new Role();
+		role.setUserCode(user.getUserCode());
+		model.addAttribute("roleList", roleService.findListByUserCode(role));
 		// 操作类型：addCorp: 添加租户； addAdmin: 添加管理员； edit: 编辑
 		model.addAttribute("op", op);
 		model.addAttribute("user", user);
@@ -127,6 +143,7 @@ public class CorpAdminController extends BaseController {
 			}
 		}
 		userService.save(user);
+		userService.saveAuth(user);
 		// 如果修改的是当前用户，则清除当前用户缓存
 		if (user.getUserCode().equals(UserUtils.getUser().getUserCode())) {
 			UserUtils.clearCache();
@@ -212,6 +229,56 @@ public class CorpAdminController extends BaseController {
 			userService.updateMgrType(user);
 			return renderResult(Global.TRUE, "取消用户'" + user.getUserName() + "'管理员身份成功！");
 		}
+	}
+	
+	/**
+	 * 查询租户数据树格式
+	 * @param pId 父级编码，默认 -1
+	 * @param isShowCode 是否显示编码（true or 1：显示在左侧；2：显示在右侧；false or null：不显示）
+	 * @return
+	 */
+	@RequiresPermissions("user")
+	@RequestMapping(value = "treeData")
+	@ResponseBody
+	public List<Map<String, Object>> treeData(String pId, String isShowCode) {
+		List<Map<String, Object>> mapList = ListUtils.newArrayList();
+		User where = new User();
+		List<User> list = userService.findCorpList(where);
+		for (int i = 0; i < list.size(); i++) {
+			User e = list.get(i);
+			Map<String, Object> map = MapUtils.newHashMap();
+			map.put("id", e.getCorpCode_());
+			map.put("pId", StringUtils.defaultIfBlank(pId, "-1"));
+			map.put("name", StringUtils.getTreeNodeName(isShowCode, e.getCorpCode_(), e.getCorpName_()));
+			mapList.add(map);
+		}
+		return mapList;
+	}
+
+	/**
+	 * 切换租户
+	 * @param user
+	 * @return
+	 */
+	@RequiresPermissions("sys:corpAdmin:edit")
+	@RequestMapping(value = "switch/{corpCode}")
+	@ResponseBody
+	public String switchCorp(@PathVariable String corpCode) {
+		if (UserUtils.getUser().isSuperAdmin()){
+			User where = new User();
+			where.setCorpCode_(corpCode);
+			List<User> list = userService.findCorpList(where);
+			if (list.size() > 0){
+				User user = list.get(0);
+				Session session = UserUtils.getSession();
+				session.setAttribute("corpCode", user.getCorpCode_());
+				session.setAttribute("corpName", user.getCorpName_());
+				return renderResult(Global.TRUE, "租户切换成功！");
+			}else{
+				return renderResult(Global.TRUE, "租户切换失败，没有这个租户！");
+			}
+		}
+		return renderResult(Global.FALSE, "租户切换失败，只有超级管理员才可以操作！");
 	}
 
 }

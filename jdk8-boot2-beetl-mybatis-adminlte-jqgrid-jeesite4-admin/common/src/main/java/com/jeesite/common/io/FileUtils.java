@@ -44,6 +44,7 @@ import net.sf.jmimemagic.MagicMatch;
 public class FileUtils extends org.apache.commons.io.FileUtils {
 
 	private static Logger logger = LoggerFactory.getLogger(FileUtils.class);
+	private static MimetypesFileTypeMap mimetypesFileTypeMap;
 	
 	/**
 	 * 复制单个文件，如果目标文件存在，则不覆盖
@@ -242,14 +243,10 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * @author ThinkGem 2016-7-4
 	 */
 	public static String readFileToString(String classResourcePath){
-		InputStream in = null;
-		try {
-			in = new ClassPathResource(classResourcePath).getInputStream();
+		try (InputStream in = new ClassPathResource(classResourcePath).getInputStream()){
             return IOUtils.toString(in, Charsets.toCharset("UTF-8"));
 		} catch (IOException e) {
 			logger.warn("Error file convert: {}", e.getMessage());
-		}finally{
-            IOUtils.closeQuietly(in);
 		}
 		return null;
 	}
@@ -658,7 +655,10 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * @return 返回文件类型
 	 */
 	public static String getContentType(String fileName) {
-		return new MimetypesFileTypeMap().getContentType(fileName);
+		if (mimetypesFileTypeMap == null){
+			mimetypesFileTypeMap = new MimetypesFileTypeMap();
+		}
+		return mimetypesFileTypeMap.getContentType(fileName);
 	}
 	
 	/**
@@ -758,7 +758,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		try {
 			response.addHeader("Content-Disposition", "attachment; filename=\"" + 
 					EncodeUtils.encodeUrl(StringUtils.isBlank(fileName) ? file.getName() : fileName) + "\"");
-			response.setContentType(getContentType(file.getName())); // set the MIME type.
+			response.setContentType(FileUtils.getContentType(file.getName())); // set the MIME type.
 			response.addHeader("Content-Length", String.valueOf(contentLength));
 			os = response.getOutputStream();
 			out = new BufferedOutputStream(os);
@@ -808,20 +808,20 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 				logger.debug("提醒：向客户端传输时出现IO异常，但此异常是允许的，有可能客户端取消了下载，导致此异常，不用关心！");
 			}
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.debug(e.getMessage(), e);
 		} finally {
 			if (out != null) {
 				try {
 					out.close();
 				} catch (IOException e) {
-					logger.error(e.getMessage(), e);
+//					logger.error(e.getMessage(), e);
 				}
 			}
 			if (raf != null) {
 				try {
 					raf.close();
 				} catch (IOException e) {
-					logger.error(e.getMessage(), e);
+//					logger.error(e.getMessage(), e);
 				}
 			}
 		}
@@ -944,9 +944,9 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 				projectPath = file.toString();
 			}
 		} catch (FileNotFoundException e) {
-			;
+			// 忽略异常
 		} catch (IOException e) {
-			e.printStackTrace();
+			// 忽略异常
 		}
 		// 取不到，取当前工作路径
 		if (StringUtils.isBlank(projectPath)){
@@ -982,9 +982,9 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 				webappPath = file.toString();
 			}
 		} catch (FileNotFoundException e) {
-			;
+			// 忽略异常
 		} catch (IOException e) {
-			e.printStackTrace();
+			// 忽略异常
 		}
 		// 取不到，取当前工作路径
 		if (StringUtils.isBlank(webappPath)){

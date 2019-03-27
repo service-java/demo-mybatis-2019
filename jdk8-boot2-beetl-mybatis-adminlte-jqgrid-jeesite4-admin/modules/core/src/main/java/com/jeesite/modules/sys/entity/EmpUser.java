@@ -61,12 +61,16 @@ import com.jeesite.common.utils.excel.fieldtype.OfficeType;
 					@Column(name="area_name", label="区域名称", isQuery=false),
 					@Column(name="area_type", label="区域类型"),
 		}),
-	}, extWhereKeys="dsfOffice, dsfCompany", orderBy="a.user_weight DESC, a.update_date DESC"
+	},
+	extWhereKeys="dsfOffice, dsfCompany",
+	orderBy="a.user_weight DESC, a.update_date DESC"
 )
 public class EmpUser extends User {
 	
 	private static final long serialVersionUID = 1L;
-
+	
+	private String[] codes; // 查询用
+	
 	public EmpUser() {
 		this(null);
 	}
@@ -100,6 +104,14 @@ public class EmpUser extends User {
 	
 	public void setEmployee(Employee employee){
 		super.setRefObj(employee);
+	}
+
+	public String[] getCodes() {
+		return codes;
+	}
+
+	public void setCodes(String[] codes) {
+		this.codes = codes;
 	}
 	
 }

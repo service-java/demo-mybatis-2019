@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +33,7 @@ import com.jeesite.modules.sys.service.UserService;
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/secAdmin")
+@ConditionalOnProperty(name="web.core.enabled", havingValue="true", matchIfMissing=true)
 public class SecAdminController extends BaseController {
 
 	@Autowired
@@ -53,7 +55,8 @@ public class SecAdminController extends BaseController {
 	@ResponseBody
 	public Page<User> listData(User user, HttpServletRequest request, HttpServletResponse response) {
 		user.setMgrType(User.MGR_TYPE_SEC_ADMIN);	// 二级管理员
-		Page<User> page = userService.findPage(new Page<User>(request, response), user);
+		user.setPage(new Page<>(request, response));
+		Page<User> page = userService.findPage(user);
 		return page;
 	}
 

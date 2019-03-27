@@ -13,6 +13,7 @@ import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -54,6 +55,7 @@ import com.jeesite.modules.sys.utils.UserUtils;
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/empUser")
+@ConditionalOnProperty(name="web.core.enabled", havingValue="true", matchIfMissing=true)
 public class EmpUserController extends BaseController {
 
 	@Autowired
@@ -90,13 +92,14 @@ public class EmpUserController extends BaseController {
 	@RequiresPermissions("user")
 	@RequestMapping(value = "listData")
 	@ResponseBody
-	public Page<EmpUser> listData(EmpUser empUser, Boolean isAll, HttpServletRequest request, HttpServletResponse response) {
+	public Page<EmpUser> listData(EmpUser empUser, Boolean isAll, String ctrlPermi, HttpServletRequest request, HttpServletResponse response) {
 		empUser.getEmployee().getOffice().setIsQueryChildren(true);
 		empUser.getEmployee().getCompany().setIsQueryChildren(true);
 		if (!(isAll != null && isAll)){
-			empUserService.addDataScopeFilter(empUser, UserDataScope.CTRL_PERMI_MANAGE);
+			empUserService.addDataScopeFilter(empUser, ctrlPermi);
 		}
-		Page<EmpUser> page = empUserService.findPage(new Page<EmpUser>(request, response), empUser);
+		empUser.setPage(new Page<>(request, response));
+		Page<EmpUser> page = empUserService.findPage(empUser);
 		return page;
 	}
 
@@ -169,11 +172,11 @@ public class EmpUserController extends BaseController {
 	 */
 	@RequiresPermissions("sys:empUser:view")
 	@RequestMapping(value = "exportData")
-	public void exportData(EmpUser empUser, Boolean isAll, HttpServletResponse response) {
+	public void exportData(EmpUser empUser, Boolean isAll, String ctrlPermi, HttpServletResponse response) {
 		empUser.getEmployee().getOffice().setIsQueryChildren(true);
 		empUser.getEmployee().getCompany().setIsQueryChildren(true);
 		if (!(isAll != null && isAll)){
-			empUserService.addDataScopeFilter(empUser, UserDataScope.CTRL_PERMI_MANAGE);
+			empUserService.addDataScopeFilter(empUser, ctrlPermi);
 		}
 		List<EmpUser> list = empUserService.findList(empUser);
 		String fileName = "用户数据" + DateUtils.getDate("yyyyMMddHHmmss") + ".xlsx";
@@ -351,8 +354,8 @@ public class EmpUserController extends BaseController {
 	@RequestMapping(value = "treeData")
 	@ResponseBody
 	public List<Map<String, Object>> treeData(String idPrefix, String pId,
-			String officeCode, String companyCode, String postCode,
-			String roleCode, Boolean isAll, String isShowCode) {
+			String officeCode, String companyCode, String postCode, String roleCode, 
+			Boolean isAll, String isShowCode, String ctrlPermi) {
 		List<Map<String, Object>> mapList = ListUtils.newArrayList();
 		EmpUser empUser = new EmpUser();
 		Employee employee = empUser.getEmployee();
@@ -364,9 +367,8 @@ public class EmpUserController extends BaseController {
 		empUser.setRoleCode(roleCode);
 		empUser.setStatus(User.STATUS_NORMAL);
 		empUser.setUserType(User.USER_TYPE_EMPLOYEE);
-		empUser.setMgrType(User.MGR_TYPE_NOT_ADMIN);
 		if (!(isAll != null && isAll)) {
-			empUserService.addDataScopeFilter(empUser);
+			empUserService.addDataScopeFilter(empUser, ctrlPermi);
 		}
 		List<EmpUser> list = empUserService.findList(empUser);
 		for (int i = 0; i < list.size(); i++) {
@@ -385,13 +387,12 @@ public class EmpUserController extends BaseController {
 	 */
 	@RequiresPermissions("user")
 	@RequestMapping(value = "empUserSelect")
-	public String empUserSelect(EmpUser empUser, String selectData, String checkbox, Model model) {
+	public String empUserSelect(EmpUser empUser, String selectData, Model model) {
 		String selectDataJson = EncodeUtils.decodeUrl(selectData);
 		if (JsonMapper.fromJson(selectDataJson, Map.class) != null){
 			model.addAttribute("selectData", selectDataJson);
 		}
-		model.addAttribute("checkbox", checkbox); // 是否显示复选框，支持多选
-		model.addAttribute("empUser", empUser); // ModelAttribute
+		model.addAttribute("empUser", empUser);
 		return "modules/sys/user/empUserSelect";
 	}
 	
