@@ -24,8 +24,10 @@ layui.define(['form', 'laydate', 'treeGrid'], function (exports) {
                 url: Common.ctxPath + '/admin/menu/list.json',
                 method: 'post',
                 cellMinWidth: 100,
-                treeId: 'id',//树形id字段名称
-                treeUpId: 'parentMenuId',//树形父id字段名称
+                // 树形id字段名称
+                treeId: 'id',
+                // 树形父id字段名称
+                treeUpId: 'parentMenuId',
                 treeShowName: 'name',//以树形式显示的字段
                 cols: [[ //表头
                     // {type: 'numbers', title: '序号', fixed: 'left'},
