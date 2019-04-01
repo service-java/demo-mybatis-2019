@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>len-admin</artifactId>
+    <artifactId>len-system</artifactId>
 
-    <name>len-admin</name>
+    <name>len-system</name>
     <url>http://maven.apache.org</url>
 
     <properties>

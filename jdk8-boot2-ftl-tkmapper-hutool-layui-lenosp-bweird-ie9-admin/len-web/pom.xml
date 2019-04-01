@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>com.len</groupId>
-            <artifactId>len-admin</artifactId>
+            <artifactId>len-system</artifactId>
         </dependency>
         <dependency>
             <groupId>com.len</groupId>

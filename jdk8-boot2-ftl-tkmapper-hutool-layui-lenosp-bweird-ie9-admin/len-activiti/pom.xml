@@ -50,7 +50,7 @@
         <!--activti 正在开发中-->
         <dependency>
             <groupId>com.len</groupId>
-            <artifactId>len-admin</artifactId>
+            <artifactId>len-system</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -62,7 +62,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.len</groupId>
-                <artifactId>len-admin</artifactId>
+                <artifactId>len-system</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
