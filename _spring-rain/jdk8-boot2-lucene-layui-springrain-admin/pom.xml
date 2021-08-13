@@ -56,7 +56,7 @@
         <fst.version>2.57</fst.version>
         
         
-        <bcprov.version>1.59</bcprov.version>
+        <bcprov.version>1.67</bcprov.version>
         
         
 	</properties>
